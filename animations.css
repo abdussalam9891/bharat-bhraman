@@ -452,3 +452,68 @@ section:hover .line {
   transition: transform 0.2s ease-out;
 }
 
+
+
+
+/* car hero -------------------------------- */
+/* IMAGE SLIDER */
+.car-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.08);
+  transition: opacity 1.5s ease, transform 6s ease;
+}
+
+.car-hero-img.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* TOP DROP */
+.car-hero-top {
+  opacity: 0;
+  transform: translateY(-40px);
+  animation: carDropTop 1s ease forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes carDropTop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SIDE SLIDE */
+.car-hero-side {
+  opacity: 0;
+  transform: translateX(-60px);
+  animation: carSlideSide 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes carSlideSide {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* CTA UP */
+.car-hero-bottom {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: carRiseUp 1s ease forwards;
+  animation-delay: 0.9s;
+}
+
+@keyframes carRiseUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

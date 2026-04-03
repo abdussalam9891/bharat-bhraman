@@ -344,80 +344,88 @@
 
 
 
-  <!-- hero ----------------------------------------------------- -->
-  <section class="relative min-h-screen mt-[72px] flex items-center justify-start px-[5%] overflow-hidden">
-    <!-- Background image -->
-    <img
-      class="hero-bg absolute inset-0 w-full h-full object-cover z-[-2] scale-[1.08] brightness-75 contrast-110 saturate-115"
-      src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1920&auto=format&fit=crop"
-      alt="Luxury road trip through India" />
+ <section class="relative min-h-screen mt-[72px] flex items-center px-[5%] overflow-hidden">
 
-    <!-- Overlay -->
-    <div class="absolute inset-0 z-[-1]" style="
-          background:
-            linear-gradient(120deg, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.2)),
-            radial-gradient(
-              circle at 20% 40%,
-              rgba(79, 190, 203, 0.18),
-              transparent 60%
-            ),
-            radial-gradient(
-              circle at 80% 70%,
-              rgba(42, 157, 143, 0.12),
-              transparent 60%
-            );
-        "></div>
+  <!-- Background -->
+  <div class="hero-images absolute inset-0 z-[-2]">
 
-    <!-- Content -->
-    <div class="max-w-[620px] py-5">
-      <!-- Trust badge -->
-      <div
-        class="hero-sub inline-block mb-4 px-4 py-1.5 rounded-full text-sm text-white bg-white/20 border border-white/30 backdrop-blur-sm">
+  <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1920&auto=format&fit=crop"
+       class="hero-img active" />
+
+  <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1920&auto=format&fit=crop"
+       class="hero-img" />
+
+  <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?q=80&w=1920&auto=format&fit=crop"
+       class="hero-img" />
+
+  <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1920&auto=format&fit=crop"
+       class="hero-img" />
+
+</div>
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 z-[-1] bg-[linear-gradient(120deg,rgba(0,0,0,0.82),rgba(0,0,0,0.2)),radial-gradient(circle_at_20%_40%,rgba(79,190,203,0.18),transparent_60%)]"></div>
+
+  <!-- WRAPPER -->
+  <div class="w-full flex justify-between items-center gap-10">
+
+    <!-- LEFT -->
+    <div class="max-w-[620px]">
+
+      <div class="hero-sub inline-block mb-4 px-4 py-1.5 rounded-full text-sm text-white bg-white/20 border border-white/30 backdrop-blur-sm">
         ★ 4.9 Rated by 1,200+ Travelers
       </div>
 
-      <!-- Heading -->
-      <h1
-        class="font-display font-extrabold text-white leading-[1.05] mb-5 [text-shadow:0_6px_30px_rgba(0,0,0,0.6)] tracking-[-1px] text-[clamp(3rem,8vw,5.5rem)]">
+      <h1 class="font-display font-extrabold text-white leading-[1.05] mb-5 tracking-[-1px] text-[clamp(3rem,8vw,5.5rem)]">
         <span class="line block">Explore India</span>
         <span class="line block">Without the Chaos</span>
       </h1>
 
-      <!-- Sub -->
       <p class="hero-sub text-[1.05rem] text-white/85 leading-[1.75] mb-9 max-w-[480px]">
-        Private car. Professional driver. Fully managed journeys across India
-        — designed for comfort, safety, and complete peace of mind.
+        Private car. Professional driver. Fully managed journeys across India — designed for comfort, safety, and complete peace of mind.
       </p>
 
-      <!-- Buttons -->
-      <div class="hero-btns-anim flex gap-3.5 flex-wrap mb-14">
+      <div class="hero-btns flex gap-3.5 flex-wrap mb-10">
         <a href="trips.html"
-          class="btn-shine inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-white font-semibold text-[0.9rem] tracking-[0.5px] transition-all duration-400 bg-gradient-to-br from-[#2a9d8f] to-[#264653] hover:-translate-y-[3px] hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(0,0,0,0.4)]">
+          class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-white font-semibold text-[0.9rem] tracking-[0.5px] bg-gradient-to-br from-[#2a9d8f] to-[#264653] hover:-translate-y-[3px] hover:scale-[1.02] transition-all duration-300">
           View Tours
         </a>
+
         <a href="tel:+919006143335"
-          class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-white font-semibold text-[0.9rem] bg-transparent border-2 border-white/80 backdrop-blur-[5px] transition-all duration-300 hover:bg-white hover:text-ink-900">
+          class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-white font-semibold text-[0.9rem] border-2 border-white/80 backdrop-blur-[5px] hover:bg-white hover:text-black transition-all duration-300">
           Talk to an Expert →
         </a>
       </div>
 
-      <!-- Trust items -->
-      <div class="hero-trust-anim flex gap-7 flex-wrap">
-        <div class="flex items-center gap-2 text-white text-[0.95rem]">
-          <span class="w-1.5 h-1.5 rounded-full bg-teal-400 shrink-0"></span>
-          No Hidden Costs
-        </div>
-        <div class="flex items-center gap-2 text-white text-[0.95rem]">
-          <span class="w-1.5 h-1.5 rounded-full bg-teal-400 shrink-0"></span>
-          Verified Drivers
-        </div>
-        <div class="flex items-center gap-2 text-white text-[0.95rem]">
-          <span class="w-1.5 h-1.5 rounded-full bg-teal-400 shrink-0"></span>
-          24/7 Support
-        </div>
-      </div>
     </div>
-  </section>
+
+    <!-- RIGHT (STATS) -->
+    <div class="hero-stats hidden md:flex flex-col gap-8 text-white">
+
+      <div>
+        <div class="stat-num text-[2.8rem] font-bold tracking-[-1px]" data-target="600">0</div>
+        <div class="text-white/70 text-sm">Trips Completed</div>
+      </div>
+
+      <div>
+        <div class="stat-num text-[2.8rem] font-bold tracking-[-1px]" data-target="98">0</div>
+        <div class="text-white/70 text-sm">Happy Travellers</div>
+      </div>
+
+      <div>
+        <div class="stat-num text-[2.8rem] font-bold tracking-[-1px]" data-target="40">0</div>
+        <div class="text-white/70 text-sm">Destinations</div>
+      </div>
+
+      <div>
+        <div class="stat-num text-[2.8rem] font-bold tracking-[-1px]" data-target="5">0</div>
+        <div class="text-white/70 text-sm">Years Experience</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
   <!-- sticky bar ---------------------------------- -->
   <div class="flex items-center justify-between px-[5%] py-3.5 bg-ink-900 text-white text-[0.93rem]">

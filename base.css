@@ -1,4 +1,4 @@
-/* DESIGN TOKENS (GLOBAL SYSTEM) */
+/* GLOBAL SYSTEM */
 :root {
   --primary: #2a9d8f;
   --primary-hover: #23867a;
@@ -22,7 +22,7 @@
     width: 80%;
     height: calc(100vh - 72px);
 
-    display: flex;              /* 🔥 IMPORTANT */
+    display: flex;
     flex-direction: column;
 
     gap: 20px;
@@ -31,7 +31,7 @@
     background: rgba(10,10,10,0.96);
     backdrop-filter: blur(20px);
 
-    z-index: 999;               /* 🔥 IMPORTANT */
+    z-index: 999;
   }
 }
 @media (max-width: 900px) {

@@ -52,9 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ==========================
-  // SCROLL TOP
-  // ==========================
+  // SCROLL TOP---------------------//
   const scrollTopBtn = document.getElementById("scrollTopBtn");
 
   if (scrollTopBtn) {
@@ -73,6 +71,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+
+
+
+
   // navbar hide when scroll --------------------------
   let lastScroll = 0;
 
@@ -90,9 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ==========================
-  // MEGA MENU
-  // ==========================
+  //MEGA MENU--------------------------//
   const triggers = document.querySelectorAll(".mega-trigger");
   const megaMenu = document.getElementById("megaMenu");
   let menuTimeout;
@@ -124,6 +124,10 @@ document.addEventListener("DOMContentLoaded", () => {
       menuTimeout = setTimeout(() => megaMenu.classList.remove("active"), 200);
     });
 
+
+
+
+
     // mobile click
     triggers.forEach((trigger) => {
       trigger.addEventListener("click", (e) => {
@@ -143,9 +147,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ==========================
-  // FEATURED TOUR CAROUSEL (ELITE)
-  // ==========================
+
+
+
+
+
+
+  // FEATURED TOUR CAROUSEL
   const track = document.getElementById("tourTrack");
   const next = document.getElementById("tourNext");
   const prev = document.getElementById("tourPrev");
@@ -162,9 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
       track.scrollBy({ left: -cardWidth, behavior: "smooth" });
     });
 
-    // ==========================
     // DRAG (DESKTOP)
-    // ==========================
     let isDown = false;
     let startX;
     let scrollLeft;
@@ -186,9 +192,8 @@ document.addEventListener("DOMContentLoaded", () => {
       track.scrollLeft = scrollLeft - walk;
     });
 
-    // ==========================
+
     // TOUCH (MOBILE)
-    // ==========================
     track.addEventListener("touchstart", (e) => {
       startX = e.touches[0].pageX;
       scrollLeft = track.scrollLeft;
@@ -200,10 +205,11 @@ document.addEventListener("DOMContentLoaded", () => {
       track.scrollLeft = scrollLeft - walk;
     });
 
-    // ==========================
+
+
+
     // AUTOPLAY
-    // ==========================
-    let autoScroll;
+   let autoScroll;
 
     function startAuto() {
       autoScroll = setInterval(() => {
@@ -222,9 +228,8 @@ document.addEventListener("DOMContentLoaded", () => {
     track.addEventListener("touchstart", stopAuto);
   }
 
-  // ==========================
+
   // REVEAL ANIMATION
-  // ==========================
   const cards = document.querySelectorAll(".card-reveal");
 
   const observer = new IntersectionObserver(
@@ -240,9 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   cards.forEach((card) => observer.observe(card));
 
-  // ==========================
-  // CARD SLIDER
-  // ==========================
+ // CARD SLIDER
   document.querySelectorAll(".slider-container").forEach((slider) => {
     const images = slider.querySelectorAll(".slider-image");
     const prevBtn = slider.querySelector(".prev");
@@ -278,9 +281,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ==========================
-  // CARD CLICK
-  // ==========================
+
+  //card click
   window.goToPage = function (e, url) {
     if (e.target.closest("a, button")) return;
 

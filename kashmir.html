@@ -1,5 +1,5 @@
-<!doctype html>
-<html>
+ <!doctype html>
+<html lang="en">
  <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -38,14 +38,18 @@ tailwind.config = {
   <link rel="stylesheet" href="animations.css" />
 
 
+
   <!-- lucide icon CDN -->
    <script src="https://unpkg.com/lucide@latest"></script>
 
 </head>
-  <body class="font-body bg-gray-50 text-gray-800 leading-relaxed antialiased">
 
 
-     <!-- NAVbar----------------------------------->
+
+
+ <body class="font-body bg-gray-50 text-gray-800 leading-relaxed antialiased">
+
+ <!-- NAVbar----------------------------------->
     <nav
       id="mainNav"
       class="mega-nav fixed top-0 left-0 right-0 z-[999] flex items-center justify-between px-[5%] h-[72px] bg-white/80 backdrop-blur-[14px] border-b border-gray-200/60"
@@ -166,14 +170,14 @@ tailwind.config = {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="kashmir.html"
                     class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Kashmir</a
                   >
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="manali.html"
                     class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Himachal</a
                   >
@@ -269,7 +273,7 @@ tailwind.config = {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="goa.html"
                     class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Goa ★★★★☆</a
                   >
@@ -285,21 +289,21 @@ tailwind.config = {
               <ul class="space-y-2.5">
                 <li>
                   <a
-                    href="#"
+                    href="goldentriangle.html"
                     class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Rajasthan</a
                   >
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="manali.html"
                     class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Himachal</a
                   >
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="kashi.html"
                     class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Varanasi</a
                   >
@@ -343,12 +347,7 @@ tailwind.config = {
 
 
 
- <!-- HERO -->
-
-
-
-<main class="pt-[72px]">
-
+ <main class="pt-[72px]">
    <!-- gallery  -->
     <section class="px-[5%]  mt-[72-px]">
 
@@ -371,7 +370,7 @@ tailwind.config = {
   <span class="text-gray-400">→</span>
 
   <span class="text-gray-900 font-medium">
-    Kerala
+    Kashmir
   </span>
 
 </div>
@@ -383,19 +382,19 @@ tailwind.config = {
       <h2
         class="text-[clamp(2rem,4vw,2.6rem)] font-semibold mb-6 text-gray-900"
       >
-        The <span class="text-teal-600 font-semibold">Kerala</span> Route
+        The <span class="text-teal-600 font-semibold">Kashmir</span> Route
       </h2>
 
       <!-- GALLERY WRAPPER (IMPORTANT) -->
       <div
         id="gallery"
         data-images='[
-      "images/kerala1.jpg",
-      "images/kerala2.jpg",
-      "images/kerala3.jpg",
-      "images/kerala4.jpg",
-      "images/kerala5.jpg",
-      "images/kerala6.jpg"
+      "images/k1.jpg",
+      "images/k2.jpg",
+      "images/k3.jpg",
+      "images/k4.jpg",
+      "images/k5.jpg",
+      "images/k6.jpg"
     ]'
       >
         <!-- GRID -->
@@ -405,7 +404,7 @@ tailwind.config = {
           <!-- LEFT BIG IMAGE -->
           <div class="h-[420px] overflow-hidden">
             <img
-              src="images/kerala1.jpg"
+              src="images/k1.jpg"
               onclick="openLightbox(0)"
               class="w-full h-full object-cover cursor-pointer hover:scale-105 transition duration-700"
             />
@@ -415,7 +414,7 @@ tailwind.config = {
           <div class="grid grid-rows-2 gap-2 h-[420px]">
             <div class="overflow-hidden">
               <img
-                src="images/kerala2.jpg"
+                src="images/k2.jpg"
                 onclick="openLightbox(1)"
                 class="w-full h-full object-cover cursor-pointer hover:scale-105 transition duration-700"
               />
@@ -423,7 +422,7 @@ tailwind.config = {
 
             <div class="relative overflow-hidden">
               <img
-                src="images/kerala3.jpg"
+                src="images/k3.jpg"
                 onclick="openLightbox(2)"
                 class="w-full h-full object-cover cursor-pointer hover:scale-105 transition duration-700"
               />
@@ -484,6 +483,18 @@ tailwind.config = {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+<!-- STATS BAR -->
 <div class="px-[5%] py-6">
 
   <div class="flex gap-3 overflow-x-auto no-scrollbar
@@ -491,6 +502,7 @@ tailwind.config = {
     backdrop-blur-md border border-gray-200/60
     rounded-2xl p-3 shadow-sm">
 
+    <!-- ITEM -->
     <div class="flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap
       bg-white/70 border border-gray-200 text-gray-700 text-sm
       transition-all duration-300
@@ -499,9 +511,10 @@ tailwind.config = {
       hover:text-white hover:shadow-md">
 
       <span class="text-base">⏳</span>
-      <span class="font-medium">7 Days / 6 Nights</span>
+      <span class="font-medium">7 Days</span>
     </div>
 
+    <!-- ITEM -->
     <div class="flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap
       bg-white/70 border border-gray-200 text-gray-700 text-sm
       transition-all duration-300
@@ -510,9 +523,10 @@ tailwind.config = {
       hover:text-white hover:shadow-md">
 
       <span class="text-base">📍</span>
-      <span class="font-medium"> Kochi → Munnar → Thekkady → Alleppey </span>
+      <span class="font-medium">Srinagar → Gulmarg → Pahalgam → Sonmarg → Srinagar</span>
     </div>
 
+    <!-- ITEM -->
     <div class="flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap
       bg-white/70 border border-gray-200 text-gray-700 text-sm
       transition-all duration-300
@@ -521,9 +535,10 @@ tailwind.config = {
       hover:text-white hover:shadow-md">
 
       <span class="text-base">🏨</span>
-      <span class="font-medium">👤 Private Tour ⭐ 4.9 Rated</span>
+      <span class="font-medium">4★ Heritage Stays</span>
     </div>
 
+    <!-- ITEM -->
     <div class="flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap
       bg-white/70 border border-gray-200 text-gray-700 text-sm
       transition-all duration-300
@@ -532,9 +547,10 @@ tailwind.config = {
       hover:text-white hover:shadow-md">
 
       <span class="text-base">🚗</span>
-      <span class="font-medium">Private AC Car</span>
+      <span class="font-medium">Private Car</span>
     </div>
 
+    <!-- ITEM -->
     <div class="flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap
       bg-white/70 border border-gray-200 text-gray-700 text-sm
       transition-all duration-300
@@ -543,40 +559,38 @@ tailwind.config = {
       hover:text-white hover:shadow-md">
 
       <span class="text-base">👥</span>
-      <span class="font-medium">Private Group</span>
+      <span class="font-medium">2–6 People</span>
     </div>
 
   </div>
 
 </div>
 
+
+
 <div class="px-[5%] py-[80px] bg-gradient-to-b from-[#f8fafc] to-white">
 
   <div class="max-w-[1200px] mx-auto grid lg:grid-cols-[1fr_360px] gap-12">
 
+    <!-- LEFT -->
     <div class="space-y-14">
 
-      <div>
-        <h2 class="text-2xl font-semibold mb-4 text-gray-900">Overview</h2>
-        <p class="text-gray-600 leading-relaxed">
-          Kerala, India’s tropical paradise, offers a rare blend of nature, comfort, and calm. This 7-day curated journey covers tea estates in Munnar, spice plantations in Thekkady, and a private houseboat stay in Alleppey’s backwaters. With a personal AC car and professional driver, every detail is taken care of — so you can simply relax and experience the journey.
-        </p>
-      </div>
-
+      <!-- SECTION -->
       <div>
         <h2 class="text-2xl font-semibold mb-6 text-gray-900">The Journey</h2>
 
-        <div class="space-y-5">
+         <div class="space-y-5">
 
           <div class="group rounded-2xl p-5 bg-white border border-gray-200
             shadow-sm hover:shadow-md transition">
             <div class="flex items-center gap-4 mb-3">
               <div class="w-10 h-10 flex items-center justify-center rounded-full
                 bg-teal-100 text-teal-600 font-semibold">1</div>
-              <div class="font-medium text-gray-900">Arrival in Kochi — Colonial Charm</div>
+              <div class="font-medium text-gray-900">Arrival in Srinagar — The Calm Begins</div>
             </div>
             <p class="text-sm text-gray-600 leading-relaxed">
-              Arrive in Kochi and transfer to your hotel. Explore Fort Kochi — Chinese fishing nets, colonial streets, and seaside cafés. Evening Kathakali performance (optional). Overnight in Kochi.
+
+Arrive in Srinagar and check into your hotel or houseboat. Spend the evening on Dal Lake with a Shikara ride as the sun sets behind the mountains.
             </p>
           </div>
 
@@ -585,180 +599,255 @@ tailwind.config = {
             <div class="flex items-center gap-4 mb-3">
               <div class="w-10 h-10 flex items-center justify-center rounded-full
                 bg-teal-100 text-teal-600 font-semibold">2</div>
-              <div class="font-medium text-gray-900">Kochi → Munnar — Into the Hills</div>
+              <div class="font-medium text-gray-900">Srinagar — Gardens & Old City</div>
             </div>
             <p class="text-sm text-gray-600 leading-relaxed">
-              Scenic drive to Munnar (approx. 4–5 hrs) through waterfalls and tea estates. Stop at viewpoints along the way. Check in and relax in the cool mountain air. Overnight in Munnar.
+
+Explore Mughal Gardens, local markets, and the old city charm. Slow day, scenic views, nothing rushed.
             </p>
           </div>
+
+
 
           <div class="group rounded-2xl p-5 bg-white border border-gray-200
             shadow-sm hover:shadow-md transition">
             <div class="flex items-center gap-4 mb-3">
               <div class="w-10 h-10 flex items-center justify-center rounded-full
                 bg-teal-100 text-teal-600 font-semibold">3</div>
-              <div class="font-medium text-gray-900">Munnar — Tea Gardens & National Park</div>
+              <div class="font-medium text-gray-900"> Srinagar → Gulmarg — Snow & Cable Cars</div>
             </div>
             <p class="text-sm text-gray-600 leading-relaxed">
-              Visit Eravikulam National Park (home of Nilgiri Tahr), tea plantations, and Mattupetty Dam. Enjoy panoramic views of rolling green hills. Overnight in Munnar.
+
+Drive to Gulmarg. Experience the famous Gondola ride and snow landscapes (seasonal). Return or stay overnight.
             </p>
           </div>
 
-          <div class="group rounded-2xl p-5 bg-white border border-gray-200
+             <div class="group rounded-2xl p-5 bg-white border border-gray-200
             shadow-sm hover:shadow-md transition">
             <div class="flex items-center gap-4 mb-3">
               <div class="w-10 h-10 flex items-center justify-center rounded-full
                 bg-teal-100 text-teal-600 font-semibold">4</div>
-              <div class="font-medium text-gray-900">Munnar → Thekkady — Spice & Wildlife</div>
+              <div class="font-medium text-gray-900"> Srinagar → Pahalgam — Valleys & Rivers
+</div>
             </div>
             <p class="text-sm text-gray-600 leading-relaxed">
-              Drive to Thekkady (approx. 3–4 hrs). Visit spice plantations and learn about Kerala’s famous spices. Optional evening cultural show or martial arts performance. Overnight in Thekkady.
+
+Head to Pahalgam, passing through saffron fields and scenic countryside. Relax by the Lidder River.
             </p>
           </div>
 
-          <div class="group rounded-2xl p-5 bg-white border border-gray-200
+             <div class="group rounded-2xl p-5 bg-white border border-gray-200
             shadow-sm hover:shadow-md transition">
             <div class="flex items-center gap-4 mb-3">
               <div class="w-10 h-10 flex items-center justify-center rounded-full
                 bg-teal-100 text-teal-600 font-semibold">5</div>
-              <div class="font-medium text-gray-900">Thekkady → Alleppey — Backwater Houseboat</div>
+              <div class="font-medium text-gray-900"> Pahalgam — Explore & Slow Travel</div>
             </div>
             <p class="text-sm text-gray-600 leading-relaxed">
-              Drive to Alleppey and board a private houseboat. Cruise through serene backwaters, passing villages, coconut groves, and paddy fields. Enjoy meals onboard. Overnight on houseboat.
+
+Visit Betaab Valley, Aru Valley, or simply spend time in nature. This is your slow day.
             </p>
           </div>
 
-          <div class="group rounded-2xl p-5 bg-white border border-gray-200
+             <div class="group rounded-2xl p-5 bg-white border border-gray-200
             shadow-sm hover:shadow-md transition">
             <div class="flex items-center gap-4 mb-3">
               <div class="w-10 h-10 flex items-center justify-center rounded-full
                 bg-teal-100 text-teal-600 font-semibold">6</div>
-              <div class="font-medium text-gray-900">Alleppey → Kochi — Leisure Day</div>
+              <div class="font-medium text-gray-900"> Srinagar → Sonmarg — Raw Mountain Beauty</div>
             </div>
             <p class="text-sm text-gray-600 leading-relaxed">
-              Disembark after breakfast and drive back to Kochi. Day at leisure for shopping or relaxing by the coast. Overnight in Kochi.
+
+A day trip to Sonmarg with glaciers, rivers, and open landscapes. One of the most untouched parts of Kashmir.
             </p>
           </div>
 
-          <div class="group rounded-2xl p-5 bg-white border border-gray-200
+             <div class="group rounded-2xl p-5 bg-white border border-gray-200
             shadow-sm hover:shadow-md transition">
             <div class="flex items-center gap-4 mb-3">
               <div class="w-10 h-10 flex items-center justify-center rounded-full
                 bg-teal-100 text-teal-600 font-semibold">7</div>
-              <div class="font-medium text-gray-900">Departure</div>
+              <div class="font-medium text-gray-900"> Departure — Carry It With You</div>
             </div>
             <p class="text-sm text-gray-600 leading-relaxed">
-              Transfer to Kochi airport or railway station for your onward journey. Tour ends with calm memories of Kerala.
+
+Transfer to airport. You leave — but Kashmir doesn’t.
             </p>
           </div>
+
+          <div class="p-6 rounded-2xl bg-white border shadow-sm">
+  <h3 class="text-lg font-semibold mb-3">Why This Trip Works</h3>
+
+  <ul class="text-sm text-gray-600 space-y-2">
+    <li>• Balanced route (lakes, valleys, snow)</li>
+    <li>• Not rushed — time to actually feel the place</li>
+    <li>• Private car for full comfort</li>
+    <li>• Designed for couples, families & photographers</li>
+  </ul>
+</div>
+
+
+
+
+
+
 
         </div>
       </div>
 
+      <!-- INCLUDED -->
       <div>
-        <h2 class="text-2xl font-semibold mb-6 text-gray-900">What’s Included & Excluded</h2>
+        <h2 class="text-2xl font-semibold mb-6 text-gray-900">What’s Included</h2>
 
         <div class="grid md:grid-cols-2 gap-6">
 
           <div class="p-5 rounded-2xl bg-green-50 border border-green-200">
-            <h3 class="font-bold text-green-800 mb-3 text-sm uppercase">Included</h3>
             <ul class="space-y-2 text-sm text-gray-700">
-              <li>✔ Private AC car throughout the tour</li>
-              <li>✔ 6 nights hotel (3★ & 4★) + 1 night houseboat</li>
-              <li>✔ Daily breakfast + all meals on houseboat</li>
-              <li>✔ Experienced, English-speaking driver</li>
-              <li>✔ All fuel, tolls, parking & taxes</li>
-              <li>✔ 24/7 on-trip WhatsApp support</li>
+              <li>✔ Private car for entire trip</li>
+              <li>✔ All accommodation</li>
+              <li>✔ Daily breakfast</li>
+              <li>✔ Driver, tolls, parking</li>
+              <li>✔ 24/7 support</li>
             </ul>
           </div>
 
           <div class="p-5 rounded-2xl bg-red-50 border border-red-200">
-            <h3 class="font-bold text-red-800 mb-3 text-sm uppercase">Excluded</h3>
             <ul class="space-y-2 text-sm text-gray-700">
-              <li>✘ Flights or trains to Kochi</li>
-              <li>✘ Entry tickets to monuments & parks</li>
-              <li>✘ Personal expenses (laundry, tips)</li>
-              <li>✘ Optional activities & experiences</li>
+              <li>✘ Flights</li>
+              <li>✘ Entry tickets</li>
+              <li>✘ Personal expenses</li>
+              <li>✘ Tips</li>
             </ul>
           </div>
 
         </div>
       </div>
 
+      <!-- ROUTE -->
       <div class="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
         <h2 class="text-xl font-semibold mb-3 text-gray-900">Route</h2>
         <p class="text-gray-600 text-sm">
-          Kochi → Munnar → Thekkady → Alleppey → Kochi
+          Srinagar → Gulmarg → Pahalgam → Sonmarg → Srinagar
         </p>
       </div>
 
+      <!-- KNOW BEFORE -->
       <div>
         <h2 class="text-2xl font-semibold mb-6 text-gray-900">Know Before You Go</h2>
+
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div class="p-4 bg-white border rounded-xl text-center text-sm">Best Time<br><b>Oct–Mar</b></div>
-          <div class="p-4 bg-white border rounded-xl text-center text-sm">Clothing<br><b>Light & Airy</b></div>
-          <div class="p-4 bg-white border rounded-xl text-center text-sm">Difficulty<br><b>Easy</b></div>
+
+          <div class="p-4 bg-white border rounded-xl text-center text-sm hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)]">Best Time<br><b>Apr–Oct (Pleasant)</b> <span class="text-xs text-gray-500">Dec–Feb for snow</span></div>
+           <div class="p-4 bg-white border rounded-xl text-center text-sm">
+      Temperature<br><b>-2°C to 25°C</b>
+    </div>
+     <div class="p-4 bg-white border rounded-xl text-center text-sm">
+      Clothing<br><b>Warm Layers</b><br>
+      <span class="text-xs text-gray-500">Heavy in winter</span>
+    </div>
+
+          <div class="p-4 bg-white border rounded-xl text-center text-sm">Difficulty<br><b>Easy–Moderate</b></div>
           <div class="p-4 bg-white border rounded-xl text-center text-sm">Customisable<br><b>Yes</b></div>
+
+          <div class="p-4 bg-white border rounded-xl text-center text-sm">
+      Ideal For<br><b>Couples • Families</b>
+    </div>
+
+    <div class="p-4 bg-white border rounded-xl text-center text-sm">
+      Connectivity<br><b>Limited in valleys</b>
+    </div>
+
+    <div class="p-4 bg-white border rounded-xl text-center text-sm">
+      Customisable<br><b>Yes</b>
+    </div>
+
+    <div class="p-4 bg-white border rounded-xl text-center text-sm">
+      Altitude<br><b>High Regions</b><br>
+      <span class="text-xs text-gray-500">Take it slow</span>
+    </div>
+
+
         </div>
       </div>
 
     </div>
 
-    <div class="lg:sticky lg:top-28 self-start">
+<div class="lg:sticky lg:top-28 self-start">
 
-      <div class="relative p-7 rounded-2xl overflow-hidden
-        bg-gradient-to-br from-white to-[#f1f5f9]
-        border border-gray-200
-        shadow-[0_25px_60px_rgba(0,0,0,0.08)]">
+  <div class="relative p-7 rounded-2xl overflow-hidden
+    bg-gradient-to-br from-white to-[#f1f5f9]
+    border border-gray-200
+    shadow-[0_25px_60px_rgba(0,0,0,0.08)]">
 
-        <div class="absolute inset-0 -z-10
-          bg-[radial-gradient(circle_at_30%_20%,rgba(42,157,143,0.18),transparent_60%)]">
-        </div>
-
-        <div class="text-center mb-6">
-          <div class="text-sm text-gray-400 line-through">₹20,000</div>
-          <div class="text-[3rem] font-bold text-gray-900 leading-none">
-            ₹16,000
-          </div>
-          <div class="text-sm font-medium text-teal-600 mt-1">
-            per person (Save ₹4,000)
-          </div>
-        </div>
-
-        <div class="h-[1px] bg-gray-200 my-5"></div>
-
-        <a href="https://wa.me/919006143335"
-          class="block text-center py-3.5 rounded-full font-medium text-white
-          bg-gradient-to-br from-teal-500 to-teal-700
-          shadow-md transition
-          hover:-translate-y-1 hover:scale-[1.04] hover:shadow-xl">
-          Book on WhatsApp →
-        </a>
-
-        <ul class="mt-6 space-y-3 text-sm text-gray-600">
-          <li class="flex gap-2 items-center">
-            <span class="w-2 h-2 bg-teal-500 rounded-full"></span>
-            Instant WhatsApp confirmation
-          </li>
-          <li class="flex gap-2 items-center">
-            <span class="w-2 h-2 bg-teal-500 rounded-full"></span>
-            50% advance, rest on arrival
-          </li>
-          <li class="flex gap-2 items-center">
-            <span class="w-2 h-2 bg-teal-500 rounded-full"></span>
-            Free itinerary customization
-          </li>
-          <li class="flex gap-2 items-center">
-            <span class="w-2 h-2 bg-teal-500 rounded-full"></span>
-            Same driver throughout the tour
-          </li>
-        </ul>
-
-      </div>
-
+    <!-- GLOW -->
+    <div class="absolute inset-0 -z-10
+      bg-[radial-gradient(circle_at_30%_20%,rgba(42,157,143,0.18),transparent_60%)]">
     </div>
+
+    <!-- PRICE -->
+    <div class="text-center mb-6">
+      <div class="text-sm text-gray-400 mb-1">Starting from</div>
+      <div class="text-[3rem] font-bold text-gray-900">
+        ₹17,000
+      </div>
+      <div class="text-sm text-gray-500">
+        per person • seasonal pricing
+      </div>
+      <p class="text-xs text-red-500 mt-3">
+  ⚡ Prices increase during snowfall & peak season
+</p>
+
+<ul class="mt-5 text-xs text-gray-500 space-y-2">
+  <li>✔ Trusted drivers with local expertise</li>
+  <li>✔ Handpicked stays (houseboat + hotels)</li>
+  <li>✔ 24/7 WhatsApp support</li>
+</ul>
+    </div>
+
+    <div class="h-[1px] bg-gray-200 my-5"></div>
+
+    <!-- CTA -->
+    <a href="https://wa.me/919006143335"
+      class="block text-center py-3.5 rounded-full font-medium text-white
+      bg-gradient-to-br from-teal-500 to-teal-700
+      shadow-md transition
+      hover:-translate-y-1 hover:scale-[1.04] hover:shadow-xl">
+
+      Ask on WhatsApp →
+    </a>
+
+    <!-- FEATURES -->
+    <ul class="mt-6 space-y-3 text-sm text-gray-600">
+
+      <li class="flex gap-2 items-center">
+        <span class="w-2 h-2 bg-teal-500 rounded-full"></span>
+        No hidden costs
+      </li>
+
+      <li class="flex gap-2 items-center">
+        <span class="w-2 h-2 bg-teal-500 rounded-full"></span>
+        Flexible itinerary
+      </li>
+
+      <li class="flex gap-2 items-center">
+        <span class="w-2 h-2 bg-teal-500 rounded-full"></span>
+        Fast confirmation
+      </li>
+
+    </ul>
 
   </div>
+
+</div>
+
+
+
+
+
+
+</div>
+
+
 
 </div>
 
@@ -967,7 +1056,11 @@ hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157
       </div>
     </section>
 
- <!-- FAQ -->
+
+
+
+
+    <!-- FAQ -->
 <section class="px-[5%] py-[110px] bg-gradient-to-b from-[#f8fafc] to-white relative overflow-hidden">
 
   <!-- BACKGROUND DECOR (SUBTLE GLOW) -->
@@ -1002,12 +1095,12 @@ hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157
     <details class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
 
       <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
-       What is the best time to visit Kerala?
+        Is the price shown final or are there extra charges?
         <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
       </summary>
 
       <p class="mt-3 text-sm text-gray-500 leading-relaxed">
-        October to March is the best time for pleasant weather and sightseeing. Monsoon (June to September) is ideal for Ayurvedic treatments and lush greenery, while summer months are warmer but still suitable for hill stations like Munnar.
+        The listed price includes driver and fuel for up to 250 km per day. Tolls, parking, and state taxes (if applicable) are extra. We keep everything transparent — no hidden surprises.
       </p>
 
     </details>
@@ -1015,48 +1108,49 @@ hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157
     <!-- ITEM -->
     <details class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
       <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
-       Are houseboat stays included in the package?
+      Is Kashmir safe for tourists?
         <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
       </summary>
 
       <p class="mt-3 text-sm text-gray-500">
-       Yes, most Kerala tour packages include a private houseboat stay in Alleppey. It includes meals onboard and a relaxing cruise through the backwaters.
+       Yes, Kashmir is safe for tourists in major destinations like Srinagar, Gulmarg, and Pahalgam. We also provide trusted local drivers and support throughout your trip.
       </p>
     </details>
 
     <!-- ITEM -->
     <details class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
       <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
-       What kind of clothes should I pack for Kerala?
+       When can I experience snowfall in Kashmir?
         <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
       </summary>
 
       <p class="mt-3 text-sm text-gray-500">
-       Light cotton clothes are recommended due to the tropical climate. Carry comfortable footwear, sunscreen, and a light jacket if visiting hill stations like Munnar.
+        Snowfall usually occurs from December to February, especially in Gulmarg. For snow experiences, winter months are ideal.
+
       </p>
     </details>
 
     <!-- ITEM -->
     <details class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
       <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
-       Can I customize my Kerala itinerary?
+        Is the Gondola ride included in the package?
         <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
       </summary>
 
       <p class="mt-3 text-sm text-gray-500">
-       Yes, all our Kerala tours are fully customizable. You can adjust destinations, hotel categories, and activities based on your preferences and budget.
+         Gondola tickets are not included as they are subject to availability and weather. We assist you in booking them in advance.
       </p>
     </details>
 
     <!-- ITEM -->
     <details class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
       <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
-      How do payments work for booking?
+      Can I customize my Kashmir itinerary?
         <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
       </summary>
 
       <p class="mt-3 text-sm text-gray-500">
-        A small advance is required to confirm your booking, with the remaining amount payable before or during the trip. Full payment details are shared transparently at booking.
+        Yes, the trip is fully customizable. You can add destinations, upgrade hotels, or extend your stay based on your preferences.
       </p>
     </details>
 
@@ -1067,8 +1161,6 @@ hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157
 
 
 </main>
-
-
 
 
 
@@ -1263,8 +1355,9 @@ hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157
   <!-- script --------------------------------->
   <script src="script.js"></script>
   <script>lucide.createIcons();</script>
-   <script src="goldentriangle.js"></script>
-  <script>
+<script src="goldentriangle.js"></script>
+ 
+ <script>
       let images = [];
       let current = 0;
 

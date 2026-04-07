@@ -37,6 +37,11 @@ tailwind.config = {
 <link rel="stylesheet" href="component.css">
   <link rel="stylesheet" href="animations.css" />
 
+
+  <!-- lucide icon CDN -->
+   <script src="https://unpkg.com/lucide@latest"></script>
+
+
 </head>
 
 
@@ -167,14 +172,14 @@ tailwind.config = {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="kashmir.html"
                     class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Kashmir</a
                   >
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="manali.html"
                     class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Himachal</a
                   >
@@ -638,7 +643,7 @@ tailwind.config = {
 
   <!-- footer ------------------------------ -->
   <footer class="bg-dark-grad px-[5%] pt-20 border-t border-[#e8ddd0]/20">
-    <!-- CTA row -->
+     <!-- CTA row -->
     <div
       class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-14 mb-14 border-b border-white/[0.08] gap-8">
       <div>
@@ -648,24 +653,43 @@ tailwind.config = {
         <p class="font-display text-[1.1rem] text-white/60 italic mb-7">
           let's make them together!
         </p>
-        <div class="flex gap-3 flex-wrap">
-          <a href="https://youtube.com" target="_blank" rel="noopener"
-            class="px-5 py-2.5 rounded-full text-[0.88rem] font-medium text-white border border-white/25 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)] hover:bg-white/10">
-            YouTube
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener"
-            class="px-5 py-2.5 rounded-full text-[0.88rem] font-medium text-white border border-white/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10">
-            Instagram
-          </a>
-          <a href="https://wa.me/919006143335" target="_blank" rel="noopener"
-            class="px-5 py-2.5 rounded-full text-[0.88rem] font-medium text-white border border-white/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10">
-            WhatsApp
-          </a>
-          <a href="tel:+919006143335"
-            class="px-5 py-2.5 rounded-full text-[0.88rem] font-medium text-white border border-white/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10">
-            Phone
-          </a>
-        </div>
+       <div class="flex gap-3 flex-wrap">
+
+  <!-- YouTube -->
+  <a href="https://youtube.com" target="_blank"
+    class="p-3 rounded-full border border-white/20 text-white/80 hover:bg-white/10 hover:text-white transition">
+
+    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"/>
+    </svg>
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://instagram.com" target="_blank"
+    class="p-3 rounded-full border border-white/20 text-white/80 hover:bg-white/10 hover:text-white transition">
+
+    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5.8A4.2 4.2 0 1 1 7.8 12 4.2 4.2 0 0 1 12 7.8zm5.3-.9a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+    </svg>
+  </a>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/919006143335" target="_blank"
+    class="p-3 rounded-full border border-white/20 text-white/80 hover:bg-white/10 hover:text-white transition">
+
+    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M20.5 3.5A11.8 11.8 0 0 0 12 0 12 12 0 0 0 1.5 18.3L0 24l5.8-1.5A12 12 0 1 0 20.5 3.5zm-8.5 18a10 10 0 0 1-5.1-1.4l-.4-.2-3.4.9.9-3.3-.2-.4A10 10 0 1 1 12 21.5zm5.5-7.6c-.3-.2-1.6-.8-1.9-.9s-.5-.2-.7.2-.8.9-1 1.1-.4.3-.7.1a8.2 8.2 0 0 1-2.4-1.5 9.2 9.2 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.7.1-.1.3-.4.4-.6s.1-.4 0-.6-.7-1.7-.9-2.3c-.2-.5-.4-.4-.7-.4h-.6c-.2 0-.6.1-.9.4s-1.1 1.1-1.1 2.7 1.1 3.1 1.2 3.3a12.5 12.5 0 0 0 4.8 4.4c.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.6-.7 1.8-1.4.2-.7.2-1.3.1-1.4s-.2-.2-.5-.3z"/>
+    </svg>
+  </a>
+
+  <!-- Phone (Lucide) -->
+  <a href="tel:+919006143335"
+    class="p-3 rounded-full border border-white/20 text-white/80 hover:bg-white/10 hover:text-white transition">
+
+    <i data-lucide="phone" class="w-5 h-5"></i>
+  </a>
+
+</div>
       </div>
       <a href="tel:+919006143335"
         class="btn-shine shrink-0 inline-flex items-center gap-2.5 px-7 py-4 rounded-full font-semibold text-white bg-gradient-to-br from-[#2a9d8f] to-[#264653] shadow-[0_8px_25px_rgba(0,0,0,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(0,0,0,0.4)]">
@@ -807,5 +831,6 @@ tailwind.config = {
 
   <!-- script --------------------------------->
   <script src="script.js"></script>
+   <script>lucide.createIcons();</script>
   </body>
 </html>

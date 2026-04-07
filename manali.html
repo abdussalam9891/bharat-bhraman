@@ -1,0 +1,1471 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore India with private car and driver tours. Customized itineraries, verified drivers, transparent pricing. Book Golden Triangle, Rajasthan, Kerala tours easily."
+    />
+    <meta
+      name="keywords"
+      content="India private tours, car with driver India, Golden Triangle tour, Rajasthan tour, Kerala trip"
+    />
+    <title>Private Car & Driver Tours in India | BharatBhramana</title>
+
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2a9d8f",
+              primaryHover: "#23867a",
+              dark: "#0a0a0a",
+              ink: {
+                900: "#111827",
+              },
+            },
+            fontFamily: {
+              display: ['"Cormorant Garamond"', "Georgia", "serif"],
+              body: ['"DM Sans"', "sans-serif"],
+            },
+            screens: {
+              nav: "900px",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="component.css" />
+    <link rel="stylesheet" href="animations.css" />
+
+
+
+    <!-- lucide icon CDN -->
+   <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+
+  <body class="font-body bg-gray-50 text-gray-800 leading-relaxed antialiased">
+    <!-- NAVbar----------------------------------->
+    <nav
+      id="mainNav"
+      class="mega-nav fixed top-0 left-0 right-0 z-[999] flex items-center justify-between px-[5%] h-[72px] bg-white/80 backdrop-blur-[14px] border-b border-gray-200/60"
+    >
+      <!-- Logo -->
+      <a
+        href="index.html"
+        class="font-display text-[1.4rem] font-bold text-gray-900 tracking-tight transition-transform duration-300 hover:scale-105 shrink-0"
+      >
+        Bharat<em class="text-teal-600 not-italic">भ्रमण</em>
+      </a>
+
+      <!-- Mobile toggle -->
+      <button
+        id="navToggle"
+        class="nav-toggle-btn hidden max-[900px]:flex flex-col justify-center gap-[5px] bg-transparent border-none cursor-pointer p-1.5 z-[1001]"
+        aria-label="Toggle menu"
+      >
+        <span
+          class="block w-6 h-[2px] bg-gray-800 rounded-sm transition-all duration-300"
+        ></span>
+        <span
+          class="block w-6 h-[2px] bg-gray-800 rounded-sm transition-all duration-300"
+        ></span>
+        <span
+          class="block w-6 h-[2px] bg-gray-800 rounded-sm transition-all duration-300"
+        ></span>
+      </button>
+
+      <!-- Desktop links -->
+      <ul
+        id="navLinks"
+        class="nav-links-mobile hidden nav:flex gap-[34px] list-none"
+      >
+        <li>
+          <a
+            href="index.html"
+            class="relative text-teal-600 text-[0.95rem] font-semibold transition-colors duration-300 hover:text-teal-300 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-400 after:transition-all after:duration-350 hover:after:w-full"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="trips.html"
+            class="relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
+          >
+            Packages
+          </a>
+        </li>
+        <li class="relative">
+          <a
+            href="#"
+            class="mega-trigger relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
+            data-mega="explore"
+          >
+            Explore
+          </a>
+        </li>
+        <li>
+          <a
+            href="cars.html"
+            class="relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
+          >
+            Cars
+          </a>
+        </li>
+        <li class="relative">
+          <a
+            href="#"
+            class="mega-trigger relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
+            data-mega="bestsellers"
+          >
+            Best Sellers
+          </a>
+        </li>
+        <li>
+          <a
+            href="about.html"
+            class="relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
+          >
+            About
+          </a>
+        </li>
+      </ul>
+
+      <!-- CTA -->
+      <a
+        href="https://wa.me/919006143335?text=Hi%20I%20am%20interested%20in%20your%20tour%20packages"
+        target="_blank"
+        rel="noopener"
+        class="btn-shine hidden nav:flex items-center gap-2 px-5 py-[10px] rounded-full text-sm font-semibold text-white bg-gradient-to-br from-[#2a9d8f] to-[#264653] shadow-[0_8px_25px_rgba(0,0,0,0.3)] transition-all duration-400 hover:-translate-y-0.5 hover:scale-[1.04] hover:shadow-[0_18px_40px_rgba(0,0,0,0.5)]"
+      >
+        Book Now
+      </a>
+
+      <!-- Mega Menu -->
+      <div
+        id="megaMenu"
+        class="mega-menu absolute top-full left-1/2 -translate-x-1/2 w-auto min-w-[520px] bg-white rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-gray-100 mt-3"
+      >
+        <!-- EXPLORE PANEL -->
+        <div class="mega-panel hidden" data-panel="explore">
+          <div class="flex gap-16 m-8">
+            <div>
+              <h4
+                class="text-gray-400 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
+              >
+                North India
+              </h4>
+              <ul class="space-y-2.5">
+                <li>
+                  <a
+                    href="goldentriangle.html"
+                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Golden Triangle</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="kashmir.html"
+                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Kashmir</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="manali.html"
+                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Himachal</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4
+                class="text-gray-400 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
+              >
+                South India
+              </h4>
+              <ul class="space-y-2.5">
+                <li>
+                  <a
+                    href="kerala.html"
+                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Kerala</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Tamil Nadu</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Karnataka</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4
+                class="text-gray-400 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
+              >
+                Special
+              </h4>
+              <ul class="space-y-2.5">
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Desert Tours</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Spiritual Tours</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Luxury Trips</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- BEST SELLERS PANEL -->
+        <div class="mega-panel hidden" data-panel="bestsellers">
+          <div class="flex gap-16 m-8">
+            <div>
+              <h4
+                class="text-gray-400 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
+              >
+                Top Picks
+              </h4>
+              <ul class="space-y-2.5">
+                <li>
+                  <a
+                    href="goldentriangle.html"
+                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Golden Triangle ★★★★★</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="kerala.html"
+                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Kerala ★★★★★</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="goa.html"
+                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Goa ★★★★☆</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4
+                class="text-gray-400 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
+              >
+                Trending
+              </h4>
+              <ul class="space-y-2.5">
+                <li>
+                  <a
+                    href="goldentriangle.html"
+                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Rajasthan</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="manali.html"
+                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Himachal</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="kashi.html"
+                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Varanasi</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4
+                class="text-gray-400 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
+              >
+                Offers
+              </h4>
+              <ul class="space-y-2.5">
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Early Bird</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-400 hover:translate-x-1.5 inline-block"
+                    >Group Deals</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Custom Tours</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- gallery  -->
+    <section class="px-[5%] pt-[60px] mt-[80px]">
+      <!-- TITLE -->
+      <h2
+        class="text-[clamp(2rem,4vw,2.6rem)] font-semibold mb-6 text-gray-900"
+      >
+        The <span class="text-teal-600 font-semibold">Manali</span> Route
+      </h2>
+
+      <!-- GALLERY WRAPPER (IMPORTANT) -->
+      <div
+        id="gallery"
+        data-images='[
+      "images/manali1.jpg",
+      "images/manali2.jpg",
+      "images/manali3.jpg"
+    ]'
+      >
+        <!-- GRID -->
+        <div
+          class="max-w-[1200px] mx-auto grid grid-cols-2 gap-2 rounded-2xl overflow-hidden"
+        >
+          <!-- LEFT BIG IMAGE -->
+          <div class="h-[420px] overflow-hidden">
+            <img
+              src="images/manali1.jpg"
+              onclick="openLightbox(0)"
+              class="w-full h-full object-cover cursor-pointer hover:scale-105 transition duration-700"
+            />
+          </div>
+
+          <!-- RIGHT SIDE -->
+          <div class="grid grid-rows-2 gap-2 h-[420px]">
+            <div class="overflow-hidden">
+              <img
+                src="images/manali2.jpg"
+                onclick="openLightbox(1)"
+                class="w-full h-full object-cover cursor-pointer hover:scale-105 transition duration-700"
+              />
+            </div>
+
+            <div class="relative overflow-hidden">
+              <img
+                src="images/manali3.jpg"
+                onclick="openLightbox(2)"
+                class="w-full h-full object-cover cursor-pointer hover:scale-105 transition duration-700"
+              />
+
+              <!-- SHOW ALL BUTTON -->
+              <button
+                onclick="openLightbox(0)"
+                class="absolute bottom-4 right-4 px-4 py-2 rounded-lg bg-teal-600/90 text-white text-sm font-medium shadow-md backdrop-blur transition-all duration-300 hover:bg-teal-700 hover:scale-105 hover:shadow-lg"
+              >
+                Show all photos
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- lightbox  -->
+    <div
+      id="lightbox"
+      class="hidden fixed inset-0 bg-black/90 z-[9999] flex items-center justify-center"
+      onclick="closeLb(event)"
+    >
+      <div class="relative w-[800px] max-w-[95vw]">
+        <!-- CLOSE -->
+        <button
+          onclick="closeLightbox()"
+          class="absolute -top-10 right-0 text-white text-2xl"
+        >
+          ✕
+        </button>
+
+        <!-- IMAGE -->
+        <img id="lbImg" class="w-full h-[500px] object-cover rounded-xl" />
+
+        <!-- CONTROLS -->
+        <div class="flex justify-between items-center mt-4">
+          <button
+            onclick="shiftLb(-1)"
+            class="w-10 h-10 bg-white rounded-full flex items-center justify-center"
+          >
+            ←
+          </button>
+
+          <span id="lbCounter" class="text-white/70 text-sm"></span>
+
+          <button
+            onclick="shiftLb(1)"
+            class="w-10 h-10 bg-white rounded-full flex items-center justify-center"
+          >
+            →
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS BAR -->
+    <div class="px-[5%] py-6">
+      <div
+        class="flex gap-3 overflow-x-auto no-scrollbar bg-gradient-to-r from-white/80 to-[#f8fafc] backdrop-blur-md border border-gray-200/60 rounded-2xl p-3 shadow-sm"
+      >
+        <!-- ITEM -->
+        <div
+          class="flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap bg-white/70 border border-gray-200 text-gray-700 text-sm transition-all duration-300 hover:-translate-y-[2px] hover:scale-[1.03] hover:bg-gradient-to-br hover:from-teal-500 hover:to-teal-600 hover:text-white hover:shadow-md"
+        >
+          <span class="text-base">⏳</span>
+          <span class="font-medium">5 Days</span>
+        </div>
+
+        <!-- ITEM -->
+        <div
+          class="flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap bg-white/70 border border-gray-200 text-gray-700 text-sm transition-all duration-300 hover:-translate-y-[2px] hover:scale-[1.03] hover:bg-gradient-to-br hover:from-teal-500 hover:to-teal-600 hover:text-white hover:shadow-md"
+        >
+          <span class="text-base">📍</span>
+          <span class="font-medium">Manali</span>
+        </div>
+
+        <!-- ITEM -->
+        <div
+          class="flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap bg-white/70 border border-gray-200 text-gray-700 text-sm transition-all duration-300 hover:-translate-y-[2px] hover:scale-[1.03] hover:bg-gradient-to-br hover:from-teal-500 hover:to-teal-600 hover:text-white hover:shadow-md"
+        >
+          <span class="text-base">🏨</span>
+          <span class="font-medium">4★ Heritage Stays</span>
+        </div>
+
+        <!-- ITEM -->
+        <div
+          class="flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap bg-white/70 border border-gray-200 text-gray-700 text-sm transition-all duration-300 hover:-translate-y-[2px] hover:scale-[1.03] hover:bg-gradient-to-br hover:from-teal-500 hover:to-teal-600 hover:text-white hover:shadow-md"
+        >
+          <span class="text-base">🚗</span>
+          <span class="font-medium">Private Car</span>
+        </div>
+
+        <!-- ITEM -->
+        <div
+          class="flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap bg-white/70 border border-gray-200 text-gray-700 text-sm transition-all duration-300 hover:-translate-y-[2px] hover:scale-[1.03] hover:bg-gradient-to-br hover:from-teal-500 hover:to-teal-600 hover:text-white hover:shadow-md"
+        >
+          <span class="text-base">👥</span>
+          <span class="font-medium">2–6 People</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="px-[5%] py-[80px] bg-gradient-to-b from-[#f8fafc] to-white">
+      <div class="max-w-[1200px] mx-auto grid lg:grid-cols-[1fr_360px] gap-12">
+        <!-- LEFT -->
+        <div class="space-y-14">
+          <!-- SECTION -->
+          <!-- SECTION -->
+          <div>
+            <h2 class="text-2xl font-semibold mb-6 text-gray-900">
+              The Journey
+            </h2>
+
+            <div class="space-y-5">
+              <!-- DAY 1 -->
+              <div
+                class="group rounded-2xl p-5 bg-white border border-gray-200 shadow-sm hover:shadow-md transition"
+              >
+                <div class="flex items-center gap-4 mb-3">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-teal-100 text-teal-600 font-semibold"
+                  >
+                    1
+                  </div>
+                  <div class="font-medium text-gray-900">
+                    Arrival in Manali — Settle Into the Mountains
+                  </div>
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  Arrive in Manali via Volvo or private car. Check into your
+                  hotel and take it easy. Explore Mall Road, nearby cafés, and
+                  get your first feel of the mountains.
+                </p>
+              </div>
+
+              <!-- DAY 2 -->
+              <div
+                class="group rounded-2xl p-5 bg-white border border-gray-200 shadow-sm hover:shadow-md transition"
+              >
+                <div class="flex items-center gap-4 mb-3">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-teal-100 text-teal-600 font-semibold"
+                  >
+                    2
+                  </div>
+                  <div class="font-medium text-gray-900">
+                    Manali — Temples, Culture & Old Town
+                  </div>
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  Visit Hadimba Devi Temple, Manu Temple, and Vashisht hot
+                  springs. Spend time in Old Manali exploring riverside cafés
+                  and local markets.
+                </p>
+              </div>
+
+              <!-- DAY 3 -->
+              <div
+                class="group rounded-2xl p-5 bg-white border border-gray-200 shadow-sm hover:shadow-md transition"
+              >
+                <div class="flex items-center gap-4 mb-3">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-teal-100 text-teal-600 font-semibold"
+                  >
+                    3
+                  </div>
+                  <div class="font-medium text-gray-900">
+                    Solang Valley — Snow & Adventure
+                  </div>
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  Head to Solang Valley for adventure activities like
+                  paragliding, zipline, or snow experiences (seasonal). Optional
+                  visit to Atal Tunnel or nearby snow points depending on
+                  weather.
+                </p>
+              </div>
+
+              <!-- DAY 4 -->
+              <div
+                class="group rounded-2xl p-5 bg-white border border-gray-200 shadow-sm hover:shadow-md transition"
+              >
+                <div class="flex items-center gap-4 mb-3">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-teal-100 text-teal-600 font-semibold"
+                  >
+                    4
+                  </div>
+                  <div class="font-medium text-gray-900">
+                    Kullu & Kasol — Valley Escape
+                  </div>
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  Drive towards Kullu Valley. Visit river rafting points
+                  (optional), shawl factories, and continue to Kasol. Walk along
+                  the Parvati River and enjoy the laid-back vibe before
+                  returning.
+                </p>
+              </div>
+
+              <!-- DAY 5 -->
+              <div
+                class="group rounded-2xl p-5 bg-white border border-gray-200 shadow-sm hover:shadow-md transition"
+              >
+                <div class="flex items-center gap-4 mb-3">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-teal-100 text-teal-600 font-semibold"
+                  >
+                    5
+                  </div>
+                  <div class="font-medium text-gray-900">
+                    Departure — Back With a Reset Mind
+                  </div>
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  After breakfast, check out and begin your return journey. You
+                  leave Manali refreshed, carrying the calm with you.
+                </p>
+              </div>
+
+              <!-- WHY THIS TRIP WORKS -->
+              <div class="p-6 rounded-2xl bg-white border shadow-sm">
+                <h3 class="text-lg font-semibold mb-3">Why This Trip Works</h3>
+
+                <ul class="text-sm text-gray-600 space-y-2">
+                  <li>• Perfect mix of chill + adventure</li>
+                  <li>• Snow experience + local culture covered</li>
+                  <li>• Not rushed — relaxed pacing</li>
+                  <li>• Ideal for friends, couples & first-time visitors</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- INCLUDED -->
+          <div>
+            <h2 class="text-2xl font-semibold mb-6 text-gray-900">
+              What’s Included
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="p-5 rounded-2xl bg-green-50 border border-green-200">
+                <ul class="space-y-2 text-sm text-gray-700">
+                  <li>✔ Private car for entire trip</li>
+                  <li>✔ All accommodation</li>
+                  <li>✔ Daily breakfast</li>
+                  <li>✔ Driver, tolls, parking</li>
+                  <li>✔ 24/7 support</li>
+                </ul>
+              </div>
+
+              <div class="p-5 rounded-2xl bg-red-50 border border-red-200">
+                <ul class="space-y-2 text-sm text-gray-700">
+                  <li>✘ Flights</li>
+                  <li>✘ Entry tickets</li>
+                  <li>✘ Personal expenses</li>
+                  <li>✘ Tips</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- ROUTE -->
+          <div
+            class="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm"
+          >
+            <h2 class="text-xl font-semibold mb-3 text-gray-900">Route</h2>
+            <p class="text-gray-600 text-sm">
+              Delhi → Chandigarh → Mohali → Kullu → Manali
+            </p>
+          </div>
+
+          <!-- KNOW BEFORE -->
+          <div>
+            <h2 class="text-2xl font-semibold mb-6 text-gray-900">
+              Know Before You Go
+            </h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div
+                class="p-4 bg-white border rounded-xl text-center text-sm hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)]"
+              >
+                Best Time<br /><b>Apr–Oct (Pleasant)</b>
+                <span class="text-xs text-gray-500">Dec–Feb for snow</span>
+              </div>
+              <div class="p-4 bg-white border rounded-xl text-center text-sm">
+                Temperature<br /><b>-2°C to 25°C</b>
+              </div>
+              <div class="p-4 bg-white border rounded-xl text-center text-sm">
+                Clothing<br /><b>Warm Layers</b><br />
+                <span class="text-xs text-gray-500">Heavy in winter</span>
+              </div>
+
+              <div class="p-4 bg-white border rounded-xl text-center text-sm">
+                Difficulty<br /><b>Easy–Moderate</b>
+              </div>
+              <div class="p-4 bg-white border rounded-xl text-center text-sm">
+                Customisable<br /><b>Yes</b>
+              </div>
+
+              <div class="p-4 bg-white border rounded-xl text-center text-sm">
+                Ideal For<br /><b>Couples • Families</b>
+              </div>
+
+              <div class="p-4 bg-white border rounded-xl text-center text-sm">
+                Connectivity<br /><b>Limited in valleys</b>
+              </div>
+
+              <div class="p-4 bg-white border rounded-xl text-center text-sm">
+                Customisable<br /><b>Yes</b>
+              </div>
+
+              <div class="p-4 bg-white border rounded-xl text-center text-sm">
+                Altitude<br /><b>High Regions</b><br />
+                <span class="text-xs text-gray-500">Take it slow</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:sticky lg:top-28 self-start">
+          <div
+            class="relative p-7 rounded-2xl overflow-hidden bg-gradient-to-br from-white to-[#f1f5f9] border border-gray-200 shadow-[0_25px_60px_rgba(0,0,0,0.08)]"
+          >
+            <!-- GLOW -->
+            <div
+              class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_20%,rgba(42,157,143,0.18),transparent_60%)]"
+            ></div>
+
+            <!-- PRICE -->
+            <div class="text-center mb-6">
+              <div class="text-sm text-gray-400 mb-1">Starting from</div>
+              <div class="text-[3rem] font-bold text-gray-900">₹13,500</div>
+              <div class="text-sm text-gray-500">
+                per person • seasonal pricing
+              </div>
+              <p class="text-xs text-red-500 mt-3">
+                ⚡ Prices increase during snowfall & peak season
+              </p>
+
+              <ul class="mt-5 text-xs text-gray-500 space-y-2">
+                <li>✔ Trusted drivers with local expertise</li>
+                <li>✔ Handpicked stays (houseboat + hotels)</li>
+                <li>✔ 24/7 WhatsApp support</li>
+              </ul>
+            </div>
+
+            <div class="h-[1px] bg-gray-200 my-5"></div>
+
+            <!-- CTA -->
+            <a
+              href="https://wa.me/919006143335"
+              class="block text-center py-3.5 rounded-full font-medium text-white bg-gradient-to-br from-teal-500 to-teal-700 shadow-md transition hover:-translate-y-1 hover:scale-[1.04] hover:shadow-xl"
+            >
+              Ask on WhatsApp →
+            </a>
+
+            <!-- FEATURES -->
+            <ul class="mt-6 space-y-3 text-sm text-gray-600">
+              <li class="flex gap-2 items-center">
+                <span class="w-2 h-2 bg-teal-500 rounded-full"></span>
+                No hidden costs
+              </li>
+
+              <li class="flex gap-2 items-center">
+                <span class="w-2 h-2 bg-teal-500 rounded-full"></span>
+                Flexible itinerary
+              </li>
+
+              <li class="flex gap-2 items-center">
+                <span class="w-2 h-2 bg-teal-500 rounded-full"></span>
+                Fast confirmation
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- car featured ------------------------------- -->
+    <section
+      class="px-[5%] py-[110px] relative overflow-hidden bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9]"
+    >
+      <!-- HEADER -->
+      <div class="flex items-end justify-between mb-10">
+        <!-- LEFT -->
+        <div>
+          <span
+            class="text-[11px] font-semibold tracking-[0.15em] uppercase text-teal-500 mb-3 block"
+          >
+            Our Fleet
+          </span>
+
+          <h2
+            class="font-display text-[clamp(2rem,4vw,2.9rem)] font-semibold text-gray-900 leading-[1.15] mb-3"
+          >
+            Ideal Vehicle for This Trip
+          </h2>
+        </div>
+
+        <!-- RIGHT -->
+        <a
+          href="cars.html"
+          class="hidden lg:inline-flex items-center gap-2 text-sm font-medium text-teal-600 transition group"
+        >
+          <span class="relative">
+            View All Cars
+            <span
+              class="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-500 transition-all group-hover:w-full"
+            ></span>
+          </span>
+          →
+        </a>
+      </div>
+
+      <!-- TRACK -->
+      <div class="flex gap-7 overflow-x-auto scroll-smooth no-scrollbar pb-2">
+        <!--CARD TEMPLATE -->
+
+        <!-- XUV700 -->
+        <article
+          class="min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+        >
+          <div class="relative h-[220px] overflow-hidden slider-container">
+            <!-- BESTSELLER BADGE -->
+            <div
+              class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400 text-[0.7rem] font-bold text-amber-900 shadow-md tracking-wide uppercase"
+            >
+              🔥 Bestseller
+            </div>
+
+            <img
+              src="carpic/mahindraSuv1.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+            <img
+              src="carpic/mahindraSuv2.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+            <img
+              src="carpic/mahindraSuv3.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+            <img
+              src="carpic/mahindraSuv4.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+
+            <button
+              class="prev absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 px-2 rounded-full"
+            >
+              ←
+            </button>
+            <button
+              class="next absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 px-2 rounded-full"
+            >
+              →
+            </button>
+          </div>
+
+          <div class="p-6">
+            <h3 class="font-semibold text-lg">Mahindra XUV700</h3>
+            <p class="text-sm text-gray-500 mb-3">7 Seater • SUV • Diesel</p>
+            <div class="text-sm text-gray-500 mb-4">
+              ₹18/km • AC • Comfortable Ride
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center px-6 py-4 border-t">
+            <div>
+              <div class="text-xs text-gray-400 line-through">₹5500/day</div>
+              <div class="font-bold text-lg text-gray-900">₹4500/day</div>
+              <div
+                class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5"
+              >
+                Save ₹1000
+              </div>
+            </div>
+            <a
+              href="#"
+              class="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
+              >Book</a
+            >
+          </div>
+        </article>
+
+        <!-- maruti suzuki dzire -->
+        <article
+          class="min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+        >
+          <div class="relative h-[220px] overflow-hidden slider-container">
+            <!-- BESTSELLER BADGE -->
+            <div
+              class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-400 text-sky-900 font-bold text-amber-900 shadow-md tracking-wide uppercase"
+            >
+              ⭐ Top Choice
+            </div>
+
+            <img
+              src="carpic/dzire1.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+            <img
+              src="carpic/dzire2.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+            <img
+              src="carpic/dzire3.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+            <img
+              src="carpic/dzire4.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+
+            <button
+              class="prev absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 px-2 rounded-full"
+            >
+              ←
+            </button>
+            <button
+              class="next absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 px-2 rounded-full"
+            >
+              →
+            </button>
+          </div>
+
+          <div class="p-6">
+            <h3 class="font-semibold text-lg">Maruti Suzuki Dzire</h3>
+            <p class="text-sm text-gray-500 mb-3">
+              4 Seater • Sedan • Petrol/CNG
+            </p>
+            <div class="text-sm text-gray-500 mb-4">
+              ₹13/km • AC • Smooth City Ride
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center px-6 py-4 border-t">
+            <div>
+              <div class="text-xs text-gray-400 line-through">₹3800/day</div>
+              <div class="font-bold text-lg text-gray-900">₹3200/day</div>
+              <div
+                class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5"
+              >
+                Save ₹600
+              </div>
+            </div>
+            <a
+              href="#"
+              class="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
+              >Book</a
+            >
+          </div>
+        </article>
+
+        <!-- toyota INNOVA  -->
+        <article
+          class="min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+        >
+          <div class="relative h-[220px] overflow-hidden slider-container">
+            <!-- BESTSELLER BADGE -->
+            <div
+              class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400 text-amber-900 font-bold text-amber-900 shadow-md tracking-wide uppercase"
+            >
+              🔥 Most Booked
+            </div>
+
+            <img
+              src="carpic/inova1.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+            <img
+              src="carpic/inova2.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+            <img
+              src="carpic/inova3.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+            <img
+              src="carpic/inova4.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+
+            <button
+              class="prev absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 px-2 rounded-full"
+            >
+              ←
+            </button>
+            <button
+              class="next absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 px-2 rounded-full"
+            >
+              →
+            </button>
+          </div>
+
+          <div class="p-6">
+            <h3 class="font-semibold text-lg">Toyota Innova Crysta</h3>
+            <p class="text-sm text-gray-500 mb-3">7 Seater • MUV • Diesel</p>
+            <div class="text-sm text-gray-500 mb-4">
+              ₹18/km • AC • Premium Interior
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center px-6 py-4 border-t">
+            <div>
+              <div class="text-xs text-gray-400 line-through">₹6000/day</div>
+              <div class="font-bold text-lg text-gray-900">₹5000/day</div>
+              <div
+                class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5"
+              >
+                Save ₹1000
+              </div>
+            </div>
+            <a
+              href="#"
+              class="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
+              >Book</a
+            >
+          </div>
+        </article>
+
+        <!-- XUV700 -->
+        <article
+          class="min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+        >
+          <div class="relative h-[220px] overflow-hidden slider-container">
+            <!-- BESTSELLER BADGE -->
+            <div
+              class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-yellow-500 text-yellow-950 font-bold text-amber-900 shadow-md tracking-wide uppercase"
+            >
+              👑 Luxury Pick
+            </div>
+
+            <img
+              src="carpic/fortuner1.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+            <img
+              src="carpic/fortuner2.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+            <img
+              src="carpic/fortuner3.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+            <img
+              src="carpic/f4.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+
+            <button
+              class="prev absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 px-2 rounded-full"
+            >
+              ←
+            </button>
+            <button
+              class="next absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 px-2 rounded-full"
+            >
+              →
+            </button>
+          </div>
+
+          <div class="p-6">
+            <h3 class="font-semibold text-lg">Toyota Fortuner</h3>
+            <p class="text-sm text-gray-500 mb-3">
+              7 Seater • Premium SUV • Diesel
+            </p>
+            <div class="text-sm text-gray-500 mb-4">
+              ₹22/km • AC • Ultimate Luxury
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center px-6 py-4 border-t">
+            <div>
+              <div class="text-xs text-gray-400 line-through">₹8500/day</div>
+              <div class="font-bold text-lg text-gray-900">₹7000/day</div>
+              <div
+                class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5"
+              >
+                Save ₹1000
+              </div>
+            </div>
+            <a
+              href="#"
+              class="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
+              >Book</a
+            >
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section
+      class="px-[5%] py-[110px] bg-gradient-to-b from-[#f8fafc] to-white relative overflow-hidden"
+    >
+      <!-- BACKGROUND DECOR (SUBTLE GLOW) -->
+      <div
+        class="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-teal-100 rounded-full blur-3xl opacity-40"
+      ></div>
+      <div
+        class="absolute bottom-[-100px] right-[-100px] w-[300px] h-[300px] bg-blue-100 rounded-full blur-3xl opacity-40"
+      ></div>
+
+      <!-- HEADING -->
+      <div class="text-center max-w-[700px] mx-auto mb-16 relative z-10">
+        <span
+          class="text-xs uppercase tracking-[0.25em] text-teal-500 font-semibold"
+        >
+          Got Questions?
+        </span>
+
+        <h2
+          class="text-[clamp(2.2rem,4vw,3rem)] font-semibold mt-4 leading-tight text-gray-900"
+        >
+          Frequently Asked
+          <span class="text-teal-500 relative inline-block">
+            Questions
+            <span
+              class="absolute left-0 -bottom-1 w-full h-[3px] bg-teal-500/70 rounded-full"
+            ></span>
+          </span>
+        </h2>
+
+        <p class="text-gray-500 mt-4 text-sm">
+          Everything you need to know before booking — clear, simple,
+          transparent.
+        </p>
+      </div>
+
+      <!-- FAQ -->
+      <div class="max-w-[820px] mx-auto space-y-5 relative z-10">
+        <!-- ITEM -->
+        <details
+          class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300"
+        >
+          <summary
+            class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition"
+          >
+            Is internet and network available in Manali?
+            <span
+              class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500"
+              >+</span
+            >
+          </summary>
+
+          <p class="mt-3 text-sm text-gray-500 leading-relaxed">
+            Network is available in Manali town, but may be limited in remote
+            areas like Solang or Rohtang. It’s best to not rely heavily on
+            internet connectivity during the trip.
+          </p>
+        </details>
+
+        <!-- ITEM -->
+        <details
+          class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300"
+        >
+          <summary
+            class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition"
+          >
+            Is it safe to travel to Manali in winter?
+            <span
+              class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500"
+              >+</span
+            >
+          </summary>
+
+          <p class="mt-3 text-sm text-gray-500">
+            Yes, Manali is safe in winter. However, road conditions may vary due
+            to snowfall. Our drivers are experienced with mountain routes to
+            ensure safe travel.
+          </p>
+        </details>
+
+        <!-- ITEM -->
+        <details
+          class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300"
+        >
+          <summary
+            class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition"
+          >
+            When can I experience snowfall in Manali?
+            <span
+              class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500"
+              >+</span
+            >
+          </summary>
+
+          <p class="mt-3 text-sm text-gray-500">
+            Snowfall usually occurs from December to February. For snow
+            experiences, winter months are ideal.
+          </p>
+        </details>
+
+        <!-- ITEM -->
+        <details
+          class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300"
+        >
+          <summary
+            class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition"
+          >
+            Is Rohtang Pass included in the package?
+            <span
+              class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500"
+              >+</span
+            >
+          </summary>
+
+          <p class="mt-3 text-sm text-gray-500">
+            Rohtang Pass requires special permits and is subject to weather
+            conditions. It is usually not included by default, but we assist
+            with permits and planning.
+          </p>
+        </details>
+
+        <!-- ITEM -->
+        <details
+          class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300"
+        >
+          <summary
+            class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition"
+          >
+            When is the best time to visit Manali?
+            <span
+              class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500"
+              >+</span
+            >
+          </summary>
+
+          <p class="mt-3 text-sm text-gray-500">
+            March to June offers pleasant weather and greenery, while December
+            to February is ideal for snowfall and winter experiences.
+          </p>
+        </details>
+      </div>
+    </section>
+
+
+
+
+
+    
+  <!-- footer ------------------------------ -->
+  <footer class="bg-dark-grad px-[5%] pt-20 border-t border-[#e8ddd0]/20">
+    <!-- CTA row -->
+    <div
+      class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-14 mb-14 border-b border-white/[0.08] gap-8">
+      <div>
+        <h2 class="font-display text-[clamp(2rem,4vw,3rem)] font-bold text-white mb-3">
+          Memories are waiting,
+        </h2>
+        <p class="font-display text-[1.1rem] text-white/60 italic mb-7">
+          let's make them together!
+        </p>
+       <div class="flex gap-3 flex-wrap">
+
+  <!-- YouTube -->
+  <a href="https://youtube.com" target="_blank"
+    class="p-3 rounded-full border border-white/20 text-white/80 hover:bg-white/10 hover:text-white transition">
+
+    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"/>
+    </svg>
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://instagram.com" target="_blank"
+    class="p-3 rounded-full border border-white/20 text-white/80 hover:bg-white/10 hover:text-white transition">
+
+    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5.8A4.2 4.2 0 1 1 7.8 12 4.2 4.2 0 0 1 12 7.8zm5.3-.9a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+    </svg>
+  </a>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/919006143335" target="_blank"
+    class="p-3 rounded-full border border-white/20 text-white/80 hover:bg-white/10 hover:text-white transition">
+
+    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M20.5 3.5A11.8 11.8 0 0 0 12 0 12 12 0 0 0 1.5 18.3L0 24l5.8-1.5A12 12 0 1 0 20.5 3.5zm-8.5 18a10 10 0 0 1-5.1-1.4l-.4-.2-3.4.9.9-3.3-.2-.4A10 10 0 1 1 12 21.5zm5.5-7.6c-.3-.2-1.6-.8-1.9-.9s-.5-.2-.7.2-.8.9-1 1.1-.4.3-.7.1a8.2 8.2 0 0 1-2.4-1.5 9.2 9.2 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.7.1-.1.3-.4.4-.6s.1-.4 0-.6-.7-1.7-.9-2.3c-.2-.5-.4-.4-.7-.4h-.6c-.2 0-.6.1-.9.4s-1.1 1.1-1.1 2.7 1.1 3.1 1.2 3.3a12.5 12.5 0 0 0 4.8 4.4c.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.6-.7 1.8-1.4.2-.7.2-1.3.1-1.4s-.2-.2-.5-.3z"/>
+    </svg>
+  </a>
+
+  <!-- Phone (Lucide) -->
+  <a href="tel:+919006143335"
+    class="p-3 rounded-full border border-white/20 text-white/80 hover:bg-white/10 hover:text-white transition">
+
+    <i data-lucide="phone" class="w-5 h-5"></i>
+  </a>
+
+</div>
+      </div>
+      <a href="tel:+919006143335"
+        class="btn-shine shrink-0 inline-flex items-center gap-2.5 px-7 py-4 rounded-full font-semibold text-white bg-gradient-to-br from-[#2a9d8f] to-[#264653] shadow-[0_8px_25px_rgba(0,0,0,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(0,0,0,0.4)]">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.98-.98a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+        </svg>
+        Call Us Now
+      </a>
+    </div>
+
+    <!-- Footer grid -->
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.6fr] gap-12 pb-14 border-b border-white/[0.08]">
+      <!-- Brand -->
+      <div>
+        <a href="index.html" class="font-display text-[1.6rem] font-semibold text-white block mb-3.5">
+          Bharat<em class="text-teal-400 not-italic">भ्रमण</em>
+        </a>
+        <p class="text-[0.95rem] text-white/65 leading-[1.8] max-w-[270px]">
+          Your trusted travel partner for private car &amp; driver experiences
+          across India. Curated routes, verified drivers, transparent pricing.
+        </p>
+      </div>
+
+      <!-- Explore links -->
+      <div>
+        <h4 class="font-body text-[0.85rem] font-semibold uppercase tracking-[0.12em] text-white mb-5">
+          Explore
+        </h4>
+        <ul class="space-y-2.5">
+          <li>
+            <a href="index.html"
+              class="text-[0.95rem] text-white/65 transition-all duration-200 hover:text-teal-400 hover:translate-x-0.5 inline-block">Home</a>
+          </li>
+          <li>
+            <a href="trips.html"
+              class="text-[0.95rem] text-white/65 transition-all duration-200 hover:text-teal-400 hover:translate-x-0.5 inline-block">All
+              Tours</a>
+          </li>
+          <li>
+            <a href="cars.html"
+              class="text-[0.95rem] text-white/65 transition-all duration-200 hover:text-teal-400 hover:translate-x-0.5 inline-block">Car
+              Rentals</a>
+          </li>
+          <li>
+            <a href="about.html"
+              class="text-[0.95rem] text-white/65 transition-all duration-200 hover:text-teal-400 hover:translate-x-0.5 inline-block">About</a>
+          </li>
+          <li>
+            <a href="#why"
+              class="text-[0.95rem] text-white/65 transition-all duration-200 hover:text-teal-400 hover:translate-x-0.5 inline-block">Why
+              Us</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Popular tours -->
+      <div>
+        <h4 class="font-body text-[0.85rem] font-semibold uppercase tracking-[0.12em] text-white mb-5">
+          Popular Tours
+        </h4>
+        <ul class="space-y-2.5">
+          <li>
+            <a href="goldentriangle.html"
+              class="text-[0.95rem] text-white/65 transition-all duration-200 hover:text-teal-400 hover:translate-x-0.5 inline-block">Golden
+              Triangle</a>
+          </li>
+          <li>
+            <a href="kerala.html"
+              class="text-[0.95rem] text-white/65 transition-all duration-200 hover:text-teal-400 hover:translate-x-0.5 inline-block">Kerala
+              Backwaters</a>
+          </li>
+          <li>
+            <a href="trips.html"
+              class="text-[0.95rem] text-white/65 transition-all duration-200 hover:text-teal-400 hover:translate-x-0.5 inline-block">Rajasthan
+              Royale</a>
+          </li>
+          <li>
+            <a href="trips.html"
+              class="text-[0.95rem] text-white/65 transition-all duration-200 hover:text-teal-400 hover:translate-x-0.5 inline-block">Goa
+              Beach Escape</a>
+          </li>
+          <li>
+            <a href="trips.html"
+              class="text-[0.95rem] text-white/65 transition-all duration-200 hover:text-teal-400 hover:translate-x-0.5 inline-block">Varanasi
+              Spiritual</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Address -->
+      <div>
+        <h4 class="font-body text-[0.85rem] font-semibold uppercase tracking-[0.12em] text-white mb-5">
+          Corporate Office
+        </h4>
+        <address class="not-italic text-[0.95rem] text-white/65 leading-[1.8]">
+          Flat No. 204, Shree Residency<br />
+          Near Apex Circle, Malviya Nagar<br />
+          Jaipur, Rajasthan - 302017<br />
+          India
+        </address>
+        <p class="text-[0.95rem] text-white/65 leading-[1.8] mt-4">
+          Mon – Sat: 10:00 AM – 8:00 PM<br />
+          Sunday: Closed
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer bottom -->
+    <div class="flex flex-col sm:flex-row justify-between items-center py-6 gap-3 text-[0.9rem] text-white/40">
+      <span>&copy;2026 BharatBhramana. All rights reserved.</span>
+      <div class="flex gap-5">
+        <a href="#" class="text-white/40 hover:text-teal-400 transition-colors duration-200">Privacy Policy</a>
+        <a href="#" class="text-white/40 hover:text-teal-400 transition-colors duration-200">Terms of Service</a>
+        <a href="#" class="text-white/40 hover:text-teal-400 transition-colors duration-200">Cancellation Policy</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- WhatsApp float -->
+  <a href="https://wa.me/919006143335?text=Hi%20I%20want%20to%20plan%20a%20trip" target="_blank" rel="noopener"
+    aria-label="Chat on WhatsApp"
+    class="wa-float fixed bottom-5 right-5 z-[1001] w-[55px] h-[55px] rounded-full bg-[#25d366] text-white flex items-center justify-center shadow-[0_8px_25px_rgba(0,0,0,0.2)] transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-[0_12px_30px_rgba(0,0,0,0.25)]">
+    <svg viewBox="0 0 32 32" width="24" height="24" fill="white">
+      <path
+        d="M16 .396C7.163.396 0 7.56 0 16.396c0 2.89.757 5.608 2.077 7.965L.396 32l7.84-1.64A15.93 15.93 0 0016 32c8.837 0 16-7.164 16-16.004C32 7.56 24.837.396 16 .396zm0 29.24c-2.563 0-5.06-.68-7.236-1.964l-.516-.305-4.652.973.986-4.537-.335-.534A13.575 13.575 0 012.41 16.396c0-7.506 6.084-13.59 13.59-13.59s13.59 6.084 13.59 13.59-6.084 13.59-13.59 13.59zm7.58-10.178c-.416-.208-2.46-1.212-2.84-1.35-.38-.14-.656-.208-.932.208-.277.416-1.07 1.35-1.31 1.628-.242.277-.484.312-.9.104-.416-.208-1.756-.647-3.347-2.063-1.238-1.103-2.074-2.463-2.316-2.88-.242-.416-.026-.64.182-.848.188-.188.416-.484.624-.726.208-.242.277-.416.416-.693.14-.277.07-.52-.035-.728-.104-.208-.932-2.246-1.276-3.078-.335-.805-.676-.696-.932-.708l-.796-.014c-.277 0-.728.104-1.11.52s-1.457 1.422-1.457 3.465 1.49 4.014 1.7 4.292c.208.277 2.93 4.476 7.103 6.278.993.429 1.767.686 2.37.878.996.317 1.903.272 2.62.165.8-.12 2.46-1.004 2.808-1.976.347-.97.347-1.8.243-1.976-.104-.174-.38-.277-.796-.485z" />
+    </svg>
+  </a>
+
+  <!-- Scroll to top -->
+  <button id="scrollTopBtn" aria-label="Scroll to top"
+    class="hidden fixed bottom-[90px] right-5 z-[1001] w-11 h-11 rounded-full bg-ink-900/70 text-white items-center justify-center text-xl transition-all duration-300 hover:bg-ink-900 cursor-pointer border-none">
+    ↑
+  </button>
+
+  <!-- script --------------------------------->
+  <script src="script.js"></script>
+  <script>lucide.createIcons();</script>
+    <script src="goldentriangle.js"></script>
+
+
+    <script>
+      let images = [];
+      let current = 0;
+
+      function openLightbox(index) {
+        const gallery = document.getElementById("gallery");
+        images = JSON.parse(gallery.dataset.images);
+
+        current = index;
+
+        const lb = document.getElementById("lightbox");
+        lb.classList.remove("hidden");
+        lb.classList.add("flex");
+
+        updateLightbox();
+      }
+
+      function updateLightbox() {
+        document.getElementById("lbImg").src = images[current];
+        document.getElementById("lbCounter").innerText =
+          `${current + 1} / ${images.length}`;
+      }
+
+      function shiftLb(dir) {
+        current = (current + dir + images.length) % images.length;
+        updateLightbox();
+      }
+
+      function closeLb(e) {
+        if (e.target.id === "lightbox") {
+          closeLightbox();
+        }
+      }
+
+      function closeLightbox() {
+        const lb = document.getElementById("lightbox");
+        lb.classList.add("hidden");
+        lb.classList.remove("flex");
+      }
+    </script>
+  </body>
+</html>

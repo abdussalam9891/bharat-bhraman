@@ -641,175 +641,252 @@ tailwind.config = {
     </div>
   </section>
 
-  <!-- footer ------------------------------ -->
-  <footer class="bg-dark-grad px-[5%] pt-20 border-t border-[#e8ddd0]/20">
-     <!-- CTA row -->
-    <div
-      class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-14 mb-14 border-b border-white/[0.08] gap-8">
-      <div>
-        <h2 class="font-display text-[clamp(2rem,4vw,3rem)] font-bold text-white mb-3">
-          Memories are waiting,
-        </h2>
-        <p class="font-display text-[1.1rem] text-white/60 italic mb-7">
-          let's make them together!
-        </p>
-       <div class="flex gap-3 flex-wrap">
+  <!-- footer  -->
+<footer class="bg-dark-grad px-[5%] pt-20 border-t border-[#e8ddd0]/20">
 
-  <!-- YouTube -->
-  <a href="https://youtube.com" target="_blank"
-    class="p-3 rounded-full border border-white/20 text-white/80 hover:bg-white/10 hover:text-white transition">
+  <!-- CTA row -->
+  <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-14 mb-14 border-b border-white/[0.08] gap-8">
+    <div>
+      <h2 class="font-display text-[clamp(2rem,4vw,3rem)] font-bold text-white mb-2">
+        Your next trip.<br/>
+        <span class="text-teal-400">Door to door.</span>
+      </h2>
+      <p class="font-display text-[1rem] text-white/50 italic mb-7">
+        Private driver. Zero hassle. Real India.
+      </p>
 
-    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"/>
-    </svg>
-  </a>
-
-  <!-- Instagram -->
-  <a href="https://instagram.com" target="_blank"
-    class="p-3 rounded-full border border-white/20 text-white/80 hover:bg-white/10 hover:text-white transition">
-
-    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5.8A4.2 4.2 0 1 1 7.8 12 4.2 4.2 0 0 1 12 7.8zm5.3-.9a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-    </svg>
-  </a>
-
-  <!-- WhatsApp -->
-  <a href="https://wa.me/919006143335" target="_blank"
-    class="p-3 rounded-full border border-white/20 text-white/80 hover:bg-white/10 hover:text-white transition">
-
-    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M20.5 3.5A11.8 11.8 0 0 0 12 0 12 12 0 0 0 1.5 18.3L0 24l5.8-1.5A12 12 0 1 0 20.5 3.5zm-8.5 18a10 10 0 0 1-5.1-1.4l-.4-.2-3.4.9.9-3.3-.2-.4A10 10 0 1 1 12 21.5zm5.5-7.6c-.3-.2-1.6-.8-1.9-.9s-.5-.2-.7.2-.8.9-1 1.1-.4.3-.7.1a8.2 8.2 0 0 1-2.4-1.5 9.2 9.2 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.7.1-.1.3-.4.4-.6s.1-.4 0-.6-.7-1.7-.9-2.3c-.2-.5-.4-.4-.7-.4h-.6c-.2 0-.6.1-.9.4s-1.1 1.1-1.1 2.7 1.1 3.1 1.2 3.3a12.5 12.5 0 0 0 4.8 4.4c.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.6-.7 1.8-1.4.2-.7.2-1.3.1-1.4s-.2-.2-.5-.3z"/>
-    </svg>
-  </a>
-
-  <!-- Phone (Lucide) -->
-  <a href="tel:+919006143335"
-    class="p-3 rounded-full border border-white/20 text-white/80 hover:bg-white/10 hover:text-white transition">
-
-    <i data-lucide="phone" class="w-5 h-5"></i>
-  </a>
-
-</div>
+      <!-- Desktop: icon circles -->
+      <div class="hidden sm:flex gap-3 flex-wrap">
+        <a href="https://youtube.com" target="_blank"
+          class="p-3 rounded-full border border-white/20 text-white/80 hover:bg-white/10 hover:text-white hover:border-white/40 transition-all duration-200">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+        </a>
+        <a href="https://instagram.com" target="_blank"
+          class="p-3 rounded-full border border-white/20 text-white/80 hover:bg-white/10 hover:text-white hover:border-white/40 transition-all duration-200">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5.8A4.2 4.2 0 1 1 7.8 12 4.2 4.2 0 0 1 12 7.8zm5.3-.9a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
+        </a>
+        <a href="https://wa.me/919006143335" target="_blank"
+          class="p-3 rounded-full border border-white/20 text-white/80 hover:bg-white/10 hover:text-white hover:border-white/40 transition-all duration-200">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0 12 12 0 0 0 1.5 18.3L0 24l5.8-1.5A12 12 0 1 0 20.5 3.5zm-8.5 18a10 10 0 0 1-5.1-1.4l-.4-.2-3.4.9.9-3.3-.2-.4A10 10 0 1 1 12 21.5zm5.5-7.6c-.3-.2-1.6-.8-1.9-.9s-.5-.2-.7.2-.8.9-1 1.1-.4.3-.7.1a8.2 8.2 0 0 1-2.4-1.5 9.2 9.2 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.7l.4-.6c.1-.2.1-.4 0-.6s-.7-1.7-.9-2.3c-.2-.5-.4-.4-.7-.4h-.6c-.2 0-.6.1-.9.4s-1.1 1.1-1.1 2.7 1.1 3.1 1.2 3.3a12.5 12.5 0 0 0 4.8 4.4c.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.6-.7 1.8-1.4.2-.7.2-1.3.1-1.4s-.2-.2-.5-.3z"/></svg>
+        </a>
+        <a href="tel:+919006143335"
+          class="p-3 rounded-full border border-white/20 text-white/80 hover:bg-white/10 hover:text-white hover:border-white/40 transition-all duration-200">
+          <i data-lucide="phone" class="w-5 h-5"></i>
+        </a>
       </div>
-      <a href="tel:+919006143335"
-        class="btn-shine shrink-0 inline-flex items-center gap-2.5 px-7 py-4 rounded-full font-semibold text-white bg-gradient-to-br from-[#2a9d8f] to-[#264653] shadow-[0_8px_25px_rgba(0,0,0,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(0,0,0,0.4)]">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path
-            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.98-.98a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-        </svg>
-        Call Us Now
-      </a>
+
+      <!-- Mobile: text pills -->
+      <div class="flex sm:hidden gap-2 flex-wrap">
+        <a href="https://youtube.com" target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-white/80 text-sm hover:bg-white/10 transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+          Youtube
+        </a>
+        <a href="https://instagram.com" target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-white/80 text-sm hover:bg-white/10 transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5.8A4.2 4.2 0 1 1 7.8 12 4.2 4.2 0 0 1 12 7.8zm5.3-.9a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
+          Instagram
+        </a>
+        <a href="https://wa.me/919006143335" target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-white/80 text-sm hover:bg-white/10 transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0 12 12 0 0 0 1.5 18.3L0 24l5.8-1.5A12 12 0 1 0 20.5 3.5zm-8.5 18a10 10 0 0 1-5.1-1.4l-.4-.2-3.4.9.9-3.3-.2-.4A10 10 0 1 1 12 21.5zm5.5-7.6c-.3-.2-1.6-.8-1.9-.9s-.5-.2-.7.2-.8.9-1 1.1-.4.3-.7.1a8.2 8.2 0 0 1-2.4-1.5 9.2 9.2 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.7l.4-.6c.1-.2.1-.4 0-.6s-.7-1.7-.9-2.3c-.2-.5-.4-.4-.7-.4h-.6c-.2 0-.6.1-.9.4s-1.1 1.1-1.1 2.7 1.1 3.1 1.2 3.3a12.5 12.5 0 0 0 4.8 4.4c.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.6-.7 1.8-1.4.2-.7.2-1.3.1-1.4s-.2-.2-.5-.3z"/></svg>
+          Whatsapp
+        </a>
+        <a href="tel:+919006143335" class="flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-white/80 text-sm hover:bg-white/10 transition">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.98-.98a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Phone
+        </a>
+      </div>
     </div>
 
-    <!-- Footer grid -->
-    <div
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.6fr] gap-12 pb-14 border-b border-white/[0.08]">
-      <!-- Brand -->
+    <a href="tel:+919006143335"
+      class="btn-shine shrink-0 inline-flex items-center gap-2.5 px-7 py-4 rounded-full font-semibold text-white bg-gradient-to-br from-[#2a9d8f] to-[#264653] shadow-[0_8px_25px_rgba(0,0,0,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(0,0,0,0.4)]">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.98-.98a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      Call Us Now
+    </a>
+  </div>
+
+  <!-- Brand (mobile only — shown above accordion) -->
+  <div class="pb-10 mb-2 border-b border-white/[0.08] lg:hidden">
+    <a href="index.html" class="font-display text-[1.6rem] font-semibold text-white block mb-3.5">
+      Bharat<em class="text-teal-400 not-italic">भ्रमण</em>
+    </a>
+    <p class="text-[0.95rem] text-white/65 leading-[1.8] max-w-[270px] mb-5">
+      Your trusted travel partner for private car &amp; driver experiences across India.
+    </p>
+    <div class="flex flex-wrap gap-x-4 gap-y-2">
+      <span class="text-[0.78rem] text-white/40 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block"></span>Verified Drivers</span>
+      <span class="text-[0.78rem] text-white/40 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block"></span>GPS Tracked</span>
+      <span class="text-[0.78rem] text-white/40 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block"></span>24/7 Support</span>
+      <span class="text-[0.78rem] text-white/40 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block"></span>Transparent Pricing</span>
+    </div>
+  </div>
+
+  <!-- ── Footer grid (desktop) + accordion (mobile) ── -->
+  <div class="pb-14 border-b border-white/[0.08]">
+
+    <!-- DESKTOP GRID -->
+    <div class="hidden lg:grid lg:grid-cols-[2fr_1fr_1fr_1.6fr] lg:gap-12">
+
+      <!-- Brand col -->
       <div>
         <a href="index.html" class="font-display text-[1.6rem] font-semibold text-white block mb-3.5">
           Bharat<em class="text-teal-400 not-italic">भ्रमण</em>
         </a>
-        <p class="text-[0.95rem] text-white/65 leading-[1.8] max-w-[270px]">
-          Your trusted travel partner for private car &amp; driver experiences
-          across India. Curated routes, verified drivers, transparent pricing.
+        <p class="text-[0.95rem] text-white/65 leading-[1.8] max-w-[270px] mb-5">
+          Your trusted travel partner for private car &amp; driver experiences across India. Curated routes, verified drivers, transparent pricing.
         </p>
+        <!-- Trust strip -->
+        <div class="flex flex-wrap gap-x-4 gap-y-2">
+          <span class="text-[0.78rem] text-white/40 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block"></span>Verified Drivers
+          </span>
+          <span class="text-[0.78rem] text-white/40 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block"></span>GPS Tracked
+          </span>
+          <span class="text-[0.78rem] text-white/40 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block"></span>24/7 Support
+          </span>
+          <span class="text-[0.78rem] text-white/40 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block"></span>Transparent Pricing
+          </span>
+        </div>
       </div>
 
-      <!-- Explore links -->
+      <!-- Explore col -->
       <div>
-        <h4 class="font-body text-[0.85rem] font-semibold uppercase tracking-[0.12em] text-white mb-5">
+        <h4 class="footer-col-heading font-body text-[0.85rem] font-semibold uppercase tracking-[0.12em] text-white mb-5">
           Explore
         </h4>
         <ul class="space-y-2.5">
-          <li>
-            <a href="index.html"
-              class="text-[0.95rem] text-white/65 transition-all duration-200 hover:text-teal-400 hover:translate-x-0.5 inline-block">Home</a>
-          </li>
-          <li>
-            <a href="trips.html"
-              class="text-[0.95rem] text-white/65 transition-all duration-200 hover:text-teal-400 hover:translate-x-0.5 inline-block">All
-              Tours</a>
-          </li>
-          <li>
-            <a href="cars.html"
-              class="text-[0.95rem] text-white/65 transition-all duration-200 hover:text-teal-400 hover:translate-x-0.5 inline-block">Car
-              Rentals</a>
-          </li>
-          <li>
-            <a href="about.html"
-              class="text-[0.95rem] text-white/65 transition-all duration-200 hover:text-teal-400 hover:translate-x-0.5 inline-block">About</a>
-          </li>
-          <li>
-            <a href="#why"
-              class="text-[0.95rem] text-white/65 transition-all duration-200 hover:text-teal-400 hover:translate-x-0.5 inline-block">Why
-              Us</a>
-          </li>
+          <li><a href="index.html" class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block">Home</a></li>
+          <li><a href="trips.html" class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block">All Tours</a></li>
+          <li><a href="cars.html" class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block">Car Rentals</a></li>
+          <li><a href="about.html" class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block">About</a></li>
+          <li><a href="#why" class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block">Why Us</a></li>
         </ul>
       </div>
 
-      <!-- Popular tours -->
+      <!-- Popular Tours col -->
       <div>
-        <h4 class="font-body text-[0.85rem] font-semibold uppercase tracking-[0.12em] text-white mb-5">
+        <h4 class="footer-col-heading font-body text-[0.85rem] font-semibold uppercase tracking-[0.12em] text-white mb-5">
           Popular Tours
         </h4>
         <ul class="space-y-2.5">
-          <li>
-            <a href="goldentriangle.html"
-              class="text-[0.95rem] text-white/65 transition-all duration-200 hover:text-teal-400 hover:translate-x-0.5 inline-block">Golden
-              Triangle</a>
-          </li>
-          <li>
-            <a href="kerala.html"
-              class="text-[0.95rem] text-white/65 transition-all duration-200 hover:text-teal-400 hover:translate-x-0.5 inline-block">Kerala
-              Backwaters</a>
-          </li>
-          <li>
-            <a href="trips.html"
-              class="text-[0.95rem] text-white/65 transition-all duration-200 hover:text-teal-400 hover:translate-x-0.5 inline-block">Rajasthan
-              Royale</a>
-          </li>
-          <li>
-            <a href="trips.html"
-              class="text-[0.95rem] text-white/65 transition-all duration-200 hover:text-teal-400 hover:translate-x-0.5 inline-block">Goa
-              Beach Escape</a>
-          </li>
-          <li>
-            <a href="trips.html"
-              class="text-[0.95rem] text-white/65 transition-all duration-200 hover:text-teal-400 hover:translate-x-0.5 inline-block">Varanasi
-              Spiritual</a>
-          </li>
+          <li><a href="goldentriangle.html" class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block">Golden Triangle</a></li>
+          <li><a href="kerala.html" class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block">Kerala Backwaters</a></li>
+          <li><a href="goldentriangle.html" class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block">Rajasthan Royale</a></li>
+          <li><a href="goa.html" class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block">Goa Beach Escape</a></li>
+          <li><a href="kashi.html" class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block">Varanasi Spiritual</a></li>
         </ul>
       </div>
 
-      <!-- Address -->
+      <!-- Contact col -->
       <div>
-        <h4 class="font-body text-[0.85rem] font-semibold uppercase tracking-[0.12em] text-white mb-5">
+        <h4 class="footer-col-heading font-body text-[0.85rem] font-semibold uppercase tracking-[0.12em] text-white mb-5">
           Corporate Office
         </h4>
-        <address class="not-italic text-[0.95rem] text-white/65 leading-[1.8]">
-          Flat No. 204, Shree Residency<br />
-          Near Apex Circle, Malviya Nagar<br />
-          Jaipur, Rajasthan - 302017<br />
-          India
-        </address>
-        <p class="text-[0.95rem] text-white/65 leading-[1.8] mt-4">
-          Mon – Sat: 10:00 AM – 8:00 PM<br />
-          Sunday: Closed
-        </p>
+        <div class="flex gap-2.5">
+          <i data-lucide="map-pin" class="w-4 h-4 text-teal-500 mt-0.5 shrink-0"></i>
+          <address class="not-italic text-[0.92rem] text-white/65 leading-[1.8]">
+            Flat No. 204, Shree Residency<br/>
+            Near Apex Circle, Malviya Nagar<br/>
+            Jaipur, Rajasthan – 302017<br/>
+            India
+          </address>
+        </div>
+        <div class="flex gap-2.5 mt-4">
+          <i data-lucide="clock" class="w-4 h-4 text-teal-500 mt-0.5 shrink-0"></i>
+          <p class="text-[0.92rem] text-white/65 leading-[1.8]">
+            Mon – Sat: 10:00 AM – 8:00 PM<br/>
+            Sunday: Closed
+          </p>
+        </div>
       </div>
     </div>
 
-    <!-- Footer bottom -->
-    <div class="flex flex-col sm:flex-row justify-between items-center py-6 gap-3 text-[0.9rem] text-white/40">
-      <span>&copy;2026 BharatBhramana. All rights reserved.</span>
-      <div class="flex gap-5">
-        <a href="check.html" class="text-white/40 hover:text-teal-400 transition-colors duration-200">Privacy Policy</a>
-        <a href="#" class="text-white/40 hover:text-teal-400 transition-colors duration-200">Terms of Service</a>
-        <a href="#" class="text-white/40 hover:text-teal-400 transition-colors duration-200">Cancellation Policy</a>
+    <!-- MOBILE ACCORDION -->
+    <div class="lg:hidden">
+
+      <div class="footer-acc border-b border-white/[0.08]">
+        <button class="footer-acc-trigger w-full flex items-center justify-between py-4 text-left">
+          <span class="text-[1rem] font-semibold text-white">Explore</span>
+          <svg class="footer-acc-chevron w-5 h-5 text-white/50 transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="footer-acc-body">
+          <div class="pb-4">
+            <ul class="space-y-3">
+              <li><a href="index.html" class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block">Home</a></li>
+              <li><a href="trips.html" class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block">All Tours</a></li>
+              <li><a href="cars.html" class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block">Car Rentals</a></li>
+              <li><a href="about.html" class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block">About</a></li>
+              <li><a href="#why" class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block">Why Us</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
+
+      <div class="footer-acc border-b border-white/[0.08]">
+        <button class="footer-acc-trigger w-full flex items-center justify-between py-4 text-left">
+          <span class="text-[1rem] font-semibold text-white">Popular Tours</span>
+          <svg class="footer-acc-chevron w-5 h-5 text-white/50 transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="footer-acc-body">
+          <div class="pb-4">
+            <ul class="space-y-3">
+              <li><a href="goldentriangle.html" class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block">Golden Triangle</a></li>
+              <li><a href="kerala.html" class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block">Kerala Backwaters</a></li>
+              <li><a href="trips.html" class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block">Rajasthan Royale</a></li>
+              <li><a href="trips.html" class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block">Goa Beach Escape</a></li>
+              <li><a href="trips.html" class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block">Varanasi Spiritual</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-acc border-b border-white/[0.08]">
+        <button class="footer-acc-trigger w-full flex items-center justify-between py-4 text-left">
+          <span class="text-[1rem] font-semibold text-white">Contact Info</span>
+          <svg class="footer-acc-chevron w-5 h-5 text-white/50 transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="footer-acc-body">
+          <div class="pb-5">
+            <div class="flex gap-2.5 mb-3">
+              <i data-lucide="map-pin" class="w-4 h-4 text-teal-500 mt-0.5 shrink-0"></i>
+              <address class="not-italic text-[0.92rem] text-white/60 leading-[1.8]">
+                Flat No. 204, Shree Residency<br/>
+                Near Apex Circle, Malviya Nagar<br/>
+                Jaipur, Rajasthan – 302017, India
+              </address>
+            </div>
+            <div class="flex gap-2.5">
+              <i data-lucide="clock" class="w-4 h-4 text-teal-500 mt-0.5 shrink-0"></i>
+              <p class="text-[0.92rem] text-white/60 leading-[1.8]">
+                Mon – Sat: 10:00 AM – 8:00 PM<br/>
+                Sunday: Closed
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </footer>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="flex flex-col sm:flex-row justify-between items-center py-6 gap-3 text-[0.9rem] text-white/40">
+    <div class="flex items-center gap-2 flex-wrap justify-center sm:justify-start">
+      <span>&copy;2026 BharatBhramana. All rights reserved.</span>
+      <span class="text-white/20 hidden sm:inline">·</span>
+      <span class="text-white/25">Crafted with care in India 🇮🇳</span>
+    </div>
+    <div class="flex gap-5 flex-wrap justify-center">
+      <a href="#" class="hover:text-teal-400 transition-colors duration-200">Privacy Policy</a>
+      <a href="#" class="hover:text-teal-400 transition-colors duration-200">Terms of Service</a>
+      <a href="#" class="hover:text-teal-400 transition-colors duration-200">Cancellation Policy</a>
+    </div>
+  </div>
+
+</footer>
 
   <!-- whatsapp floating option  -->
 

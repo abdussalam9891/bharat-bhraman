@@ -1,5 +1,5 @@
 
-/* ── Fonts ──────────────────────────────────────────────────────────── */
+/* ── Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap");
 
 
@@ -25,7 +25,7 @@
 /* sticky bar 2--------------------- */
 /* subtle pulse effect */
 @keyframes pulseGlow {
-  0% { opacity: 0.4; }
+  0% { opacity: 0.7; }
   50% { opacity: 0.8; }
   100% { opacity: 0.4; }
 }
@@ -34,7 +34,23 @@
   animation: pulseGlow 1.8s ease-in-out infinite;
 }
 
+/* reveal base */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s cubic-bezier(.2,.65,.3,1);
+  will-change: transform, opacity;
+}
 
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* slight variation */
+.reveal-up {
+  transform: translateY(60px);
+}
 
 
 
@@ -168,49 +184,111 @@
   pointer-events: none;
 }
 .why-card-border:hover::before { opacity: 1; }
+/* motion  */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s cubic-bezier(.2,.65,.3,1);
+  will-change: transform, opacity;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translate(0,0);
+}
+
+.reveal-left {
+  transform: translateX(-80px);
+}
+
+.reveal-right {
+  transform: translateX(80px);
+}
+
+
+
+.reveal-up {
+  transform: translateY(80px);
+}
+
+/* base state */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px) scale(0.96);
+  transition: all 0.9s cubic-bezier(.16,1,.3,1);
+  will-change: transform, opacity;
+}
+
+/* active (visible) */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* stronger bottom feel */
+.reveal-up {
+  transform: translateY(80px) scale(0.95);
+}
+
+.reveal.active h2 {
+  transition-delay: 0.1s;
+}
+
+.reveal.active p {
+  transition-delay: 0.2s;
+}
+
+.reveal.active a {
+  transition-delay: 0.3s;
+}
+
+
+
+
 
 /* ── Reviews Auto-Scroll ─────────────────────────────────────────────── */
-@keyframes scrollTrack {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+.review-card-new {
+  transform: scale(0.82);
+  opacity: 0.45;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
 }
 
-.reviews-track { animation: scrollTrack 32s linear infinite; }
-.reviews-container:hover .reviews-track { animation-play-state: paused; }
-
-/* Review card top accent stripe */
-.review-card {
-  position: relative;
-  overflow: hidden;
-}
-.review-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #4fbecb, #6a8dff);
-  border-radius: 20px 20px 0 0;
+.review-card-new.rc-adjacent {
+  transform: scale(0.91);
+  opacity: 0.7;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
-/* ── Card Image Slideshow (auto-fade) ────────────────────────────────── */
-@keyframes fadeSlideshow {
-  0%     { opacity: 1; }
-  33.33% { opacity: 1; }
-  33.34% { opacity: 0; }
-  100%   { opacity: 0; }
+.review-card-new.rc-active {
+  transform: scale(1);
+  opacity: 1;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.13), 0 0 0 1.5px rgba(20, 184, 166, 0.15);
 }
 
-.slideshow { position: relative; }
-.slideshow img {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  animation: fadeSlideshow 9s infinite;
+/* Dot indicators */
+.rc-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #cbd5e1;
+  transition: width 0.3s ease, background 0.3s ease;
+  cursor: pointer;
 }
-.slideshow img:nth-child(1) { animation-delay: 0s;  }
-.slideshow img:nth-child(2) { animation-delay: 3s;  }
-.slideshow img:nth-child(3) { animation-delay: 6s;  }
+
+.rc-dot.rc-dot-active {
+  width: 22px;
+  background: #14b8a6;
+}
+
+
+
+
+
+
+
+
+
+
 
 /* ── WhatsApp Pulse Ring ─────────────────────────────────────────────── */
 @keyframes waPulse {
@@ -361,10 +439,6 @@ summary::-webkit-details-marker {
 
 
 
-/* SMOOTH BASE */
-* {
-  scroll-behavior: smooth;
-}
 
 /* HERO BG FLOAT (cinematic slow movement) */
 .hero-bg {
@@ -447,6 +521,25 @@ section:hover .line {
 .hero-trust-anim > div:nth-child(2) { animation-delay: 1.2s; }
 .hero-trust-anim > div:nth-child(3) { animation-delay: 1.4s; }
 
+
+
+
+/* Stats row reveal */
+.hero-stat-item {
+  opacity: 0;
+  transform: translateY(28px);
+  animation: statReveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+
+
+@keyframes statReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* PARALLAX ON MOUSE MOVE */
 .hero-parallax {
   transition: transform 0.2s ease-out;
@@ -516,4 +609,36 @@ section:hover .line {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+
+/* tour card heading motion  */
+/* Section heading reveal */
+.section-label {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.section-title {
+  opacity: 0;
+  transform: translateY(-36px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+
+.section-underline {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.55s;
+}
+
+/* triggered state */
+.heading-revealed .section-label,
+.heading-revealed .section-title {
+  opacity: 1;
+  transform: translate(0);
+}
+
+.heading-revealed .section-underline {
+  transform: scaleX(1);
 }

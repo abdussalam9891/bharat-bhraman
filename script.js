@@ -121,24 +121,28 @@
 
 
 
+
 // testimonials--------------------------------
- (function initReviewsCarousel() {
+(function initReviewsCarousel() {
   const container = document.querySelector('.reviews-carousel-new');
   const track     = document.querySelector('.reviews-track-new');
   const dotsWrap  = document.querySelector('.reviews-dots');
   const origCards = [...track.querySelectorAll('.review-card-new')];
-  const total     = origCards.length; // 7
+
+  if (!container || !track || !dotsWrap || !origCards.length) return;
+
+  const total = origCards.length;
 
   let current = 0;
-  let vPos    = 0;    // visual/translate index — can enter clone zone (≥ total)
+  let vPos = 0;
   let jumping = false;
   let timer;
 
-  // ── Clone all cards and append for seamless forward loop ──
+  // Clone for infinite loop
   origCards.forEach(card => track.appendChild(card.cloneNode(true)));
-  const allCards = [...track.querySelectorAll('.review-card-new')]; // 14 total
+  const allCards = [...track.querySelectorAll('.review-card-new')];
 
-  // ── Dots (one per original card only) ──
+  // Dots
   origCards.forEach((_, i) => {
     const dot = document.createElement('div');
     dot.className = 'rc-dot';
@@ -146,21 +150,22 @@
     dotsWrap.appendChild(dot);
   });
 
-  // ── Geometry helpers ──
-  function gap()     { return 24; } // gap-6 = 24px
-  function cardW()   { return allCards[0].offsetWidth + gap(); }
-  function centerX() { return container.offsetWidth / 2 - allCards[0].offsetWidth / 2; }
-  function offset(v) { return centerX() - v * cardW(); }
+  // Geometry
+  const gap = () => 24;
+  const cardW = () => allCards[0].offsetWidth + gap();
+  const centerX = () => container.offsetWidth / 2 - allCards[0].offsetWidth / 2;
+  const offset = v => centerX() - v * cardW();
 
-  // ── Apply active / adjacent classes to all 14 cards ──
   function applyClasses() {
     allCards.forEach((card, i) => {
       card.classList.remove('rc-active', 'rc-adjacent');
+
       const logical = i % total;
       const d = Math.min(
         Math.abs(logical - current),
         total - Math.abs(logical - current)
       );
+
       if (d === 0) card.classList.add('rc-active');
       else if (d === 1) card.classList.add('rc-adjacent');
     });
@@ -172,24 +177,20 @@
     );
   }
 
-  // ── Core move function ──
-  // logical  = 0-6 (destination card)
-  // useClone = true only when wrapping last→first (shows clone zone)
   function moveTo(logical, useClone = false) {
     if (jumping) return;
     if (logical === current && !useClone) return;
 
     jumping = true;
     current = logical;
-    vPos    = useClone ? total + logical : logical;
+    vPos = useClone ? total + logical : logical;
 
-    track.style.transition = 'transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    track.style.transition = 'transform 0.6s cubic-bezier(.2,.65,.3,1)';
     track.style.transform  = `translateX(${offset(vPos)}px)`;
 
     applyClasses();
     applyDots();
 
-    // After animation: if in clone zone, silently snap back to original position
     setTimeout(() => {
       if (vPos >= total) {
         vPos = logical;
@@ -197,24 +198,20 @@
         track.style.transform  = `translateX(${offset(vPos)}px)`;
       }
       jumping = false;
-    }, 700); // slightly > transition duration
+    }, 650);
   }
 
-  // ── Auto-advance ──
   function advance() {
     const next = (current + 1) % total;
-    // When wrapping from last card → first, animate through clone zone
     moveTo(next, current === total - 1);
   }
 
-  // ── Per-card events ──
-  // Click → focus that card | Hover → pause ONLY on that card
+  // Click + Hover
   allCards.forEach((card, i) => {
     card.style.cursor = 'pointer';
 
     card.addEventListener('click', () => {
       const logical = i % total;
-      if (logical === current) return; // already centered, ignore
       moveTo(logical);
     });
 
@@ -222,65 +219,64 @@
     card.addEventListener('mouseleave', startAuto);
   });
 
-  // ── Auto-scroll ──
   function startAuto() {
     clearInterval(timer);
     timer = setInterval(advance, 3200);
   }
 
-  // ── Recalculate on resize ──
+  // Resize fix
   window.addEventListener('resize', () => {
     track.style.transition = 'none';
     track.style.transform  = `translateX(${offset(vPos)}px)`;
   });
 
-
-
-  // ── Touch / Trackpad swipe ──
-  let touchStartX = 0;
-  let touchStartY = 0;
-  let isSwiping   = false;
+  // Touch support
+  let startX = 0, startY = 0, isSwiping = false;
 
   container.addEventListener('touchstart', e => {
-    touchStartX = e.touches[0].clientX;
-    touchStartY = e.touches[0].clientY;
-    isSwiping   = false;
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    isSwiping = false;
   }, { passive: true });
 
   container.addEventListener('touchmove', e => {
-    const dx = e.touches[0].clientX - touchStartX;
-    const dy = e.touches[0].clientY - touchStartY;
-    // Only hijack if clearly horizontal swipe
+    const dx = e.touches[0].clientX - startX;
+    const dy = e.touches[0].clientY - startY;
+
     if (!isSwiping && Math.abs(dx) > Math.abs(dy) + 5) {
       isSwiping = true;
     }
+
     if (isSwiping) e.preventDefault();
   }, { passive: false });
 
   container.addEventListener('touchend', e => {
     if (!isSwiping) return;
-    const dx = e.changedTouches[0].clientX - touchStartX;
-    if (Math.abs(dx) < 40) return; // ignore micro-swipes
+
+    const dx = e.changedTouches[0].clientX - startX;
+
+    if (Math.abs(dx) < 40) return;
+
     if (dx < 0) {
-      // swipe left → next
       const next = (current + 1) % total;
       moveTo(next, current === total - 1);
     } else {
-      // swipe right → prev
       const prev = (current - 1 + total) % total;
       moveTo(prev);
     }
   });
 
-  // Trackpad wheel (horizontal)
-  let wheelCooldown = false;
+  // Wheel control (trackpad)
+  let cooldown = false;
+
   container.addEventListener('wheel', e => {
-    const isHorizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY);
-    if (!isHorizontal) return;
+    if (Math.abs(e.deltaX) < Math.abs(e.deltaY)) return;
+
     e.preventDefault();
-    if (wheelCooldown) return;
-    wheelCooldown = true;
-    setTimeout(() => wheelCooldown = false, 750);
+
+    if (cooldown) return;
+    cooldown = true;
+    setTimeout(() => cooldown = false, 700);
 
     if (e.deltaX > 0) {
       const next = (current + 1) % total;
@@ -291,9 +287,10 @@
     }
   }, { passive: false });
 
-  // ── Init ──
+  // INIT
   track.style.transition = 'none';
   track.style.transform  = `translateX(${offset(0)}px)`;
+
   applyClasses();
   applyDots();
   startAuto();
@@ -469,17 +466,18 @@ document.addEventListener("DOMContentLoaded", initReveal);
 (function () {
   const revealEls = document.querySelectorAll('.reveal');
 
-  const observer = new IntersectionObserver((entries) => {
+  const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
 
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
-      } else {
-        entry.target.classList.remove('active');
+
+        // stop observing after first reveal
+        obs.unobserve(entry.target);
       }
 
     });
-  }, { threshold: 0.3 });
+  }, { threshold: 0.25 });
 
   revealEls.forEach(el => observer.observe(el));
 })();
@@ -571,34 +569,34 @@ document.addEventListener("DOMContentLoaded", initReveal);
 
 
 
-// car section home page carousel
-(function initCarCarousel() {
-  const track   = document.getElementById('carTrack');
-  const prevBtn = document.getElementById('carPrev');
-  const nextBtn = document.getElementById('carNext');
-  if (!track || !prevBtn || !nextBtn) return;
+// // car section home page carousel
+// (function initCarCarousel() {
+//   const track   = document.getElementById('carTrack');
+//   const prevBtn = document.getElementById('carPrev');
+//   const nextBtn = document.getElementById('carNext');
+//   if (!track || !prevBtn || !nextBtn) return;
 
-  let position = 0;
+//   let position = 0;
 
-  function getCardWidth() {
-    const card = track.querySelector('article');
-    if (!card) return 328;
-    return card.offsetWidth + 28; // card + gap-7 (28px)
-  }
+//   function getCardWidth() {
+//     const card = track.querySelector('article');
+//     if (!card) return 328;
+//     return card.offsetWidth + 28; // card + gap-7 (28px)
+//   }
 
-  function getMaxScroll() {
-    return track.scrollWidth - track.parentElement.offsetWidth;
-  }
+//   function getMaxScroll() {
+//     return track.scrollWidth - track.parentElement.offsetWidth;
+//   }
 
-  nextBtn.addEventListener('click', () => {
-    position = Math.min(position + getCardWidth(), getMaxScroll());
-    track.style.transform = `translateX(-${position}px)`;
-  });
+//   nextBtn.addEventListener('click', () => {
+//     position = Math.min(position + getCardWidth(), getMaxScroll());
+//     track.style.transform = `translateX(-${position}px)`;
+//   });
 
-  prevBtn.addEventListener('click', () => {
-    position = Math.max(position - getCardWidth(), 0);
-    track.style.transform = `translateX(-${position}px)`;
-  });
-})();
+//   prevBtn.addEventListener('click', () => {
+//     position = Math.max(position - getCardWidth(), 0);
+//     track.style.transform = `translateX(-${position}px)`;
+//   });
+// })();
 
 });

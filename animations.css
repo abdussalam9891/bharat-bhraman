@@ -22,36 +22,6 @@
 
 
 
-/* sticky bar 2--------------------- */
-/* subtle pulse effect */
-@keyframes pulseGlow {
-  0% { opacity: 0.7; }
-  50% { opacity: 0.8; }
-  100% { opacity: 0.4; }
-}
-
-.group:hover div:first-child {
-  animation: pulseGlow 1.8s ease-in-out infinite;
-}
-
-/* reveal base */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.7s cubic-bezier(.2,.65,.3,1);
-  will-change: transform, opacity;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* slight variation */
-.reveal-up {
-  transform: translateY(60px);
-}
-
 
 
 
@@ -115,17 +85,29 @@
 
 
 /* Card scroll system ------------------------home page tour card---------------------*/
-#cardContainer {
+#cardContainer,
+#carTrack {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
 
   /* hide scrollbar */
-  -ms-overflow-style: none;   /* IE */
-  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-#cardContainer::-webkit-scrollbar {
-  display: none;              /* Chrome/Safari */
+/* Chrome / Safari */
+#cardContainer::-webkit-scrollbar,
+#carTrack::-webkit-scrollbar {
+  display: none;
+}
+
+/* DESKTOP: disable horizontal scroll */
+@media (min-width: 768px) {
+  #cardContainer,
+  #carTrack {
+    overflow-x: hidden;
+  }
 }
 
 /* Card scroll system------------------------- home page tour card  */
@@ -144,7 +126,7 @@
 
 
 
-/* ================= REVEAL SYSTEM ================= */
+/*-----------------REVEAL SYSTEM---------------------*/
 
 /* Base state */
 .reveal {
@@ -187,33 +169,51 @@
 
 
 
-/* ── Reviews Auto-Scroll ─────────────────────────────────────────────── */
+/* ── Reviews Cards (Premium Motion + Depth) ───────────────────────── */
+
 .review-card-new {
-  transform: scale(0.82);
-  opacity: 0.45;
+  transform: scale(0.8);
+  opacity: 0.4;
+  filter: blur(1px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+
+  transition:
+    transform 0.6s cubic-bezier(.2,.65,.3,1),
+    opacity 0.5s ease,
+    box-shadow 0.5s ease,
+    filter 0.5s ease;
 }
 
+/* Adjacent cards */
 .review-card-new.rc-adjacent {
-  transform: scale(0.91);
-  opacity: 0.7;
+  transform: scale(0.92);
+  opacity: 0.75;
+  filter: blur(0.3px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
+/* Active (center) card */
 .review-card-new.rc-active {
-  transform: scale(1);
+  transform: scale(1.02) translateY(-6px);
   opacity: 1;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.13), 0 0 0 1.5px rgba(20, 184, 166, 0.15);
+  filter: blur(0);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.13),
+    0 0 0 1.5px rgba(20, 184, 166, 0.15),
+    0 10px 40px rgba(20, 184, 166, 0.08);
 }
 
-/* Dot indicators */
+/* ── Dot Indicators ───────────────────────── */
+
 .rc-dot {
   width: 7px;
   height: 7px;
   border-radius: 999px;
   background: #cbd5e1;
-  transition: width 0.3s ease, background 0.3s ease;
   cursor: pointer;
+
+  transition: all 0.35s cubic-bezier(.2,.65,.3,1);
 }
 
 .rc-dot.rc-dot-active {
@@ -221,7 +221,8 @@
   background: #14b8a6;
 }
 
-/* Star rating — partial fill */
+/* ── Star Rating ───────────────────────── */
+
 .star-rating {
   position: relative;
   display: inline-block;
@@ -231,7 +232,7 @@
 }
 
 .star-rating .stars-empty {
-  color: #e2e8f0; /* gray unfilled */
+  color: #e2e8f0;
 }
 
 .star-rating .stars-filled {
@@ -240,7 +241,7 @@
   left: 0;
   overflow: hidden;
   white-space: nowrap;
-  color: #14b8a6; /* teal-500 */
+  color: #14b8a6;
 }
 
 

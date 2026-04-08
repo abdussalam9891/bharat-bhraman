@@ -505,7 +505,7 @@
 
 
 <!-- get recommendation  -->
-<section class="px-[5%] py-[80px] md:py-[100px] bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9] relative overflow-hidden">
+<section class="px-[5%] py-[80px] md:py-[100px] bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9] relative ">
 
   <!-- subtle glow -->
   <div class="absolute inset-0 -z-10 animate-gradient bg-[radial-gradient(circle_at_20%_30%,rgba(42,157,143,0.18),transparent_60%), radial-gradient(circle_at_80%_70%,rgba(79,190,203,0.15),transparent_60%), linear-gradient(120deg,#f8fafc,#eef3f9,#f8fafc)]">
@@ -554,7 +554,7 @@
 
         <!-- car featured ------------------------------- -->
     <section
-    class="px-[5%] mt-8  relative overflow-hidden bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9]"
+    class="px-[5%] py-[80px] md:py-[100px] relative bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9]"
     >
       <!-- HEADER -->
       <div class="flex justify-between items-end mb-8 reveal">
@@ -606,10 +606,10 @@
 </template>
 
 
-       <div class="flex justify-end gap-3 mt-8 reveal">
+<div class="flex justify-end gap-3 mt-8 reveal">
 
   <!-- PREVIOUS -->
-  <button id="tourPrev"
+  <button id="carPrev"
     class="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-700
     hover:bg-teal-500 hover:text-white transition">
 
@@ -617,7 +617,7 @@
   </button>
 
   <!-- NEXT -->
-  <button id="tourNext"
+  <button id="carNext"
     class="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-700
     hover:bg-teal-500 hover:text-white transition">
 
@@ -625,6 +625,7 @@
   </button>
 
 </div>
+
     </section>
 
 
@@ -1286,8 +1287,11 @@
   </button>
 
   <!-- script --------------------------------->
-  <script src="script.js"></script>
-  <script src="card/card.js" defer></script>
+
+  <script src="card/utils.js" defer></script>
+   <script src="script.js"></script>
+  <script src="card/tour.js" defer></script>
+  <script src="card/cars.js" defer></script>
   <script>lucide.createIcons();</script>
 
 

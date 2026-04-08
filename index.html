@@ -49,9 +49,7 @@
 
 <body class="font-body text-gray-800 leading-relaxed antialiased relative overflow-x-hidden">
 
-  <div
-    class="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_20%_30%,rgba(42,157,143,0.15),transparent_60%), radial-gradient(circle_at_80%_70%,rgba(79,190,203,0.12),transparent_60%), linear-gradient(to_bottom,#f8fafc,#eef3f9)]">
-  </div>
+
 
  <!-- NAVbar----------------------------------->
     <nav
@@ -351,7 +349,7 @@
 
 
    <!---------------------- hero---------------------->
-<section class="relative min-h-[92vh] mt-[72px] mx-[18px] mb-[18px] rounded-[18px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)] flex items-center justify-center px-[5%]">
+<section class="relative min-h-[85vh] mt-[72px] mx-[18px] mb-[8px] md:mb-[12px] rounded-[18px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)] flex items-center justify-center px-[5%]">
 
   <!-- Background -->
   <div class="hero-images absolute inset-0 z-[-2]">
@@ -377,7 +375,7 @@
 
     <!-- CTA -->
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 car-hero-bottom mb-14">
-      <a href="#fleet"
+      <a href="trips.html"
         class="px-8 py-3.5 rounded-full font-medium
         bg-gradient-to-br from-teal-500 to-teal-700
         transition-all duration-300 hover:-translate-y-1 hover:scale-[1.06]">
@@ -423,21 +421,18 @@
 
   <!-- featured tours ----------------------------------- -->
 
-
-  <section class=" min-h-screen px-[5%] py-[110px] relative overflow-hidden bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9]">
+  <section class="px-[5%] py-[80px] md:py-[100px] relative overflow-hidden bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9]">
     <!-- Background glow -->
-    <div
-      class="absolute inset-0 opacity-30 pointer-events-none bg-[radial-gradient(circle_at_20%_30%,rgba(42,157,143,0.15),transparent_60%)]">
-    </div>
 
-    <div class="space-y-10">
+
+
       <div class="relative z-10 mb-12">
         <!-- HEADING — centered -->
-     <div class="text-center mb-8 section-heading-wrapper">
-  <span class="section-label text-[11px] font-semibold tracking-[0.2em] uppercase text-teal-500 mb-3 block">
+     <div class="text-center mb-8 section-heading-wrapper reveal">
+  <span class="section-label text-[11px] font-semibold tracking-[0.2em] uppercase text-teal-500 mb-3 block reveal">
     Curated Journeys
   </span>
-  <h2 class="section-title font-display text-[clamp(2.2rem,4vw,3rem)] font-semibold text-gray-900 leading-[1.15]">
+  <h2 class="section-title font-display text-[clamp(2.2rem,4vw,3rem)] font-semibold text-gray-900 leading-[1.15] reveal">
     Explore Trips That<br />
     <span class="text-teal-500 relative inline-block">
       Feel Personal
@@ -446,1703 +441,74 @@
   </h2>
 </div>
 
-        <!-- FILTERS + CTA — same row -->
-        <div class="flex flex-wrap items-center justify-between gap-4">
-          <div class="flex flex-wrap gap-3">
-            <button
-              class="px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-br from-teal-500 to-teal-600 text-white shadow-sm transition hover:scale-[1.04]">
-              All
-            </button>
-            <button
-              class="px-4 py-2 rounded-full text-sm font-medium bg-white/80 backdrop-blur border border-gray-200 text-gray-700 transition hover:bg-teal-50 hover:border-teal-300 hover:text-teal-600">
-              3–5 Days
-            </button>
-            <button
-              class="px-4 py-2 rounded-full text-sm font-medium bg-white/80 backdrop-blur border border-gray-200 text-gray-700 transition hover:bg-teal-50 hover:border-teal-300 hover:text-teal-600">
-              6–8 Days
-            </button>
-            <button
-              class="px-4 py-2 rounded-full text-sm font-medium bg-white/80 backdrop-blur border border-gray-200 text-gray-700 transition hover:bg-teal-50 hover:border-teal-300 hover:text-teal-600">
-              Luxury
-            </button>
 
-          </div>
-
-          <a href="trips.html"
-            class="hidden lg:inline-flex items-center gap-2 text-sm font-medium text-teal-600 transition group">
-            <span class="relative">
-              View All Tours
-              <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-500 transition-all group-hover:w-full"></span>
-            </span>
-            →
-          </a>
-        </div>
       </div>
 
+
+
+<!-- CARD CONTAINER -->
+<div id="cardContainer"
+  class="flex gap-6 overflow-x-auto px-[5%] py-[60px]
+  snap-x snap-mandatory scroll-smooth no-scrollbar">
+</div>
+
+<!-- TEMPLATE (MOVE HERE) -->
+<template id="tour-card-template">
+  <article class="snap-start min-w-[300px] max-w-[320px] group bg-white rounded-[18px] overflow-hidden
+  shadow-sm hover:shadow-[0_25px_60px_rgba(0,0,0,0.18)] transition-all duration-500 hover:-translate-y-2">
+
+    <div class="relative h-[220px] overflow-hidden">
+      <div class="slider-container relative w-full h-full images-wrapper"></div>
     </div>
 
-
-    <!-- Carousel -->
-      <div class="relative z-10 overflow-hidden">
-
-        <div id="tourPin" class="relative w-full z-10">
-        <!-- Track -->
-        <div
-          id="tourTrack"
-          class="flex gap-7 w-max"
-        >
-
-          <!-- golden -->
-          <article
-            class="card-reveal snap-start min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)]"
-          >
-            <!-- IMAGE BLOCK -->
-            <div class="relative h-[220px] overflow-hidden">
-              <div class="slider-container relative w-full h-full">
-                <!-- images -->
-                <img
-                  src="images/d2.jpg"
-                  class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500"
-                />
-
-                <img
-                  src="images/d7.jpg"
-                  class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
-                />
-
-                <img
-                  src="images/r6.jpg"
-                  class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
-                />
-
-
-
-                <!-- arrows -->
-                <button
-                  class="prev absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white"
-                >
-                  ←
-                </button>
-
-                <button
-                  class="next absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white"
-                >
-                  →
-                </button>
-
-                <!-- dots -->
-                <div
-                  class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 opacity-0 group-hover:opacity-100 transition"
-                >
-                  <span
-                    class="slider-dot w-2 h-2 rounded-full bg-white cursor-pointer"
-                  ></span>
-                  <span
-                    class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"
-                  ></span>
-                  <span
-                    class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"
-                  ></span>
-                </div>
-              </div>
-            </div>
-
-            <!-- CONTENT -->
-            <div class="p-6">
-              <h3
-                class="font-display text-[1.35rem] font-semibold text-ink-900"
-              >
-                Golden Triangle
-              </h3>
-              <p class="text-[0.82rem] text-gray-500 mb-3">
-                Delhi → Agra → Jaipur
-              </p>
-
-              <div class="flex gap-4 text-[0.8rem] text-gray-500 mb-4">
-                <span>9 Days</span>
-                <span class="text-amber-500">★ 4.8</span>
-                <span>Private</span>
-              </div>
-            </div>
-
-            <!-- FOOTER -->
-            <div
-              class="flex justify-between items-center px-6 py-4 border-t border-gray-100"
-            >
-              <div
-                class="font-display text-[1.3rem] font-semibold text-ink-900"
-              >
-                ₹14,000
-                <span class="text-[0.75rem] text-gray-500">/ person</span>
-              </div>
-
-              <a
-                href="goldentriangle.html"
-                class="px-4 py-2 rounded-lg bg-ink-900 text-white text-sm hover:bg-teal-500 transition"
-              >
-                Details
-              </a>
-            </div>
-          </article>
-
-          <!--kerala-->
-          <article
-            class="card-reveal snap-start min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)]"
-          >
-            <!-- IMAGE BLOCK -->
-            <div class="relative h-[220px] overflow-hidden">
-              <div class="slider-container relative w-full h-full">
-                <!-- images -->
-                <img
-                  src="images/kerala1.jpg"
-                  class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500"
-                />
-
-                <img
-                  src="images/kerala2.jpg"
-                  class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
-                />
-
-                <img
-                  src="images/kerala3.jpg"
-                  class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
-                />
-
-
-
-                <!-- arrows -->
-                <button
-                  class="prev absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white"
-                >
-                  ←
-                </button>
-
-                <button
-                  class="next absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white"
-                >
-                  →
-                </button>
-
-                <!-- dots -->
-                <div
-                  class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 opacity-0 group-hover:opacity-100 transition"
-                >
-                  <span
-                    class="slider-dot w-2 h-2 rounded-full bg-white cursor-pointer"
-                  ></span>
-                  <span
-                    class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"
-                  ></span>
-                  <span
-                    class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"
-                  ></span>
-                </div>
-              </div>
-            </div>
-
-            <!-- CONTENT -->
-            <div class="p-6">
-              <h3
-                class="font-display text-[1.35rem] font-semibold text-ink-900"
-              >
-                Kerala trip
-              </h3>
-              <p class="text-[0.82rem] text-gray-500 mb-3">
-                Kochi → Munnar → Alleppey
-              </p>
-
-              <div class="flex gap-4 text-[0.8rem] text-gray-500 mb-4">
-                <span>7 Days</span>
-                <span class="text-amber-500">★ 4.8</span>
-                <span>Private</span>
-              </div>
-            </div>
-
-            <!-- FOOTER -->
-            <div
-              class="flex justify-between items-center px-6 py-4 border-t border-gray-100"
-            >
-              <div
-                class="font-display text-[1.3rem] font-semibold text-ink-900"
-              >
-                ₹20,000
-                <span class="text-[0.75rem] text-gray-500">/ person</span>
-              </div>
-
-              <a
-                href="kerala.html"
-                class="px-4 py-2 rounded-lg bg-ink-900 text-white text-sm hover:bg-teal-500 transition"
-              >
-                Details
-              </a>
-            </div>
-          </article>
-
-        <article
-class="card-reveal snap-start min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)]"
->
-  <!-- IMAGE BLOCK -->
-  <div class="relative h-[220px] overflow-hidden rounded-t-[16px]">
-    <div class="slider-container relative w-full h-full">
-
-      <!-- images -->
-      <img src="images/k1.jpg"
-        class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-
-      <img src="images/k2.jpg"
-        class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500" />
-
-      <img src="images/k3.jpg"
-        class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500" />
-
-      <!-- arrows -->
-      <button
-        class="prev absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white"
-      >
-        ←
-      </button>
-
-      <button
-        class="next absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white"
-      >
-        →
-      </button>
-
-      <!-- dots -->
-      <div
-        class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 opacity-0 group-hover:opacity-100 transition"
-      >
-        <span class="slider-dot w-2 h-2 rounded-full bg-white"></span>
-        <span class="slider-dot w-2 h-2 rounded-full bg-white/50"></span>
-        <span class="slider-dot w-2 h-2 rounded-full bg-white/50"></span>
-      </div>
-    </div>
-  </div>
-
-  <!-- CONTENT -->
-  <div class="p-6">
-    <h3 class="font-display text-[1.35rem] font-semibold text-ink-900">
-      Kashmir Trip
-    </h3>
-    <p class="text-[0.82rem] text-gray-500 mb-3">
-      Srinagar → Sonmarg → Gulmarg
-    </p>
-
-    <div class="flex gap-4 text-[0.8rem] text-gray-500 mb-4">
-      <span>7 Days</span>
-      <span class="text-amber-500">★ 4.9</span>
-      <span>Private</span>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <div class="flex justify-between items-center px-6 py-4 border-t border-gray-100">
-    <div class="font-display text-[1.3rem] font-semibold text-ink-900">
-      ₹18,000
-      <span class="text-[0.75rem] text-gray-500">/ person</span>
+    <div class="p-5 space-y-3">
+      <p class="location text-[0.75rem] text-gray-500 font-medium"></p>
+      <h3 class="title text-[1.05rem] font-semibold text-ink-900"></h3>
+      <div class="meta flex items-center gap-3 text-[0.78rem] text-gray-500"></div>
+      <p class="booked text-[0.75rem] text-gray-400"></p>
     </div>
 
-    <a href="goldentriangle.html"
-      class="px-4 py-2 rounded-lg bg-ink-900 text-white text-sm hover:bg-teal-500 transition">
-      Details
-    </a>
-  </div>
-</article>
+    <div class="flex justify-between items-center px-5 pb-5 mt-1">
+      <div class="price"></div>
+      <a class="cta px-4 py-2 rounded-lg bg-ink-900 text-white text-sm
+      hover:bg-teal-500 transition flex items-center gap-1">
+        View Trip →
+      </a>
+    </div>
 
+  </article>
+</template>
 
-                <!-- goa------------- -->
-        <article
-          class="card-reveal snap-start min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
-          <!-- IMAGE BLOCK -->
-          <div class="relative h-[220px] overflow-hidden">
-            <div class="slider-container relative w-full h-full">
-              <!-- BADGE top-left -->
-              <div
-                class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400 text-amber-900 font-bold text-amber-900 shadow-md tracking-wide uppercase">
-                🔥 Bestseller
-              </div>
+ <div class="flex justify-end gap-3 mt-8 reveal">
 
-              <!-- IMAGES -->
-              <img src="tourimages/goa1.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/goa2.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500" />
-              <img src="tourimages/goa3.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500" />
-              <img src="tourimages/goa4.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500" />
+  <!-- PREVIOUS -->
+  <button id="tourPrev"
+    class="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-700
+    hover:bg-teal-500 hover:text-white transition">
 
+    ← <span>Previous</span>
+  </button>
 
+  <!-- NEXT -->
+  <button id="tourNext"
+    class="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-700
+    hover:bg-teal-500 hover:text-white transition">
 
+    <span>Next</span> →
+  </button>
 
-
-              <!-- DOTS -->
-              <div
-                class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 opacity-0 group-hover:opacity-100 transition z-10">
-                <span class="slider-dot w-2 h-2 rounded-full bg-white cursor-pointer"></span>
-                <span class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"></span>
-                <span class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"></span>
-                <span class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"></span>
-              </div>
-            </div>
-          </div>
-
-          <!-- CONTENT -->
-          <div class="p-6">
-            <h3 class="font-display text-[1.35rem] font-semibold text-gray-900">
-              Goa Beach Escape
-            </h3>
-            <p class="text-[0.82rem] text-gray-500 mb-3">
-              Panaji → Calangute → Palolem
-            </p>
-            <div class="flex gap-4 text-[0.8rem] text-gray-500 mb-4">
-              <span>3 Days</span>
-              <span class="text-amber-500">★ 4.9</span>
-              <span>Private</span>
-            </div>
-          </div>
-
-          <!-- FOOTER -->
-          <div class="flex justify-between items-center px-6 py-4 border-t border-gray-100">
-            <div>
-              <div class="text-xs text-gray-400 line-through">₹9,000</div>
-              <div class="font-display text-[1.3rem] font-semibold text-gray-900">
-                ₹7,500
-                <span class="text-[0.75rem] text-gray-500">/ person</span>
-              </div>
-              <div
-                class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5">
-                Save ₹1,500
-              </div>
-            </div>
-            <a href="goa.html"
-              class="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm hover:bg-teal-500 transition">Details</a>
-          </div>
-        </article>
-
-        <!-- manali -->
-        <article
-          class="card-reveal snap-start min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
-          <!-- IMAGE BLOCK -->
-          <div class="relative h-[220px] overflow-hidden">
-            <div class="slider-container relative w-full h-full">
-              <!-- BADGE top-left -->
-              <div
-                class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400 text-amber-900 font-bold text-amber-900 shadow-md tracking-wide uppercase">
-                ❄️ Most Booked
-              </div>
-
-              <!-- IMAGES -->
-
-              <img src="tourimages/manali1.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/manali2.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500" />
-              <img src="tourimages/manali3.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500" />
-              <img src="tourimages/manali4.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500" />
-              <img src="tourimages/manali5.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500" />
-
-
-
-              <!-- ARROWS -->
-              <button
-                class="prev absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white">
-                ←
-              </button>
-              <button
-                class="next absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white">
-                →
-              </button>
-
-              <!-- DOTS -->
-              <div
-                class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 opacity-0 group-hover:opacity-100 transition z-10">
-                <span class="slider-dot w-2 h-2 rounded-full bg-white cursor-pointer"></span>
-                <span class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"></span>
-                <span class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"></span>
-                <span class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"></span>
-              </div>
-
-              <!-- LOCATION PILL bottom-left -->
-            </div>
-          </div>
-
-          <!-- CONTENT -->
-          <div class="p-6">
-            <h3 class="font-display text-[1.35rem] font-semibold text-gray-900">
-              Manali Snow Trip
-            </h3>
-            <p class="text-[0.82rem] text-gray-500 mb-3">
-              Delhi → Kullu → Manali
-            </p>
-            <div class="flex gap-4 text-[0.8rem] text-gray-500 mb-4">
-              <span>5 Days</span>
-              <span class="text-amber-500">★ 4.8</span>
-              <span>Private</span>
-            </div>
-          </div>
-
-          <!-- FOOTER -->
-          <div class="flex justify-between items-center px-6 py-4 border-t border-gray-100">
-            <div>
-              <div class="text-xs text-gray-400 line-through">₹16,000</div>
-              <div class="font-display text-[1.3rem] font-semibold text-gray-900">
-                ₹13,500
-                <span class="text-[0.75rem] text-gray-500">/ person</span>
-              </div>
-              <div
-                class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5">
-                Save ₹2,500
-              </div>
-            </div>
-            <a href="manali.html"
-              class="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm hover:bg-teal-500 transition">Details</a>
-          </div>
-        </article>
-
-        <!-- varanasi  -->
-        <article
-          class="card-reveal snap-start min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
-          <!-- IMAGE BLOCK -->
-          <div class="relative h-[220px] overflow-hidden">
-            <div class="slider-container relative w-full h-full">
-              <!-- BADGE top-left -->
-              <div
-                class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-400 text-orange-900 font-bold text-amber-900 shadow-md tracking-wide uppercase">
-                🪔 Spiritual
-              </div>
-
-              <!-- IMAGES -->
-              <img src="tourimages/kashi1.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/kashi2.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500" />
-              <img src="tourimages/kashi3.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500" />
-              <img src="tourimages/kashi4.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500" />
-
-
-
-              <!-- ARROWS -->
-              <button
-                class="prev absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white">
-                ←
-              </button>
-              <button
-                class="next absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white">
-                →
-              </button>
-
-              <!-- DOTS -->
-              <div
-                class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 opacity-0 group-hover:opacity-100 transition z-10">
-                <span class="slider-dot w-2 h-2 rounded-full bg-white cursor-pointer"></span>
-                <span class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"></span>
-                <span class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"></span>
-                <span class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"></span>
-              </div>
-            </div>
-          </div>
-
-          <!-- CONTENT -->
-          <div class="p-6">
-            <h3 class="font-display text-[1.35rem] font-semibold text-gray-900">
-              Varanasi Spiritual
-            </h3>
-            <p class="text-[0.82rem] text-gray-500 mb-3">
-              Varanasi → Sarnath → Bodh Gaya
-            </p>
-            <div class="flex gap-4 text-[0.8rem] text-gray-500 mb-4">
-              <span>4 Days</span>
-              <span class="text-amber-500">★ 4.7</span>
-              <span>Private</span>
-            </div>
-          </div>
-
-          <!-- FOOTER -->
-          <div class="flex justify-between items-center px-6 py-4 border-t border-gray-100">
-            <div>
-              <div class="text-xs text-gray-400 line-through">₹10,000</div>
-              <div class="font-display text-[1.3rem] font-semibold text-gray-900">
-                ₹8,500
-                <span class="text-[0.75rem] text-gray-500">/ person</span>
-              </div>
-              <div
-                class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5">
-                Save ₹1,500
-              </div>
-            </div>
-            <a href="kashi.html"
-              class="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm hover:bg-teal-500 transition">Details</a>
-          </div>
-        </article>
-
-
-
-        <!-- andaman  -->
-        <article
-          class="card-reveal snap-start min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
-          <!-- IMAGE BLOCK -->
-          <div class="relative h-[220px] overflow-hidden">
-            <div class="slider-container relative w-full h-full">
-              <!-- BADGE top-left -->
-              <div
-                class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-400 text-cyan-900 font-bold text-amber-900 shadow-md tracking-wide uppercase">
-                🏝️ Top Pick
-              </div>
-
-              <!-- IMAGES -->
-              <img src="tourimages/portblair1.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/portblair2.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500" />
-              <img src="tourimages/andaman1.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500" />
-              <img src="tourimages/andaman2.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500" />
-              <img src="tourimages/andaman3.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500" />
-
-
-
-              <!-- ARROWS -->
-              <button
-                class="prev absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white">
-                ←
-              </button>
-              <button
-                class="next absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white">
-                →
-              </button>
-
-              <!-- DOTS -->
-              <div
-                class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 opacity-0 group-hover:opacity-100 transition z-10">
-                <span class="slider-dot w-2 h-2 rounded-full bg-white cursor-pointer"></span>
-                <span class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"></span>
-                <span class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"></span>
-                <span class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"></span>
-              </div>
-            </div>
-          </div>
-
-          <!-- CONTENT -->
-          <div class="p-6">
-            <h3 class="font-display text-[1.35rem] font-semibold text-gray-900">
-              Andaman Islands
-            </h3>
-            <p class="text-[0.82rem] text-gray-500 mb-3">
-              Port Blair → Havelock → Neil Island
-            </p>
-            <div class="flex gap-4 text-[0.8rem] text-gray-500 mb-4">
-              <span>7 Days</span>
-              <span class="text-amber-500">★ 4.9</span>
-              <span>Private</span>
-            </div>
-          </div>
-
-          <!-- FOOTER -->
-          <div class="flex justify-between items-center px-6 py-4 border-t border-gray-100">
-            <div>
-              <div class="text-xs text-gray-400 line-through">₹28,000</div>
-              <div class="font-display text-[1.3rem] font-semibold text-gray-900">
-                ₹24,000
-                <span class="text-[0.75rem] text-gray-500">/ person</span>
-              </div>
-              <div
-                class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5">
-                Save ₹4,000
-              </div>
-            </div>
-            <a href="andamanIsland.html"
-              class="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm hover:bg-teal-500 transition">Details</a>
-          </div>
-        </article>
-
-
-
-
-        </div>
-
-        </div>
-
-
-
-      </div>
+</div>
 
   </section>
 
 
-
-
-<!-- sticky bar  -->
-<section class="px-[5%] py-[100px] bg-gradient-to-b from-slate-50 to-slate-100">
-
-  <div class="max-w-[1100px] mx-auto mb-14 text-center reveal">
-
-    <p class="text-sm font-medium text-teal-600 tracking-wider uppercase mb-3">
-      Our Impact
-    </p>
-
-    <h2 class="text-3xl md:text-4xl font-semibold text-gray-900 leading-tight">
-      Our Journey in <span class="text-teal-600">Numbers</span>
-    </h2>
-
-  </div>
-
-  <div class="max-w-[1100px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6">
-
-    <!-- ITEM -->
-    <div class="reveal reveal-up group p-8 rounded-2xl text-center bg-white border border-gray-200 shadow-sm transition-transform transition-shadow duration-300 hover:-translate-y-2 hover:shadow-lg">
-      <div class="counter text-[3rem] font-bold text-gray-900 mb-2" data-target="600">0</div>
-      <div class="text-gray-500 text-sm tracking-wide">Trips Completed</div>
-    </div>
-
-    <!-- ITEM -->
-    <div class="reveal reveal-up group p-8 rounded-2xl text-center bg-white border border-gray-200 shadow-sm transition-transform transition-shadow duration-300 hover:-translate-y-2 hover:shadow-lg">
-      <div class="counter text-[3rem] font-bold text-gray-900 mb-2" data-target="98">0</div>
-      <div class="text-gray-500 text-sm tracking-wide">Happy Travellers</div>
-    </div>
-
-    <!-- ITEM -->
-    <div class="reveal reveal-up group p-8 rounded-2xl text-center bg-white border border-gray-200 shadow-sm transition-transform transition-shadow duration-300 hover:-translate-y-2 hover:shadow-lg">
-      <div class="counter text-[3rem] font-bold text-gray-900 mb-2" data-target="40">0</div>
-      <div class="text-gray-500 text-sm tracking-wide">Destinations</div>
-    </div>
-
-    <!-- ITEM -->
-    <div class="reveal reveal-up group p-8 rounded-2xl text-center bg-white border border-gray-200 shadow-sm transition-transform transition-shadow duration-300 hover:-translate-y-2 hover:shadow-lg">
-      <div class="counter text-[3rem] font-bold text-gray-900 mb-2" data-target="5">0</div>
-      <div class="text-gray-500 text-sm tracking-wide">Years Experience</div>
-    </div>
-
-  </div>
-</section>
-
-
-
-
-
-
-<!-- car  -->
-  <section class="px-[5%] py-[110px] relative overflow-hidden bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9]">
-    <!-- Background glow -->
-    <div
-      class="absolute inset-0 opacity-30 pointer-events-none bg-[radial-gradient(circle_at_20%_30%,rgba(42,157,143,0.15),transparent_60%)]">
-    </div>
-
-    <div class="space-y-10">
-      <div class="relative z-10 mb-12">
-        <!-- HEADING — centered -->
-        <div class="text-center mb-8">
-          <h2 class="font-display text-[clamp(2.2rem,4vw,3rem)] font-semibold text-teal-500 leading-[1.15]">
-              Recommended
-          </h2>
-        </div>
-
-
-      </div>
-
-    </div>
-
-
-    <!-- Carousel -->
-      <div class="relative z-10">
-        <!-- Track -->
-        <div
-          id="tourTrack"
-          class="flex gap-7 overflow-x-auto scroll-smooth no-scrollbar pb-2"
-        >
-
-          <!-- CARD 1 -->
-          <article
-            class="card-reveal snap-start min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)]"
-          >
-            <!-- IMAGE BLOCK -->
-            <div class="relative h-[220px] overflow-hidden">
-              <div class="slider-container relative w-full h-full">
-                <!-- images -->
-                <img
-                  src="images/d2.jpg"
-                  class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500"
-                />
-
-                <img
-                  src="images/d7.jpg"
-                  class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
-                />
-
-                <img
-                  src="images/r6.jpg"
-                  class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
-                />
-
-                <!-- overlay (premium touch) -->
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition"
-                ></div>
-
-                <!-- arrows -->
-                <button
-                  class="prev absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white"
-                >
-                  ←
-                </button>
-
-                <button
-                  class="next absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white"
-                >
-                  →
-                </button>
-
-
-                 <div
-              class="flex justify-between items-center px-6 py-4 border-t border-gray-100"
-            >
-              <div
-                class="font-display text-[1.3rem] font-semibold text-white-900"
-              >
-                ₹14,000
-
-              </div>
-
-              <a
-                href="goldentriangle.html"
-                class="px-4 py-2 rounded-lg  text-white text-sm hover:bg-teal-500 transition"
-              >
-                <i data-lucide="arrow-right" class="w-5 h-5  rotate-[-45deg]"></i>
-              </a>
-            </div>
-
-                <!-- dots -->
-                <div
-                  class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 opacity-0 group-hover:opacity-100 transition"
-                >
-                  <span
-                    class="slider-dot w-2 h-2 rounded-full bg-white cursor-pointer"
-                  ></span>
-                  <span
-                    class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"
-                  ></span>
-                  <span
-                    class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"
-                  ></span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-
-
-
-
-          <!-- CARD 2 -->
-          <article
-            class="card-reveal snap-start min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)]"
-          >
-            <!-- IMAGE BLOCK -->
-            <div class="relative h-[220px] overflow-hidden">
-              <div class="slider-container relative w-full h-full">
-                <!-- images -->
-                <img
-                  src="images/kerala1.jpg"
-                  class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500"
-                />
-
-                <img
-                  src="images/kerala2.jpg"
-                  class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
-                />
-
-                <img
-                  src="images/kerala3.jpg"
-                  class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
-                />
-
-                <!-- overlay (premium touch) -->
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition"
-                ></div>
-
-                <!-- arrows -->
-                <button
-                  class="prev absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white"
-                >
-                  ←
-                </button>
-
-                <button
-                  class="next absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white"
-                >
-                  →
-                </button>
-
-                <!-- dots -->
-                <div
-                  class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 opacity-0 group-hover:opacity-100 transition"
-                >
-                  <span
-                    class="slider-dot w-2 h-2 rounded-full bg-white cursor-pointer"
-                  ></span>
-                  <span
-                    class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"
-                  ></span>
-                  <span
-                    class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"
-                  ></span>
-                </div>
-              </div>
-            </div>
-
-            <!-- CONTENT -->
-            <div class="p-6">
-              <h3
-                class="font-display text-[1.35rem] font-semibold text-ink-900"
-              >
-                Kerala trip
-              </h3>
-              <p class="text-[0.82rem] text-gray-500 mb-3">
-                Kochi → Munnar → Alleppey
-              </p>
-
-              <div class="flex gap-4 text-[0.8rem] text-gray-500 mb-4">
-                <span>7 Days</span>
-                <span class="text-amber-500">★ 4.8</span>
-                <span>Private</span>
-              </div>
-            </div>
-
-            <!-- FOOTER -->
-            <div
-              class="flex justify-between items-center px-6 py-4 border-t border-gray-100"
-            >
-              <div
-                class="font-display text-[1.3rem] font-semibold text-ink-900"
-              >
-                ₹20,000
-                <span class="text-[0.75rem] text-gray-500">/ person</span>
-              </div>
-
-              <a
-                href="kerala.html"
-                class="px-4 py-2 rounded-lg bg-ink-900 text-white text-sm hover:bg-teal-500 transition"
-              >
-                Details
-              </a>
-            </div>
-          </article>
-
-          <!-- CARD 3 -->
-          <article
-            class="card-reveal snap-start min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)]"
-          >
-            <!-- IMAGE BLOCK -->
-            <div class="relative h-[220px] overflow-hidden">
-              <div class="slider-container relative w-full h-full">
-                <!-- images -->
-                <img
-                  src="images/k1.jpg"
-                  class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500"
-                />
-
-                <img
-                  src="images/k2.jpg"
-                  class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
-                />
-
-                <img
-                  src="images/k3.jpg"
-                  class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
-                />
-
-                <!-- overlay (premium touch) -->
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition"
-                ></div>
-
-                <!-- arrows -->
-                <button
-                  class="prev absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white"
-                >
-                  ←
-                </button>
-
-                <button
-                  class="next absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white"
-                >
-                  →
-                </button>
-
-                <!-- dots -->
-                <div
-                  class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 opacity-0 group-hover:opacity-100 transition"
-                >
-                  <span
-                    class="slider-dot w-2 h-2 rounded-full bg-white cursor-pointer"
-                  ></span>
-                  <span
-                    class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"
-                  ></span>
-                  <span
-                    class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"
-                  ></span>
-                </div>
-              </div>
-            </div>
-
-            <!-- CONTENT -->
-            <div class="p-6">
-              <h3
-                class="font-display text-[1.35rem] font-semibold text-ink-900"
-              >
-                Kashmir Trip
-              </h3>
-              <p class="text-[0.82rem] text-gray-500 mb-3">
-                Srinagar → Sonmarg → Gulmarg
-              </p>
-
-              <div class="flex gap-4 text-[0.8rem] text-gray-500 mb-4">
-                <span>7 Days</span>
-                <span class="text-amber-500">★ 4.9</span>
-                <span>Private</span>
-              </div>
-            </div>
-
-            <!-- FOOTER -->
-            <div
-              class="flex justify-between items-center px-6 py-4 border-t border-gray-100"
-            >
-              <div
-                class="font-display text-[1.3rem] font-semibold text-ink-900"
-              >
-                ₹18,000
-                <span class="text-[0.75rem] text-gray-500">/ person</span>
-              </div>
-
-              <a
-                href="goldentriangle.html"
-                class="px-4 py-2 rounded-lg bg-ink-900 text-white text-sm hover:bg-teal-500 transition"
-              >
-                Details
-              </a>
-            </div>
-          </article>
-
-
-                <!-- goa------------- -->
-        <article
-          class="card-reveal snap-start min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
-          <!-- IMAGE BLOCK -->
-          <div class="relative h-[220px] overflow-hidden">
-            <div class="slider-container relative w-full h-full">
-              <!-- BADGE top-left -->
-              <div
-                class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400 text-amber-900 font-bold text-amber-900 shadow-md tracking-wide uppercase">
-                🔥 Bestseller
-              </div>
-
-              <!-- IMAGES -->
-              <img src="tourimages/goa1.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/goa2.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/goa3.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/goa4.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-
-              <!-- dark overlay on hover -->
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/40 to-black/0 opacity-0 group-hover:opacity-100 transition">
-              </div>
-
-              <!-- ARROWS -->
-              <button
-                class="prev absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white">
-                ←
-              </button>
-              <button
-                class="next absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white">
-                →
-              </button>
-
-              <!-- DOTS -->
-              <div
-                class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 opacity-0 group-hover:opacity-100 transition z-10">
-                <span class="slider-dot w-2 h-2 rounded-full bg-white cursor-pointer"></span>
-                <span class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"></span>
-                <span class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"></span>
-                <span class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"></span>
-              </div>
-            </div>
-          </div>
-
-          <!-- CONTENT -->
-          <div class="p-6">
-            <h3 class="font-display text-[1.35rem] font-semibold text-gray-900">
-              Goa Beach Escape
-            </h3>
-            <p class="text-[0.82rem] text-gray-500 mb-3">
-              Panaji → Calangute → Palolem
-            </p>
-            <div class="flex gap-4 text-[0.8rem] text-gray-500 mb-4">
-              <span>3 Days</span>
-              <span class="text-amber-500">★ 4.9</span>
-              <span>Private</span>
-            </div>
-          </div>
-
-          <!-- FOOTER -->
-          <div class="flex justify-between items-center px-6 py-4 border-t border-gray-100">
-            <div>
-              <div class="text-xs text-gray-400 line-through">₹9,000</div>
-              <div class="font-display text-[1.3rem] font-semibold text-gray-900">
-                ₹7,500
-                <span class="text-[0.75rem] text-gray-500">/ person</span>
-              </div>
-              <div
-                class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5">
-                Save ₹1,500
-              </div>
-            </div>
-            <a href="goa.html"
-              class="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm hover:bg-teal-500 transition">Details</a>
-          </div>
-        </article>
-
-        <!-- manali -->
-        <article
-          class="card-reveal snap-start min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
-          <!-- IMAGE BLOCK -->
-          <div class="relative h-[220px] overflow-hidden">
-            <div class="slider-container relative w-full h-full">
-              <!-- BADGE top-left -->
-              <div
-                class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400 text-amber-900 font-bold text-amber-900 shadow-md tracking-wide uppercase">
-                ❄️ Most Booked
-              </div>
-
-              <!-- IMAGES -->
-
-              <img src="tourimages/manali1.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/manali2.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/manali3.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/manali4.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/manali5.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-
-              <!-- dark overlay on hover -->
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/40 to-black/0 opacity-0 group-hover:opacity-100 transition">
-              </div>
-
-              <!-- ARROWS -->
-              <button
-                class="prev absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white">
-                ←
-              </button>
-              <button
-                class="next absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white">
-                →
-              </button>
-
-              <!-- DOTS -->
-              <div
-                class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 opacity-0 group-hover:opacity-100 transition z-10">
-                <span class="slider-dot w-2 h-2 rounded-full bg-white cursor-pointer"></span>
-                <span class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"></span>
-                <span class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"></span>
-                <span class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"></span>
-              </div>
-
-              <!-- LOCATION PILL bottom-left -->
-            </div>
-          </div>
-
-          <!-- CONTENT -->
-          <div class="p-6">
-            <h3 class="font-display text-[1.35rem] font-semibold text-gray-900">
-              Manali Snow Trip
-            </h3>
-            <p class="text-[0.82rem] text-gray-500 mb-3">
-              Delhi → Kullu → Manali
-            </p>
-            <div class="flex gap-4 text-[0.8rem] text-gray-500 mb-4">
-              <span>5 Days</span>
-              <span class="text-amber-500">★ 4.8</span>
-              <span>Private</span>
-            </div>
-          </div>
-
-          <!-- FOOTER -->
-          <div class="flex justify-between items-center px-6 py-4 border-t border-gray-100">
-            <div>
-              <div class="text-xs text-gray-400 line-through">₹16,000</div>
-              <div class="font-display text-[1.3rem] font-semibold text-gray-900">
-                ₹13,500
-                <span class="text-[0.75rem] text-gray-500">/ person</span>
-              </div>
-              <div
-                class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5">
-                Save ₹2,500
-              </div>
-            </div>
-            <a href="manali.html"
-              class="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm hover:bg-teal-500 transition">Details</a>
-          </div>
-        </article>
-
-        <!-- varanasi  -->
-        <article
-          class="card-reveal snap-start min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
-          <!-- IMAGE BLOCK -->
-          <div class="relative h-[220px] overflow-hidden">
-            <div class="slider-container relative w-full h-full">
-              <!-- BADGE top-left -->
-              <div
-                class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-400 text-orange-900 font-bold text-amber-900 shadow-md tracking-wide uppercase">
-                🪔 Spiritual
-              </div>
-
-              <!-- IMAGES -->
-              <img src="tourimages/kashi1.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/kashi2.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/kashi3.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/kashi4.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-
-              <!-- dark overlay on hover -->
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/40 to-black/0 opacity-0 group-hover:opacity-100 transition">
-              </div>
-
-              <!-- ARROWS -->
-              <button
-                class="prev absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white">
-                ←
-              </button>
-              <button
-                class="next absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white">
-                →
-              </button>
-
-              <!-- DOTS -->
-              <div
-                class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 opacity-0 group-hover:opacity-100 transition z-10">
-                <span class="slider-dot w-2 h-2 rounded-full bg-white cursor-pointer"></span>
-                <span class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"></span>
-                <span class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"></span>
-                <span class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"></span>
-              </div>
-            </div>
-          </div>
-
-          <!-- CONTENT -->
-          <div class="p-6">
-            <h3 class="font-display text-[1.35rem] font-semibold text-gray-900">
-              Varanasi Spiritual
-            </h3>
-            <p class="text-[0.82rem] text-gray-500 mb-3">
-              Varanasi → Sarnath → Bodh Gaya
-            </p>
-            <div class="flex gap-4 text-[0.8rem] text-gray-500 mb-4">
-              <span>4 Days</span>
-              <span class="text-amber-500">★ 4.7</span>
-              <span>Private</span>
-            </div>
-          </div>
-
-          <!-- FOOTER -->
-          <div class="flex justify-between items-center px-6 py-4 border-t border-gray-100">
-            <div>
-              <div class="text-xs text-gray-400 line-through">₹10,000</div>
-              <div class="font-display text-[1.3rem] font-semibold text-gray-900">
-                ₹8,500
-                <span class="text-[0.75rem] text-gray-500">/ person</span>
-              </div>
-              <div
-                class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5">
-                Save ₹1,500
-              </div>
-            </div>
-            <a href="kashi.html"
-              class="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm hover:bg-teal-500 transition">Details</a>
-          </div>
-        </article>
-
-
-
-        <!-- andaman  -->
-        <article
-          class="card-reveal snap-start min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
-          <!-- IMAGE BLOCK -->
-          <div class="relative h-[220px] overflow-hidden">
-            <div class="slider-container relative w-full h-full">
-              <!-- BADGE top-left -->
-              <div
-                class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-fullbg-cyan-400 text-cyan-900 font-bold text-amber-900 shadow-md tracking-wide uppercase">
-                🏝️ Top Pick
-              </div>
-
-              <!-- IMAGES -->
-              <img src="tourimages/portblair1.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/portblair2.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/andaman1.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/andaman2.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/andaman3.jpg"
-                class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-
-              <!-- dark overlay on hover -->
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/40 to-black/0 opacity-0 group-hover:opacity-100 transition">
-              </div>
-
-              <!-- ARROWS -->
-              <button
-                class="prev absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white">
-                ←
-              </button>
-              <button
-                class="next absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white">
-                →
-              </button>
-
-              <!-- DOTS -->
-              <div
-                class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 opacity-0 group-hover:opacity-100 transition z-10">
-                <span class="slider-dot w-2 h-2 rounded-full bg-white cursor-pointer"></span>
-                <span class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"></span>
-                <span class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"></span>
-                <span class="slider-dot w-2 h-2 rounded-full bg-white/50 cursor-pointer"></span>
-              </div>
-            </div>
-          </div>
-
-          <!-- CONTENT -->
-          <div class="p-6">
-            <h3 class="font-display text-[1.35rem] font-semibold text-gray-900">
-              Andaman Islands
-            </h3>
-            <p class="text-[0.82rem] text-gray-500 mb-3">
-              Port Blair → Havelock → Neil Island
-            </p>
-            <div class="flex gap-4 text-[0.8rem] text-gray-500 mb-4">
-              <span>7 Days</span>
-              <span class="text-amber-500">★ 4.9</span>
-              <span>Private</span>
-            </div>
-          </div>
-
-          <!-- FOOTER -->
-          <div class="flex justify-between items-center px-6 py-4 border-t border-gray-100">
-            <div>
-              <div class="text-xs text-gray-400 line-through">₹28,000</div>
-              <div class="font-display text-[1.3rem] font-semibold text-gray-900">
-                ₹24,000
-                <span class="text-[0.75rem] text-gray-500">/ person</span>
-              </div>
-              <div
-                class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5">
-                Save ₹4,000
-              </div>
-            </div>
-            <a href="andamanIsland.html"
-              class="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm hover:bg-teal-500 transition">Details</a>
-          </div>
-        </article>
-
-
-
-
-        </div>
-
-        <!-- Buttons -->
-        <div class="flex justify-end gap-3 mt-8">
-          <button
-            id="tourPrev"
-            class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-teal-500 hover:text-white transition"
-          >
-            ←
-          </button>
-          <button
-            id="tourNext"
-            class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-teal-500 hover:text-white transition"
-          >
-            →
-          </button>
-        </div>
-
-
-      </div>
-
-  </section>
-
-
-
-
-
-        <!-- car featured ------------------------------- -->
-    <section
-      class="px-[5%] py-[110px] relative overflow-hidden bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9]"
-    >
-      <!-- HEADER -->
-      <div class="flex justify-between items-end mb-10">
-        <div>
-          <span
-            class="text-[11px] font-semibold tracking-[0.15em] uppercase text-teal-500 mb-3 block"
-          >
-            Our Fleet
-          </span>
-          <h2
-            class="font-display text-[clamp(2rem,4vw,2.9rem)] font-semibold text-gray-900 leading-[1.15] mb-3"
-          >
-           Cars Our Travellers Love Most
-          </h2>
-
-        </div>
-      </div>
-
-      <!-- TRACK -->
-      <div class="flex gap-7 overflow-x-auto scroll-smooth no-scrollbar pb-2">
-        <!--CARD TEMPLATE -->
-
-        <!-- XUV700 -->
-     <article class="min-w-[300px] max-w-[320px] group bg-white rounded-[16px]
-border border-gray-200 overflow-hidden transition-all duration-300
-hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
-  <div class="relative h-[220px] overflow-hidden slider-container">
-
-    <!-- BESTSELLER BADGE -->
-    <div class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400 text-[0.7rem] font-bold text-amber-900 shadow-md tracking-wide uppercase">
-      🔥 Bestseller
-    </div>
-
-    <img src="carpic/mahindraSuv1.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-     <img src="carpic/mahindraSuv2.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-       <img src="carpic/mahindraSuv3.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-       <img src="carpic/mahindraSuv4.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-
-   <button
-  class="prev absolute left-3 top-1/2 -translate-y-1/2
-  bg-white/90 p-2 rounded-full shadow
-  opacity-100 md:opacity-0 md:group-hover:opacity-100
-  transition duration-300 hover:scale-110">
-
-  <i data-lucide="chevron-left" class="w-5 h-5 text-gray-700"></i>
-</button>
-
-<!-- RIGHT BUTTON -->
-<button
-  class="next absolute right-3 top-1/2 -translate-y-1/2
-  bg-white/90 p-2 rounded-full shadow
-  opacity-100 md:opacity-0 md:group-hover:opacity-100
-  transition duration-300 hover:scale-110">
-
-  <i data-lucide="chevron-right" class="w-5 h-5 text-gray-700"></i>
-</button>
-  </div>
-
-  <div class="p-6">
-    <h3 class="font-semibold text-lg">Mahindra XUV700</h3>
-    <p class="text-sm text-gray-500 mb-3">7 Seater • SUV • Diesel</p>
-    <div class="text-sm text-gray-500 mb-4">₹18/km • AC • Comfortable Ride</div>
-  </div>
-
- <div class="flex justify-between items-center px-6 py-4 border-t">
-  <div>
-    <div class="text-xs text-gray-400 line-through">₹5500/day</div>
-    <div class="font-bold text-lg text-gray-900">₹4500/day</div>
-    <div class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5">Save ₹1000</div>
-  </div>
- <a
-  href="https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Mahindra%20XUV700%20for%20rent."
-  target="_blank"
-  class="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
->
-  Book
-</a>
-</div>
-</article>
-
-
-        <!-- maruti suzuki dzire -->
-         <article class="min-w-[300px] max-w-[320px] group bg-white rounded-[16px]
-border border-gray-200 overflow-hidden transition-all duration-300
-hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
-  <div class="relative h-[220px] overflow-hidden slider-container">
-
-    <!-- BESTSELLER BADGE -->
-    <div class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-400 text-sky-900 font-bold text-amber-900 shadow-md tracking-wide uppercase">
-      ⭐ Top Choice
-    </div>
-
-    <img src="carpic/dzire1.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-     <img src="carpic/dzire2.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-       <img src="carpic/dzire3.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-       <img src="carpic/dzire4.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-
-    <button
-  class="prev absolute left-3 top-1/2 -translate-y-1/2
-  bg-white/90 p-2 rounded-full shadow
-  opacity-100 md:opacity-0 md:group-hover:opacity-100
-  transition duration-300 hover:scale-110">
-
-  <i data-lucide="chevron-left" class="w-5 h-5 text-gray-700"></i>
-</button>
-
-<!-- RIGHT BUTTON -->
-<button
-  class="next absolute right-3 top-1/2 -translate-y-1/2
-  bg-white/90 p-2 rounded-full shadow
-  opacity-100 md:opacity-0 md:group-hover:opacity-100
-  transition duration-300 hover:scale-110">
-
-  <i data-lucide="chevron-right" class="w-5 h-5 text-gray-700"></i>
-</button>
-  </div>
-
-  <div class="p-6">
-    <h3 class="font-semibold text-lg">Maruti Suzuki Dzire</h3>
-    <p class="text-sm text-gray-500 mb-3">4 Seater • Sedan • Petrol/CNG</p>
-    <div class="text-sm text-gray-500 mb-4">₹13/km • AC • Smooth City Ride </div>
-  </div>
-
- <div class="flex justify-between items-center px-6 py-4 border-t">
-  <div>
-    <div class="text-xs text-gray-400 line-through">₹3800/day</div>
-    <div class="font-bold text-lg text-gray-900">₹3200/day</div>
-    <div class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5">Save ₹600</div>
-  </div>
-  <a
-  href="https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Mahindra%20XUV700%20for%20rent."
-  target="_blank"
-  class="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
->
-  Book
-</a>
-</div>
-</article>
-
-        <!-- toyota INNOVA  -->
-      <article class="min-w-[300px] max-w-[320px] group bg-white rounded-[16px]
-border border-gray-200 overflow-hidden transition-all duration-300
-hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
-  <div class="relative h-[220px] overflow-hidden slider-container">
-
-    <!-- BESTSELLER BADGE -->
-    <div class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400 text-amber-900 font-bold text-amber-900 shadow-md tracking-wide uppercase">
-      🔥 Most Booked
-    </div>
-
-   <img src="carpic/inova1.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-     <img src="carpic/inova2.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-       <img src="carpic/inova3.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-       <img src="carpic/inova4.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-
-    <button
-  class="prev absolute left-3 top-1/2 -translate-y-1/2
-  bg-white/90 p-2 rounded-full shadow
-  opacity-100 md:opacity-0 md:group-hover:opacity-100
-  transition duration-300 hover:scale-110">
-
-  <i data-lucide="chevron-left" class="w-5 h-5 text-gray-700"></i>
-</button>
-
-<!-- RIGHT BUTTON -->
-<button
-  class="next absolute right-3 top-1/2 -translate-y-1/2
-  bg-white/90 p-2 rounded-full shadow
-  opacity-100 md:opacity-0 md:group-hover:opacity-100
-  transition duration-300 hover:scale-110">
-
-  <i data-lucide="chevron-right" class="w-5 h-5 text-gray-700"></i>
-</button>
-  </div>
-
-  <div class="p-6">
-    <h3 class="font-semibold text-lg"> Toyota Innova Crysta</h3>
-    <p class="text-sm text-gray-500 mb-3">7 Seater • MUV • Diesel</p>
-    <div class="text-sm text-gray-500 mb-4">₹18/km • AC • Premium Interior</div>
-  </div>
-
- <div class="flex justify-between items-center px-6 py-4 border-t">
-  <div>
-    <div class="text-xs text-gray-400 line-through">₹6000/day</div>
-    <div class="font-bold text-lg text-gray-900">₹5000/day</div>
-    <div class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5">Save ₹1000</div>
-  </div>
- <a
-  href="https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Mahindra%20XUV700%20for%20rent."
-  target="_blank"
-  class="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
->
-  Book
-</a>
-</div>
-</article>
-
-       <!-- mahindra thar -->
-      <article class="min-w-[300px] max-w-[320px] group bg-white rounded-[16px]
-border border-gray-200 overflow-hidden transition-all duration-300
-hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
-  <div class="relative h-[220px] overflow-hidden slider-container">
-
-    <!-- BESTSELLER BADGE -->
-    <div class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-500 text-stone-100 font-bold text-amber-900 shadow-md tracking-wide uppercase">
-      🧗 Off-Road King
-    </div>
-
-    <img src="carpic/thar1.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-     <img src="carpic/thar2.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-       <img src="carpic/thar3.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-       <img src="carpic/thar4.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-    <button
-  class="prev absolute left-3 top-1/2 -translate-y-1/2
-  bg-white/90 p-2 rounded-full shadow
-  opacity-100 md:opacity-0 md:group-hover:opacity-100
-  transition duration-300 hover:scale-110">
-
-  <i data-lucide="chevron-left" class="w-5 h-5 text-gray-700"></i>
-</button>
-
-<!-- RIGHT BUTTON -->
-<button
-  class="next absolute right-3 top-1/2 -translate-y-1/2
-  bg-white/90 p-2 rounded-full shadow
-  opacity-100 md:opacity-0 md:group-hover:opacity-100
-  transition duration-300 hover:scale-110">
-
-  <i data-lucide="chevron-right" class="w-5 h-5 text-gray-700"></i>
-</button>
-  </div>
-
-  <div class="p-6">
-    <h3 class="font-semibold text-lg">  Mahindra Thar — Adventure 4x4</h3>
-    <p class="text-sm text-gray-500 mb-3">4 Seater • 4x4 SUV • Diesel</p>
-    <div class="text-sm text-gray-500 mb-4">₹18/km • AC •  4WD Mountain Beast</div>
-  </div>
-
- <div class="flex justify-between items-center px-6 py-4 border-t">
-  <div>
-    <div class="text-xs text-gray-400 line-through">₹5000/day</div>
-    <div class="font-bold text-lg text-gray-900">₹4200/day</div>
-    <div class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5">Save ₹800</div>
-  </div>
- <a
-  href="https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Mahindra%20XUV700%20for%20rent."
-  target="_blank"
-  class="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
->
-  Book
-</a>
-</div>
-</article>
-
-
-       <!-- XUV700 -->
-      <article class="min-w-[300px] max-w-[320px] group bg-white rounded-[16px]
-border border-gray-200 overflow-hidden transition-all duration-300
-hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
-  <div class="relative h-[220px] overflow-hidden slider-container">
-
-    <!-- BESTSELLER BADGE -->
-    <div class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-yellow-500 text-yellow-950 font-bold text-amber-900 shadow-md tracking-wide uppercase">
-      👑 Luxury Pick
-    </div>
-
-    <img src="carpic/fortuner1.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-     <img src="carpic/fortuner2.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-       <img src="carpic/fortuner3.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-       <img src="carpic/f4.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-
-    <button
-  class="prev absolute left-3 top-1/2 -translate-y-1/2
-  bg-white/90 p-2 rounded-full shadow
-  opacity-100 md:opacity-0 md:group-hover:opacity-100
-  transition duration-300 hover:scale-110">
-
-  <i data-lucide="chevron-left" class="w-5 h-5 text-gray-700"></i>
-</button>
-
-<!-- RIGHT BUTTON -->
-<button
-  class="next absolute right-3 top-1/2 -translate-y-1/2
-  bg-white/90 p-2 rounded-full shadow
-  opacity-100 md:opacity-0 md:group-hover:opacity-100
-  transition duration-300 hover:scale-110">
-
-  <i data-lucide="chevron-right" class="w-5 h-5 text-gray-700"></i>
-</button>
-  </div>
-
-  <div class="p-6">
-    <h3 class="font-semibold text-lg"> Toyota Fortuner </h3>
-    <p class="text-sm text-gray-500 mb-3">7 Seater • Premium SUV • Diesel</p>
-    <div class="text-sm text-gray-500 mb-4">₹22/km • AC • Ultimate Luxury</div>
-  </div>
-
- <div class="flex justify-between items-center px-6 py-4 border-t">
-  <div>
-    <div class="text-xs text-gray-400 line-through">₹8500/day</div>
-    <div class="font-bold text-lg text-gray-900">₹7000/day</div>
-    <div class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5">Save ₹1000</div>
-  </div>
- <a
-  href="https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Mahindra%20XUV700%20for%20rent."
-  target="_blank"
-  class="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
->
-  Book
-</a>
-</div>
-</article>
-
-
-      </div>
-    </section>
 
 
 <!-- get recommendation  -->
-<section class="px-[5%] py-[100px] bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+<section class="px-[5%] py-[80px] md:py-[100px] bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9] relative overflow-hidden">
 
   <!-- subtle glow -->
-  <div class="absolute inset-0 opacity-20
-    bg-[radial-gradient(circle_at_70%_40%,rgba(42,157,143,0.25),transparent_60%)]">
+  <div class="absolute inset-0 -z-10 animate-gradient bg-[radial-gradient(circle_at_20%_30%,rgba(42,157,143,0.18),transparent_60%), radial-gradient(circle_at_80%_70%,rgba(79,190,203,0.15),transparent_60%), linear-gradient(120deg,#f8fafc,#eef3f9,#f8fafc)]">
   </div>
 
   <div class="relative z-10 max-w-[900px] mx-auto text-center reveal reveal-up">
@@ -2158,7 +524,7 @@ hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157
     </h2>
 
     <!-- SUBTEXT -->
-    <p class="text-gray-500 text-[1.05rem] max-w-[650px] mx-auto mb-10 leading-relaxed">
+    <p class="text-gray-500 text-[1.05rem] max-w-[650px] mx-auto mb-8 leading-relaxed">
       Tell us your destination, dates, and group size. We’ll help you choose the perfect vehicle and plan your journey.
     </p>
 
@@ -2183,8 +549,93 @@ hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157
 </section>
 
 
-  <!-- why choose us ------------------->
-<section id="why" class="px-[5%] py-[140px] relative overflow-hidden">
+
+
+
+        <!-- car featured ------------------------------- -->
+    <section
+    class="px-[5%] mt-8  relative overflow-hidden bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9]"
+    >
+      <!-- HEADER -->
+      <div class="flex justify-between items-end mb-8 reveal">
+        <div class="mb-8 reveal">
+          <span
+            class="text-[11px] font-semibold tracking-[0.15em] uppercase text-teal-500 mb-3 block"
+          >
+            Our Fleet
+          </span>
+          <h2
+            class="font-display text-[clamp(2rem,4vw,2.9rem)] font-semibold text-gray-900 leading-[1.15] mb-3"
+          >
+           Cars Our Travellers Love Most
+          </h2>
+
+        </div>
+      </div>
+
+     <!-- TRACK -->
+<div id="carTrack"
+  class="flex gap-7 overflow-x-auto px-[5%] py-[40px]
+  snap-x snap-mandatory scroll-smooth no-scrollbar">
+</div>
+
+<!-- TEMPLATE -->
+<template id="car-card-template">
+  <article class="snap-start min-w-[300px] max-w-[320px] group bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9] rounded-[16px]
+  border border-gray-200 overflow-hidden transition-all duration-300
+  hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
+
+    <div class="relative h-[220px] overflow-hidden">
+      <div class="images-wrapper relative w-full h-full"></div>
+    </div>
+
+    <div class="p-6">
+      <h3 class="car-title font-display text-[1.35rem] font-semibold text-gray-900"></h3>
+      <p class="car-specs text-sm text-gray-500 mb-3"></p>
+      <div class="car-features text-sm text-gray-500 mb-4"></div>
+    </div>
+
+    <div class="flex justify-between items-center px-6 py-4 border-t">
+      <div class="car-price"></div>
+      <a class="car-cta px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition">
+        Book
+      </a>
+    </div>
+
+  </article>
+</template>
+
+
+       <div class="flex justify-end gap-3 mt-8 reveal">
+
+  <!-- PREVIOUS -->
+  <button id="tourPrev"
+    class="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-700
+    hover:bg-teal-500 hover:text-white transition">
+
+    ← <span>Previous</span>
+  </button>
+
+  <!-- NEXT -->
+  <button id="tourNext"
+    class="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-700
+    hover:bg-teal-500 hover:text-white transition">
+
+    <span>Next</span> →
+  </button>
+
+</div>
+    </section>
+
+
+
+
+
+
+
+
+<!-- why choose us ------------------->
+<section id="why" class="px-[5%] py-[80px] md:py-[100px] relative overflow-hidden">
 
   <!-- BACKGROUND -->
   <div
@@ -2192,22 +643,22 @@ hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157
   </div>
 
   <!-- HEADING -->
-  <div class="text-center max-w-[720px] mx-auto mb-24 reveal">
+  <div class="text-center max-w-[720px] mx-auto mb-12 reveal">
     <span class="text-xs uppercase tracking-[0.3em] text-teal-500 font-semibold">
       Simple Process
     </span>
 
-    <h2 class="text-[clamp(2.6rem,5vw,3.8rem)] font-semibold mt-5 leading-[1.1] text-gray-900">
+    <h2 class="text-[clamp(2.6rem,5vw,3.8rem)] font-semibold mt-4 leading-[1.1] text-gray-900">
       How It Works
     </h2>
 
-    <p class="text-gray-500 mt-5 text-[1rem]">
+    <p class="text-gray-500 mt-4 text-[1rem]">
       A smooth process designed to get you on the road without friction.
     </p>
   </div>
 
   <!-- STEPS -->
-  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-[1200px] mx-auto">
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-[1200px] mx-auto">
 
     <!-- STEP 1 -->
     <div class="reveal reveal-left group relative">
@@ -2313,11 +764,8 @@ hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157
 </section>
 
   <!---------------REVIEWS — auto-scrolling------------>
- <section id="reviews" class="relative py-20 overflow-hidden bg-gradient-to-br from-[#f8fbff] to-[#eef3f9]">
+ <section id="reviews" class="relative py-[100px] overflow-hidden      absolute inset-0 -z-10 animate-gradient bg-[radial-gradient(circle_at_20%_30%,rgba(42,157,143,0.18),transparent_60%), radial-gradient(circle_at_80%_70%,rgba(79,190,203,0.15),transparent_60%), linear-gradient(120deg,#f8fafc,#eef3f9,#f8fafc)]">
 
-  <!-- Blobs -->
-  <div class="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] rounded-full bg-teal-500/20 blur-[80px] pointer-events-none"></div>
-  <div class="absolute bottom-[-100px] right-[-100px] w-[300px] h-[300px] rounded-full bg-teal-500/20 blur-[80px] pointer-events-none"></div>
 
   <!-- Heading -->
   <div class="text-center mb-14 relative z-10">
@@ -2338,13 +786,16 @@ hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157
         <span class="text-[0.78rem] text-gray-400 mb-4 z-10">🇮🇳 Mumbai</span>
         <div class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none">"</div>
         <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">Driver was very polite and always on time. Car was clean throughout the trip.</p>
-        <div class="mt-auto z-10">
-          <h4 class="font-semibold text-[0.92rem] text-gray-900">Rohit Sharma</h4>
-          <div class="flex items-center justify-center gap-0.5 mt-1">
-            <span class="text-teal-500 text-sm">★★★★★</span>
-            <span class="text-gray-400 text-xs ml-1">4.8</span>
-          </div>
-        </div>
+     <div class="mt-auto z-10">
+  <h4 class="font-semibold text-[0.92rem] text-gray-900">Rohit Sharma</h4>
+  <div class="flex items-center justify-center gap-2 mt-1.5">
+    <div class="star-rating">
+      <span class="stars-empty">★★★★★</span>
+      <span class="stars-filled" style="width: 96%">★★★★★</span>
+    </div>
+    <span class="text-gray-400 text-xs">4.8</span>
+  </div>
+</div>
       </div>
 
       <!-- Card 2 -->
@@ -2354,13 +805,16 @@ hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157
         <span class="text-[0.78rem] text-gray-400 mb-4 z-10">🇮🇳 Delhi</span>
         <div class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none">"</div>
         <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">Travelled with parents, everything was smooth and comfortable. No stress at all.</p>
-        <div class="mt-auto z-10">
-          <h4 class="font-semibold text-[0.92rem] text-gray-900">Neha Verma</h4>
-          <div class="flex items-center justify-center gap-0.5 mt-1">
-            <span class="text-teal-500 text-sm">★★★★★</span>
-            <span class="text-gray-400 text-xs ml-1">4.9</span>
-          </div>
-        </div>
+       <div class="mt-auto z-10">
+  <h4 class="font-semibold text-[0.92rem] text-gray-900">Neha Verma</h4>
+  <div class="flex items-center justify-center gap-2 mt-1.5">
+    <div class="star-rating">
+      <span class="stars-empty">★★★★★</span>
+      <span class="stars-filled" style="width: 98%">★★★★★</span>
+    </div>
+    <span class="text-gray-400 text-xs">4.9</span>
+  </div>
+</div>
       </div>
 
       <!-- Card 3 -->
@@ -2370,13 +824,16 @@ hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157
         <span class="text-[0.78rem] text-gray-400 mb-4 z-10">🇮🇳 Gurgaon</span>
         <div class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none">"</div>
         <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">Honestly better than expected. Driver knew all routes and avoided traffic perfectly.</p>
-        <div class="mt-auto z-10">
-          <h4 class="font-semibold text-[0.92rem] text-gray-900">Aman Gupta</h4>
-          <div class="flex items-center justify-center gap-0.5 mt-1">
-            <span class="text-teal-500 text-sm">★★★★★</span>
-            <span class="text-gray-400 text-xs ml-1">4.7</span>
-          </div>
-        </div>
+       <div class="mt-auto z-10">
+  <h4 class="font-semibold text-[0.92rem] text-gray-900">Aman Gupta</h4>
+  <div class="flex items-center justify-center gap-2 mt-1.5">
+    <div class="star-rating">
+      <span class="stars-empty">★★★★★</span>
+      <span class="stars-filled" style="width: 94%">★★★★★</span>
+    </div>
+    <span class="text-gray-400 text-xs">4.7</span>
+  </div>
+</div>
       </div>
 
       <!-- Card 4 -->
@@ -2386,13 +843,16 @@ hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157
         <span class="text-[0.78rem] text-gray-400 mb-4 z-10">🇮🇳 Ahmedabad</span>
         <div class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none">"</div>
         <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">Very professional service. Car condition was excellent and the ride felt completely safe.</p>
-        <div class="mt-auto z-10">
-          <h4 class="font-semibold text-[0.92rem] text-gray-900">Pooja Mehta</h4>
-          <div class="flex items-center justify-center gap-0.5 mt-1">
-            <span class="text-teal-500 text-sm">★★★★★</span>
-            <span class="text-gray-400 text-xs ml-1">4.8</span>
-          </div>
-        </div>
+      <div class="mt-auto z-10">
+  <h4 class="font-semibold text-[0.92rem] text-gray-900">Pooja Mehta</h4>
+  <div class="flex items-center justify-center gap-2 mt-1.5">
+    <div class="star-rating">
+      <span class="stars-empty">★★★★★</span>
+      <span class="stars-filled" style="width: 96%">★★★★★</span>
+    </div>
+    <span class="text-gray-400 text-xs">4.8</span>
+  </div>
+</div>
       </div>
 
       <!-- Card 5 -->
@@ -2402,13 +862,17 @@ hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157
         <span class="text-[0.78rem] text-gray-400 mb-4 z-10">🇺🇸 USA</span>
         <div class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none">"</div>
         <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">Our India trip felt safe and well-organized. The driver was absolutely excellent.</p>
-        <div class="mt-auto z-10">
-          <h4 class="font-semibold text-[0.92rem] text-gray-900">Daniel Brooks</h4>
-          <div class="flex items-center justify-center gap-0.5 mt-1">
-            <span class="text-teal-500 text-sm">★★★★★</span>
-            <span class="text-gray-400 text-xs ml-1">4.9</span>
-          </div>
-        </div>
+      <div class="mt-auto z-10">
+  <h4 class="font-semibold text-[0.92rem] text-gray-900">Daniel Brooks</h4>
+  <div class="flex items-center justify-center gap-2 mt-1.5">
+    <div class="star-rating">
+      <span class="stars-empty">★★★★★</span>
+      <span class="stars-filled" style="width: 98%">★★★★★</span>
+    </div>
+    <span class="text-gray-400 text-xs">4.9</span>
+  </div>
+</div>
+
       </div>
 
       <!-- Card 6 -->
@@ -2418,13 +882,16 @@ hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157
         <span class="text-[0.78rem] text-gray-400 mb-4 z-10">🇬🇧 UK</span>
         <div class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none">"</div>
         <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">Great experience overall. Very comfortable travel between cities across India.</p>
-        <div class="mt-auto z-10">
-          <h4 class="font-semibold text-[0.92rem] text-gray-900">Emma Wilson</h4>
-          <div class="flex items-center justify-center gap-0.5 mt-1">
-            <span class="text-teal-500 text-sm">★★★★★</span>
-            <span class="text-gray-400 text-xs ml-1">4.8</span>
-          </div>
-        </div>
+       <div class="mt-auto z-10">
+  <h4 class="font-semibold text-[0.92rem] text-gray-900">Emma Wilson</h4>
+  <div class="flex items-center justify-center gap-2 mt-1.5">
+    <div class="star-rating">
+      <span class="stars-empty">★★★★★</span>
+      <span class="stars-filled" style="width: 96%">★★★★★</span>
+    </div>
+    <span class="text-gray-400 text-xs">4.8</span>
+  </div>
+</div>
       </div>
 
       <!-- Card 7 -->
@@ -2434,13 +901,16 @@ hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157
         <span class="text-[0.78rem] text-gray-400 mb-4 z-10">🇮🇳 Hyderabad</span>
         <div class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none">"</div>
         <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">Everything went exactly as planned. Very trustworthy team, will book again.</p>
-        <div class="mt-auto z-10">
-          <h4 class="font-semibold text-[0.92rem] text-gray-900">Sneha Reddy</h4>
-          <div class="flex items-center justify-center gap-0.5 mt-1">
-            <span class="text-teal-500 text-sm">★★★★★</span>
-            <span class="text-gray-400 text-xs ml-1">4.9</span>
-          </div>
-        </div>
+      <div class="mt-auto z-10">
+  <h4 class="font-semibold text-[0.92rem] text-gray-900">Sneha Reddy</h4>
+  <div class="flex items-center justify-center gap-2 mt-1.5">
+    <div class="star-rating">
+      <span class="stars-empty">★★★★★</span>
+      <span class="stars-filled" style="width: 98%">★★★★★</span>
+    </div>
+    <span class="text-gray-400 text-xs">4.9</span>
+  </div>
+</div>
       </div>
 
     </div>
@@ -2451,115 +921,101 @@ hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157
 
 </section>
 
- 
 
-  <!-- FAQ -->
-  <section class="px-[5%] py-[110px] bg-gradient-to-b from-[#f8fafc] to-white relative overflow-hidden">
-    <!-- BACKGROUND DECOR (SUBTLE GLOW) -->
-    <div class="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-teal-100 rounded-full blur-3xl opacity-40">
-    </div>
-    <div
-      class="absolute bottom-[-100px] right-[-100px] w-[300px] h-[300px] bg-blue-100 rounded-full blur-3xl opacity-40">
-    </div>
 
-    <!-- HEADING -->
-    <div class="text-center max-w-[700px] mx-auto mb-16 relative z-10">
-      <span class="text-xs uppercase tracking-[0.25em] text-teal-500 font-semibold">
-        Got Questions?
+
+<!-- FAQ -->
+<section class="px-[5%] py-[80px] md:py-[100px] bg-gradient-to-b from-[#f8fafc] to-white relative overflow-hidden">
+
+  <!-- BACKGROUND DECOR -->
+  <div class="absolute inset-0 -z-10 animate-gradient bg-[radial-gradient(circle_at_20%_30%,rgba(42,157,143,0.18),transparent_60%), radial-gradient(circle_at_80%_70%,rgba(79,190,203,0.15),transparent_60%), linear-gradient(120deg,#f8fafc,#eef3f9,#f8fafc)]"></div>
+
+
+  <!-- HEADING -->
+  <div class="text-center max-w-[700px] mx-auto mb-12 relative z-10">
+    <span class="text-xs uppercase tracking-[0.25em] text-teal-500 font-semibold">
+      Got Questions?
+    </span>
+
+    <h2 class="text-[clamp(2.2rem,4vw,3rem)] font-semibold mt-4 leading-tight text-gray-900">
+      Frequently Asked
+      <span class="text-teal-500 relative inline-block">
+        Questions
+        <span class="absolute left-0 -bottom-1 w-full h-[3px] bg-teal-500/70 rounded-full"></span>
       </span>
+    </h2>
 
-      <h2 class="text-[clamp(2.2rem,4vw,3rem)] font-semibold mt-4 leading-tight text-gray-900">
-        Frequently Asked
-        <span class="text-teal-500 relative inline-block">
-          Questions
-          <span class="absolute left-0 -bottom-1 w-full h-[3px] bg-teal-500/70 rounded-full"></span>
-        </span>
-      </h2>
+    <p class="text-gray-500 mt-4 text-sm">
+      Everything you need to know before booking — clear, simple, transparent.
+    </p>
+  </div>
 
-      <p class="text-gray-500 mt-4 text-sm">
-        Everything you need to know before booking — clear, simple,
-        transparent.
+  <!-- FAQ ITEMS -->
+  <div class="max-w-[820px] mx-auto space-y-4 relative z-10">
+
+    <!-- ITEM -->
+    <details class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
+      <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
+        Is fuel included in the daily rate?
+        <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
+      </summary>
+
+      <p class="mt-3 text-sm text-gray-500 leading-relaxed">
+        Yes. All our rates include driver and fuel for up to 250 km per day.
+        Extra kilometres are charged at the listed per-km rate.
       </p>
-    </div>
+    </details>
 
-    <!-- FAQ -->
-    <div class="max-w-[820px] mx-auto space-y-5 relative z-10">
-      <!-- ITEM -->
-      <details
-        class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
-        <summary
-          class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
-          Is fuel included in the daily rate?
-          <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
-        </summary>
+    <!-- ITEM -->
+    <details class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
+      <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
+        Can I book a one-way trip?
+        <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
+      </summary>
 
-        <p class="mt-3 text-sm text-gray-500 leading-relaxed">
-          Yes. All our rates include driver and fuel for up to 250 km per day.
-          Extra kilometres are charged at the listed per-km rate.
-        </p>
-      </details>
+      <p class="mt-3 text-sm text-gray-500">
+        Yes. One-way bookings are available. A drop charge may apply depending on distance.
+      </p>
+    </details>
 
-      <!-- ITEM -->
-      <details
-        class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
-        <summary
-          class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
-          Can I book a one-way trip?
-          <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
-        </summary>
+    <!-- ITEM -->
+    <details class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
+      <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
+        What about cancellations?
+        <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
+      </summary>
 
-        <p class="mt-3 text-sm text-gray-500">
-          Yes. One-way bookings are available. A drop charge may apply
-          depending on distance.
-        </p>
-      </details>
+      <p class="mt-3 text-sm text-gray-500">
+        Free cancellation up to 48 hours. Within 24 hours, one day charge applies.
+      </p>
+    </details>
 
-      <!-- ITEM -->
-      <details
-        class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
-        <summary
-          class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
-          What about cancellations?
-          <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
-        </summary>
+    <!-- ITEM -->
+    <details class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
+      <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
+        Are drivers verified?
+        <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
+      </summary>
 
-        <p class="mt-3 text-sm text-gray-500">
-          Free cancellation up to 48 hours. Within 24 hours, one day charge
-          applies.
-        </p>
-      </details>
+      <p class="mt-3 text-sm text-gray-500">
+        Yes. All drivers are background-checked, licensed, and rated above 4.8.
+      </p>
+    </details>
 
-      <!-- ITEM -->
-      <details
-        class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
-        <summary
-          class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
-          Are drivers verified?
-          <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
-        </summary>
+    <!-- ITEM -->
+    <details class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
+      <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
+        Can I book for multiple days?
+        <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
+      </summary>
 
-        <p class="mt-3 text-sm text-gray-500">
-          Yes. All drivers are background-checked, licensed, and rated above
-          4.8.
-        </p>
-      </details>
+      <p class="mt-3 text-sm text-gray-500">
+        Yes. Multi-day bookings are our most popular and come with better pricing.
+      </p>
+    </details>
 
-      <!-- ITEM -->
-      <details
-        class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
-        <summary
-          class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
-          Can I book for multiple days?
-          <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
-        </summary>
-
-        <p class="mt-3 text-sm text-gray-500">
-          Yes. Multi-day bookings are our most popular and come with better
-          pricing.
-        </p>
-      </details>
-    </div>
-  </section>
+  </div>
+</section>
 
 
 
@@ -2831,10 +1287,8 @@ hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157
 
   <!-- script --------------------------------->
   <script src="script.js"></script>
+  <script src="card/card.js" defer></script>
   <script>lucide.createIcons();</script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.6/bundled/lenis.min.js"></script>
 
 
 

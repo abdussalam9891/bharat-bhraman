@@ -3,63 +3,299 @@
 
 
 
-  (function initReviewsCarousel() {
+// homepage tour
+ (function initTourCarousel() {
+  const track   = document.getElementById('tourTrack');
+  const prevBtn = document.getElementById('tourPrev');
+  const nextBtn = document.getElementById('tourNext');
+
+  if (!track) return;
+
+  const wrapper = track.parentElement;
+  let position = 0;
+  let isDragging = false;
+  let startX = 0;
+  let startPosition = 0;
+
+  // ---------- helpers ----------
+  function cardWidth() {
+    const card = track.querySelector('article');
+    return card ? card.offsetWidth + 28 : 328;
+  }
+
+  function maxScroll() {
+    return track.scrollWidth - wrapper.offsetWidth;
+  }
+
+  function clamp(val, min, max) {
+    return Math.max(min, Math.min(val, max));
+  }
+
+  function update(withAnim = true) {
+    track.style.transition = withAnim ? 'transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94)' : 'none';
+    track.style.transform  = `translateX(-${position}px)`;
+
+    if (prevBtn) {
+      prevBtn.style.opacity = position <= 0 ? '0.3' : '1';
+      prevBtn.style.pointerEvents = position <= 0 ? 'none' : 'auto';
+    }
+
+    if (nextBtn) {
+      nextBtn.style.opacity = position >= maxScroll() ? '0.3' : '1';
+      nextBtn.style.pointerEvents = position >= maxScroll() ? 'none' : 'auto';
+    }
+  }
+
+  // ---------- buttons ----------
+  nextBtn?.addEventListener('click', () => {
+    position = clamp(position + cardWidth(), 0, maxScroll());
+    update(true);
+  });
+
+  prevBtn?.addEventListener('click', () => {
+    position = clamp(position - cardWidth(), 0, maxScroll());
+    update(true);
+  });
+
+  // ---------- touch swipe (mobile) ----------
+  track.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    startPosition = position;
+  }, { passive: true });
+
+  track.addEventListener('touchmove', (e) => {
+    const dx = e.touches[0].clientX - startX;
+    position = clamp(startPosition - dx, 0, maxScroll());
+    update(false);
+  }, { passive: true });
+
+  track.addEventListener('touchend', () => {
+    update(true);
+  });
+
+  // ---------- mouse drag (desktop premium feel) ----------
+  wrapper.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.pageX;
+    startPosition = position;
+    wrapper.style.cursor = 'grabbing';
+  });
+
+  window.addEventListener('mouseup', () => {
+    isDragging = false;
+    wrapper.style.cursor = 'grab';
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+
+    const dx = e.pageX - startX;
+    position = clamp(startPosition - dx, 0, maxScroll());
+    update(false);
+  });
+
+  wrapper.style.cursor = 'grab';
+
+  // ---------- trackpad horizontal scroll ----------
+  wrapper.addEventListener('wheel', (e) => {
+    const isHorizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY);
+
+    if (isHorizontal) {
+      e.preventDefault();
+
+      position = clamp(position + e.deltaX, 0, maxScroll());
+      update(false);
+    }
+  }, { passive: false });
+
+  // ---------- resize ----------
+  window.addEventListener('resize', () => {
+    position = clamp(position, 0, maxScroll());
+    update(false);
+  });
+
+  // ---------- init ----------
+  update(false);
+
+})();
+
+
+
+// testimonials--------------------------------
+ (function initReviewsCarousel() {
   const container = document.querySelector('.reviews-carousel-new');
   const track     = document.querySelector('.reviews-track-new');
   const dotsWrap  = document.querySelector('.reviews-dots');
-  const cards     = [...document.querySelectorAll('.review-card-new')];
-  const total     = cards.length;
-  let current     = 0;
+  const origCards = [...track.querySelectorAll('.review-card-new')];
+  const total     = origCards.length; // 7
+
+  let current = 0;
+  let vPos    = 0;    // visual/translate index — can enter clone zone (≥ total)
+  let jumping = false;
   let timer;
 
-  // Build dots
-  cards.forEach((_, i) => {
+  // ── Clone all cards and append for seamless forward loop ──
+  origCards.forEach(card => track.appendChild(card.cloneNode(true)));
+  const allCards = [...track.querySelectorAll('.review-card-new')]; // 14 total
+
+  // ── Dots (one per original card only) ──
+  origCards.forEach((_, i) => {
     const dot = document.createElement('div');
     dot.className = 'rc-dot';
-    dot.addEventListener('click', () => goTo(i));
+    dot.addEventListener('click', () => moveTo(i));
     dotsWrap.appendChild(dot);
   });
 
-  function updateDots() {
-    [...dotsWrap.children].forEach((d, i) => {
-      d.classList.toggle('rc-dot-active', i === current);
-    });
-  }
+  // ── Geometry helpers ──
+  function gap()     { return 24; } // gap-6 = 24px
+  function cardW()   { return allCards[0].offsetWidth + gap(); }
+  function centerX() { return container.offsetWidth / 2 - allCards[0].offsetWidth / 2; }
+  function offset(v) { return centerX() - v * cardW(); }
 
-  function goTo(index) {
-    current = ((index % total) + total) % total;
-
-    cards.forEach((card, i) => {
+  // ── Apply active / adjacent classes to all 14 cards ──
+  function applyClasses() {
+    allCards.forEach((card, i) => {
       card.classList.remove('rc-active', 'rc-adjacent');
-      const diff = Math.min(
-        Math.abs(i - current),
-        total - Math.abs(i - current)
+      const logical = i % total;
+      const d = Math.min(
+        Math.abs(logical - current),
+        total - Math.abs(logical - current)
       );
-      if (diff === 0) card.classList.add('rc-active');
-      else if (diff === 1) card.classList.add('rc-adjacent');
+      if (d === 0) card.classList.add('rc-active');
+      else if (d === 1) card.classList.add('rc-adjacent');
+    });
+  }
+
+  function applyDots() {
+    [...dotsWrap.children].forEach((d, i) =>
+      d.classList.toggle('rc-dot-active', i === current)
+    );
+  }
+
+  // ── Core move function ──
+  // logical  = 0-6 (destination card)
+  // useClone = true only when wrapping last→first (shows clone zone)
+  function moveTo(logical, useClone = false) {
+    if (jumping) return;
+    if (logical === current && !useClone) return;
+
+    jumping = true;
+    current = logical;
+    vPos    = useClone ? total + logical : logical;
+
+    track.style.transition = 'transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    track.style.transform  = `translateX(${offset(vPos)}px)`;
+
+    applyClasses();
+    applyDots();
+
+    // After animation: if in clone zone, silently snap back to original position
+    setTimeout(() => {
+      if (vPos >= total) {
+        vPos = logical;
+        track.style.transition = 'none';
+        track.style.transform  = `translateX(${offset(vPos)}px)`;
+      }
+      jumping = false;
+    }, 700); // slightly > transition duration
+  }
+
+  // ── Auto-advance ──
+  function advance() {
+    const next = (current + 1) % total;
+    // When wrapping from last card → first, animate through clone zone
+    moveTo(next, current === total - 1);
+  }
+
+  // ── Per-card events ──
+  // Click → focus that card | Hover → pause ONLY on that card
+  allCards.forEach((card, i) => {
+    card.style.cursor = 'pointer';
+
+    card.addEventListener('click', () => {
+      const logical = i % total;
+      if (logical === current) return; // already centered, ignore
+      moveTo(logical);
     });
 
-    // Translate track so active card is centered
-    const cardW   = cards[0].offsetWidth + 24; // 24 = gap-6
-    const centerX = container.offsetWidth / 2 - cards[0].offsetWidth / 2;
-    track.style.transform = `translateX(${centerX - current * cardW}px)`;
+    card.addEventListener('mouseenter', () => clearInterval(timer));
+    card.addEventListener('mouseleave', startAuto);
+  });
 
-    updateDots();
-  }
-
+  // ── Auto-scroll ──
   function startAuto() {
-    timer = setInterval(() => goTo(current + 1), 3200);
-  }
-
-  function stopAuto() {
     clearInterval(timer);
+    timer = setInterval(advance, 3200);
   }
 
-  container.addEventListener('mouseenter', stopAuto);
-  container.addEventListener('mouseleave',  startAuto);
+  // ── Recalculate on resize ──
+  window.addEventListener('resize', () => {
+    track.style.transition = 'none';
+    track.style.transform  = `translateX(${offset(vPos)}px)`;
+  });
 
-  // Init
-  goTo(0);
+
+
+  // ── Touch / Trackpad swipe ──
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let isSwiping   = false;
+
+  container.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    isSwiping   = false;
+  }, { passive: true });
+
+  container.addEventListener('touchmove', e => {
+    const dx = e.touches[0].clientX - touchStartX;
+    const dy = e.touches[0].clientY - touchStartY;
+    // Only hijack if clearly horizontal swipe
+    if (!isSwiping && Math.abs(dx) > Math.abs(dy) + 5) {
+      isSwiping = true;
+    }
+    if (isSwiping) e.preventDefault();
+  }, { passive: false });
+
+  container.addEventListener('touchend', e => {
+    if (!isSwiping) return;
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) < 40) return; // ignore micro-swipes
+    if (dx < 0) {
+      // swipe left → next
+      const next = (current + 1) % total;
+      moveTo(next, current === total - 1);
+    } else {
+      // swipe right → prev
+      const prev = (current - 1 + total) % total;
+      moveTo(prev);
+    }
+  });
+
+  // Trackpad wheel (horizontal)
+  let wheelCooldown = false;
+  container.addEventListener('wheel', e => {
+    const isHorizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY);
+    if (!isHorizontal) return;
+    e.preventDefault();
+    if (wheelCooldown) return;
+    wheelCooldown = true;
+    setTimeout(() => wheelCooldown = false, 750);
+
+    if (e.deltaX > 0) {
+      const next = (current + 1) % total;
+      moveTo(next, current === total - 1);
+    } else {
+      const prev = (current - 1 + total) % total;
+      moveTo(prev);
+    }
+  }, { passive: false });
+
+  // ── Init ──
+  track.style.transition = 'none';
+  track.style.transform  = `translateX(${offset(0)}px)`;
+  applyClasses();
+  applyDots();
   startAuto();
 })();
 
@@ -69,61 +305,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // NAVBAR / MOBILE MENU
-  const toggle = document.getElementById("navToggle");
-  const navLinks = document.getElementById("navLinks");
-  const nav = document.getElementById("mainNav");
-
-  if (toggle && navLinks) {
-    toggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-
-      toggle.classList.toggle("active");
-
-      navLinks.classList.toggle("hidden");
-      navLinks.classList.toggle("flex");
-    });
-
-    document.addEventListener("click", (e) => {
-      if (!navLinks.contains(e.target) && !toggle.contains(e.target)) {
-        navLinks.classList.add("hidden");
-        navLinks.classList.remove("flex");
-        toggle.classList.remove("active");
-      }
-    });
-  }
-
-
-  // NAVBAR HIDE ON SCROLL
-  let lastScroll = 0;
-
-  if (nav) {
-    window.addEventListener("scroll", () => {
-      const current = window.scrollY;
-
-      if (current > lastScroll && current > 100) {
-        nav.classList.add("hidden-up");
-      } else {
-        nav.classList.remove("hidden-up");
-      }
-
-      lastScroll = current;
-    });
-  }
 
 
   // SCROLL TOP BUTTON
@@ -144,6 +325,9 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
+// scroll top button
+
+
 
 
   // MEGA MENU
@@ -174,6 +358,10 @@
       menuTimeout = setTimeout(() => megaMenu.classList.remove("active"), 200);
     });
   }
+
+
+
+
 
 
   // CARD IMAGE SLIDER (INSIDE CARD)
@@ -228,168 +416,52 @@
   };
 
 
-  // COUNTER ANIMATION
-  const counters = document.querySelectorAll('.stat-num');
+
+
+
+
+
+
+
+
+
+
+
+
+
+// why choose us
+//----------------------REVEAL ON SCROLL------------------
+
+function initReveal() {
+  const elements = document.querySelectorAll(".reveal");
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        animateCounter(entry.target);
-        observer.unobserve(entry.target);
+        entry.target.classList.add("active");
+        observer.unobserve(entry.target); // trigger once
       }
     });
-  }, { threshold: 0.6 });
+  }, {
+    threshold: 0.2
+  });
 
-  counters.forEach(counter => observer.observe(counter));
-
-  function animateCounter(el) {
-    const target = +el.getAttribute('data-target');
-    const duration = 2000;
-    const start = performance.now();
-
-    function update(now) {
-      const progress = Math.min((now - start) / duration, 1);
-      const ease = 1 - Math.pow(2, -10 * progress);
-
-      let value = Math.floor(ease * target);
-
-      if (target === 98) el.textContent = value + '%';
-      else el.textContent = value + '+';
-
-      if (progress < 1) requestAnimationFrame(update);
-    }
-
-    requestAnimationFrame(update);
-  }
-
-
-  // HERO IMAGE ROTATION
-  const slides = document.querySelectorAll('.hero-img');
-  let currentSlide = 0;
-
-  setInterval(() => {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add('active');
-  }, 5000);
-
-
-
-  // GSAP SCROLL ANIMATION (MAIN FEATURE)
-  gsap.registerPlugin(ScrollTrigger);
-
-  const track = document.querySelector("#tourTrack");
-
-  if (track) {
-    const totalWidth = track.scrollWidth - window.innerWidth;
-
-    gsap.to(track, {
-      x: -totalWidth,
-      ease: "none",
-      scrollTrigger: {
-        trigger: "#tourPin",
-        start: "top top",
-        end: () => "+=" + (track.scrollWidth - window.innerWidth),
-        scrub: true,
-        pin: true,
-        anticipatePin: 1
-      }
-    });
-  }
-  ScrollTrigger.refresh();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // sticky bar 2
-/* SCROLL REVEAL */
-(function () {
-
-  /* SCROLL REVEAL */
-  const revealEls = document.querySelectorAll('.reveal');
-
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-
-        setTimeout(() => {
-          entry.target.classList.add('active');
-        }, index * 120);
-
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-
-  revealEls.forEach(el => revealObserver.observe(el));
-
-
-  /* COUNTER */
-  const counterEls = document.querySelectorAll('.counter');
-
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-
-        const el = entry.target;
-        const target = +el.dataset.target;
-        let count = 0;
-
-        const update = () => {
-          const increment = target / 60;
-          count += increment;
-
-          if (count < target) {
-            el.innerText = Math.floor(count);
-            requestAnimationFrame(update);
-          } else {
-            el.innerText = target + (target === 98 ? '%' : '+');
-          }
-        };
-
-        update();
-        counterObserver.unobserve(el);
-      }
-    });
-  }, { threshold: 0.6 });
-
-  counterEls.forEach(el => counterObserver.observe(el));
-
-})();
-
-
+  elements.forEach(el => observer.observe(el));
+}
+// run after DOM loads
+document.addEventListener("DOMContentLoaded", initReveal);
 // why choose us
+//----------------------REVEAL ON SCROLL------------------
 
-(function () {
-  const revealEls = document.querySelectorAll('.reveal');
 
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
 
-        setTimeout(() => {
-          entry.target.classList.add('active');
-        }, index * 120);
 
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
 
-  revealEls.forEach(el => observer.observe(el));
-})();
+
+
+
+
+
 
 
 // motion recommendation
@@ -429,6 +501,54 @@
 })();
 
 
+// homepage hero counter
+ // COUNTER ANIMATION----------------------------------------------
+  const counters = document.querySelectorAll('.stat-num');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.6 });
+
+  counters.forEach(counter => observer.observe(counter));
+
+  function animateCounter(el) {
+    const target = +el.getAttribute('data-target');
+    const duration = 2000;
+    const start = performance.now();
+
+    function update(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const ease = 1 - Math.pow(2, -10 * progress);
+
+      let value = Math.floor(ease * target);
+
+      if (target === 98) el.textContent = value + '%';
+      else el.textContent = value + '+';
+
+      if (progress < 1) requestAnimationFrame(update);
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  // homepage HERO IMAGE ROTATION--------------------
+  const slides = document.querySelectorAll('.hero-img');
+  let currentSlide = 0;
+
+  setInterval(() => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }, 5000);
+  // homepage hero image rotation -----------------------
+
+
+
 
 
 // footer
@@ -444,6 +564,40 @@
       // Toggle clicked one
       if (!isOpen) acc.classList.add('open');
     });
+  });
+})();
+
+
+
+
+
+// car section home page carousel
+(function initCarCarousel() {
+  const track   = document.getElementById('carTrack');
+  const prevBtn = document.getElementById('carPrev');
+  const nextBtn = document.getElementById('carNext');
+  if (!track || !prevBtn || !nextBtn) return;
+
+  let position = 0;
+
+  function getCardWidth() {
+    const card = track.querySelector('article');
+    if (!card) return 328;
+    return card.offsetWidth + 28; // card + gap-7 (28px)
+  }
+
+  function getMaxScroll() {
+    return track.scrollWidth - track.parentElement.offsetWidth;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    position = Math.min(position + getCardWidth(), getMaxScroll());
+    track.style.transform = `translateX(-${position}px)`;
+  });
+
+  prevBtn.addEventListener('click', () => {
+    position = Math.max(position - getCardWidth(), 0);
+    track.style.transform = `translateX(-${position}px)`;
   });
 })();
 

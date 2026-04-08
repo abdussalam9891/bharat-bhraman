@@ -107,141 +107,82 @@
   transition: opacity 1.8s ease-in-out, transform 8s ease-in-out;
 }
 
+/* hero --------------------------------------- */
 
 
 
 
 
 
-/* Text reveal — lines staggered */
-.line {
-  opacity: 0;
-  transform: translateY(40px) scale(0.98);
-  filter: blur(6px);
-  animation: luxuryReveal 0.9s cubic-bezier(0.2, 0.65, 0.3, 1) forwards;
-}
-.line:nth-child(2)  { animation-delay: 0.25s; }
-.hero-sub           { opacity: 0; transform: translateY(20px); animation: luxuryReveal 0.8s ease forwards 0.4s; }
-.hero-btns-anim     { opacity: 0; transform: translateY(20px); animation: luxuryReveal 0.8s ease forwards 0.6s; }
-.hero-trust-anim    { opacity: 0; transform: translateY(20px); animation: luxuryReveal 0.8s ease forwards 0.8s; }
+/* Card scroll system ------------------------home page tour card---------------------*/
+#cardContainer {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 
-
-
-
-
-
-/* ── Button Shine ────────────────────────────────────────────────────── */
-.btn-shine { position: relative; overflow: hidden; }
-.btn-shine::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
-  transform: translateX(-100%);
-  pointer-events: none;
-}
-.btn-shine:hover::after { animation: shineSlide 0.8s ease; }
-
-
-
-
-
-
-
-
-/* ── Why Cards — stagger + gradient border ───────────────────────────── */
-@keyframes fadeUp {
-  to { opacity: 1; transform: translateY(0); }
+  /* hide scrollbar */
+  -ms-overflow-style: none;   /* IE */
+  scrollbar-width: none;      /* Firefox */
 }
 
-.why-card-enter {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeUp 0.6s ease forwards;
-}
-.why-card-enter:nth-child(1) { animation-delay: 0.1s; }
-.why-card-enter:nth-child(2) { animation-delay: 0.2s; }
-.why-card-enter:nth-child(3) { animation-delay: 0.3s; }
-.why-card-enter:nth-child(4) { animation-delay: 0.4s; }
-.why-card-enter:nth-child(5) { animation-delay: 0.5s; }
-
-/* Gradient masked border — not achievable with Tailwind utilities */
-.why-card-border {
-  position: relative;
-}
-.why-card-border::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 20px;
-  padding: 1px;
-  background: linear-gradient(120deg, #4fbecb, #6a8dff);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.3s;
-  pointer-events: none;
-}
-.why-card-border:hover::before { opacity: 1; }
-/* motion  */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.7s cubic-bezier(.2,.65,.3,1);
-  will-change: transform, opacity;
+#cardContainer::-webkit-scrollbar {
+  display: none;              /* Chrome/Safari */
 }
 
-.reveal.active {
-  opacity: 1;
-  transform: translate(0,0);
-}
-
-.reveal-left {
-  transform: translateX(-80px);
-}
-
-.reveal-right {
-  transform: translateX(80px);
-}
+/* Card scroll system------------------------- home page tour card  */
 
 
 
-.reveal-up {
-  transform: translateY(80px);
-}
 
-/* base state */
+
+
+
+
+
+
+
+
+
+
+
+/* ================= REVEAL SYSTEM ================= */
+
+/* Base state */
 .reveal {
   opacity: 0;
   transform: translateY(60px) scale(0.96);
-  transition: all 0.9s cubic-bezier(.16,1,.3,1);
+  transition: all 0.8s cubic-bezier(.16,1,.3,1);
   will-change: transform, opacity;
 }
 
-/* active (visible) */
+/* Active (visible) */
 .reveal.active {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
 
-/* stronger bottom feel */
+/* Direction variants */
+.reveal-left {
+  transform: translateX(-80px) scale(0.96);
+}
+
+.reveal-right {
+  transform: translateX(80px) scale(0.96);
+}
+
 .reveal-up {
   transform: translateY(80px) scale(0.95);
 }
 
-.reveal.active h2 {
-  transition-delay: 0.1s;
+/* Optional: stagger children */
+.reveal.active > * {
+  transition: all 0.6s ease;
 }
 
-.reveal.active p {
-  transition-delay: 0.2s;
-}
-
-.reveal.active a {
-  transition-delay: 0.3s;
-}
-
+.reveal.active > *:nth-child(1) { transition-delay: 0.05s; }
+.reveal.active > *:nth-child(2) { transition-delay: 0.1s; }
+.reveal.active > *:nth-child(3) { transition-delay: 0.15s; }
+.reveal.active > *:nth-child(4) { transition-delay: 0.2s; }
+.reveal.active > *:nth-child(5) { transition-delay: 0.25s; }
 
 
 
@@ -278,6 +219,28 @@
 .rc-dot.rc-dot-active {
   width: 22px;
   background: #14b8a6;
+}
+
+/* Star rating — partial fill */
+.star-rating {
+  position: relative;
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 1;
+  letter-spacing: 2px;
+}
+
+.star-rating .stars-empty {
+  color: #e2e8f0; /* gray unfilled */
+}
+
+.star-rating .stars-filled {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #14b8a6; /* teal-500 */
 }
 
 
@@ -440,115 +403,11 @@ summary::-webkit-details-marker {
 
 
 
-/* HERO BG FLOAT (cinematic slow movement) */
-.hero-bg {
-  animation: heroFloat 18s ease-in-out infinite alternate;
-}
-
-@keyframes heroFloat {
-  0% { transform: scale(1.08) translateY(0px); }
-  100% { transform: scale(1.12) translateY(-20px); }
-}
-
-/* STAGGER FADE UP */
-.fade-up {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp 1s cubic-bezier(.22,1,.36,1) forwards;
-}
-
-.fade-up.delay-1 { animation-delay: 0.2s; }
-.fade-up.delay-2 { animation-delay: 0.4s; }
-.fade-up.delay-3 { animation-delay: 0.6s; }
-.fade-up.delay-4 { animation-delay: 0.8s; }
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* TEXT HOVER LIFT (premium micro interaction) */
-.line {
-  display: inline-block;
-  transition: transform 0.5s cubic-bezier(.22,1,.36,1);
-}
-section:hover .line {
-  transform: translateY(-3px);
-}
-
-/* MAGNETIC BUTTON EFFECT */
-.btn-shine {
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-shine::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
-  transform: translateX(-100%);
-}
-
-.btn-shine:hover::before {
-  animation: shine 1.2s ease;
-}
-
-@keyframes shine {
-  to {
-    transform: translateX(100%);
-  }
-}
-
-/* BUTTON FLOAT */
-.hero-btns-anim a {
-  transition: transform 0.4s cubic-bezier(.22,1,.36,1);
-}
-.hero-btns-anim a:hover {
-  transform: translateY(-6px) scale(1.04);
-}
-
-/* TRUST ITEMS FLOAT IN */
-.hero-trust-anim > div {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.8s ease forwards;
-}
-
-.hero-trust-anim > div:nth-child(1) { animation-delay: 1s; }
-.hero-trust-anim > div:nth-child(2) { animation-delay: 1.2s; }
-.hero-trust-anim > div:nth-child(3) { animation-delay: 1.4s; }
 
 
 
 
-/* Stats row reveal */
-.hero-stat-item {
-  opacity: 0;
-  transform: translateY(28px);
-  animation: statReveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-
-
-@keyframes statReveal {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* PARALLAX ON MOUSE MOVE */
-.hero-parallax {
-  transition: transform 0.2s ease-out;
-}
-
-
-
-
-/* car hero -------------------------------- */
+/* car hero   and home hero -------------------------------- */
 /* IMAGE SLIDER */
 .car-hero-img {
   position: absolute;
@@ -612,33 +471,3 @@ section:hover .line {
 }
 
 
-/* tour card heading motion  */
-/* Section heading reveal */
-.section-label {
-  opacity: 0;
-  transform: translateX(-40px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.section-title {
-  opacity: 0;
-  transform: translateY(-36px);
-  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
-}
-
-.section-underline {
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.55s;
-}
-
-/* triggered state */
-.heading-revealed .section-label,
-.heading-revealed .section-title {
-  opacity: 1;
-  transform: translate(0);
-}
-
-.heading-revealed .section-underline {
-  transform: scaleX(1);
-}

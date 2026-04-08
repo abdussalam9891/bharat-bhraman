@@ -274,50 +274,201 @@
   z-index: -1;
 }
 
-/* ── Nav mega-menu panel transition ─────────────────────────────────── */
+
+ /* navbar ------------------------------------------------------ */
+.nav-link {
+  position: relative;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #374151;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.nav-link:hover {
+  color: #111827;
+}
+
+/* Underline that grows on hover */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #2a9d8f;
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Active page — underline always on */
+.nav-link.active {
+  color: #2a9d8f;
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+
+/* ── Mega menu links ─────────────────────────────────────────── */
+
+.mega-link {
+  display: inline-block;
+  color: #374151;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.mega-link:hover {
+  color: #2a9d8f;
+  transform: translateX(4px);
+}
+
+
+/* ── Mega menu open/close animation ─────────────────────────── */
+
 .mega-menu {
-  display: none;
   opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  transform: translateY(10px) scale(0.97);
+  transform-origin: top center;
+  transition:
+    opacity 0.18s ease-out,
+    transform 0.22s cubic-bezier(0.2, 0.65, 0.3, 1);
 }
+
 .mega-menu.active {
-  display: block;
   opacity: 1;
-  transform: translateY(0);
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
 }
 
-/* Nav scroll hide */
-.mega-nav { transition: transform 0.4s ease; }
-.mega-nav.hidden-up { transform: translateY(-100%); }
 
-/* Mobile nav drawer */
-@media (max-width: 900px) {
-  .nav-links-mobile {
-    position: fixed;
-    top: 0; right: -100%;
-    width: 80%; height: 100vh;
-    background: rgba(10, 10, 10, 0.96);
-    backdrop-filter: blur(18px);
-    flex-direction: column;
-    padding: 90px 30px 40px;
-    gap: 24px;
-    transition: right 0.4s ease;
-    z-index: 998;
-    display: flex;
-  }
-  .nav-links-mobile.open { right: 0; }
+/* ── Hamburger → X ───────────────────────────────────────────── */
 
-  /* hamburger → X */
-  .nav-toggle-btn.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .nav-toggle-btn.active span:nth-child(2) { opacity: 0; }
-  .nav-toggle-btn.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-toggle-btn span {
+  transition: transform 0.3s ease, opacity 0.2s ease;
 }
 
-/* ── Floating labels & utility ───────────────────────────────────────── */
-/* Accent gradient — used as background only, never as 'color' */
-.bg-accent  { background: linear-gradient(135deg, #6fd3db, #4fbecb); }
-.bg-dark-grad { background: linear-gradient(to top, #0f172a, #111827); }
+.nav-toggle-btn.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle-btn.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ── Mobile drawer ───────────────────────────────────────────── */
+/*
+  This is a SEPARATE element from the desktop <ul>.
+  No conflict, no color battle. White text on dark bg.
+*/
+
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;
+  max-width: 320px;
+  height: 100vh;
+  background: rgba(10, 10, 10, 0.97);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  padding: 90px 28px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.2, 0.65, 0.3, 1);
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.mobile-drawer.open {
+  transform: translateX(0);
+}
+
+/* Main links inside the drawer */
+.mobile-link {
+  display: block;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.mobile-link:hover {
+  color: #2a9d8f;
+  padding-left: 6px;
+}
+
+.mobile-link.active {
+  color: #2a9d8f;
+  font-weight: 600;
+}
+
+/* Section label inside drawer */
+.mobile-section-label {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+
+/* Sub-links inside drawer sections */
+.mobile-sublink {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  padding: 8px 0;
+  text-decoration: none;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.mobile-sublink:hover {
+  color: #2a9d8f;
+  padding-left: 6px;
+}
+
+
+/* ── Overlay behind mobile drawer ────────────────────────────── */
+
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 997;
+}
+
+.nav-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* nabar end -------------------------------------------------------------------------------------------------------------- */
+
+
+
 
 
 

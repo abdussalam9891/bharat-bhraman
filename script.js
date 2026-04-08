@@ -326,37 +326,125 @@
 
 
 
+//  navbar --------------------------
+(function () {
 
-  // MEGA MENU
-  const triggers = document.querySelectorAll(".mega-trigger");
-  const megaMenu = document.getElementById("megaMenu");
-  let menuTimeout;
+  const megaMenu   = document.getElementById("megaMenu");
+  const triggers   = document.querySelectorAll(".mega-trigger");
+  const panels     = document.querySelectorAll(".mega-panel");
+  const navItems   = document.querySelectorAll("#navLinks > li");
+  const navToggle  = document.getElementById("navToggle");
+  const mobileMenu = document.getElementById("mobileMenu");   // separate drawer
+  const overlay    = document.getElementById("navOverlay");
 
-  if (triggers.length && megaMenu) {
-    triggers.forEach((trigger) => {
-      trigger.addEventListener("mouseenter", () => {
-        if (window.innerWidth < 900) return;
+  if (!megaMenu) return;
 
-        clearTimeout(menuTimeout);
-        megaMenu.classList.add("active");
+  let hideTimeout = null;
+  let activePanel = null;
 
-        const panel = trigger.dataset.mega;
 
-        document.querySelectorAll(".mega-panel").forEach((p) => {
-          p.classList.toggle("hidden", p.dataset.panel !== panel);
-          p.classList.toggle("flex", p.dataset.panel === panel);
-        });
-      });
-    });
+  // ── Mega menu ─────────────────────────────────────────────
 
-    megaMenu.addEventListener("mouseenter", () => clearTimeout(menuTimeout));
+  function showMega(panelKey) {
+    clearTimeout(hideTimeout);
+    megaMenu.classList.add("active");
 
-    megaMenu.addEventListener("mouseleave", () => {
-      menuTimeout = setTimeout(() => megaMenu.classList.remove("active"), 200);
+    if (activePanel === panelKey) return;
+    activePanel = panelKey;
+
+    panels.forEach(p => {
+      const match = p.dataset.panel === panelKey;
+      p.classList.toggle("hidden", !match);
+      p.classList.toggle("flex",   match);
     });
   }
 
+  function hideMega() {
+    hideTimeout = setTimeout(() => {
+      megaMenu.classList.remove("active");
+      panels.forEach(p => {
+        p.classList.add("hidden");
+        p.classList.remove("flex");
+      });
+      activePanel = null;
+    }, 150);
+  }
 
+  triggers.forEach(trigger => {
+    trigger.addEventListener("mouseenter", () => {
+      if (window.innerWidth < 900) return;
+      showMega(trigger.dataset.mega);
+    });
+    trigger.addEventListener("mouseleave", () => {
+      if (window.innerWidth < 900) return;
+      hideMega();
+    });
+  });
+
+  megaMenu.addEventListener("mouseenter", () => clearTimeout(hideTimeout));
+  megaMenu.addEventListener("mouseleave", hideMega);
+
+  navItems.forEach(item => {
+    if (!item.querySelector(".mega-trigger")) {
+      item.addEventListener("mouseenter", () => {
+        if (window.innerWidth < 900) return;
+        hideMega();
+      });
+    }
+  });
+
+
+  // ── Mobile drawer ─────────────────────────────────────────
+
+  function openMenu() {
+    mobileMenu.classList.add("open");
+    overlay.classList.add("active");
+    navToggle.classList.add("active");
+    navToggle.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeMenu() {
+    mobileMenu.classList.remove("open");
+    overlay.classList.remove("active");
+    navToggle.classList.remove("active");
+    navToggle.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  }
+
+  navToggle.addEventListener("click", () => {
+    mobileMenu.classList.contains("open") ? closeMenu() : openMenu();
+  });
+
+  overlay.addEventListener("click", closeMenu);
+
+  // Close when any link inside drawer is tapped
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  // Close on resize to desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 900) closeMenu();
+  });
+
+
+  // ── Active page detection ─────────────────────────────────
+
+  const filename    = window.location.pathname.split("/").pop();
+  const currentPage = filename.replace(".html", "") || "index";
+
+  // Desktop links
+  document.querySelectorAll(".nav-link[data-page]").forEach(link => {
+    if (link.dataset.page === currentPage) link.classList.add("active");
+  });
+
+  // Mobile drawer links
+  document.querySelectorAll(".mobile-link[data-page]").forEach(link => {
+    if (link.dataset.page === currentPage) link.classList.add("active");
+  });
+
+})();
 
 
 

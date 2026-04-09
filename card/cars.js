@@ -10,7 +10,7 @@ const cars = [
     price: "₹4500/day",
     oldPrice: "₹5500/day",
     save: "Save ₹1000",
-    badge: "🔥 Bestseller",
+    badge: "Bestseller",
     link: "https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Mahindra%20XUV700%20for%20rent.",
     images: [
       "carpic/mahindraSuv1.jpg",
@@ -27,7 +27,7 @@ const cars = [
     price: "₹3200/day",
     oldPrice: "₹3800/day",
     save: "Save ₹600",
-    badge: "⭐ Top Choice",
+    badge: "Top Choice",
     link: "https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Maruti%20Suzuki%20Dzire%20for%20rent.",
     images: [
       "carpic/dzire1.jpg",
@@ -44,7 +44,7 @@ const cars = [
     price: "₹5000/day",
     oldPrice: "₹6000/day",
     save: "Save ₹1000",
-    badge: "🔥 Most Booked",
+    badge: "Most Booked",
     link: "https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Toyota%20Innova%20Crysta%20for%20rent.",
     images: [
       "carpic/inova1.jpg",
@@ -55,13 +55,13 @@ const cars = [
   },
 
   {
-    name: "Mahindra Thar — Adventure 4x4",
-    specs: "4 Seater • 4x4 SUV • Diesel",
+    name: "Mahindra Thar",
+    specs: "4 Seater • SUV • Diesel",
     features: "₹18/km • AC • 4WD Mountain Beast",
     price: "₹4200/day",
     oldPrice: "₹5000/day",
     save: "Save ₹800",
-    badge: "🧗 Off-Road King",
+    badge: "Off-Road King",
     link: "https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Mahindra%20Thar%20for%20rent.",
     images: [
       "carpic/thar1.jpg",
@@ -78,7 +78,7 @@ const cars = [
     price: "₹7000/day",
     oldPrice: "₹8500/day",
     save: "Save ₹1500",
-    badge: "👑 Luxury Pick",
+    badge: "Luxury Pick",
     link: "https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Toyota%20Fortuner%20for%20rent.",
     images: [
       "carpic/fortuner1.jpg",

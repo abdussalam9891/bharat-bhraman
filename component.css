@@ -1,0 +1,386 @@
+
+
+   /* Order:-Navbar → Cards → Reviews → Footer → Utilities  */
+
+
+
+/* ── NAVBAR ─────────────────────────────────────────────────── */
+
+.nav-link {
+  position: relative;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #374151;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.nav-link:hover { color: #111827; }
+
+/* Animated underline on hover */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #2a9d8f;
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after { width: 100%; }
+
+/* Active page state */
+.nav-link.active {
+  color: #2a9d8f;
+  font-weight: 600;
+}
+
+.nav-link.active::after { width: 100%; }
+
+
+/* ── Mega menu links ── */
+
+.mega-link {
+  display: inline-block;
+  color: #374151;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.mega-link:hover {
+  color: #2a9d8f;
+  transform: translateX(4px);
+}
+
+
+/* ── Mega menu panel (open/close) ── */
+
+.mega-menu {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 10px) scale(0.97);
+  transform-origin: top center;
+  transition: opacity 0.18s ease-out,
+              transform 0.22s cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.mega-menu.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0) scale(1);
+}
+
+
+/* ── Hamburger → X animation ── */
+
+.nav-toggle-btn span {
+  transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+.nav-toggle-btn.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle-btn.active span:nth-child(2) { opacity: 0; }
+.nav-toggle-btn.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+
+/* ── Mobile drawer (separate from desktop ul — dark bg, white text) ── */
+
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;
+  max-width: 320px;
+  height: 100vh;
+  background: rgba(10, 10, 10, 0.97);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  padding: 90px 28px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.2, 0.65, 0.3, 1);
+  z-index: 1001;
+  overflow-y: auto;
+  will-change: transform;
+}
+
+.mobile-drawer.open { transform: translateX(0); }
+
+.mobile-link {
+  display: block;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.mobile-link:hover { color: #2a9d8f; padding-left: 6px; }
+.mobile-link.active { color: #2a9d8f; font-weight: 600; }
+
+.mobile-section-label {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+
+.mobile-sublink {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  padding: 8px 0;
+  text-decoration: none;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.mobile-sublink:hover { color: #2a9d8f; padding-left: 6px; }
+
+
+/* ── Dark overlay behind mobile drawer ── */
+
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 998;
+}
+
+.nav-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+/* ── CARD SCROLL SYSTEM (tour + car carousels) ──────────────── */
+
+#tourTrack,
+#carTrack {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#tourTrack::-webkit-scrollbar,
+#carTrack::-webkit-scrollbar { display: none; }
+
+@media (min-width: 768px) {
+  #tourTrack,
+  #carTrack { overflow-x: hidden; }
+}
+
+
+/* ── REVIEW CARDS ───────────────────────────────────────────── */
+
+/* Default: scaled down, faded */
+.review-card-new {
+  transform: scale(0.8);
+  opacity: 0.4;
+  filter: blur(1px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  transition: transform 0.6s cubic-bezier(.2,.65,.3,1),
+              opacity 0.5s ease,
+              box-shadow 0.5s ease,
+              filter 0.5s ease;
+}
+
+/* One step from center */
+.review-card-new.rc-adjacent {
+  transform: scale(0.92);
+  opacity: 0.75;
+  filter: blur(0.3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Active center card */
+.review-card-new.rc-active {
+  transform: scale(1.02) translateY(-6px);
+  opacity: 1;
+  filter: blur(0);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.13),
+              0 0 0 1.5px rgba(20, 184, 166, 0.15),
+              0 10px 40px rgba(20, 184, 166, 0.08);
+}
+
+/* Dot indicators */
+.rc-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #cbd5e1;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(.2,.65,.3,1);
+}
+
+.rc-dot.rc-dot-active {
+  width: 22px;
+  background: #14b8a6;
+}
+
+/* Partial-fill star rating */
+.star-rating {
+  position: relative;
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 1;
+  letter-spacing: 2px;
+}
+
+.star-rating .stars-empty { color: #e2e8f0; }
+
+.star-rating .stars-filled {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #14b8a6;
+}
+
+
+/* ── FAQ ────────────────────────────────────────────────────── */
+
+/* Hide default browser arrow */
+summary::-webkit-details-marker { display: none; }
+
+details[open] p {
+  animation: fadeIn 0.25s ease;
+}
+
+
+/* ── LOGO CAROUSEL ──────────────────────────────────────────── */
+
+/* Fade edges */
+.logo-carousel::before,
+.logo-carousel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+}
+
+.logo-carousel::before {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+
+.logo-carousel::after {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
+}
+
+.logo-track {
+  width: max-content;
+  animation: scrollLogos 22s linear infinite;
+  will-change: transform;
+}
+
+.logo-item {
+  height: 70px;
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  opacity: 0.7;
+  transition: all 0.35s ease;
+}
+
+.logo-item img {
+  max-height: 28px;
+  transition: 0.3s ease;
+}
+
+.logo-item:hover {
+  opacity: 1;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.logo-item:hover img { filter: grayscale(0%); }
+
+.logo-carousel:hover .logo-track { animation-play-state: paused; }
+
+
+/* ── FOOTER ─────────────────────────────────────────────────── */
+
+/* Dark gradient background */
+.bg-dark-grad {
+  background: linear-gradient(135deg, #0f172a, #020617);
+}
+
+/* Column heading with teal left-border accent */
+.footer-col-heading {
+  padding-left: 12px;
+  border-left: 2px solid #2dd4bf;
+}
+
+/* Mobile accordion — grid-row trick for smooth expand */
+.footer-acc-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* open */
+.footer-acc.open .footer-acc-body {
+  max-height: 600px; /* increase if needed */
+}
+
+/* chevron */
+.footer-acc-chevron {
+  transition: transform 0.3s ease;
+}
+
+.footer-acc.open .footer-acc-chevron {
+  transform: rotate(180deg);
+}
+
+/* Mobile tap feedback */
+.footer-acc-trigger { -webkit-tap-highlight-color: transparent; }
+.footer-acc-trigger:active { transform: scale(0.98); }
+
+
+/* ── UTILITIES ──────────────────────────────────────────────── */
+
+/* Hide scrollbar but keep scroll functionality */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+/* General card hover */
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* CTA button shadow */
+.cta-btn { box-shadow: 0 10px 25px rgba(42, 157, 143, 0.25); }
+.cta-btn:hover { box-shadow: 0 15px 35px rgba(42, 157, 143, 0.35); }
+
+/* WhatsApp float button */
+.wa-float { position: relative; }

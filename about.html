@@ -1,549 +1,694 @@
 <!doctype html>
 <html lang="en">
- <head>
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Explore India with private car and driver tours. Customized itineraries, verified drivers, transparent pricing. Book Golden Triangle, Rajasthan, Kerala tours easily." />
-  <meta name="keywords" content="India private tours, car with driver India, Golden Triangle tour, Rajasthan tour, Kerala trip" />
+  <meta name="description"
+    content="Explore India with private car and driver tours. Customized itineraries, verified drivers, transparent pricing. Book Golden Triangle, Rajasthan, Kerala tours easily." />
+  <meta name="keywords"
+    content="India private tours, car with driver India, Golden Triangle tour, Rajasthan tour, Kerala trip" />
   <title>Private Car & Driver Tours in India | BharatBhramana</title>
 
   <!-- Tailwind Play CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
- <script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        primary: '#2a9d8f',
-        primaryHover: '#23867a',
-        dark: '#0a0a0a',
-        ink: {
-          900: '#111827'
-        }
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#2a9d8f",
+            primaryHover: "#23867a",
+            dark: "#0a0a0a",
+            ink: {
+              900: "#111827",
+            },
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', "Georgia", "serif"],
+            body: ['"DM Sans"', "sans-serif"],
+          },
+          screens: {
+            nav: "900px",
+          },
+        },
       },
-      fontFamily: {
-        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-        body: ['"DM Sans"', 'sans-serif'],
-      },
-      screens: {
-        nav: '900px',
-      },
-    }
-  }
-}
-</script>
+    };
+  </script>
 
-<link rel="stylesheet" href="base.css" />
-<link rel="stylesheet" href="component.css">
-  <link rel="stylesheet" href="animations.css" />
+  <link rel="stylesheet" href="base.css" />
+<link rel="stylesheet" href="component.css" />
+<link rel="stylesheet" href="animations.css" />
 
 
-  <!-- lucide icon CDN -->
-   <script src="https://unpkg.com/lucide@latest"></script>
+
 
 
 </head>
 
 
 
-
  <body class="font-body bg-gray-50 text-gray-800 leading-relaxed antialiased">
 
- <!-- NAVbar----------------------------------->
-    <nav
-      id="mainNav"
-      class="mega-nav fixed top-0 left-0 right-0 z-[999] flex items-center justify-between px-[5%] h-[72px] bg-white/80 backdrop-blur-[14px] border-b border-gray-200/60"
-    >
-      <!-- Logo -->
-      <a
-        href="index.html"
-        class="font-display text-[1.4rem] font-bold  text-gray-900 tracking-tight transition-transform duration-300 hover:scale-105 shrink-0"
-      >
-        Bharat<em class="text-teal-600 not-italic">भ्रमण</em>
-      </a>
+  <!-- navbar ----------------------------------------------- -->
+<!-- Dark overlay behind mobile drawer -->
+<div id="navOverlay" class="nav-overlay"></div>
 
-      <!-- Mobile toggle -->
-      <button
-        id="navToggle"
-        class="nav-toggle-btn hidden max-[900px]:flex flex-col justify-center gap-[5px] bg-transparent border-none cursor-pointer p-1.5 z-[1001]"
-        aria-label="Toggle menu"
-      >
-        <span
-          class="block w-6 h-[2px] bg-gray-800 rounded-sm transition-all duration-300"
-        ></span>
-        <span
-          class="block w-6 h-[2px] bg-gray-800 rounded-sm transition-all duration-300"
-        ></span>
-        <span
-          class="block w-6 h-[2px] bg-gray-800 rounded-sm transition-all duration-300"
-        ></span>
-      </button>
+<!-------------------------Mobile Drawer (separate from desktop ul)------------------------------------>
 
-      <!-- Desktop links -->
-      <ul
-        id="navLinks"
-        class="nav-links-mobile hidden nav:flex gap-[34px] list-none"
-      >
+<div id="mobileMenu" class="mobile-drawer">
+  <a href="index.html"  class="mobile-link" data-page="index">Home</a>
+  <a href="trips.html"  class="mobile-link" data-page="trips">Packages</a>
+  <a href="cars.html"   class="mobile-link" data-page="cars">Cars</a>
+  <a href="about.html"  class="mobile-link" data-page="about">About</a>
 
-        <li>
-          <a
-            href="index.html"
-            class="relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
-          >
-           Home
-          </a>
-        </li>
-           <li>
-          <a
-            href="cars.html"
-            class="relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
-          >
-            Car
-          </a>
-        </li>
-        <li>
-          <a
-            href="trips.html"
-            class="relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
-          >
-            Packages
-          </a>
-        </li>
-        <li class="relative">
-          <a
-            href="#"
-            class="mega-trigger relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
-            data-mega="explore"
-          >
-            Explore
-          </a>
-        </li>
-        <li>
-          <a
-            href="#"
-            class="relative text-teal-600 text-[0.95rem] font-semibold transition-colors duration-300 hover:text-teal-300 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-400 after:transition-all after:duration-350 hover:after:w-full"
-          >
-            About
-          </a>
-        </li>
-        <li class="relative">
-          <a
-            href="#"
-            class="mega-trigger relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
-            data-mega="bestsellers"
-          >
-            Best Sellers
-          </a>
-        </li>
-
-      </ul>
-
-      <!-- CTA -->
-      <a
-        href="https://wa.me/919006143335?text=Hi%20I%20am%20interested%20in%20your%20tour%20packages"
-        target="_blank"
-        rel="noopener"
-        class="btn-shine hidden nav:flex items-center gap-2 px-5 py-[10px] rounded-full text-sm font-semibold text-white bg-gradient-to-br from-[#2a9d8f] to-[#264653] shadow-[0_8px_25px_rgba(0,0,0,0.3)] transition-all duration-400 hover:-translate-y-0.5 hover:scale-[1.04] hover:shadow-[0_18px_40px_rgba(0,0,0,0.5)]"
-      >
-        Book Now
-      </a>
-
-      <!-- Mega Menu -->
-      <div
-        id="megaMenu"
-        class="mega-menu absolute top-full left-1/2 -translate-x-1/2 w-auto min-w-[520px] bg-white rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-gray-100 mt-3"
-      >
-        <!-- EXPLORE PANEL -->
-        <div class="mega-panel hidden" data-panel="explore">
-          <div class="flex gap-16 m-8">
-            <div>
-              <h4
-                class=" text-gray-400 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
-              >
-                North India
-              </h4>
-              <ul class="space-y-2.5">
-                <li>
-                  <a
-                    href="goldentriangle.html"
-                    class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Golden Triangle</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="kashmir.html"
-                    class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Kashmir</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="manali.html"
-                    class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Himachal</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4
-                class=" text-gray-400 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
-              >
-                South India
-              </h4>
-              <ul class="space-y-2.5">
-                <li>
-                  <a
-                    href="kerala.html"
-                    class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Kerala</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Tamil Nadu</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Karnataka</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4
-                class="text-gray-400 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
-              >
-                Special
-              </h4>
-              <ul class="space-y-2.5">
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Desert Tours</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Spiritual Tours</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Luxury Trips</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- BEST SELLERS PANEL -->
-        <div class="mega-panel hidden" data-panel="bestsellers">
-          <div class="flex gap-16 m-8">
-            <div>
-              <h4
-                class="text-gray-400 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
-              >
-                Top Picks
-              </h4>
-              <ul class="space-y-2.5">
-                <li>
-                  <a
-                    href="goldentriangle.html"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Golden Triangle ★★★★★</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="kerala.html"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Kerala ★★★★★</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Goa ★★★★☆</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4
-                class="text-gray-400 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
-              >
-                Trending
-              </h4>
-              <ul class="space-y-2.5">
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Rajasthan</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Himachal</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Varanasi</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4
-                class="text-gray-400 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
-              >
-                Offers
-              </h4>
-              <ul class="space-y-2.5">
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Early Bird</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-400 hover:translate-x-1.5 inline-block"
-                    >Group Deals</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Custom Tours</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-     <!-- ownpace image  -->
-  <section class="w-full mt-12 overflow-hidden">
-    <img src="images/ownpace.png" alt="Travel at your own pace" class="w-full h-auto object-cover block" />
-  </section>
-
-
-
-
-
-
-
-
-<section class="px-[6%] py-[120px] relative overflow-hidden">
-
-  <!-- WATERMARK -->
-  <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
-    <span class="font-display text-[18vw] font-bold text-[#C8881A]/5">भ्रमण</span>
+  <div class="mt-2 border-t border-white/10 pt-4">
+    <p class="mobile-section-label">Explore</p>
+    <a href="goldentriangle.html" class="mobile-sublink">Golden Triangle</a>
+    <a href="kashmir.html"        class="mobile-sublink">Kashmir</a>
+    <a href="manali.html"          class="mobile-sublink">Himachal</a>
+    <a href="kerala.html"         class="mobile-sublink">Kerala</a>
+    <a href="kashi.html"          class="mobile-sublink">Spiritual Tours</a>
   </div>
 
-  <!-- HEADER -->
-  <div class="grid md:grid-cols-2 gap-16 mb-24">
+  <a
+    href="https://wa.me/919006143335?text=Hi%20I%20am%20interested%20in%20your%20tour%20packages"
+    target="_blank" rel="noopener"
+    class="mt-auto mx-0 flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-semibold text-white bg-gradient-to-br from-[#2a9d8f] to-[#264653]"
+  >
+    📱 Book Now
+  </a>
+</div>
 
-    <div class="fade-up">
-      <p class="text-[11px] tracking-[0.25em] uppercase text-teal-500 mb-4">Our People</p>
+<nav
+  id="mainNav"
+ class="fixed top-0 left-0 right-0 z-[1000] bg-white/80 backdrop-blur-[14px] border-b border-gray-200/60"
 
-      <h1 class="font-display text-[clamp(3rem,6vw,5rem)] leading-[1.05]">
-        The people <br/> behind <em class="text-teal-500">Bharat भ्रमण</em>
-      </h1>
+>
 
-      <p class="mt-6 text-gray-600 max-w-[500px] leading-relaxed">
-        Built by people who understand travel from both sides — as planners and as travellers.
-      </p>
-    </div>
+<div class="container-main flex items-center justify-between h-[72px]">
 
-    <div class="fade-up space-y-6">
-      <p class="font-display italic text-xl text-gray-600 border-l-2 border-teal-500 pl-5">
-        "We don't sell packages. We share the journeys that changed us."
-      </p>
+  <!-- Logo -->
+  <a href="index.html"
+    class="font-display text-[1.4rem] font-bold text-gray-900 tracking-tight transition-transform duration-300 hover:scale-105 shrink-0">
+    Bharat<em class="text-teal-600 not-italic">भ्रमण</em>
+  </a>
 
-      <div class="flex gap-10 pt-6 border-t">
+  <!-- Hamburger — mobile only -->
+  <button
+    id="navToggle"
+    class="nav-toggle-btn hidden max-[900px]:flex flex-col justify-center gap-[5px] bg-transparent border-none cursor-pointer p-1.5 z-[1001]"
+    aria-label="Toggle menu"
+    aria-expanded="false"
+  >
+    <span class="block w-6 h-[2px] bg-gray-800 rounded-sm"></span>
+    <span class="block w-6 h-[2px] bg-gray-800 rounded-sm"></span>
+    <span class="block w-6 h-[2px] bg-gray-800 rounded-sm"></span>
+  </button>
+
+  <!-- Desktop nav links — hidden on mobile, flex on 900px+ -->
+  <ul
+    id="navLinks"
+    class="hidden min-[900px]:flex gap-[34px] items-center"
+  >
+    <!-- NO hardcoded active class — JS sets it from URL -->
+    <li><a href="index.html" class="nav-link" data-page="index">Home</a></li>
+    <li><a href="trips.html" class="nav-link" data-page="trips">Packages</a></li>
+
+    <li>
+      <a href="#" class="mega-trigger nav-link flex items-center gap-1" data-mega="explore">
+        Explore
+        <svg class="w-3.5 h-3.5 text-gray-400 mt-[1px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </a>
+    </li>
+
+    <li><a href="cars.html"  class="nav-link" data-page="cars">Cars</a></li>
+
+
+
+    <li><a href="about.html" class="nav-link" data-page="about">About</a></li>
+  </ul>
+
+  <!-- Book Now CTA — desktop only -->
+  <a
+    href="https://wa.me/919006143335?text=Hi%20I%20am%20interested%20in%20your%20tour%20packages"
+    target="_blank" rel="noopener"
+    class="hidden min-[900px]:flex  gap-2 px-5 py-2 rounded-full text-sm font-semibold text-white
+           bg-gradient-to-br from-[#2a9d8f] to-[#264653]
+           shadow-[0_8px_25px_rgba(0,0,0,0.3)]
+           transition-all duration-300
+           hover:-translate-y-0.5 hover:scale-[1.04] hover:shadow-[0_18px_40px_rgba(0,0,0,0.4)]"
+  >
+    Book Now
+  </a>
+
+  <!-- ── Mega Menu ───────────────────────────────────────── -->
+  <div
+    id="megaMenu"
+    class="mega-menu absolute top-full left-1/2 -translate-x-1/2 min-w-[540px] bg-white rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-gray-100 mt-3 z-[1000]"
+  >
+
+    <!-- EXPLORE -->
+    <div class="mega-panel hidden" data-panel="explore">
+      <div class="flex gap-14 m-8">
         <div>
-          <h3 class="font-display text-4xl">12+</h3>
-          <p class="text-xs uppercase tracking-wider text-gray-500">Years</p>
+          <h4 class="text-gray-400 text-[0.78rem] font-semibold uppercase tracking-widest mb-4">North India</h4>
+          <ul class="space-y-3">
+            <li><a href="goldentriangle.html" class="mega-link">Golden Triangle</a></li>
+            <li><a href="kashmir.html"        class="mega-link">Kashmir</a></li>
+            <li><a href="manali.html"          class="mega-link">Himachal</a></li>
+          </ul>
         </div>
         <div>
-          <h3 class="font-display text-4xl">600+</h3>
-          <p class="text-xs uppercase tracking-wider text-gray-500">Trips</p>
+          <h4 class="text-gray-400 text-[0.78rem] font-semibold uppercase tracking-widest mb-4">South India</h4>
+          <ul class="space-y-3">
+            <li><a href="kerala.html"    class="mega-link">Kerala</a></li>
+            <li><a href="tamilnadu.html" class="mega-link">Tamil Nadu</a></li>
+            <li><a href="karnataka.html" class="mega-link">Karnataka</a></li>
+          </ul>
         </div>
         <div>
-          <h3 class="font-display text-4xl">10+</h3>
-          <p class="text-xs uppercase tracking-wider text-gray-500">Countries</p>
+          <h4 class="text-gray-400 text-[0.78rem] font-semibold uppercase tracking-widest mb-4">Special</h4>
+          <ul class="space-y-3">
+            <li><a href="desert.html" class="mega-link">Desert Tours</a></li>
+            <li><a href="kashi.html"  class="mega-link">Spiritual Tours</a></li>
+            <li><a href="luxury.html" class="mega-link">Luxury Trips</a></li>
+          </ul>
         </div>
       </div>
     </div>
 
-  </div>
 
-  <!-- TEAM GRID -->
-  <div class="grid md:grid-cols-3 gap-10">
-
-    <!-- CARD -->
- <!-- CARD -->
-<div class="fade-up group">
-  <div class="h-[420px] bg-gray-200 overflow-hidden relative">
-
-    <!-- IMAGE -->
-    <img
-      src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
-      alt="Arjun Rawat"
-      class="w-full h-full object-cover transition duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
-    />
-
-    <!-- DARK GRADIENT OVERLAY -->
-    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-
-    <!-- TEXT OVER IMAGE -->
-    <div class="absolute bottom-5 left-5 text-white z-10">
-      <p class="text-xs tracking-widest text-teal-400 uppercase">Co-founder</p>
-      <h3 class="font-display text-2xl">Arjun Rawat</h3>
-    </div>
 
   </div>
-
-  <!-- DESCRIPTION -->
-  <p class="mt-4 text-sm text-gray-600 leading-relaxed">
-    Has driven every highway from Leh to Kanyakumari.
-  </p>
-</div>
-
- <!-- CARD -->
-<div class="fade-up group md:mt-16">
-
-  <div class="h-[380px] bg-gray-200 relative overflow-hidden">
-
-    <!-- IMAGE -->
-    <img
-      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330"
-      alt="Priya Mehta"
-      class="w-full h-full object-cover transition duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
-    />
-
-    <!-- OVERLAY -->
-    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-
-    <!-- TEXT -->
-    <div class="absolute bottom-5 left-5 text-white z-10">
-      <p class="text-[11px] tracking-[0.2em] text-teal-400 uppercase mb-1">
-        Guest Experience
-      </p>
-      <h3 class="font-display text-[22px] leading-tight">
-        Priya Mehta
-      </h3>
-    </div>
-
-  </div>
-
-  <!-- DESCRIPTION -->
-  <p class="mt-4 text-[14px] text-gray-600 leading-relaxed max-w-[90%]">
-    Ensures every journey feels personal — from the first message to the final goodbye.
-    No guest ever feels uncertain, rushed, or out of place.
-  </p>
 
 </div>
-  <!-- CARD -->
-<div class="fade-up group md:mt-32">
+</nav>
 
-  <div class="h-[340px] bg-gray-200 relative overflow-hidden">
 
-    <!-- IMAGE -->
-    <img
-      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
-      alt="Dinesh Kumar"
-      class="w-full h-full object-cover transition duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
-    />
 
-    <!-- OVERLAY -->
-    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+    <section class="section relative overflow-hidden">
 
-    <!-- TEXT -->
-    <div class="absolute bottom-5 left-5 text-white z-10">
-      <p class="text-[11px] tracking-[0.2em] text-teal-400 uppercase mb-1">
-        Senior Driver
-      </p>
-      <h3 class="font-display text-[18px] leading-tight">
-        Dinesh Kumar
-      </h3>
-    </div>
-
+  <!-- BACKGROUND -->
+  <div class="absolute inset-0 -z-10
+    bg-[radial-gradient(circle_at_20%_30%,rgba(42,157,143,0.12),transparent_60%),
+        radial-gradient(circle_at_80%_70%,rgba(79,190,203,0.10),transparent_60%)]">
   </div>
 
-  <!-- DESCRIPTION -->
-  <p class="mt-4 text-[14px] text-gray-600 leading-relaxed max-w-[85%]">
-    Nine years on the road, zero complaints — the kind of reliability guests remember long after the journey ends.
-  </p>
 
-</div>
+  <div class="container-main">
+  <!-- HERO -->
+  <div class="text-center container-narrow mb-20 reveal">
+    <span class="text-xs uppercase tracking-[0.3em] text-teal-500 font-semibold">
+      About Us
+    </span>
 
-  </div>
+    <h2 class="text-[clamp(2.6rem,5vw,3.6rem)] font-semibold mt-4 leading-[1.1] text-gray-900">
+      Travel, Your Way — <br class="hidden md:block" />
+      <span class="text-teal-500">Without Compromise</span>
+    </h2>
 
-  <!-- MANIFESTO -->
-  <div class="mt-32 border-y py-16 grid md:grid-cols-2 gap-16 fade-up">
-    <div>
-      <p class="text-xs tracking-widest text-teal-500 uppercase mb-4">Philosophy</p>
-      <h2 class="font-display text-4xl leading-tight">
-        Travel is not a product. <br/>It's a <em class="text-teal-500">relationship</em>
-      </h2>
-    </div>
-
-    <p class="text-gray-600 leading-relaxed">
-      We built this because travel felt transactional. We wanted something real, human, and reliable.
+    <p class="text-gray-500 mt-5 text-[1rem]">
+      We believe travel should be flexible, comfortable, and completely yours.
+      No fixed schedules. No compromises. Just seamless journeys designed around you.
     </p>
   </div>
 
-  <!-- CTA -->
-  <div class="mt-20 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 fade-up">
-    <h2 class="font-display text-4xl">
-      Ready to travel with people who <em class="text-teal-500">get it?</em>
-    </h2>
+  <!-- STORY + IMAGE -->
+  <div class="grid md:grid-cols-2 gap-14 items-center mb-24">
 
-    <a href="#" class="bg-black text-white rounded-xl px-8 py-4 text-xs tracking-widest uppercase hover:bg-teal-500 transition">
-      Plan Your Journey →
-    </a>
+    <!-- TEXT -->
+    <div class="reveal reveal-left">
+      <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+        Built for Real Travelers
+      </h3>
+
+      <p class="text-gray-600 leading-relaxed mb-4">
+        We started with a simple idea — travel should adapt to you, not the other way around.
+        Whether it’s a short getaway or a long journey, you deserve control, comfort, and clarity.
+      </p>
+
+      <p class="text-gray-600 leading-relaxed">
+        That’s why we focus on private cars, professional drivers, and flexible plans —
+        so you can explore at your own pace without stress.
+      </p>
+    </div>
+
+    <!-- IMAGE -->
+    <div class="reveal reveal-right flex justify-center">
+      <img src="images/about.png" class="rounded-2xl max-w-full w-[420px]" />
+    </div>
+
   </div>
 
+  <!-- STATS -->
+  <div class="hero-stats-row grid grid-cols-2 md:grid-cols-4 gap-8 mb-24 reveal reveal-left">
+
+    <div class="hero-stat-item text-center">
+      <h4 class="stat-num text-3xl font-bold text-teal-600" data-target="600">0</h4>
+      <p class="text-gray-500 text-sm mt-2">Trips Completed</p>
+    </div>
+
+      <div class="hero-stat-item text-center">
+      <h4 class="stat-num text-3xl font-bold text-teal-600" data-target="40">0</h4>
+      <p class="text-gray-500 text-sm mt-2">Destinations Covered</p>
+    </div>
+
+    <div class="hero-stat-item text-center">
+      <h4 class="stat-num text-3xl font-bold text-teal-600" data-target="100">0%</h4>
+      <p class="text-gray-500 text-sm mt-2">Happy Travellers</p>
+    </div>
+
+     <div class="hero-stat-item text-center">
+      <h4 class="stat-num text-3xl font-bold text-teal-600" data-target="5">0</h4>
+      <p class="text-gray-500 text-sm mt-2">Years Experience</p>
+    </div>
+
+  </div>
+
+  <!-- MINI CTA -->
+  <div class="text-center reveal">
+    <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+      Plan Your Trip Your Way
+    </h3>
+
+    <p class="reveal reveal-right text-gray-500 mb-6">
+      Private cars, flexible plans, and complete control — start your journey today.
+    </p>
+
+    <a href="contact.html" class="reveal reveal-right bg-teal-600 text-white px-6 py-3 rounded-xl hover:scale-105 transition shadow-md inline-block">
+  Plan Your Trip
+</a>
+  </div>
+
+
+</div>
 </section>
 
-  <!-- FAQ -->
-  <section class="px-[5%] py-[110px] bg-gradient-to-b from-[#f8fafc] to-white relative overflow-hidden">
-    <!-- BACKGROUND DECOR (SUBTLE GLOW) -->
-    <div class="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-teal-100 rounded-full blur-3xl opacity-40">
-    </div>
-    <div
-      class="absolute bottom-[-100px] right-[-100px] w-[300px] h-[300px] bg-blue-100 rounded-full blur-3xl opacity-40">
+
+
+
+
+
+
+
+
+<!-- why choose us ------------------->
+ <section class="section relative overflow-hidden">
+
+  <!-- BACKGROUND GLOW -->
+  <div class="absolute inset-0 -z-10
+    bg-[radial-gradient(circle_at_20%_30%,rgba(42,157,143,0.12),transparent_60%),
+        radial-gradient(circle_at_80%_70%,rgba(79,190,203,0.10),transparent_60%)]">
+  </div>
+
+  <div class="container-main">
+
+  <!-- HEADING -->
+  <div class="text-center container-narrow mb-20 reveal">
+
+    <span class="text-xs uppercase tracking-[0.25em] text-teal-500 font-semibold">
+     Why Choose Us
+    </span>
+
+    <h2 class="text-[clamp(2.4rem,5vw,3.4rem)] font-semibold mt-4 leading-tight text-gray-900">
+     Why Travelers
+      <span class="text-teal-500 relative inline-block">
+       Choose Us
+        <span class="absolute left-0 -bottom-1 w-full h-[4px] bg-teal-500/70 rounded-full"></span>
+      </span>
+    </h2>
+
+    <p class="text-gray-500 mt-5 text-[0.95rem]">
+      From selecting your car to starting your journey — everything is designed to be effortless.
+    </p>
+
+  </div>
+
+  <!-- STEPS -->
+  <div class="relative">
+
+    <!-- CONNECTOR LINE -->
+    <div class="hidden lg:block absolute top-[40px] left-0 w-full h-[2px]
+      bg-gradient-to-r from-transparent via-teal-300/40 to-transparent">
     </div>
 
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <!-- STEP -->
+      <div class="group relative reveal reveal-left">
+
+        <!-- NUMBER -->
+        <div class="w-[70px] h-[70px] rounded-full
+          bg-gradient-to-br from-teal-500 to-teal-700 text-white
+          flex items-center justify-center text-xl font-bold
+          shadow-lg mx-auto mb-6
+          transition duration-300 group-hover:scale-110 group-hover:rotate-6">
+          01
+        </div>
+
+        <!-- CARD -->
+        <div class="bg-white/70 backdrop-blur-lg border border-white/60
+          rounded-2xl p-6 text-center
+          shadow-[0_10px_25px_rgba(0,0,0,0.06)]
+          transition-all duration-300
+          group-hover:-translate-y-3 group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.12)]">
+
+          <h3 class="font-semibold text-lg mb-2 text-gray-900 group-hover:text-teal-600 transition">
+            Private Drivers Only
+          </h3>
+
+          <p class="text-sm text-gray-500 leading-relaxed">
+            No shared rides. Your car, your space.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- STEP -->
+      <div class="group relative reveal reveal-right">
+
+        <div class="w-[70px] h-[70px] rounded-full
+          bg-gradient-to-br from-teal-500 to-teal-700 text-white
+          flex items-center justify-center text-xl font-bold
+          shadow-lg mx-auto mb-6
+          transition duration-300 group-hover:scale-110 group-hover:rotate-6">
+          02
+        </div>
+
+        <div class="bg-white/70 backdrop-blur-lg border border-white/60
+          rounded-2xl p-6 text-center
+          shadow-[0_10px_25px_rgba(0,0,0,0.06)]
+          transition-all duration-300
+          group-hover:-translate-y-3 group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.12)]">
+
+          <h3 class="font-semibold text-lg mb-2 text-gray-900 group-hover:text-teal-600 transition">
+            Fully Flexible Trips
+          </h3>
+
+          <p class="text-sm text-gray-500 leading-relaxed">
+            Stop anywhere, change anytime.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- STEP -->
+      <div class="group relative reveal reveal-left">
+
+        <div class="w-[70px] h-[70px] rounded-full
+          bg-gradient-to-br from-teal-500 to-teal-700 text-white
+          flex items-center justify-center text-xl font-bold
+          shadow-lg mx-auto mb-6
+          transition duration-300 group-hover:scale-110 group-hover:rotate-6">
+          03
+        </div>
+
+        <div class="bg-white/70 backdrop-blur-lg border border-white/60
+          rounded-2xl p-6 text-center
+          shadow-[0_10px_25px_rgba(0,0,0,0.06)]
+          transition-all duration-300
+          group-hover:-translate-y-3 group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.12)]">
+
+          <h3 class="font-semibold text-lg mb-2 text-gray-900 group-hover:text-teal-600 transition">
+            Clean & Verified Cars
+          </h3>
+
+          <p class="text-sm text-gray-500 leading-relaxed">
+           Regularly checked, well maintained.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- STEP -->
+      <div class="group relative reveal reveal-right">
+
+        <div class="w-[70px] h-[70px] rounded-full
+          bg-gradient-to-br from-teal-500 to-teal-700 text-white
+          flex items-center justify-center text-xl font-bold
+          shadow-lg mx-auto mb-6
+          transition duration-300 group-hover:scale-110 group-hover:rotate-6">
+          04
+        </div>
+
+        <div class="bg-white/70 backdrop-blur-lg border border-white/60
+          rounded-2xl p-6 text-center
+          shadow-[0_10px_25px_rgba(0,0,0,0.06)]
+          transition-all duration-300
+          group-hover:-translate-y-3 group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.12)]">
+
+          <h3 class="font-semibold text-lg mb-2 text-gray-900 group-hover:text-teal-600 transition">
+            Travel & Relax
+          </h3>
+
+          <p class="text-sm text-gray-500 leading-relaxed">
+           No hidden charges. Pay only what you see.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+</div>
+</section>
+
+
+
+
+
+
+
+<!-- brand logo  -->
+<section class="section reveal relative py-[80px] overflow-hidden bg-white">
+
+<div class="container-main">
+  <!-- HEADING -->
+  <div class="reveal reveal-left text-center conatiner-narrow mb-12 reveal">
+    <span class="text-xs uppercase tracking-[0.3em] text-teal-500 font-semibold">
+      Trusted Travel Partners
+    </span>
+
+    <h2 class="reveal reveal-right text-[clamp(1.2rem,2.4vw,2.2rem)] font-semibold mt-4 leading-[1.1] text-gray-900">
+       Platforms That Power Your Journey
+    </h2>
+
+    <p class="text-gray-500 mt-4 text-[1rem]">
+     We collaborate with reliable platforms and services to ensure a smooth and seamless travel experience.
+    </p>
+  </div>
+
+  <!-- LOGO CAROUSEL -->
+  <div class="logo-carousel relative overflow-hidden py-6">
+
+    <div class="logo-track flex items-center gap-14">
+
+      <!-- logos -->
+      <div class="logo-item"><img src="images/makemytrip.jpg"></div>
+      <div class="logo-item"><img src="images/goibibo.jpg"></div>
+      <div class="logo-item"><img src="images/visa.jpg"></div>
+      <div class="logo-item"><img src="images/mastercard1.jpg"></div>
+      <div class="logo-item"><img src="images/google.jpg"></div>
+
+      <!-- duplicate -->
+      <div class="logo-item"><img src="images/makemytrip.jpg"></div>
+      <div class="logo-item"><img src="images/goibibo.jpg"></div>
+      <div class="logo-item"><img src="images/visa.jpg"></div>
+      <div class="logo-item"><img src="images/mastercard1.jpg"></div>
+      <div class="logo-item"><img src="images/google.jpg"></div>
+
+    </div>
+
+  </div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+  <!---------------REVIEWS — auto-scrolling------------>
+ <section id="reviews" class="section relative overflow-hidden">
+
+<div class="absolute inset-0 -z-10 animate-gradient bg-[radial-gradient(circle_at_20%_30%,rgba(42,157,143,0.18),transparent_60%), radial-gradient(circle_at_80%_70%,rgba(79,190,203,0.15),transparent_60%), linear-gradient(120deg,#f8fafc,#eef3f9,#f8fafc)]"></div>
+
+  <div class="container-main">
+  <!-- Heading -->
+  <div class="reveal reveal-right container-narrow text-center mb-14">
+    <span class="text-[11px] font-semibold tracking-[0.2em] uppercase text-teal-500 mb-3 block">What Travelers Say</span>
+    <h2 class="font-display text-[clamp(2rem,4vw,2.8rem)] font-semibold text-gray-900 leading-[1.15]">
+      Trusted by <span class="text-teal-500">1,200+</span> Travelers
+    </h2>
+  </div>
+
+  <!-- Carousel -->
+  <div class="reviews-carousel-new relative overflow-hidden py-8 pb-12">
+    <div class="reviews-track-new flex gap-6">
+
+      <!-- Card 1 -->
+      <div class="review-card-new w-[300px] shrink-0 bg-white rounded-[20px] p-7 relative overflow-hidden flex flex-col items-center text-center"
+           style="transition: transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.65s ease, box-shadow 0.65s ease;">
+        <div class="w-14 h-14 rounded-full bg-teal-100 text-teal-700 font-bold text-lg flex items-center justify-center mb-4 z-10">RS</div>
+        <span class="text-[0.78rem] text-gray-400 mb-4 z-10">🇮🇳 Mumbai</span>
+        <div class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none">"</div>
+        <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">Driver was very polite and always on time. Car was clean throughout the trip.</p>
+     <div class="mt-auto z-10">
+  <h4 class="font-semibold text-[0.92rem] text-gray-900">Rohit Sharma</h4>
+  <div class="flex items-center justify-center gap-2 mt-1.5">
+    <div class="star-rating">
+      <span class="stars-empty">★★★★★</span>
+      <span class="stars-filled" style="width: 96%">★★★★★</span>
+    </div>
+    <span class="text-gray-400 text-xs">4.8</span>
+  </div>
+</div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="review-card-new w-[300px] shrink-0 bg-white rounded-[20px] p-7 relative overflow-hidden flex flex-col items-center text-center"
+           style="transition: transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.65s ease, box-shadow 0.65s ease;">
+        <div class="w-14 h-14 rounded-full bg-purple-100 text-purple-700 font-bold text-lg flex items-center justify-center mb-4 z-10">NV</div>
+        <span class="text-[0.78rem] text-gray-400 mb-4 z-10">🇮🇳 Delhi</span>
+        <div class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none">"</div>
+        <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">Travelled with parents, everything was smooth and comfortable. No stress at all.</p>
+       <div class="mt-auto z-10">
+  <h4 class="font-semibold text-[0.92rem] text-gray-900">Neha Verma</h4>
+  <div class="flex items-center justify-center gap-2 mt-1.5">
+    <div class="star-rating">
+      <span class="stars-empty">★★★★★</span>
+      <span class="stars-filled" style="width: 98%">★★★★★</span>
+    </div>
+    <span class="text-gray-400 text-xs">4.9</span>
+  </div>
+</div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="review-card-new w-[300px] shrink-0 bg-white rounded-[20px] p-7 relative overflow-hidden flex flex-col items-center text-center"
+           style="transition: transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.65s ease, box-shadow 0.65s ease;">
+        <div class="w-14 h-14 rounded-full bg-orange-100 text-orange-700 font-bold text-lg flex items-center justify-center mb-4 z-10">AG</div>
+        <span class="text-[0.78rem] text-gray-400 mb-4 z-10">🇮🇳 Gurgaon</span>
+        <div class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none">"</div>
+        <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">Honestly better than expected. Driver knew all routes and avoided traffic perfectly.</p>
+       <div class="mt-auto z-10">
+  <h4 class="font-semibold text-[0.92rem] text-gray-900">Aman Gupta</h4>
+  <div class="flex items-center justify-center gap-2 mt-1.5">
+    <div class="star-rating">
+      <span class="stars-empty">★★★★★</span>
+      <span class="stars-filled" style="width: 94%">★★★★★</span>
+    </div>
+    <span class="text-gray-400 text-xs">4.7</span>
+  </div>
+</div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="review-card-new w-[300px] shrink-0 bg-white rounded-[20px] p-7 relative overflow-hidden flex flex-col items-center text-center"
+           style="transition: transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.65s ease, box-shadow 0.65s ease;">
+        <div class="w-14 h-14 rounded-full bg-rose-100 text-rose-700 font-bold text-lg flex items-center justify-center mb-4 z-10">PM</div>
+        <span class="text-[0.78rem] text-gray-400 mb-4 z-10">🇮🇳 Ahmedabad</span>
+        <div class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none">"</div>
+        <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">Very professional service. Car condition was excellent and the ride felt completely safe.</p>
+      <div class="mt-auto z-10">
+  <h4 class="font-semibold text-[0.92rem] text-gray-900">Pooja Mehta</h4>
+  <div class="flex items-center justify-center gap-2 mt-1.5">
+    <div class="star-rating">
+      <span class="stars-empty">★★★★★</span>
+      <span class="stars-filled" style="width: 96%">★★★★★</span>
+    </div>
+    <span class="text-gray-400 text-xs">4.8</span>
+  </div>
+</div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="review-card-new w-[300px] shrink-0 bg-white rounded-[20px] p-7 relative overflow-hidden flex flex-col items-center text-center"
+           style="transition: transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.65s ease, box-shadow 0.65s ease;">
+        <div class="w-14 h-14 rounded-full bg-blue-100 text-blue-700 font-bold text-lg flex items-center justify-center mb-4 z-10">DB</div>
+        <span class="text-[0.78rem] text-gray-400 mb-4 z-10">🇺🇸 USA</span>
+        <div class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none">"</div>
+        <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">Our India trip felt safe and well-organized. The driver was absolutely excellent.</p>
+      <div class="mt-auto z-10">
+  <h4 class="font-semibold text-[0.92rem] text-gray-900">Daniel Brooks</h4>
+  <div class="flex items-center justify-center gap-2 mt-1.5">
+    <div class="star-rating">
+      <span class="stars-empty">★★★★★</span>
+      <span class="stars-filled" style="width: 98%">★★★★★</span>
+    </div>
+    <span class="text-gray-400 text-xs">4.9</span>
+  </div>
+</div>
+
+      </div>
+
+      <!-- Card 6 -->
+      <div class="review-card-new w-[300px] shrink-0 bg-white rounded-[20px] p-7 relative overflow-hidden flex flex-col items-center text-center"
+           style="transition: transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.65s ease, box-shadow 0.65s ease;">
+        <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-700 font-bold text-lg flex items-center justify-center mb-4 z-10">EW</div>
+        <span class="text-[0.78rem] text-gray-400 mb-4 z-10">🇬🇧 UK</span>
+        <div class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none">"</div>
+        <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">Great experience overall. Very comfortable travel between cities across India.</p>
+       <div class="mt-auto z-10">
+  <h4 class="font-semibold text-[0.92rem] text-gray-900">Emma Wilson</h4>
+  <div class="flex items-center justify-center gap-2 mt-1.5">
+    <div class="star-rating">
+      <span class="stars-empty">★★★★★</span>
+      <span class="stars-filled" style="width: 96%">★★★★★</span>
+    </div>
+    <span class="text-gray-400 text-xs">4.8</span>
+  </div>
+</div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="review-card-new w-[300px] shrink-0 bg-white rounded-[20px] p-7 relative overflow-hidden flex flex-col items-center text-center"
+           style="transition: transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.65s ease, box-shadow 0.65s ease;">
+        <div class="w-14 h-14 rounded-full bg-yellow-100 text-yellow-700 font-bold text-lg flex items-center justify-center mb-4 z-10">SR</div>
+        <span class="text-[0.78rem] text-gray-400 mb-4 z-10">🇮🇳 Hyderabad</span>
+        <div class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none">"</div>
+        <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">Everything went exactly as planned. Very trustworthy team, will book again.</p>
+      <div class="mt-auto z-10">
+  <h4 class="font-semibold text-[0.92rem] text-gray-900">Sneha Reddy</h4>
+  <div class="flex items-center justify-center gap-2 mt-1.5">
+    <div class="star-rating">
+      <span class="stars-empty">★★★★★</span>
+      <span class="stars-filled" style="width: 98%">★★★★★</span>
+    </div>
+    <span class="text-gray-400 text-xs">4.9</span>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Dots -->
+  <div class="reviews-dots flex items-center justify-center gap-2 mt-2"></div>
+</div>
+</section>
+
+
+  <!-- FAQ -->
+  <section class="section reveal reveal-right relative overflow-hidden bg-white">
+
+
+<div class="container-main">
+
     <!-- HEADING -->
-    <div class="text-center max-w-[700px] mx-auto mb-16 relative z-10">
+    <div class="text-center container-narrow mx-auto mb-16 relative z-10">
       <span class="text-xs uppercase tracking-[0.25em] text-teal-500 font-semibold">
         Got Questions?
       </span>
@@ -563,7 +708,7 @@ tailwind.config = {
     </div>
 
     <!-- FAQ -->
-    <div class="max-w-[820px] mx-auto space-y-5 relative z-10">
+    <div class="space-y-5 relative z-10">
       <!-- ITEM -->
       <details
         class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
@@ -639,7 +784,11 @@ tailwind.config = {
         </p>
       </details>
     </div>
+
+    </div>
   </section>
+
+
 
   <!-- footer  -->
 <footer class="bg-dark-grad px-[5%] pt-20 border-t border-[#e8ddd0]/20">
@@ -907,7 +1056,9 @@ tailwind.config = {
   </button>
 
   <!-- script --------------------------------->
+<!-- lucide icon CDN -->
+   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="script.js"></script>
-   <script>lucide.createIcons();</script>
+
   </body>
 </html>

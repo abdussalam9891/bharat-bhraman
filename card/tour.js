@@ -1,7 +1,7 @@
 // DATA
 const tours = [
   {
-    title: "Golden Triangle 5 Days 4 Nights Tour Package",
+    title: "Golden Triangle",
     location: "Delhi - Agra - Jaipur",
     days: "5 Days",
     rating: "★ 4.7 (180)",
@@ -14,7 +14,7 @@ const tours = [
     images: ["images/d2.jpg", "images/d7.jpg", "images/r6.jpg"]
   },
   {
-    title: "Kerala 7 Days 6 Nights Backwater Tour Package",
+    title: "Kerala",
     location: "Kochi - Munnar - Alleppey",
     days: "7 Days",
     rating: "★ 4.8 (220)",
@@ -36,7 +36,7 @@ const tours = [
     price: "₹7,500",
     oldPrice: "₹9,000",
     link: "goa.html",
-    badge: "🔥 Bestseller",
+    badge: "Bestseller",
     images: ["tourimages/goa1.jpg","tourimages/goa2.jpg","tourimages/goa3.jpg","tourimages/goa4.jpg"]
   },
   {
@@ -49,7 +49,7 @@ const tours = [
     price: "₹13,500",
     oldPrice: "₹16,000",
     link: "manali.html",
-    badge: "❄️ Most Booked",
+    badge: "Most Booked",
     images: ["tourimages/manali1.jpg","tourimages/manali2.jpg","tourimages/manali3.jpg","tourimages/manali4.jpg","tourimages/manali5.jpg"]
   },
   {
@@ -62,11 +62,11 @@ const tours = [
     price: "₹8,500",
     oldPrice: "₹10,000",
     link: "kashi.html",
-    badge: "🪔 Spiritual",
+    badge: "Spiritual",
     images: ["tourimages/kashi1.jpg","tourimages/kashi2.jpg","tourimages/kashi3.jpg","tourimages/kashi4.jpg"]
   },
   {
-    title: "Andaman Islands 7 Days Tour",
+    title: "Andaman Islands",
     location: "Port Blair - Havelock - Neil Island",
     days: "7 Days",
     rating: "★ 4.9",
@@ -75,7 +75,7 @@ const tours = [
     price: "₹24,000",
     oldPrice: "₹28,000",
     link: "andamanIsland.html",
-    badge: "🏝️ Top Pick",
+    badge: "Top Pick",
     images: ["tourimages/portblair1.jpg","tourimages/portblair2.jpg","tourimages/andaman1.jpg","tourimages/andaman2.jpg","tourimages/andaman3.jpg"]
   }
 ];

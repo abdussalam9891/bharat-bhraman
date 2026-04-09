@@ -1,308 +1,281 @@
- document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
+  // homepage tour
+  (function initTourCarousel() {
+    const track = document.getElementById("tourTrack");
+    const prevBtn = document.getElementById("tourPrev");
+    const nextBtn = document.getElementById("tourNext");
 
+    if (!track) return;
 
+    const wrapper = track.parentElement;
+    let position = 0;
+    let isDragging = false;
+    let startX = 0;
+    let startPosition = 0;
 
-
-// homepage tour
- (function initTourCarousel() {
-  const track   = document.getElementById('tourTrack');
-  const prevBtn = document.getElementById('tourPrev');
-  const nextBtn = document.getElementById('tourNext');
-
-  if (!track) return;
-
-  const wrapper = track.parentElement;
-  let position = 0;
-  let isDragging = false;
-  let startX = 0;
-  let startPosition = 0;
-
-  // ---------- helpers ----------
-  function cardWidth() {
-    const card = track.querySelector('article');
-    return card ? card.offsetWidth + 28 : 328;
-  }
-
-  function maxScroll() {
-    return track.scrollWidth - wrapper.offsetWidth;
-  }
-
-  function clamp(val, min, max) {
-    return Math.max(min, Math.min(val, max));
-  }
-
-  function update(withAnim = true) {
-    track.style.transition = withAnim ? 'transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94)' : 'none';
-    track.style.transform  = `translateX(-${position}px)`;
-
-    if (prevBtn) {
-      prevBtn.style.opacity = position <= 0 ? '0.3' : '1';
-      prevBtn.style.pointerEvents = position <= 0 ? 'none' : 'auto';
+    // ---------- helpers ----------
+    function cardWidth() {
+      const card = track.querySelector("article");
+      return card ? card.offsetWidth + 28 : 328;
     }
 
-    if (nextBtn) {
-      nextBtn.style.opacity = position >= maxScroll() ? '0.3' : '1';
-      nextBtn.style.pointerEvents = position >= maxScroll() ? 'none' : 'auto';
+    function maxScroll() {
+      return track.scrollWidth - wrapper.offsetWidth;
     }
-  }
 
-  // ---------- buttons ----------
-  nextBtn?.addEventListener('click', () => {
-    position = clamp(position + cardWidth(), 0, maxScroll());
-    update(true);
-  });
-
-  prevBtn?.addEventListener('click', () => {
-    position = clamp(position - cardWidth(), 0, maxScroll());
-    update(true);
-  });
-
-  // ---------- touch swipe (mobile) ----------
-  track.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-    startPosition = position;
-  }, { passive: true });
-
-  track.addEventListener('touchmove', (e) => {
-    const dx = e.touches[0].clientX - startX;
-    position = clamp(startPosition - dx, 0, maxScroll());
-    update(false);
-  }, { passive: true });
-
-  track.addEventListener('touchend', () => {
-    update(true);
-  });
-
-  // ---------- mouse drag (desktop premium feel) ----------
-  wrapper.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    startX = e.pageX;
-    startPosition = position;
-    wrapper.style.cursor = 'grabbing';
-  });
-
-  window.addEventListener('mouseup', () => {
-    isDragging = false;
-    wrapper.style.cursor = 'grab';
-  });
-
-  window.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-
-    const dx = e.pageX - startX;
-    position = clamp(startPosition - dx, 0, maxScroll());
-    update(false);
-  });
-
-  wrapper.style.cursor = 'grab';
-
-  // ---------- trackpad horizontal scroll ----------
-  wrapper.addEventListener('wheel', (e) => {
-    const isHorizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY);
-
-    if (isHorizontal) {
-      e.preventDefault();
-
-      position = clamp(position + e.deltaX, 0, maxScroll());
-      update(false);
+    function clamp(val, min, max) {
+      return Math.max(min, Math.min(val, max));
     }
-  }, { passive: false });
 
-  // ---------- resize ----------
-  window.addEventListener('resize', () => {
-    position = clamp(position, 0, maxScroll());
-    update(false);
-  });
+    function update(withAnim = true) {
+      track.style.transition = withAnim
+        ? "transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94)"
+        : "none";
+      track.style.transform = `translateX(-${position}px)`;
 
-  // ---------- init ----------
-  update(false);
+      if (prevBtn) {
+        prevBtn.style.opacity = position <= 0 ? "0.3" : "1";
+        prevBtn.style.pointerEvents = position <= 0 ? "none" : "auto";
+      }
 
-})();
+      if (nextBtn) {
+        nextBtn.style.opacity = position >= maxScroll() ? "0.3" : "1";
+        nextBtn.style.pointerEvents = position >= maxScroll() ? "none" : "auto";
+      }
+    }
 
-
-
-
-// testimonials--------------------------------
-(function initReviewsCarousel() {
-  const container = document.querySelector('.reviews-carousel-new');
-  const track     = document.querySelector('.reviews-track-new');
-  const dotsWrap  = document.querySelector('.reviews-dots');
-  const origCards = [...track.querySelectorAll('.review-card-new')];
-
-  if (!container || !track || !dotsWrap || !origCards.length) return;
-
-  const total = origCards.length;
-
-  let current = 0;
-  let vPos = 0;
-  let jumping = false;
-  let timer;
-
-  // Clone for infinite loop
-  origCards.forEach(card => track.appendChild(card.cloneNode(true)));
-  const allCards = [...track.querySelectorAll('.review-card-new')];
-
-  // Dots
-  origCards.forEach((_, i) => {
-    const dot = document.createElement('div');
-    dot.className = 'rc-dot';
-    dot.addEventListener('click', () => moveTo(i));
-    dotsWrap.appendChild(dot);
-  });
-
-  // Geometry
-  const gap = () => 24;
-  const cardW = () => allCards[0].offsetWidth + gap();
-  const centerX = () => container.offsetWidth / 2 - allCards[0].offsetWidth / 2;
-  const offset = v => centerX() - v * cardW();
-
-  function applyClasses() {
-    allCards.forEach((card, i) => {
-      card.classList.remove('rc-active', 'rc-adjacent');
-
-      const logical = i % total;
-      const d = Math.min(
-        Math.abs(logical - current),
-        total - Math.abs(logical - current)
-      );
-
-      if (d === 0) card.classList.add('rc-active');
-      else if (d === 1) card.classList.add('rc-adjacent');
+    // ---------- buttons ----------
+    nextBtn?.addEventListener("click", () => {
+      position = clamp(position + cardWidth(), 0, maxScroll());
+      update(true);
     });
-  }
 
-  function applyDots() {
-    [...dotsWrap.children].forEach((d, i) =>
-      d.classList.toggle('rc-dot-active', i === current)
+    prevBtn?.addEventListener("click", () => {
+      position = clamp(position - cardWidth(), 0, maxScroll());
+      update(true);
+    });
+
+    // ---------- touch swipe (mobile) ----------
+    track.addEventListener(
+      "touchstart",
+      (e) => {
+        startX = e.touches[0].clientX;
+        startPosition = position;
+      },
+      { passive: true },
     );
-  }
 
-  function moveTo(logical, useClone = false) {
-    if (jumping) return;
-    if (logical === current && !useClone) return;
+    track.addEventListener(
+      "touchmove",
+      (e) => {
+        const dx = e.touches[0].clientX - startX;
+        position = clamp(startPosition - dx, 0, maxScroll());
+        update(false);
+      },
+      { passive: true },
+    );
 
-    jumping = true;
-    current = logical;
-    vPos = useClone ? total + logical : logical;
+    track.addEventListener("touchend", () => {
+      update(true);
+    });
 
-    track.style.transition = 'transform 0.6s cubic-bezier(.2,.65,.3,1)';
-    track.style.transform  = `translateX(${offset(vPos)}px)`;
+    // ---------- mouse drag (desktop premium feel) ----------
+    wrapper.addEventListener("mousedown", (e) => {
+      isDragging = true;
+      startX = e.pageX;
+      startPosition = position;
+      wrapper.style.cursor = "grabbing";
+    });
 
+    window.addEventListener("mouseup", () => {
+      isDragging = false;
+      wrapper.style.cursor = "grab";
+    });
+
+    window.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+
+      const dx = e.pageX - startX;
+      position = clamp(startPosition - dx, 0, maxScroll());
+      update(false);
+    });
+
+    wrapper.style.cursor = "grab";
+
+    // ---------- trackpad horizontal scroll ----------
+    wrapper.addEventListener(
+      "wheel",
+      (e) => {
+        const isHorizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY);
+
+        if (isHorizontal) {
+          e.preventDefault();
+
+          position = clamp(position + e.deltaX, 0, maxScroll());
+          update(false);
+        }
+      },
+      { passive: false },
+    );
+
+    // ---------- resize ----------
+    window.addEventListener("resize", () => {
+      position = clamp(position, 0, maxScroll());
+      update(false);
+    });
+
+    // ---------- init ----------
+    update(false);
+  })();
+
+  // testimonials--------------------------------
+  (function initReviewsCarousel() {
+    const container = document.querySelector(".reviews-carousel-new");
+    const track = document.querySelector(".reviews-track-new");
+    const dotsWrap = document.querySelector(".reviews-dots");
+
+    if (!container || !track || !dotsWrap) return;
+
+    const origCards = [...track.querySelectorAll(".review-card-new")];
+    if (!origCards.length) return;
+
+    const total = origCards.length;
+    let current = 0;
+    let vPos = 0;
+    let jumping = false;
+    let timer;
+
+    origCards.forEach((card) => track.appendChild(card.cloneNode(true)));
+    const allCards = [...track.querySelectorAll(".review-card-new")];
+
+    origCards.forEach((_, i) => {
+      const dot = document.createElement("div");
+      dot.className = "rc-dot";
+      dot.addEventListener("click", () => moveTo(i));
+      dotsWrap.appendChild(dot);
+    });
+
+    const gap = () => 24;
+    const cardW = () => allCards[0].offsetWidth + gap();
+    const centerX = () =>
+      container.offsetWidth / 2 - allCards[0].offsetWidth / 2;
+    const offset = (v) => centerX() - v * cardW();
+
+    function applyClasses() {
+      allCards.forEach((card, i) => {
+        card.classList.remove("rc-active", "rc-adjacent");
+        const logical = i % total;
+        const d = Math.min(
+          Math.abs(logical - current),
+          total - Math.abs(logical - current),
+        );
+        if (d === 0) card.classList.add("rc-active");
+        else if (d === 1) card.classList.add("rc-adjacent");
+      });
+    }
+
+    function applyDots() {
+      [...dotsWrap.children].forEach((d, i) =>
+        d.classList.toggle("rc-dot-active", i === current),
+      );
+    }
+
+    function moveTo(logical, useClone = false) {
+      if (jumping) return;
+      if (logical === current && !useClone) return;
+      jumping = true;
+      current = logical;
+      vPos = useClone ? total + logical : logical;
+      track.style.transition = "transform 0.6s cubic-bezier(.2,.65,.3,1)";
+      track.style.transform = `translateX(${offset(vPos)}px)`;
+      applyClasses();
+      applyDots();
+      setTimeout(() => {
+        if (vPos >= total) {
+          vPos = logical;
+          track.style.transition = "none";
+          track.style.transform = `translateX(${offset(vPos)}px)`;
+        }
+        jumping = false;
+      }, 650);
+    }
+
+    function advance() {
+      const next = (current + 1) % total;
+      moveTo(next, current === total - 1);
+    }
+
+    function startAuto() {
+      clearInterval(timer);
+      timer = setInterval(advance, 3200);
+    }
+
+    allCards.forEach((card, i) => {
+      card.style.cursor = "pointer";
+      card.addEventListener("click", () => moveTo(i % total));
+      card.addEventListener("mouseenter", () => clearInterval(timer));
+      card.addEventListener("mouseleave", startAuto);
+    });
+
+    window.addEventListener("resize", () => {
+      track.style.transition = "none";
+      track.style.transform = `translateX(${offset(vPos)}px)`;
+    });
+
+    let startX = 0,
+      startY = 0,
+      isSwiping = false;
+
+    container.addEventListener(
+      "touchstart",
+      (e) => {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        isSwiping = false;
+      },
+      { passive: true },
+    );
+
+    container.addEventListener(
+      "touchmove",
+      (e) => {
+        const dx = e.touches[0].clientX - startX;
+        const dy = e.touches[0].clientY - startY;
+        if (!isSwiping && Math.abs(dx) > Math.abs(dy) + 5) isSwiping = true;
+        if (isSwiping) e.preventDefault();
+      },
+      { passive: false },
+    );
+
+    container.addEventListener("touchend", (e) => {
+      if (!isSwiping) return;
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) < 40) return;
+      if (dx < 0) moveTo((current + 1) % total, current === total - 1);
+      else moveTo((current - 1 + total) % total);
+    });
+
+    let cooldown = false;
+    container.addEventListener(
+      "wheel",
+      (e) => {
+        if (Math.abs(e.deltaX) < Math.abs(e.deltaY)) return;
+        e.preventDefault();
+        if (cooldown) return;
+        cooldown = true;
+        setTimeout(() => (cooldown = false), 700);
+        if (e.deltaX > 0) moveTo((current + 1) % total, current === total - 1);
+        else moveTo((current - 1 + total) % total);
+      },
+      { passive: false },
+    );
+
+    track.style.transition = "none";
+    track.style.transform = `translateX(${offset(0)}px)`;
     applyClasses();
     applyDots();
-
-    setTimeout(() => {
-      if (vPos >= total) {
-        vPos = logical;
-        track.style.transition = 'none';
-        track.style.transform  = `translateX(${offset(vPos)}px)`;
-      }
-      jumping = false;
-    }, 650);
-  }
-
-  function advance() {
-    const next = (current + 1) % total;
-    moveTo(next, current === total - 1);
-  }
-
-  // Click + Hover
-  allCards.forEach((card, i) => {
-    card.style.cursor = 'pointer';
-
-    card.addEventListener('click', () => {
-      const logical = i % total;
-      moveTo(logical);
-    });
-
-    card.addEventListener('mouseenter', () => clearInterval(timer));
-    card.addEventListener('mouseleave', startAuto);
-  });
-
-  function startAuto() {
-    clearInterval(timer);
-    timer = setInterval(advance, 3200);
-  }
-
-  // Resize fix
-  window.addEventListener('resize', () => {
-    track.style.transition = 'none';
-    track.style.transform  = `translateX(${offset(vPos)}px)`;
-  });
-
-  // Touch support
-  let startX = 0, startY = 0, isSwiping = false;
-
-  container.addEventListener('touchstart', e => {
-    startX = e.touches[0].clientX;
-    startY = e.touches[0].clientY;
-    isSwiping = false;
-  }, { passive: true });
-
-  container.addEventListener('touchmove', e => {
-    const dx = e.touches[0].clientX - startX;
-    const dy = e.touches[0].clientY - startY;
-
-    if (!isSwiping && Math.abs(dx) > Math.abs(dy) + 5) {
-      isSwiping = true;
-    }
-
-    if (isSwiping) e.preventDefault();
-  }, { passive: false });
-
-  container.addEventListener('touchend', e => {
-    if (!isSwiping) return;
-
-    const dx = e.changedTouches[0].clientX - startX;
-
-    if (Math.abs(dx) < 40) return;
-
-    if (dx < 0) {
-      const next = (current + 1) % total;
-      moveTo(next, current === total - 1);
-    } else {
-      const prev = (current - 1 + total) % total;
-      moveTo(prev);
-    }
-  });
-
-  // Wheel control (trackpad)
-  let cooldown = false;
-
-  container.addEventListener('wheel', e => {
-    if (Math.abs(e.deltaX) < Math.abs(e.deltaY)) return;
-
-    e.preventDefault();
-
-    if (cooldown) return;
-    cooldown = true;
-    setTimeout(() => cooldown = false, 700);
-
-    if (e.deltaX > 0) {
-      const next = (current + 1) % total;
-      moveTo(next, current === total - 1);
-    } else {
-      const prev = (current - 1 + total) % total;
-      moveTo(prev);
-    }
-  }, { passive: false });
-
-  // INIT
-  track.style.transition = 'none';
-  track.style.transform  = `translateX(${offset(0)}px)`;
-
-  applyClasses();
-  applyDots();
-  startAuto();
-})();
-
-
-
-
-
-
-
-
+    startAuto();
+  })();
 
   // SCROLL TOP BUTTON
   const scrollTopBtn = document.getElementById("scrollTopBtn");
@@ -322,132 +295,82 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
-// scroll top button
+  // scroll top button
 
+  //  navbar --------------------------
+  (function () {
+    function initNavbar() {
+      const megaMenu = document.getElementById("megaMenu");
+      const triggers = document.querySelectorAll(".mega-trigger");
+      const panels = document.querySelectorAll(".mega-panel");
+      const navToggle = document.getElementById("navToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const overlay = document.getElementById("navOverlay");
 
+      console.log("INIT RUNNING", { navToggle, triggers, megaMenu });
 
-//  navbar --------------------------
-(function () {
+      // ── Mega menu ──
+      if (megaMenu && triggers.length) {
+        function showMega(panelKey) {
+          megaMenu.classList.add("active");
+          panels.forEach((p) => {
+            const match = p.dataset.panel === panelKey;
+            p.classList.toggle("hidden", !match);
+            p.classList.toggle("flex", match);
+          });
+        }
 
-  const megaMenu   = document.getElementById("megaMenu");
-  const triggers   = document.querySelectorAll(".mega-trigger");
-  const panels     = document.querySelectorAll(".mega-panel");
-  const navItems   = document.querySelectorAll("#navLinks > li");
-  const navToggle  = document.getElementById("navToggle");
-  const mobileMenu = document.getElementById("mobileMenu");   // separate drawer
-  const overlay    = document.getElementById("navOverlay");
+        function hideMega() {
+          megaMenu.classList.remove("active");
+        }
 
-  if (!megaMenu) return;
+        let hideTimeout;
 
-  let hideTimeout = null;
-  let activePanel = null;
+        triggers.forEach((trigger) => {
+          trigger.addEventListener("mouseenter", () => {
+            if (window.innerWidth < 900) return;
+            clearTimeout(hideTimeout);
+            showMega(trigger.dataset.mega);
+          });
 
+          trigger.addEventListener("mouseleave", () => {
+            if (window.innerWidth < 900) return;
+            hideTimeout = setTimeout(hideMega, 120);
+          });
+        });
 
-  // ── Mega menu ─────────────────────────────────────────────
+        megaMenu.addEventListener("mouseenter", () => {
+          clearTimeout(hideTimeout);
+        });
 
-  function showMega(panelKey) {
-    clearTimeout(hideTimeout);
-    megaMenu.classList.add("active");
+        megaMenu.addEventListener("mouseleave", () => {
+          hideTimeout = setTimeout(hideMega, 120);
+        });
+      }
 
-    if (activePanel === panelKey) return;
-    activePanel = panelKey;
+      // ── Mobile menu ──
+      if (navToggle && mobileMenu && overlay) {
+        navToggle.addEventListener("click", () => {
+          mobileMenu.classList.toggle("open");
+          overlay.classList.toggle("active");
+          navToggle.classList.toggle("active");
+        });
 
-    panels.forEach(p => {
-      const match = p.dataset.panel === panelKey;
-      p.classList.toggle("hidden", !match);
-      p.classList.toggle("flex",   match);
-    });
-  }
-
-  function hideMega() {
-    hideTimeout = setTimeout(() => {
-      megaMenu.classList.remove("active");
-      panels.forEach(p => {
-        p.classList.add("hidden");
-        p.classList.remove("flex");
-      });
-      activePanel = null;
-    }, 150);
-  }
-
-  triggers.forEach(trigger => {
-    trigger.addEventListener("mouseenter", () => {
-      if (window.innerWidth < 900) return;
-      showMega(trigger.dataset.mega);
-    });
-    trigger.addEventListener("mouseleave", () => {
-      if (window.innerWidth < 900) return;
-      hideMega();
-    });
-  });
-
-  megaMenu.addEventListener("mouseenter", () => clearTimeout(hideTimeout));
-  megaMenu.addEventListener("mouseleave", hideMega);
-
-  navItems.forEach(item => {
-    if (!item.querySelector(".mega-trigger")) {
-      item.addEventListener("mouseenter", () => {
-        if (window.innerWidth < 900) return;
-        hideMega();
-      });
+        overlay.addEventListener("click", () => {
+          mobileMenu.classList.remove("open");
+          overlay.classList.remove("active");
+          navToggle.classList.remove("active");
+        });
+      }
     }
-  });
 
-
-  // ── Mobile drawer ─────────────────────────────────────────
-
-  function openMenu() {
-    mobileMenu.classList.add("open");
-    overlay.classList.add("active");
-    navToggle.classList.add("active");
-    navToggle.setAttribute("aria-expanded", "true");
-    document.body.style.overflow = "hidden";
-  }
-
-  function closeMenu() {
-    mobileMenu.classList.remove("open");
-    overlay.classList.remove("active");
-    navToggle.classList.remove("active");
-    navToggle.setAttribute("aria-expanded", "false");
-    document.body.style.overflow = "";
-  }
-
-  navToggle.addEventListener("click", () => {
-    mobileMenu.classList.contains("open") ? closeMenu() : openMenu();
-  });
-
-  overlay.addEventListener("click", closeMenu);
-
-  // Close when any link inside drawer is tapped
-  mobileMenu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", closeMenu);
-  });
-
-  // Close on resize to desktop
-  window.addEventListener("resize", () => {
-    if (window.innerWidth >= 900) closeMenu();
-  });
-
-
-  // ── Active page detection ─────────────────────────────────
-
-  const filename    = window.location.pathname.split("/").pop();
-  const currentPage = filename.replace(".html", "") || "index";
-
-  // Desktop links
-  document.querySelectorAll(".nav-link[data-page]").forEach(link => {
-    if (link.dataset.page === currentPage) link.classList.add("active");
-  });
-
-  // Mobile drawer links
-  document.querySelectorAll(".mobile-link[data-page]").forEach(link => {
-    if (link.dataset.page === currentPage) link.classList.add("active");
-  });
-
-})();
-
-
-
+    // SAFE INIT
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initNavbar);
+    } else {
+      initNavbar();
+    }
+  })();
 
   // CARD IMAGE SLIDER (INSIDE CARD)
   document.querySelectorAll(".slider-container").forEach((slider) => {
@@ -460,12 +383,10 @@
 
     function showSlide(index) {
       images.forEach((img) =>
-        img.classList.replace("opacity-100", "opacity-0")
+        img.classList.replace("opacity-100", "opacity-0"),
       );
 
-      dots.forEach((dot) =>
-        dot.classList.replace("bg-white", "bg-white/50")
-      );
+      dots.forEach((dot) => dot.classList.replace("bg-white", "bg-white/50"));
 
       images[index].classList.replace("opacity-0", "opacity-100");
       dots[index]?.classList.replace("bg-white/50", "bg-white");
@@ -488,7 +409,6 @@
     });
   });
 
-
   // CARD CLICK NAVIGATION
   window.goToPage = function (e, url) {
     if (e.target.closest("a, button")) return;
@@ -500,110 +420,110 @@
     }
   };
 
+  // at your own pace section
+  (function () {
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("active");
+            obs.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.2 },
+    );
 
+    document.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
+  })();
 
+  // why choose us
+  //----------------------REVEAL ON SCROLL------------------
 
+  function initReveal() {
+    const elements = document.querySelectorAll(".reveal");
 
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target); // trigger once
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+      },
+    );
 
+    elements.forEach((el) => observer.observe(el));
+  }
+  // run after DOM loads
+  document.addEventListener("DOMContentLoaded", initReveal);
+  // why choose us
+  //----------------------REVEAL ON SCROLL------------------
 
+  // motion recommendation
 
+  (function () {
+    const revealEls = document.querySelectorAll(".reveal");
 
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
 
+            // stop observing after first reveal
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.25 },
+    );
 
+    revealEls.forEach((el) => observer.observe(el));
+  })();
 
+  // tour card's heading below hero of  home page
+  (function initSectionHeadingReveal() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("heading-revealed");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 },
+    );
 
+    document
+      .querySelectorAll(".section-heading-wrapper")
+      .forEach((el) => observer.observe(el));
+  })();
 
+  // homepage hero counter
+  const counters = document.querySelectorAll(".stat-num");
 
-// why choose us
-//----------------------REVEAL ON SCROLL------------------
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.6 },
+  );
 
-function initReveal() {
-  const elements = document.querySelectorAll(".reveal");
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-        observer.unobserve(entry.target); // trigger once
-      }
-    });
-  }, {
-    threshold: 0.2
-  });
-
-  elements.forEach(el => observer.observe(el));
-}
-// run after DOM loads
-document.addEventListener("DOMContentLoaded", initReveal);
-// why choose us
-//----------------------REVEAL ON SCROLL------------------
-
-
-
-
-
-
-
-
-
-
-
-
-// motion recommendation
-
-(function () {
-  const revealEls = document.querySelectorAll('.reveal');
-
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-
-        // stop observing after first reveal
-        obs.unobserve(entry.target);
-      }
-
-    });
-  }, { threshold: 0.25 });
-
-  revealEls.forEach(el => observer.observe(el));
-})();
-
-
-
-// tour card's heading below hero of  home page
-(function initSectionHeadingReveal() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('heading-revealed');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.3 });
-
-  document.querySelectorAll('.section-heading-wrapper').forEach(el => observer.observe(el));
-})();
-
-
-// homepage hero counter
- // COUNTER ANIMATION----------------------------------------------
-  const counters = document.querySelectorAll('.stat-num');
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateCounter(entry.target);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.6 });
-
-  counters.forEach(counter => observer.observe(counter));
+  counters.forEach((counter) => observer.observe(counter));
 
   function animateCounter(el) {
-    const target = +el.getAttribute('data-target');
+    const target = +el.getAttribute("data-target");
     const duration = 2000;
     const start = performance.now();
 
@@ -613,8 +533,8 @@ document.addEventListener("DOMContentLoaded", initReveal);
 
       let value = Math.floor(ease * target);
 
-      if (target === 98) el.textContent = value + '%';
-      else el.textContent = value + '+';
+      if (target === 100) el.textContent = value + "%";
+      else el.textContent = value + "+";
 
       if (progress < 1) requestAnimationFrame(update);
     }
@@ -623,68 +543,66 @@ document.addEventListener("DOMContentLoaded", initReveal);
   }
 
   // homepage HERO IMAGE ROTATION--------------------
-  const slides = document.querySelectorAll('.hero-img');
-  let currentSlide = 0;
+  (function initHeroSlider() {
+    const slides = document.querySelectorAll(".hero-img");
+    if (!slides.length) return;
 
-  setInterval(() => {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add('active');
-  }, 5000);
+    let currentSlide = 0;
+
+    setInterval(() => {
+      slides[currentSlide].classList.remove("active");
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add("active");
+    }, 5000);
+  })();
   // homepage hero image rotation -----------------------
 
-
-
-
-
-// footer
-(function initFooterAccordion() {
-  document.querySelectorAll('.footer-acc-trigger').forEach(trigger => {
-    trigger.addEventListener('click', () => {
-      const acc = trigger.closest('.footer-acc');
-      const isOpen = acc.classList.contains('open');
-
-      // Close all first (one open at a time)
-      document.querySelectorAll('.footer-acc.open').forEach(el => el.classList.remove('open'));
-
-      // Toggle clicked one
-      if (!isOpen) acc.classList.add('open');
+  // footer  -------------------------------
+  (function initFooterAccordion() {
+    const accs = document.querySelectorAll(".footer-acc");
+    accs.forEach((acc) => {
+      const trigger = acc.querySelector(".footer-acc-trigger");
+      trigger.addEventListener("click", () => {
+        const isOpen = acc.classList.contains("open");
+        accs.forEach((a) => a.classList.remove("open"));
+        if (!isOpen) acc.classList.add("open");
+      });
     });
+  })();
+
+  window.addEventListener("load", function () {
+    if (window.lucide) {
+      lucide.createIcons();
+    }
   });
-})();
 
+  // // car section home page carousel
+  // (function initCarCarousel() {
+  //   const track   = document.getElementById('carTrack');
+  //   const prevBtn = document.getElementById('carPrev');
+  //   const nextBtn = document.getElementById('carNext');
+  //   if (!track || !prevBtn || !nextBtn) return;
 
+  //   let position = 0;
 
+  //   function getCardWidth() {
+  //     const card = track.querySelector('article');
+  //     if (!card) return 328;
+  //     return card.offsetWidth + 28; // card + gap-7 (28px)
+  //   }
 
+  //   function getMaxScroll() {
+  //     return track.scrollWidth - track.parentElement.offsetWidth;
+  //   }
 
-// // car section home page carousel
-// (function initCarCarousel() {
-//   const track   = document.getElementById('carTrack');
-//   const prevBtn = document.getElementById('carPrev');
-//   const nextBtn = document.getElementById('carNext');
-//   if (!track || !prevBtn || !nextBtn) return;
+  //   nextBtn.addEventListener('click', () => {
+  //     position = Math.min(position + getCardWidth(), getMaxScroll());
+  //     track.style.transform = `translateX(-${position}px)`;
+  //   });
 
-//   let position = 0;
-
-//   function getCardWidth() {
-//     const card = track.querySelector('article');
-//     if (!card) return 328;
-//     return card.offsetWidth + 28; // card + gap-7 (28px)
-//   }
-
-//   function getMaxScroll() {
-//     return track.scrollWidth - track.parentElement.offsetWidth;
-//   }
-
-//   nextBtn.addEventListener('click', () => {
-//     position = Math.min(position + getCardWidth(), getMaxScroll());
-//     track.style.transform = `translateX(-${position}px)`;
-//   });
-
-//   prevBtn.addEventListener('click', () => {
-//     position = Math.max(position - getCardWidth(), 0);
-//     track.style.transform = `translateX(-${position}px)`;
-//   });
-// })();
-
+  //   prevBtn.addEventListener('click', () => {
+  //     position = Math.max(position - getCardWidth(), 0);
+  //     track.style.transform = `translateX(-${position}px)`;
+  //   });
+  // })();
 });

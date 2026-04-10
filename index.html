@@ -1,1509 +1,2265 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore India with private car and driver tours. Customized itineraries, verified drivers, transparent pricing. Book Golden Triangle, Rajasthan, Kerala tours easily."
+    />
+    <meta
+      name="keywords"
+      content="India private tours, car with driver India, Golden Triangle tour, Rajasthan tour, Kerala trip"
+    />
+    <title>Private Car & Driver Tours in India | BharatBhramana</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Explore India with private car and driver tours. Customized itineraries, verified drivers, transparent pricing. Book Golden Triangle, Rajasthan, Kerala tours easily." />
-  <meta name="keywords"
-    content="India private tours, car with driver India, Golden Triangle tour, Rajasthan tour, Kerala trip" />
-  <title>Private Car & Driver Tours in India | BharatBhramana</title>
-
-  <!-- Tailwind Play CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: "#2a9d8f",
-            primaryHover: "#23867a",
-            dark: "#0a0a0a",
-            ink: {
-              900: "#111827",
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2a9d8f",
+              primaryHover: "#23867a",
+              dark: "#0a0a0a",
+              ink: {
+                900: "#111827",
+              },
+            },
+            fontFamily: {
+              display: ['"Cormorant Garamond"', "Georgia", "serif"],
+              body: ['"DM Sans"', "sans-serif"],
+            },
+            screens: {
+              nav: "900px",
             },
           },
-          fontFamily: {
-            display: ['"Cormorant Garamond"', "Georgia", "serif"],
-            body: ['"DM Sans"', "sans-serif"],
-          },
-          screens: {
-            nav: "900px",
-          },
         },
-      },
-    };
-  </script>
+      };
+    </script>
 
-  <link rel="stylesheet" href="base.css" />
-<link rel="stylesheet" href="component.css" />
-<link rel="stylesheet" href="animations.css" />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="component.css" />
+    <link rel="stylesheet" href="animations.css" />
+  </head>
 
-
-
-
-
-</head>
-
-<body class="font-body text-gray-800 leading-relaxed antialiased relative overflow-x-hidden">
-
-
-
-
-
- <!-- navbar ----------------------------------------------- -->
-<!-- Dark overlay behind mobile drawer -->
-<div id="navOverlay" class="nav-overlay"></div>
-
-<!-------------------------Mobile Drawer (separate from desktop ul)------------------------------------>
-
-<div id="mobileMenu" class="mobile-drawer">
-  <a href="index.html"  class="mobile-link" data-page="index">Home</a>
-  <a href="trips.html"  class="mobile-link" data-page="trips">Packages</a>
-  <a href="cars.html"   class="mobile-link" data-page="cars">Cars</a>
-  <a href="about.html"  class="mobile-link" data-page="about">About</a>
-
-  <div class="mt-2 border-t border-white/10 pt-4">
-    <p class="mobile-section-label">Explore</p>
-    <a href="goldentriangle.html" class="mobile-sublink">Golden Triangle</a>
-    <a href="kashmir.html"        class="mobile-sublink">Kashmir</a>
-    <a href="manali.html"          class="mobile-sublink">Himachal</a>
-    <a href="kerala.html"         class="mobile-sublink">Kerala</a>
-    <a href="kashi.html"          class="mobile-sublink">Spiritual Tours</a>
-  </div>
-
-  <a
-    href="https://wa.me/919006143335?text=Hi%20I%20am%20interested%20in%20your%20tour%20packages"
-    target="_blank" rel="noopener"
-    class="mt-auto mx-0 flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-semibold text-white bg-gradient-to-br from-[#2a9d8f] to-[#264653]"
+  <body
+    class="font-body text-gray-800 leading-relaxed antialiased relative overflow-x-hidden"
   >
-    📱 Book Now
-  </a>
-</div>
+    <!-- navbar ----------------------------------------------- -->
+    <!-- Dark overlay behind mobile drawer -->
+    <div id="navOverlay" class="nav-overlay"></div>
 
-<nav
-  id="mainNav"
- class="fixed top-0 left-0 right-0 z-[1000] bg-white/80 backdrop-blur-[14px] border-b border-gray-200/60"
+    <!-------------------------Mobile Drawer (separate from desktop ul)------------------------------------>
 
->
+    <div id="mobileMenu" class="mobile-drawer">
+      <a href="index.html" class="mobile-link" data-page="index">Home</a>
+      <a href="trips.html" class="mobile-link" data-page="trips">Packages</a>
+      <a href="cars.html" class="mobile-link" data-page="cars">Cars</a>
+      <a href="about.html" class="mobile-link" data-page="about">About</a>
 
-<div class="container-main flex items-center justify-between h-[72px]">
-
-  <!-- Logo -->
-  <a href="index.html"
-    class="font-display text-[1.4rem] font-bold text-gray-900 tracking-tight transition-transform duration-300 hover:scale-105 shrink-0">
-    Bharat<em class="text-teal-600 not-italic">भ्रमण</em>
-  </a>
-
-  <!-- Hamburger — mobile only -->
-  <button
-    id="navToggle"
-    class="nav-toggle-btn hidden max-[900px]:flex flex-col justify-center gap-[5px] bg-transparent border-none cursor-pointer p-1.5 z-[1001]"
-    aria-label="Toggle menu"
-    aria-expanded="false"
-  >
-    <span class="block w-6 h-[2px] bg-gray-800 rounded-sm"></span>
-    <span class="block w-6 h-[2px] bg-gray-800 rounded-sm"></span>
-    <span class="block w-6 h-[2px] bg-gray-800 rounded-sm"></span>
-  </button>
-
-  <!-- Desktop nav links — hidden on mobile, flex on 900px+ -->
-  <ul
-    id="navLinks"
-    class="hidden min-[900px]:flex gap-[34px] items-center"
-  >
-    <!-- NO hardcoded active class — JS sets it from URL -->
-    <li><a href="index.html" class="nav-link" data-page="index">Home</a></li>
-    <li><a href="trips.html" class="nav-link" data-page="trips">Packages</a></li>
-
-    <li>
-      <a href="#" class="mega-trigger nav-link flex items-center gap-1" data-mega="explore">
-        Explore
-        <svg class="w-3.5 h-3.5 text-gray-400 mt-[1px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-        </svg>
-      </a>
-    </li>
-
-    <li><a href="cars.html"  class="nav-link" data-page="cars">Cars</a></li>
-
-
-
-    <li><a href="about.html" class="nav-link" data-page="about">About</a></li>
-  </ul>
-
-  <!-- Book Now CTA — desktop only -->
-  <a
-    href="https://wa.me/919006143335?text=Hi%20I%20am%20interested%20in%20your%20tour%20packages"
-    target="_blank" rel="noopener"
-    class="hidden min-[900px]:flex  gap-2 px-5 py-2 rounded-full text-sm font-semibold text-white
-           bg-gradient-to-br from-[#2a9d8f] to-[#264653]
-           shadow-[0_8px_25px_rgba(0,0,0,0.3)]
-           transition-all duration-300
-           hover:-translate-y-0.5 hover:scale-[1.04] hover:shadow-[0_18px_40px_rgba(0,0,0,0.4)]"
-  >
-    Book Now
-  </a>
-
-  <!-- ── Mega Menu ───────────────────────────────────────── -->
-  <div
-    id="megaMenu"
-    class="mega-menu absolute top-full left-1/2 -translate-x-1/2 min-w-[540px] bg-white rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-gray-100 mt-3 z-[1000]"
-  >
-
-    <!-- EXPLORE -->
-    <div class="mega-panel hidden" data-panel="explore">
-      <div class="flex gap-14 m-8">
-        <div>
-          <h4 class="text-gray-400 text-[0.78rem] font-semibold uppercase tracking-widest mb-4">North India</h4>
-          <ul class="space-y-3">
-            <li><a href="goldentriangle.html" class="mega-link">Golden Triangle</a></li>
-            <li><a href="kashmir.html"        class="mega-link">Kashmir</a></li>
-            <li><a href="manali.html"          class="mega-link">Himachal</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-gray-400 text-[0.78rem] font-semibold uppercase tracking-widest mb-4">South India</h4>
-          <ul class="space-y-3">
-            <li><a href="kerala.html"    class="mega-link">Kerala</a></li>
-            <li><a href="tamilnadu.html" class="mega-link">Tamil Nadu</a></li>
-            <li><a href="karnataka.html" class="mega-link">Karnataka</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-gray-400 text-[0.78rem] font-semibold uppercase tracking-widest mb-4">Special</h4>
-          <ul class="space-y-3">
-            <li><a href="desert.html" class="mega-link">Desert Tours</a></li>
-            <li><a href="kashi.html"  class="mega-link">Spiritual Tours</a></li>
-            <li><a href="luxury.html" class="mega-link">Luxury Trips</a></li>
-          </ul>
-        </div>
+      <div class="mt-2 border-t border-white/10 pt-4">
+        <p class="mobile-section-label">Explore</p>
+        <a href="goldentriangle.html" class="mobile-sublink">Golden Triangle</a>
+        <a href="kashmir.html" class="mobile-sublink">Kashmir</a>
+        <a href="manali.html" class="mobile-sublink">Himachal</a>
+        <a href="kerala.html" class="mobile-sublink">Kerala</a>
+        <a href="kashi.html" class="mobile-sublink">Spiritual Tours</a>
       </div>
-    </div>
 
-
-
-  </div>
-
-</div>
-</nav>
-
-
-
-
-
-
-
-   <!---------------------- hero---------------------->
-<section class="relative min-h-[85vh] mt-[72px] mx-[18px] mb-[8px] md:mb-[12px] rounded-[18px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)] flex items-center justify-center px-[5%]">
-
-  <!-- Background -->
-  <div class="hero-images absolute inset-0 z-[-2]">
-    <img src="images/k5.jpg" class="hero-img active" />
-    <img src="images/kerala4.jpg" class="hero-img" />
-    <img src="images/kerala6.jpg" class="hero-img" />
-    <img src="images/m1.jpg" class="hero-img" />
-  </div>
-
-  <!-- Overlay -->
-  <div class="absolute inset-0 z-[-1] bg-[linear-gradient(120deg,rgba(0,0,0,0.82),rgba(0,0,0,0.2)),radial-gradient(circle_at_20%_40%,rgba(79,190,203,0.18),transparent_60%)]"></div>
-
-  <!-- CONTENT -->
-  <div class="relative z-10 max-w-[850px] text-white text-center w-full">
-
-    <!-- HEADING -->
-    <h1 class="text-[clamp(3rem,6vw,5rem)] font-bold leading-[1.05] tracking-tight mb-6">
-      <span class="block car-hero-top">Less Noise</span>
-      <span class="block car-hero-side text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">
-        More Journey
-      </span>
-    </h1>
-
-    <!-- CTA -->
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 car-hero-bottom mb-14">
-      <a href="trips.html"
-        class="px-8 py-3.5 rounded-full font-medium
-        bg-gradient-to-br from-teal-500 to-teal-700
-        transition-all duration-300 hover:-translate-y-1 hover:scale-[1.06]">
-        View Tours →
-      </a>
-      <a href="tel:+919006143335"
-        class="px-8 py-3.5 rounded-full font-medium
-        border border-white/30 backdrop-blur-md
-        hover:bg-white/10 transition-all duration-300">
-        Talk to Us
+      <a
+        href="https://wa.me/919006143335?text=Hi%20I%20am%20interested%20in%20your%20tour%20packages"
+        target="_blank"
+        rel="noopener"
+        class="mt-auto mx-0 flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-semibold text-white bg-gradient-to-br from-[#2a9d8f] to-[#264653]"
+      >
+        Book Now
       </a>
     </div>
 
-    <!-- STATS ROW -->
-    <div class="hero-stats-row flex flex-row items-center justify-center gap-0 w-full border-t border-white/15 pt-8">
-
-      <div class="hero-stat-item flex-1 flex flex-col items-center gap-1 px-4 border-r border-white/15 last:border-r-0">
-        <div class="stat-num text-[2.2rem] font-bold tracking-[-1px]" data-target="600">0</div>
-        <div class="text-white/60 text-xs uppercase tracking-widest">Trips Completed</div>
-      </div>
-
-      <div class="hero-stat-item flex-1 flex flex-col items-center gap-1 px-4 border-r border-white/15 last:border-r-0">
-        <div class="stat-num text-[2.2rem] font-bold tracking-[-1px]" data-target="100">0</div>
-        <div class="text-white/60 text-xs uppercase tracking-widest">Happy Travellers</div>
-      </div>
-
-      <div class="hero-stat-item flex-1 flex flex-col items-center gap-1 px-4 border-r border-white/15 last:border-r-0">
-        <div class="stat-num text-[2.2rem] font-bold tracking-[-1px]" data-target="40">0</div>
-        <div class="text-white/60 text-xs uppercase tracking-widest">Destinations</div>
-      </div>
-
-      <div class="hero-stat-item flex-1 flex flex-col items-center gap-1 px-4">
-        <div class="stat-num text-[2.2rem] font-bold tracking-[-1px]" data-target="5">0</div>
-        <div class="text-white/60 text-xs uppercase tracking-widest">Years Experience</div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-
-
-  <!-- featured tours ----------------------------------- -->
-
-  <section class="section relative overflow-hidden bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9]">
-    <!-- Background glow -->
-
-<div class="container-main">
-
-      <div class="relative z-10 mb-12">
-        <!-- HEADING — centered -->
-     <div class="text-center mb-8 section-heading-wrapper reveal">
-  <span class="section-label text-[11px] font-semibold tracking-[0.2em] uppercase text-teal-500 mb-3 block reveal">
-    Curated Journeys
-  </span>
-  <h2 class="section-title font-display text-[clamp(2.2rem,4vw,3rem)] font-semibold text-gray-900 leading-[1.15] reveal">
-    Explore Trips That<br />
-    <span class="text-teal-500 relative inline-block">
-      Feel Personal
-      <span class="section-underline absolute left-0 -bottom-1 w-full h-[3px] bg-teal-500/60 rounded-full"></span>
-    </span>
-  </h2>
-</div>
-
-
-      </div>
-
-
-
-<!-- CARD CONTAINER -->
-<div id="cardContainer"
-  class="flex gap-6 overflow-x-auto px-[5%] py-[60px]
-  snap-x snap-mandatory scroll-smooth no-scrollbar">
-</div>
-
-<!-- TEMPLATE (MOVE HERE) -->
-<template id="tour-card-template">
-  <article class="snap-start min-w-[300px] max-w-[320px] group bg-white rounded-[18px] overflow-hidden
-  shadow-sm hover:shadow-[0_25px_60px_rgba(0,0,0,0.18)] transition-all duration-500 hover:-translate-y-2">
-
-    <div class="relative h-[220px] overflow-hidden">
-      <div class="slider-container relative w-full h-full images-wrapper"></div>
-    </div>
-
-    <div class="p-5 space-y-3">
-      <p class="location text-[0.75rem] text-gray-500 font-medium"></p>
-      <h3 class="title text-[1.05rem] font-semibold text-ink-900"></h3>
-      <div class="meta flex items-center gap-3 text-[0.78rem] text-gray-500"></div>
-      <p class="booked text-[0.75rem] text-gray-400"></p>
-    </div>
-
-    <div class="flex justify-between items-center px-5 pb-5 mt-1">
-      <div class="price"></div>
-      <a class="cta px-4 py-2 rounded-lg bg-ink-900 text-white text-sm
-      hover:bg-teal-500 transition flex items-center gap-1">
-        View Trip →
-      </a>
-    </div>
-
-  </article>
-</template>
-
-
-
-
- <div class="flex justify-end gap-3 mt-8 reveal">
-
-  <!-- PREVIOUS -->
-  <button id="tourPrev"
-    class="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-700
-    hover:bg-teal-500 hover:text-white transition">
-
-    ← <span>Previous</span>
-  </button>
-
-  <!-- NEXT -->
-  <button id="tourNext"
-    class="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-700
-    hover:bg-teal-500 hover:text-white transition">
-
-    <span>Next</span> →
-  </button>
-
-</div>
-
-</div>
-  </section>
-
-
-
-
-<!-- get recommendation  -->
-<section class="section bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9] relative ">
-
-  <!-- subtle glow -->
-  <div class="absolute inset-0 -z-10 animate-gradient bg-[radial-gradient(circle_at_20%_30%,rgba(42,157,143,0.18),transparent_60%), radial-gradient(circle_at_80%_70%,rgba(79,190,203,0.15),transparent_60%), linear-gradient(120deg,#f8fafc,#eef3f9,#f8fafc)]">
-  </div>
-
-  <div class="container-main">
-
-  <div class="relative auto text-center reveal reveal-up">
-
-    <!-- LABEL -->
-    <p class="text-sm font-medium text-teal-600 tracking-wider uppercase mb-3">
-      Need Help?
-    </p>
-
-    <!-- HEADING -->
-    <h2 class="text-[clamp(1.9rem,3vw,2.6rem)] font-semibold text-gray-900 leading-tight mb-4">
-      Planning your next <span class="text-teal-700">trip</span>?
-    </h2>
-
-    <!-- SUBTEXT -->
-    <p class="text-gray-500 text-[1.05rem] container-narrow mb-8 leading-relaxed">
-      Tell us your destination, dates, and group size. We’ll help you choose the perfect vehicle and plan your journey.
-    </p>
-
-    <!-- CTA BUTTON -->
-    <a href="https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20plan%20a%20trip.%20Please%20help%20me%20with%20destination%2C%20car%2C%20and%20itinerary."
-      class="inline-flex group items-center gap-2 px-7 py-3.5 rounded-full
-      bg-teal-600 text-white font-medium text-sm
-      shadow-md transition-all duration-300
-      hover:bg-teal-700 hover:scale-105 hover:shadow-lg">
-
-      Start Planning
-      <span class="transition group-hover:translate-x-1">→</span>
-    </a>
-
-    <!-- TRUST LINE -->
-    <div class="mt-6 text-sm text-gray-400">
-      Response within 10–15 minutes • No obligation
-    </div>
-
-  </div>
-
-  </div>
-</section>
-
-
-
-
-
-        <!-- car featured ------------------------------- -->
-    <section
-    class="section relative bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9]"
+    <nav
+      id="mainNav"
+      class="fixed top-0 left-0 right-0 z-[1000] bg-white/80 backdrop-blur-[14px] border-b border-gray-200/60"
     >
+      <div class="container-main flex items-center justify-between h-[72px]">
+        <!-- Logo -->
+        <a
+          href="index.html"
+          class="font-display text-[1.4rem] font-bold text-gray-900 tracking-tight transition-transform duration-300 hover:scale-105 shrink-0"
+        >
+          Bharat<em class="text-teal-600 not-italic">भ्रमण</em>
+        </a>
 
-    <div class="container-main">
-      <!-- HEADER -->
-      <div class="flex justify-between items-end mb-8 reveal">
-        <div class="mb-8 reveal">
-          <span
-            class="text-[11px] font-semibold tracking-[0.15em] uppercase text-teal-500 mb-3 block"
-          >
-            Our Fleet
-          </span>
-          <h2
-            class="font-display text-[clamp(2rem,4vw,2.9rem)] font-semibold text-gray-900 leading-[1.15] mb-3"
-          >
-           Cars Our Travellers Love Most
-          </h2>
+        <!-- Hamburger — mobile only -->
+        <button
+          id="navToggle"
+          class="nav-toggle-btn hidden max-[900px]:flex flex-col justify-center gap-[5px] bg-transparent border-none cursor-pointer p-1.5 z-[1001]"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span class="block w-6 h-[2px] bg-gray-800 rounded-sm"></span>
+          <span class="block w-6 h-[2px] bg-gray-800 rounded-sm"></span>
+          <span class="block w-6 h-[2px] bg-gray-800 rounded-sm"></span>
+        </button>
 
+        <!-- Desktop nav links — hidden on mobile, flex on 900px+ -->
+        <ul
+          id="navLinks"
+          class="hidden min-[900px]:flex gap-[34px] items-center"
+        >
+          <!-- NO hardcoded active class — JS sets it from URL -->
+          <li>
+            <a href="index.html" class="nav-link" data-page="index">Home</a>
+          </li>
+          <li>
+            <a href="trips.html" class="nav-link" data-page="trips">Packages</a>
+          </li>
+
+          <li>
+            <a
+              href="#"
+              class="mega-trigger nav-link flex items-center gap-1"
+              data-mega="explore"
+            >
+              Explore
+              <svg
+                class="w-3.5 h-3.5 text-gray-400 mt-[1px]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </a>
+          </li>
+
+          <li>
+            <a href="cars.html" class="nav-link" data-page="cars">Cars</a>
+          </li>
+
+          <li>
+            <a href="about.html" class="nav-link" data-page="about">About</a>
+          </li>
+        </ul>
+
+        <!-- Book Now CTA — desktop only -->
+        <a
+          href="#form"
+          class="hidden min-[900px]:flex gap-2 px-5 py-2 rounded-full text-sm font-semibold text-white bg-gradient-to-br from-[#2a9d8f] to-[#264653] shadow-[0_8px_25px_rgba(0,0,0,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.04] hover:shadow-[0_18px_40px_rgba(0,0,0,0.4)]"
+        >
+          Book Now
+        </a>
+
+        <!-- ── Mega Menu ───────────────────────────────────────── -->
+        <div
+          id="megaMenu"
+          class="mega-menu absolute top-full left-1/2 -translate-x-1/2 min-w-[540px] bg-white rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-gray-100 mt-3 z-[1000]"
+        >
+          <!-- EXPLORE -->
+          <div class="mega-panel hidden" data-panel="explore">
+            <div class="flex gap-14 m-8">
+              <div>
+                <h4
+                  class="text-gray-400 text-[0.78rem] font-semibold uppercase tracking-widest mb-4"
+                >
+                  North India
+                </h4>
+                <ul class="space-y-3">
+                  <li>
+                    <a href="goldentriangle.html" class="mega-link"
+                      >Golden Triangle</a
+                    >
+                  </li>
+                  <li><a href="kashmir.html" class="mega-link">Kashmir</a></li>
+                  <li><a href="manali.html" class="mega-link">Himachal</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4
+                  class="text-gray-400 text-[0.78rem] font-semibold uppercase tracking-widest mb-4"
+                >
+                  South India
+                </h4>
+                <ul class="space-y-3">
+                  <li><a href="kerala.html" class="mega-link">Kerala</a></li>
+                  <li>
+                    <a href="tamilnadu.html" class="mega-link">Tamil Nadu</a>
+                  </li>
+                  <li>
+                    <a href="karnataka.html" class="mega-link">Karnataka</a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4
+                  class="text-gray-400 text-[0.78rem] font-semibold uppercase tracking-widest mb-4"
+                >
+                  Special
+                </h4>
+                <ul class="space-y-3">
+                  <li>
+                    <a href="desert.html" class="mega-link">Desert Tours</a>
+                  </li>
+                  <li>
+                    <a href="kashi.html" class="mega-link">Spiritual Tours</a>
+                  </li>
+                  <li>
+                    <a href="luxury.html" class="mega-link">Luxury Trips</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </nav>
 
-     <!-- TRACK -->
-<div id="carTrack"
-  class="flex gap-7 snap-x snap-mandatory scroll-smooth no-scrollbar">
-</div>
+    <!---------------------- hero---------------------->
+    <section
+      class="relative min-h-[85vh] mt-[72px] mx-[18px] mb-[8px] md:mb-[12px] rounded-[18px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)] flex items-center justify-center px-[5%]"
+    >
+      <!-- Background -->
+      <div class="hero-images absolute inset-0 z-[-2]">
+        <img src="images/k5.jpg" class="hero-img active" />
+        <img src="images/kerala4.jpg" class="hero-img" />
+        <img src="images/kerala6.jpg" class="hero-img" />
+        <img src="images/m1.jpg" class="hero-img" />
+      </div>
 
-<!-- TEMPLATE -->
-<template id="car-card-template">
-  <article class="snap-start min-w-[300px] max-w-[320px] group bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9] rounded-[16px]
-  border border-gray-200 overflow-hidden transition-all duration-300
-  hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
+      <!-- Overlay -->
+      <div
+        class="absolute inset-0 z-[-1] bg-[linear-gradient(120deg,rgba(0,0,0,0.82),rgba(0,0,0,0.2)),radial-gradient(circle_at_20%_40%,rgba(79,190,203,0.18),transparent_60%)]"
+      ></div>
 
-    <div class="relative h-[220px] overflow-hidden">
-      <div class="images-wrapper relative w-full h-full"></div>
-    </div>
+      <!-- CONTENT -->
+      <div class="relative z-10 max-w-[850px] text-white text-center w-full">
+        <!-- HEADING -->
+        <h1
+          class="text-[clamp(3rem,6vw,5rem)] font-bold leading-[1.05] tracking-tight mb-6"
+        >
+          <span class="block car-hero-top">Less Noise</span>
+          <span
+            class="block car-hero-side text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70"
+          >
+            More Journey
+          </span>
+        </h1>
 
-    <div class="p-6">
-      <h3 class="car-title font-display text-[1.35rem] font-semibold text-gray-900"></h3>
-      <p class="car-specs text-sm text-gray-500 mb-3"></p>
-      <div class="car-features text-sm text-gray-500 mb-4"></div>
-    </div>
+        <!-- CTA -->
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center gap-4 car-hero-bottom mb-14"
+        >
+          <a
+            href="trips.html"
+            class="px-8 py-3.5 rounded-full font-medium bg-gradient-to-br from-teal-500 to-teal-700 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.06]"
+          >
+            View Tours →
+          </a>
+          <a
+            href="tel:+919006143335"
+            class="px-8 py-3.5 rounded-full font-medium border border-white/30 backdrop-blur-md hover:bg-white/10 transition-all duration-300"
+          >
+            Talk to Us
+          </a>
+        </div>
 
-    <div class="flex justify-between items-center px-6 py-4 border-t">
-      <div class="car-price"></div>
-      <a class="car-cta px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition">
-        Book
-      </a>
-    </div>
+        <!-- STATS ROW -->
+        <div
+          class="hero-stats-row flex flex-row items-center justify-center gap-0 w-full border-t border-white/15 pt-8"
+        >
+          <div
+            class="hero-stat-item flex-1 flex flex-col items-center gap-1 px-4 border-r border-white/15 last:border-r-0"
+          >
+            <div
+              class="stat-num text-[2.2rem] font-bold tracking-[-1px]"
+              data-target="600"
+            >
+              0
+            </div>
+            <div class="text-white/60 text-xs uppercase tracking-widest">
+              Trips Completed
+            </div>
+          </div>
 
-  </article>
-</template>
+          <div
+            class="hero-stat-item flex-1 flex flex-col items-center gap-1 px-4 border-r border-white/15 last:border-r-0"
+          >
+            <div
+              class="stat-num text-[2.2rem] font-bold tracking-[-1px]"
+              data-target="100"
+            >
+              0
+            </div>
+            <div class="text-white/60 text-xs uppercase tracking-widest">
+              Happy Travellers
+            </div>
+          </div>
 
+          <div
+            class="hero-stat-item flex-1 flex flex-col items-center gap-1 px-4 border-r border-white/15 last:border-r-0"
+          >
+            <div
+              class="stat-num text-[2.2rem] font-bold tracking-[-1px]"
+              data-target="40"
+            >
+              0
+            </div>
+            <div class="text-white/60 text-xs uppercase tracking-widest">
+              Destinations
+            </div>
+          </div>
 
-<div class="flex justify-end gap-3 mt-8 reveal">
-
-  <!-- PREVIOUS -->
-  <button id="carPrev"
-    class="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-700
-    hover:bg-teal-500 hover:text-white transition">
-
-    ← <span>Previous</span>
-  </button>
-
-  <!-- NEXT -->
-  <button id="carNext"
-    class="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-700
-    hover:bg-teal-500 hover:text-white transition">
-
-    <span>Next</span> →
-  </button>
-
-</div>
-
-</div>
+          <div
+            class="hero-stat-item flex-1 flex flex-col items-center gap-1 px-4"
+          >
+            <div
+              class="stat-num text-[2.2rem] font-bold tracking-[-1px]"
+              data-target="5"
+            >
+              0
+            </div>
+            <div class="text-white/60 text-xs uppercase tracking-widest">
+              Years Experience
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
 
 
-    <!-- at ur own pace section  -->
-<section class="travel-section section bg-gradient-to-b from-[#f8fafc] to-white overflow-hidden">
-
-
-  <div class="container-main">
-  <!-- HERO -->
-  <div class="text-center max-w-3xl mx-auto mb-16">
-    <h2 class="reveal text-4xl md:text-5xl font-bold">
-      Travel at <span class="text-teal-600">Your Own Pace</span>
-    </h2>
-    <p class="reveal mt-4 text-gray-600">
-      Private Car, Your Timetable
-    </p>
-  </div>
-
-  <!-- GRID -->
-  <div class="grid md:grid-cols-3 gap-10 items-center">
-
-    <!-- LEFT -->
-    <div class="space-y-8">
-      <div class="card reveal reveal-left hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
-        <h3 class="font-semibold mb-2">Private Car with Driver</h3>
-        <p class="text-sm text-gray-600">
-          Relax in your personal vehicle as your local driver handles navigation, traffic, and parking.
-        </p>
-      </div>
-
-      <div class="card reveal reveal-left hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
-        <h3 class="font-semibold mb-2">Comfort. Anytime Anywhere</h3>
-        <p class="text-sm text-gray-600">
-          Enjoy a roomy, air-conditioned ride—perfect for city exploring, long drives, and everything in between.
-        </p>
-      </div>
-    </div>
-
-    <!-- CENTER -->
-    <div class="flex justify-center">
-      <img src="images/animatedCar.png" class="car-image reveal w-full max-w-md" />
-    </div>
-
-    <!-- RIGHT -->
-    <div class="space-y-8 ">
-      <div class="card reveal reveal-right hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
-        <h3 class="font-semibold mb-2">No Rush. Fully Flexible</h3>
-        <p class="text-sm text-gray-600">
-          Stop anywhere, change plans, stay longer, or leave early. Your trip, your pace.
-        </p>
-      </div>
-
-      <div class="card reveal reveal-right hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
-        <h3 class="font-semibold mb-2">Hand-Picked Cars & Drivers</h3>
-        <p class="text-sm text-gray-600">
-          Modern, clean, and reliable SUVs and sedans. Professional and friendly drivers chosen for you.
-        </p>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- CTA -->
-  <div class="text-center mt-20">
-    <h3 class="reveal text-3xl font-semibold mb-4">
-      Your Trip, Your Schedule
-    </h3>
-
-    <p class="reveal text-gray-600 mb-6">
-      Stop wherever, whenever. Discover at your own rhythm. We provide the ride; you call the shots.
-    </p>
-
-    <button class="reveal cta-btn bg-teal-600 text-white px-6 py-3 rounded-xl transition hover:scale-105">
-      Book Your Private Ride
-    </button>
-  </div>
-
-</div>
-</section>
-
-
-
-
-
-
-<!-- why choose us ------------------->
- <section class="section relative overflow-hidden">
-
-  <!-- BACKGROUND GLOW -->
-  <div class="absolute inset-0 -z-10
-    bg-[radial-gradient(circle_at_20%_30%,rgba(42,157,143,0.12),transparent_60%),
-        radial-gradient(circle_at_80%_70%,rgba(79,190,203,0.10),transparent_60%)]">
-  </div>
-
-  <div class="container-main">
-
-  <!-- HEADING -->
-  <div class="text-center container-narrow mb-20 reveal">
-
-    <span class="text-xs uppercase tracking-[0.25em] text-teal-500 font-semibold">
-     Why Choose Us
-    </span>
-
-    <h2 class="text-[clamp(2.4rem,5vw,3.4rem)] font-semibold mt-4 leading-tight text-gray-900">
-     Why Travelers
-      <span class="text-teal-500 relative inline-block">
-       Choose Us
-        <span class="absolute left-0 -bottom-1 w-full h-[4px] bg-teal-500/70 rounded-full"></span>
-      </span>
-    </h2>
-
-    <p class="text-gray-500 mt-5 text-[0.95rem]">
-      From selecting your car to starting your journey — everything is designed to be effortless.
-    </p>
-
-  </div>
-
-  <!-- STEPS -->
-  <div class="relative">
-
-    <!-- CONNECTOR LINE -->
-    <div class="hidden lg:block absolute top-[40px] left-0 w-full h-[2px]
-      bg-gradient-to-r from-transparent via-teal-300/40 to-transparent">
-    </div>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-
-      <!-- STEP -->
-      <div class="group relative reveal reveal-left">
-
-        <!-- NUMBER -->
-        <div class="w-[70px] h-[70px] rounded-full
-          bg-gradient-to-br from-teal-500 to-teal-700 text-white
-          flex items-center justify-center text-xl font-bold
-          shadow-lg mx-auto mb-6
-          transition duration-300 group-hover:scale-110 group-hover:rotate-6">
-          01
+     <!-- at ur own pace section  -->
+    <section
+      class="travel-section section bg-gradient-to-b from-[#f8fafc] to-white overflow-hidden"
+    >
+      <div class="container-main">
+        <!-- HERO -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="reveal text-4xl md:text-5xl font-bold">
+            Travel at <span class="text-teal-600">Your Own Pace</span>
+          </h2>
+          <p class="reveal mt-4 text-gray-600">Private Car, Your Timetable</p>
         </div>
 
-        <!-- CARD -->
-        <div class="bg-white/70 backdrop-blur-lg border border-white/60
-          rounded-2xl p-6 text-center
-          shadow-[0_10px_25px_rgba(0,0,0,0.06)]
-          transition-all duration-300
-          group-hover:-translate-y-3 group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.12)]">
-
-          <h3 class="font-semibold text-lg mb-2 text-gray-900 group-hover:text-teal-600 transition">
-            Private Drivers Only
-          </h3>
-
-          <p class="text-sm text-gray-500 leading-relaxed">
-            No shared rides. Your car, your space.
-          </p>
-
-        </div>
-
-      </div>
-
-      <!-- STEP -->
-      <div class="group relative reveal reveal-right">
-
-        <div class="w-[70px] h-[70px] rounded-full
-          bg-gradient-to-br from-teal-500 to-teal-700 text-white
-          flex items-center justify-center text-xl font-bold
-          shadow-lg mx-auto mb-6
-          transition duration-300 group-hover:scale-110 group-hover:rotate-6">
-          02
-        </div>
-
-        <div class="bg-white/70 backdrop-blur-lg border border-white/60
-          rounded-2xl p-6 text-center
-          shadow-[0_10px_25px_rgba(0,0,0,0.06)]
-          transition-all duration-300
-          group-hover:-translate-y-3 group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.12)]">
-
-          <h3 class="font-semibold text-lg mb-2 text-gray-900 group-hover:text-teal-600 transition">
-            Fully Flexible Trips
-          </h3>
-
-          <p class="text-sm text-gray-500 leading-relaxed">
-            Stop anywhere, change anytime.
-          </p>
-
-        </div>
-
-      </div>
-
-      <!-- STEP -->
-      <div class="group relative reveal reveal-left">
-
-        <div class="w-[70px] h-[70px] rounded-full
-          bg-gradient-to-br from-teal-500 to-teal-700 text-white
-          flex items-center justify-center text-xl font-bold
-          shadow-lg mx-auto mb-6
-          transition duration-300 group-hover:scale-110 group-hover:rotate-6">
-          03
-        </div>
-
-        <div class="bg-white/70 backdrop-blur-lg border border-white/60
-          rounded-2xl p-6 text-center
-          shadow-[0_10px_25px_rgba(0,0,0,0.06)]
-          transition-all duration-300
-          group-hover:-translate-y-3 group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.12)]">
-
-          <h3 class="font-semibold text-lg mb-2 text-gray-900 group-hover:text-teal-600 transition">
-            Clean & Verified Cars
-          </h3>
-
-          <p class="text-sm text-gray-500 leading-relaxed">
-           Regularly checked, well maintained.
-          </p>
-
-        </div>
-
-      </div>
-
-      <!-- STEP -->
-      <div class="group relative reveal reveal-right">
-
-        <div class="w-[70px] h-[70px] rounded-full
-          bg-gradient-to-br from-teal-500 to-teal-700 text-white
-          flex items-center justify-center text-xl font-bold
-          shadow-lg mx-auto mb-6
-          transition duration-300 group-hover:scale-110 group-hover:rotate-6">
-          04
-        </div>
-
-        <div class="bg-white/70 backdrop-blur-lg border border-white/60
-          rounded-2xl p-6 text-center
-          shadow-[0_10px_25px_rgba(0,0,0,0.06)]
-          transition-all duration-300
-          group-hover:-translate-y-3 group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.12)]">
-
-          <h3 class="font-semibold text-lg mb-2 text-gray-900 group-hover:text-teal-600 transition">
-            Travel & Relax
-          </h3>
-
-          <p class="text-sm text-gray-500 leading-relaxed">
-           No hidden charges. Pay only what you see.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-</div>
-</section>
-
-
-
-
-
-
-
-<!-- how it works  -->
-<section id="why" class="section relative overflow-hidden">
-
-
-
-  <div class="container-main">
-
-  <!-- HEADING -->
-  <div class="text-center container-narrow mb-12 reveal">
-    <span class="text-xs uppercase tracking-[0.3em] text-teal-500 font-semibold">
-      Simple Process
-    </span>
-
-    <h2 class="text-[clamp(2.6rem,5vw,3.8rem)] font-semibold mt-4 leading-[1.1] text-gray-900">
-      How It Works
-    </h2>
-
-    <p class="text-gray-500 mt-4 text-[1rem]">
-      A smooth process designed to get you on the road without friction.
-    </p>
-  </div>
-
-  <!-- STEPS -->
-  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-
-    <!-- STEP 1 -->
-    <div class="reveal reveal-left group relative">
-
-      <div class="relative bg-white/60 backdrop-blur-xl border border-white/50 rounded-3xl p-7 text-center transition-transform duration-500 hover:-translate-y-4 hover:scale-[1.03] hover:shadow-[0_30px_80px_rgba(0,0,0,0.12)]">
-
-        <div class="text-[3.5rem] font-bold text-teal-500/20 absolute top-4 left-6">01</div>
-
-        <div class="mb-5 flex items-center justify-center">
-          <div class="p-4 rounded-2xl bg-teal-50 group-hover:bg-teal-100 transition">
-            <i data-lucide="car-front" class="w-8 h-8 text-teal-600"></i>
-          </div>
-        </div>
-
-        <h3 class="font-semibold text-[1.1rem] mb-3 text-gray-900 group-hover:text-teal-600 transition">
-          Choose Your Car
-        </h3>
-
-        <p class="text-sm text-gray-500 leading-relaxed">
-          Select a vehicle that matches your comfort, group size, and travel needs.
-        </p>
-
-      </div>
-    </div>
-
-    <!-- STEP 2 -->
-    <div class="reveal reveal-right group relative">
-
-
-      <div class="relative bg-white/60 backdrop-blur-xl border border-white/50 rounded-3xl p-7 text-center transition-transform duration-500 hover:-translate-y-4 hover:scale-[1.03] hover:shadow-[0_30px_80px_rgba(0,0,0,0.12)]">
-
-        <div class="text-[3.5rem] font-bold text-teal-500/20 absolute top-4 left-6">02</div>
-
-        <div class="mb-5 flex items-center justify-center">
-          <div class="p-4 rounded-2xl bg-teal-50 group-hover:bg-teal-100 transition">
-            <i data-lucide="clipboard-list" class="w-8 h-8 text-teal-600"></i>
-          </div>
-        </div>
-
-        <h3 class="font-semibold text-[1.1rem] mb-3 text-gray-900 group-hover:text-teal-600 transition">
-          Share Your Plan
-        </h3>
-
-        <p class="text-sm text-gray-500 leading-relaxed">
-          Tell us your dates, pickup location, and route — quick and effortless.
-        </p>
-
-      </div>
-    </div>
-
-    <!-- STEP 3 -->
-    <div class="reveal reveal-left group relative">
-
-      <div class="relative bg-white/60 backdrop-blur-xl border border-white/50 rounded-3xl p-7 text-center transition-transform duration-500 hover:-translate-y-4 hover:scale-[1.03] hover:shadow-[0_30px_80px_rgba(0,0,0,0.12)]">
-
-        <div class="text-[3.5rem] font-bold text-teal-500/20 absolute top-4 left-6">03</div>
-
-        <div class="mb-5 flex items-center justify-center">
-          <div class="p-4 rounded-2xl bg-teal-50 group-hover:bg-teal-100 transition">
-            <i data-lucide="message-circle" class="w-8 h-8 text-teal-600"></i>
-          </div>
-        </div>
-
-        <h3 class="font-semibold text-[1.1rem] mb-3 text-gray-900 group-hover:text-teal-600 transition">
-          Get Confirmation
-        </h3>
-
-        <p class="text-sm text-gray-500 leading-relaxed">
-          Receive a clear quote and confirm instantly with full transparency.
-        </p>
-
-      </div>
-    </div>
-
-    <!-- STEP 4 -->
-    <div class="reveal reveal-right group relative">
-
-      <div class="relative bg-white/60 backdrop-blur-xl border border-white/50 rounded-3xl p-7 text-center transition-transform duration-500 hover:-translate-y-4 hover:scale-[1.03] hover:shadow-[0_30px_80px_rgba(0,0,0,0.12)]">
-
-        <div class="text-[3.5rem] font-bold text-teal-500/20 absolute top-4 left-6">04</div>
-
-        <div class="mb-5 flex items-center justify-center">
-          <div class="p-4 rounded-2xl bg-teal-50 group-hover:bg-teal-100 transition">
-            <i data-lucide="globe" class="w-8 h-8 text-teal-600"></i>
-          </div>
-        </div>
-
-        <h3 class="font-semibold text-[1.1rem] mb-3 text-gray-900 group-hover:text-teal-600 transition">
-          Travel & Relax
-        </h3>
-
-        <p class="text-sm text-gray-500 leading-relaxed">
-          Your driver arrives on time — you enjoy a smooth, stress-free journey.
-        </p>
-
-      </div>
-    </div>
-
-  </div>
-
-  </div>
-</section>
-
-
-
-
-
-
-
-
-
-<!-- brand logo  -->
-<section class="section reveal relative py-[80px] overflow-hidden bg-white">
-
-<div class="container-main">
-  <!-- HEADING -->
-  <div class="reveal reveal-left text-center conatiner-narrow mb-12 reveal">
-    <span class="text-xs uppercase tracking-[0.3em] text-teal-500 font-semibold">
-      Trusted Travel Partners
-    </span>
-
-    <h2 class="reveal reveal-right text-[clamp(1.2rem,2.4vw,2.2rem)] font-semibold mt-4 leading-[1.1] text-gray-900">
-       Platforms That Power Your Journey
-    </h2>
-
-    <p class="text-gray-500 mt-4 text-[1rem]">
-     We collaborate with reliable platforms and services to ensure a smooth and seamless travel experience.
-    </p>
-  </div>
-
-  <!-- LOGO CAROUSEL -->
-  <div class="logo-carousel relative overflow-hidden py-6">
-
-    <div class="logo-track flex items-center gap-14">
-
-      <!-- logos -->
-      <div class="logo-item"><img src="images/makemytrip.jpg"></div>
-      <div class="logo-item"><img src="images/goibibo.jpg"></div>
-      <div class="logo-item"><img src="images/visa.jpg"></div>
-      <div class="logo-item"><img src="images/mastercard1.jpg"></div>
-      <div class="logo-item"><img src="images/google.jpg"></div>
-
-      <!-- duplicate -->
-      <div class="logo-item"><img src="images/makemytrip.jpg"></div>
-      <div class="logo-item"><img src="images/goibibo.jpg"></div>
-      <div class="logo-item"><img src="images/visa.jpg"></div>
-      <div class="logo-item"><img src="images/mastercard1.jpg"></div>
-      <div class="logo-item"><img src="images/google.jpg"></div>
-
-    </div>
-
-  </div>
-</div>
-</section>
-
-
-
-
-
-
-
-
-  <!---------------REVIEWS — auto-scrolling------------>
- <section id="reviews" class="section relative overflow-hidden">
-
-<div class="absolute inset-0 -z-10 animate-gradient bg-[radial-gradient(circle_at_20%_30%,rgba(42,157,143,0.18),transparent_60%), radial-gradient(circle_at_80%_70%,rgba(79,190,203,0.15),transparent_60%), linear-gradient(120deg,#f8fafc,#eef3f9,#f8fafc)]"></div>
-
-  <div class="container-main">
-  <!-- Heading -->
-  <div class="reveal reveal-right container-narrow text-center mb-14">
-    <span class="text-[11px] font-semibold tracking-[0.2em] uppercase text-teal-500 mb-3 block">What Travelers Say</span>
-    <h2 class="font-display text-[clamp(2rem,4vw,2.8rem)] font-semibold text-gray-900 leading-[1.15]">
-      Trusted by <span class="text-teal-500">1,200+</span> Travelers
-    </h2>
-  </div>
-
-  <!-- Carousel -->
-  <div class="reviews-carousel-new relative overflow-hidden py-8 pb-12">
-    <div class="reviews-track-new flex gap-6">
-
-      <!-- Card 1 -->
-      <div class="review-card-new w-[300px] shrink-0 bg-white rounded-[20px] p-7 relative overflow-hidden flex flex-col items-center text-center"
-           style="transition: transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.65s ease, box-shadow 0.65s ease;">
-        <div class="w-14 h-14 rounded-full bg-teal-100 text-teal-700 font-bold text-lg flex items-center justify-center mb-4 z-10">RS</div>
-        <span class="text-[0.78rem] text-gray-400 mb-4 z-10">🇮🇳 Mumbai</span>
-        <div class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none">"</div>
-        <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">Driver was very polite and always on time. Car was clean throughout the trip.</p>
-     <div class="mt-auto z-10">
-  <h4 class="font-semibold text-[0.92rem] text-gray-900">Rohit Sharma</h4>
-  <div class="flex items-center justify-center gap-2 mt-1.5">
-    <div class="star-rating">
-      <span class="stars-empty">★★★★★</span>
-      <span class="stars-filled" style="width: 96%">★★★★★</span>
-    </div>
-    <span class="text-gray-400 text-xs">4.8</span>
-  </div>
-</div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="review-card-new w-[300px] shrink-0 bg-white rounded-[20px] p-7 relative overflow-hidden flex flex-col items-center text-center"
-           style="transition: transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.65s ease, box-shadow 0.65s ease;">
-        <div class="w-14 h-14 rounded-full bg-purple-100 text-purple-700 font-bold text-lg flex items-center justify-center mb-4 z-10">NV</div>
-        <span class="text-[0.78rem] text-gray-400 mb-4 z-10">🇮🇳 Delhi</span>
-        <div class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none">"</div>
-        <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">Travelled with parents, everything was smooth and comfortable. No stress at all.</p>
-       <div class="mt-auto z-10">
-  <h4 class="font-semibold text-[0.92rem] text-gray-900">Neha Verma</h4>
-  <div class="flex items-center justify-center gap-2 mt-1.5">
-    <div class="star-rating">
-      <span class="stars-empty">★★★★★</span>
-      <span class="stars-filled" style="width: 98%">★★★★★</span>
-    </div>
-    <span class="text-gray-400 text-xs">4.9</span>
-  </div>
-</div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="review-card-new w-[300px] shrink-0 bg-white rounded-[20px] p-7 relative overflow-hidden flex flex-col items-center text-center"
-           style="transition: transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.65s ease, box-shadow 0.65s ease;">
-        <div class="w-14 h-14 rounded-full bg-orange-100 text-orange-700 font-bold text-lg flex items-center justify-center mb-4 z-10">AG</div>
-        <span class="text-[0.78rem] text-gray-400 mb-4 z-10">🇮🇳 Gurgaon</span>
-        <div class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none">"</div>
-        <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">Honestly better than expected. Driver knew all routes and avoided traffic perfectly.</p>
-       <div class="mt-auto z-10">
-  <h4 class="font-semibold text-[0.92rem] text-gray-900">Aman Gupta</h4>
-  <div class="flex items-center justify-center gap-2 mt-1.5">
-    <div class="star-rating">
-      <span class="stars-empty">★★★★★</span>
-      <span class="stars-filled" style="width: 94%">★★★★★</span>
-    </div>
-    <span class="text-gray-400 text-xs">4.7</span>
-  </div>
-</div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="review-card-new w-[300px] shrink-0 bg-white rounded-[20px] p-7 relative overflow-hidden flex flex-col items-center text-center"
-           style="transition: transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.65s ease, box-shadow 0.65s ease;">
-        <div class="w-14 h-14 rounded-full bg-rose-100 text-rose-700 font-bold text-lg flex items-center justify-center mb-4 z-10">PM</div>
-        <span class="text-[0.78rem] text-gray-400 mb-4 z-10">🇮🇳 Ahmedabad</span>
-        <div class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none">"</div>
-        <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">Very professional service. Car condition was excellent and the ride felt completely safe.</p>
-      <div class="mt-auto z-10">
-  <h4 class="font-semibold text-[0.92rem] text-gray-900">Pooja Mehta</h4>
-  <div class="flex items-center justify-center gap-2 mt-1.5">
-    <div class="star-rating">
-      <span class="stars-empty">★★★★★</span>
-      <span class="stars-filled" style="width: 96%">★★★★★</span>
-    </div>
-    <span class="text-gray-400 text-xs">4.8</span>
-  </div>
-</div>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="review-card-new w-[300px] shrink-0 bg-white rounded-[20px] p-7 relative overflow-hidden flex flex-col items-center text-center"
-           style="transition: transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.65s ease, box-shadow 0.65s ease;">
-        <div class="w-14 h-14 rounded-full bg-blue-100 text-blue-700 font-bold text-lg flex items-center justify-center mb-4 z-10">DB</div>
-        <span class="text-[0.78rem] text-gray-400 mb-4 z-10">🇺🇸 USA</span>
-        <div class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none">"</div>
-        <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">Our India trip felt safe and well-organized. The driver was absolutely excellent.</p>
-      <div class="mt-auto z-10">
-  <h4 class="font-semibold text-[0.92rem] text-gray-900">Daniel Brooks</h4>
-  <div class="flex items-center justify-center gap-2 mt-1.5">
-    <div class="star-rating">
-      <span class="stars-empty">★★★★★</span>
-      <span class="stars-filled" style="width: 98%">★★★★★</span>
-    </div>
-    <span class="text-gray-400 text-xs">4.9</span>
-  </div>
-</div>
-
-      </div>
-
-      <!-- Card 6 -->
-      <div class="review-card-new w-[300px] shrink-0 bg-white rounded-[20px] p-7 relative overflow-hidden flex flex-col items-center text-center"
-           style="transition: transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.65s ease, box-shadow 0.65s ease;">
-        <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-700 font-bold text-lg flex items-center justify-center mb-4 z-10">EW</div>
-        <span class="text-[0.78rem] text-gray-400 mb-4 z-10">🇬🇧 UK</span>
-        <div class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none">"</div>
-        <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">Great experience overall. Very comfortable travel between cities across India.</p>
-       <div class="mt-auto z-10">
-  <h4 class="font-semibold text-[0.92rem] text-gray-900">Emma Wilson</h4>
-  <div class="flex items-center justify-center gap-2 mt-1.5">
-    <div class="star-rating">
-      <span class="stars-empty">★★★★★</span>
-      <span class="stars-filled" style="width: 96%">★★★★★</span>
-    </div>
-    <span class="text-gray-400 text-xs">4.8</span>
-  </div>
-</div>
-      </div>
-
-      <!-- Card 7 -->
-      <div class="review-card-new w-[300px] shrink-0 bg-white rounded-[20px] p-7 relative overflow-hidden flex flex-col items-center text-center"
-           style="transition: transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.65s ease, box-shadow 0.65s ease;">
-        <div class="w-14 h-14 rounded-full bg-yellow-100 text-yellow-700 font-bold text-lg flex items-center justify-center mb-4 z-10">SR</div>
-        <span class="text-[0.78rem] text-gray-400 mb-4 z-10">🇮🇳 Hyderabad</span>
-        <div class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none">"</div>
-        <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">Everything went exactly as planned. Very trustworthy team, will book again.</p>
-      <div class="mt-auto z-10">
-  <h4 class="font-semibold text-[0.92rem] text-gray-900">Sneha Reddy</h4>
-  <div class="flex items-center justify-center gap-2 mt-1.5">
-    <div class="star-rating">
-      <span class="stars-empty">★★★★★</span>
-      <span class="stars-filled" style="width: 98%">★★★★★</span>
-    </div>
-    <span class="text-gray-400 text-xs">4.9</span>
-  </div>
-</div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Dots -->
-  <div class="reviews-dots flex items-center justify-center gap-2 mt-2"></div>
-</div>
-</section>
-
-
-
-
-
- <!-- FAQ -->
-  <section class="section reveal reveal-right relative overflow-hidden bg-white">
-
-
-<div class="container-main">
-
-    <!-- HEADING -->
-    <div class="text-center container-narrow mx-auto mb-16 relative z-10">
-      <span class="text-xs uppercase tracking-[0.25em] text-teal-500 font-semibold">
-        Got Questions?
-      </span>
-
-      <h2 class="text-[clamp(2.2rem,4vw,3rem)] font-semibold mt-4 leading-tight text-gray-900">
-        Frequently Asked
-        <span class="text-teal-500 relative inline-block">
-          Questions
-          <span class="absolute left-0 -bottom-1 w-full h-[3px] bg-teal-500/70 rounded-full"></span>
-        </span>
-      </h2>
-
-      <p class="text-gray-500 mt-4 text-sm">
-        Everything you need to know before booking — clear, simple,
-        transparent.
-      </p>
-    </div>
-
-
-
-
-  <!-- FAQ ITEMS -->
-  <div class="mx-auto space-y-4 relative z-10">
-
-    <!-- ITEM -->
-    <details class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
-      <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
-        Is fuel included in the daily rate?
-        <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
-      </summary>
-
-      <p class="mt-3 text-sm text-gray-500 leading-relaxed">
-        Yes. All our rates include driver and fuel for up to 250 km per day.
-        Extra kilometres are charged at the listed per-km rate.
-      </p>
-    </details>
-
-    <!-- ITEM -->
-    <details class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
-      <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
-        Can I book a one-way trip?
-        <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
-      </summary>
-
-      <p class="mt-3 text-sm text-gray-500">
-        Yes. One-way bookings are available. A drop charge may apply depending on distance.
-      </p>
-    </details>
-
-    <!-- ITEM -->
-    <details class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
-      <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
-        What about cancellations?
-        <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
-      </summary>
-
-      <p class="mt-3 text-sm text-gray-500">
-        Free cancellation up to 48 hours. Within 24 hours, one day charge applies.
-      </p>
-    </details>
-
-    <!-- ITEM -->
-    <details class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
-      <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
-        Are drivers verified?
-        <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
-      </summary>
-
-      <p class="mt-3 text-sm text-gray-500">
-        Yes. All drivers are background-checked, licensed, and rated above 4.8.
-      </p>
-    </details>
-
-    <!-- ITEM -->
-    <details class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
-      <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
-        Can I book for multiple days?
-        <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
-      </summary>
-
-      <p class="mt-3 text-sm text-gray-500">
-        Yes. Multi-day bookings are our most popular and come with better pricing.
-      </p>
-    </details>
-
-  </div>
-
-  </div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- footer  -->
-<footer class="bg-dark-grad px-[5%] pt-20 border-t border-[#e8ddd0]/20">
-
-  <!-- CTA row -->
-  <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-14 mb-14 border-b border-white/[0.08] gap-8">
-    <div>
-      <h2 class="font-display text-[clamp(2rem,4vw,3rem)] font-bold text-white mb-2">
-        Your next trip.<br/>
-        <span class="text-teal-400">Door to door.</span>
-      </h2>
-      <p class="font-display text-[1rem] text-white/50 italic mb-7">
-        Private driver. Zero hassle. Real India.
-      </p>
-
-      <!-- Desktop: icon circles -->
-      <div class="hidden sm:flex gap-3 flex-wrap">
-        <a href="https://youtube.com" target="_blank"
-          class="p-3 rounded-full border border-white/20 text-white/80 hover:bg-white/10 hover:text-white hover:border-white/40 transition-all duration-200">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
-        </a>
-        <a href="https://instagram.com" target="_blank"
-          class="p-3 rounded-full border border-white/20 text-white/80 hover:bg-white/10 hover:text-white hover:border-white/40 transition-all duration-200">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5.8A4.2 4.2 0 1 1 7.8 12 4.2 4.2 0 0 1 12 7.8zm5.3-.9a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
-        </a>
-        <a href="https://wa.me/919006143335" target="_blank"
-          class="p-3 rounded-full border border-white/20 text-white/80 hover:bg-white/10 hover:text-white hover:border-white/40 transition-all duration-200">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0 12 12 0 0 0 1.5 18.3L0 24l5.8-1.5A12 12 0 1 0 20.5 3.5zm-8.5 18a10 10 0 0 1-5.1-1.4l-.4-.2-3.4.9.9-3.3-.2-.4A10 10 0 1 1 12 21.5zm5.5-7.6c-.3-.2-1.6-.8-1.9-.9s-.5-.2-.7.2-.8.9-1 1.1-.4.3-.7.1a8.2 8.2 0 0 1-2.4-1.5 9.2 9.2 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.7l.4-.6c.1-.2.1-.4 0-.6s-.7-1.7-.9-2.3c-.2-.5-.4-.4-.7-.4h-.6c-.2 0-.6.1-.9.4s-1.1 1.1-1.1 2.7 1.1 3.1 1.2 3.3a12.5 12.5 0 0 0 4.8 4.4c.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.6-.7 1.8-1.4.2-.7.2-1.3.1-1.4s-.2-.2-.5-.3z"/></svg>
-        </a>
-        <a href="tel:+919006143335"
-          class="p-3 rounded-full border border-white/20 text-white/80 hover:bg-white/10 hover:text-white hover:border-white/40 transition-all duration-200">
-          <i data-lucide="phone" class="w-5 h-5"></i>
-        </a>
-      </div>
-
-      <!-- Mobile: text pills -->
-      <div class="flex sm:hidden gap-2 flex-wrap">
-        <a href="https://youtube.com" target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-white/80 text-sm hover:bg-white/10 transition">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
-          Youtube
-        </a>
-        <a href="https://instagram.com" target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-white/80 text-sm hover:bg-white/10 transition">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5.8A4.2 4.2 0 1 1 7.8 12 4.2 4.2 0 0 1 12 7.8zm5.3-.9a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
-          Instagram
-        </a>
-        <a href="https://wa.me/919006143335" target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-white/80 text-sm hover:bg-white/10 transition">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0 12 12 0 0 0 1.5 18.3L0 24l5.8-1.5A12 12 0 1 0 20.5 3.5zm-8.5 18a10 10 0 0 1-5.1-1.4l-.4-.2-3.4.9.9-3.3-.2-.4A10 10 0 1 1 12 21.5zm5.5-7.6c-.3-.2-1.6-.8-1.9-.9s-.5-.2-.7.2-.8.9-1 1.1-.4.3-.7.1a8.2 8.2 0 0 1-2.4-1.5 9.2 9.2 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.7l.4-.6c.1-.2.1-.4 0-.6s-.7-1.7-.9-2.3c-.2-.5-.4-.4-.7-.4h-.6c-.2 0-.6.1-.9.4s-1.1 1.1-1.1 2.7 1.1 3.1 1.2 3.3a12.5 12.5 0 0 0 4.8 4.4c.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.6-.7 1.8-1.4.2-.7.2-1.3.1-1.4s-.2-.2-.5-.3z"/></svg>
-          Whatsapp
-        </a>
-        <a href="tel:+919006143335" class="flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-white/80 text-sm hover:bg-white/10 transition">
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.98-.98a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Phone
-        </a>
-      </div>
-    </div>
-
-    <a href="tel:+919006143335"
-      class="btn-shine shrink-0 inline-flex items-center gap-2.5 px-7 py-4 rounded-full font-semibold text-white bg-gradient-to-br from-[#2a9d8f] to-[#264653] shadow-[0_8px_25px_rgba(0,0,0,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(0,0,0,0.4)]">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.98-.98a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-      </svg>
-      Call Us Now
-    </a>
-  </div>
-
-  <!-- Brand (mobile only — shown above accordion) -->
-  <div class="pb-10 mb-2 border-b border-white/[0.08] lg:hidden">
-    <a href="index.html" class="font-display text-[1.6rem] font-semibold text-white block mb-3.5">
-      Bharat<em class="text-teal-400 not-italic">भ्रमण</em>
-    </a>
-    <p class="text-[0.95rem] text-white/65 leading-[1.8] max-w-[270px] mb-5">
-      Your trusted travel partner for private car &amp; driver experiences across India.
-    </p>
-    <div class="flex flex-wrap gap-x-4 gap-y-2">
-      <span class="text-[0.78rem] text-white/40 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block"></span>Verified Drivers</span>
-      <span class="text-[0.78rem] text-white/40 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block"></span>GPS Tracked</span>
-      <span class="text-[0.78rem] text-white/40 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block"></span>24/7 Support</span>
-      <span class="text-[0.78rem] text-white/40 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block"></span>Transparent Pricing</span>
-    </div>
-  </div>
-
-  <!-- ── Footer grid (desktop) + accordion (mobile) ── -->
-  <div class="pb-14 border-b border-white/[0.08]">
-
-    <!-- DESKTOP GRID -->
-    <div class="hidden lg:grid lg:grid-cols-[2fr_1fr_1fr_1.6fr] lg:gap-12">
-
-      <!-- Brand col -->
-      <div>
-        <a href="index.html" class="font-display text-[1.6rem] font-semibold text-white block mb-3.5">
-          Bharat<em class="text-teal-400 not-italic">भ्रमण</em>
-        </a>
-        <p class="text-[0.95rem] text-white/65 leading-[1.8] max-w-[270px] mb-5">
-          Your trusted travel partner for private car &amp; driver experiences across India. Curated routes, verified drivers, transparent pricing.
-        </p>
-        <!-- Trust strip -->
-        <div class="flex flex-wrap gap-x-4 gap-y-2">
-          <span class="text-[0.78rem] text-white/40 flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block"></span>Verified Drivers
-          </span>
-          <span class="text-[0.78rem] text-white/40 flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block"></span>GPS Tracked
-          </span>
-          <span class="text-[0.78rem] text-white/40 flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block"></span>24/7 Support
-          </span>
-          <span class="text-[0.78rem] text-white/40 flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block"></span>Transparent Pricing
-          </span>
-        </div>
-      </div>
-
-      <!-- Explore col -->
-      <div>
-        <h4 class="footer-col-heading font-body text-[0.85rem] font-semibold uppercase tracking-[0.12em] text-white mb-5">
-          Explore
-        </h4>
-        <ul class="space-y-2.5">
-          <li><a href="index.html" class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block">Home</a></li>
-          <li><a href="trips.html" class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block">All Tours</a></li>
-          <li><a href="cars.html" class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block">Car Rentals</a></li>
-          <li><a href="about.html" class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block">About</a></li>
-          <li><a href="#why" class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block">Why Us</a></li>
-        </ul>
-      </div>
-
-      <!-- Popular Tours col -->
-      <div>
-        <h4 class="footer-col-heading font-body text-[0.85rem] font-semibold uppercase tracking-[0.12em] text-white mb-5">
-          Popular Tours
-        </h4>
-        <ul class="space-y-2.5">
-          <li><a href="goldentriangle.html" class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block">Golden Triangle</a></li>
-          <li><a href="kerala.html" class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block">Kerala Backwaters</a></li>
-          <li><a href="trips.html" class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block">Rajasthan Royale</a></li>
-          <li><a href="trips.html" class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block">Goa Beach Escape</a></li>
-          <li><a href="trips.html" class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block">Varanasi Spiritual</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact col -->
-      <div>
-        <h4 class="footer-col-heading font-body text-[0.85rem] font-semibold uppercase tracking-[0.12em] text-white mb-5">
-          Corporate Office
-        </h4>
-        <div class="flex gap-2.5">
-          <i data-lucide="map-pin" class="w-4 h-4 text-teal-500 mt-0.5 shrink-0"></i>
-          <address class="not-italic text-[0.92rem] text-white/65 leading-[1.8]">
-            Flat No. 204, Shree Residency<br/>
-            Near Apex Circle, Malviya Nagar<br/>
-            Jaipur, Rajasthan – 302017<br/>
-            India
-          </address>
-        </div>
-        <div class="flex gap-2.5 mt-4">
-          <i data-lucide="clock" class="w-4 h-4 text-teal-500 mt-0.5 shrink-0"></i>
-          <p class="text-[0.92rem] text-white/65 leading-[1.8]">
-            Mon – Sat: 10:00 AM – 8:00 PM<br/>
-            Sunday: Closed
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- MOBILE ACCORDION -->
-    <div class="lg:hidden">
-
-      <div class="footer-acc border-b border-white/[0.08]">
-        <button class="footer-acc-trigger w-full flex items-center justify-between py-4 text-left">
-          <span class="text-[1rem] font-semibold text-white">Explore</span>
-          <svg class="footer-acc-chevron w-5 h-5 text-white/50 transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-        </button>
-        <div class="footer-acc-body">
-          <div class="pb-4">
-            <ul class="space-y-3">
-              <li><a href="index.html" class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block">Home</a></li>
-              <li><a href="trips.html" class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block">All Tours</a></li>
-              <li><a href="cars.html" class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block">Car Rentals</a></li>
-              <li><a href="about.html" class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block">About</a></li>
-              <li><a href="#why" class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block">Why Us</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-acc border-b border-white/[0.08]">
-        <button class="footer-acc-trigger w-full flex items-center justify-between py-4 text-left">
-          <span class="text-[1rem] font-semibold text-white">Popular Tours</span>
-          <svg class="footer-acc-chevron w-5 h-5 text-white/50 transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-        </button>
-        <div class="footer-acc-body">
-          <div class="pb-4">
-            <ul class="space-y-3">
-              <li><a href="goldentriangle.html" class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block">Golden Triangle</a></li>
-              <li><a href="kerala.html" class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block">Kerala Backwaters</a></li>
-              <li><a href="trips.html" class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block">Rajasthan Royale</a></li>
-              <li><a href="trips.html" class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block">Goa Beach Escape</a></li>
-              <li><a href="trips.html" class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block">Varanasi Spiritual</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-acc border-b border-white/[0.08]">
-        <button class="footer-acc-trigger w-full flex items-center justify-between py-4 text-left">
-          <span class="text-[1rem] font-semibold text-white">Contact Info</span>
-          <svg class="footer-acc-chevron w-5 h-5 text-white/50 transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-        </button>
-        <div class="footer-acc-body">
-          <div class="pb-5">
-            <div class="flex gap-2.5 mb-3">
-              <i data-lucide="map-pin" class="w-4 h-4 text-teal-500 mt-0.5 shrink-0"></i>
-              <address class="not-italic text-[0.92rem] text-white/60 leading-[1.8]">
-                Flat No. 204, Shree Residency<br/>
-                Near Apex Circle, Malviya Nagar<br/>
-                Jaipur, Rajasthan – 302017, India
-              </address>
+        <!-- GRID -->
+        <div class="grid md:grid-cols-3 gap-10 items-center">
+          <!-- LEFT -->
+          <div class="space-y-8">
+            <div
+              class="card reveal reveal-left hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+            >
+              <h3 class="font-semibold mb-2">Private Car with Driver</h3>
+              <p class="text-sm text-gray-600">
+                Relax in your personal vehicle as your local driver handles
+                navigation, traffic, and parking.
+              </p>
             </div>
-            <div class="flex gap-2.5">
-              <i data-lucide="clock" class="w-4 h-4 text-teal-500 mt-0.5 shrink-0"></i>
-              <p class="text-[0.92rem] text-white/60 leading-[1.8]">
-                Mon – Sat: 10:00 AM – 8:00 PM<br/>
-                Sunday: Closed
+
+            <div
+              class="card reveal reveal-left hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+            >
+              <h3 class="font-semibold mb-2">Comfort. Anytime Anywhere</h3>
+              <p class="text-sm text-gray-600">
+                Enjoy a roomy, air-conditioned ride—perfect for city exploring,
+                long drives, and everything in between.
+              </p>
+            </div>
+          </div>
+
+          <!-- CENTER -->
+          <div class="flex justify-center">
+            <img
+              src="images/animatedCar.png"
+              class="car-image reveal w-full max-w-md"
+            />
+          </div>
+
+          <!-- RIGHT -->
+          <div class="space-y-8">
+            <div
+              class="card reveal reveal-right hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+            >
+              <h3 class="font-semibold mb-2">No Rush. Fully Flexible</h3>
+              <p class="text-sm text-gray-600">
+                Stop anywhere, change plans, stay longer, or leave early. Your
+                trip, your pace.
+              </p>
+            </div>
+
+            <div
+              class="card reveal reveal-right hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+            >
+              <h3 class="font-semibold mb-2">Hand-Picked Cars & Drivers</h3>
+              <p class="text-sm text-gray-600">
+                Modern, clean, and reliable SUVs and sedans. Professional and
+                friendly drivers chosen for you.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center mt-20">
+          <h3 class="reveal text-3xl font-semibold mb-4">
+            Your Trip, Your Schedule
+          </h3>
+
+          <p class="reveal text-gray-600 mb-6">
+            Stop wherever, whenever. Discover at your own rhythm. We provide the
+            ride; you call the shots.
+          </p>
+
+          <a
+          href="#form"
+            class="reveal cta-btn bg-teal-600 text-white px-6 py-3 rounded-xl transition hover:scale-105"
+          >
+            Book Your Private Ride
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- featured tours ----------------------------------- -->
+
+    <section
+      class="section relative overflow-hidden bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9]"
+    >
+      <!-- Background glow -->
+
+      <div class="container-main">
+        <div class="relative z-10 mb-12">
+          <!-- HEADING — centered -->
+          <div class="text-center mb-8 section-heading-wrapper reveal">
+            <span
+              class="section-label text-[11px] font-semibold tracking-[0.2em] uppercase text-teal-500 mb-3 block reveal"
+            >
+              Curated Journeys
+            </span>
+            <h2
+              class="section-title font-display text-[clamp(2.2rem,4vw,3rem)] font-semibold text-gray-900 leading-[1.15] reveal"
+            >
+              Explore Trips That<br />
+              <span class="text-teal-500 relative inline-block">
+                Feel Personal
+                <span
+                  class="section-underline absolute left-0 -bottom-1 w-full h-[3px] bg-teal-500/60 rounded-full"
+                ></span>
+              </span>
+            </h2>
+          </div>
+        </div>
+
+        <!-- CARD CONTAINER -->
+        <div
+          id="cardContainer"
+          class="flex gap-6 overflow-x-auto px-[5%] py-[60px] snap-x snap-mandatory scroll-smooth no-scrollbar"
+        ></div>
+
+        <!-- TEMPLATE -->
+        <template id="tour-card-template">
+          <article
+            class="snap-start min-w-[300px] max-w-[320px] group bg-white rounded-[18px] overflow-hidden shadow-sm hover:shadow-[0_25px_60px_rgba(0,0,0,0.18)] transition-all duration-500 hover:-translate-y-2"
+          >
+            <div class="relative h-[220px] overflow-hidden">
+              <div
+                class="slider-container relative w-full h-full images-wrapper"
+              ></div>
+            </div>
+
+            <div class="p-5 space-y-3">
+              <p class="location text-[0.75rem] text-gray-500 font-medium"></p>
+              <h3 class="title text-[1.05rem] font-semibold text-ink-900"></h3>
+              <div
+                class="meta flex items-center gap-3 text-[0.78rem] text-gray-500"
+              ></div>
+              <p class="booked text-[0.75rem] text-gray-400"></p>
+            </div>
+
+            <div class="flex justify-between items-center px-5 pb-5 mt-1">
+              <div class="price"></div>
+              <a
+                class="cta px-4 py-2 rounded-lg bg-ink-900 text-white text-sm hover:bg-teal-500 transition flex items-center gap-1"
+              >
+                View Trip →
+              </a>
+            </div>
+          </article>
+        </template>
+
+        <div class="flex justify-end gap-3 mt-8 reveal">
+          <!-- PREVIOUS -->
+          <button
+            id="tourPrev"
+            class="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-700 hover:bg-teal-500 hover:text-white transition"
+          >
+            ← <span>Previous</span>
+          </button>
+
+          <!-- NEXT -->
+          <button
+            id="tourNext"
+            class="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-700 hover:bg-teal-500 hover:text-white transition"
+          >
+            <span>Next</span> →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- get recommendation  -->
+    <section
+      class="section bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9] relative"
+    >
+      <!-- subtle glow -->
+      <div
+        class="absolute inset-0 -z-10 animate-gradient bg-[radial-gradient(circle_at_20%_30%,rgba(42,157,143,0.18),transparent_60%), radial-gradient(circle_at_80%_70%,rgba(79,190,203,0.15),transparent_60%), linear-gradient(120deg,#f8fafc,#eef3f9,#f8fafc)]"
+      ></div>
+
+      <div class="container-main">
+        <div class="relative auto text-center reveal reveal-up">
+          <!-- LABEL -->
+          <p
+            class="text-sm font-medium text-teal-600 tracking-wider uppercase mb-3"
+          >
+            Need Help?
+          </p>
+
+          <!-- HEADING -->
+          <h2
+            class="text-[clamp(1.9rem,3vw,2.6rem)] font-semibold text-gray-900 leading-tight mb-4"
+          >
+            Planning your next <span class="text-teal-700">trip</span>?
+          </h2>
+
+          <!-- SUBTEXT -->
+          <p
+            class="text-gray-500 text-[1.05rem] container-narrow mb-8 leading-relaxed"
+          >
+            Tell us your destination, dates, and group size. We’ll help you
+            choose the perfect vehicle and plan your journey.
+          </p>
+
+          <!-- CTA BUTTON -->
+          <a
+            href="#form"
+            class="inline-flex group items-center gap-2 px-7 py-3.5 rounded-full bg-teal-600 text-white font-medium text-sm shadow-md transition-all duration-300 hover:bg-teal-700 hover:scale-105 hover:shadow-lg"
+          >
+            Start Planning
+            <span class="transition group-hover:translate-x-1">→</span>
+          </a>
+
+          <!-- TRUST LINE -->
+          <div class="mt-6 text-sm text-gray-400">
+            Response within 10–15 minutes • No obligation
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- car featured ------------------------------- -->
+    <section
+      class="section relative bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9]"
+    >
+      <div class="container-main">
+        <!-- HEADER -->
+        <div class="flex justify-between items-end mb-8 reveal">
+          <div class="mb-8 reveal">
+            <span
+              class="text-[11px] font-semibold tracking-[0.15em] uppercase text-teal-500 mb-3 block"
+            >
+              Our Fleet
+            </span>
+            <h2
+              class="font-display text-[clamp(2rem,4vw,2.9rem)] font-semibold text-gray-900 leading-[1.15] mb-3"
+            >
+              Cars Our Travellers Love Most
+            </h2>
+          </div>
+        </div>
+
+        <!-- TRACK -->
+        <div
+          id="carTrack"
+          class="flex gap-7 snap-x snap-mandatory scroll-smooth no-scrollbar"
+        ></div>
+
+        <!-- TEMPLATE -->
+        <template id="car-card-template">
+          <article
+            class="snap-start min-w-[300px] max-w-[320px] group bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9] rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+          >
+            <div class="relative h-[220px] overflow-hidden">
+              <div class="images-wrapper relative w-full h-full"></div>
+            </div>
+
+            <div class="p-6">
+              <h3
+                class="car-title font-display text-[1.35rem] font-semibold text-gray-900"
+              ></h3>
+              <p class="car-specs text-sm text-gray-500 mb-3"></p>
+              <div class="car-features text-sm text-gray-500 mb-4"></div>
+            </div>
+
+            <div class="flex justify-between items-center px-6 py-4 border-t">
+              <div class="car-price"></div>
+              <a
+              href="#form"
+                class="car-cta px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
+              >
+                Enquire
+              </a>
+            </div>
+          </article>
+        </template>
+
+        <div class="flex justify-end gap-3 mt-8 reveal">
+          <!-- PREVIOUS -->
+          <button
+            id="carPrev"
+            class="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-700 hover:bg-teal-500 hover:text-white transition"
+          >
+            ← <span>Previous</span>
+          </button>
+
+          <!-- NEXT -->
+          <button
+            id="carNext"
+            class="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-700 hover:bg-teal-500 hover:text-white transition"
+          >
+            <span>Next</span> →
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- why choose us ------------------->
+    <section class="section relative overflow-hidden">
+      <!-- BACKGROUND GLOW -->
+      <div
+        class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_30%,rgba(42,157,143,0.12),transparent_60%), radial-gradient(circle_at_80%_70%,rgba(79,190,203,0.10),transparent_60%)]"
+      ></div>
+
+      <div class="container-main">
+        <!-- HEADING -->
+        <div class="text-center container-narrow mb-20 reveal">
+          <span
+            class="text-xs uppercase tracking-[0.25em] text-teal-500 font-semibold"
+          >
+            Why Choose Us
+          </span>
+
+          <h2
+            class="text-[clamp(2.4rem,5vw,3.4rem)] font-semibold mt-4 leading-tight text-gray-900"
+          >
+            Why Travelers
+            <span class="text-teal-500 relative inline-block">
+              Choose Us
+              <span
+                class="absolute left-0 -bottom-1 w-full h-[4px] bg-teal-500/70 rounded-full"
+              ></span>
+            </span>
+          </h2>
+
+          <p class="text-gray-500 mt-5 text-[0.95rem]">
+            From selecting your car to starting your journey — everything is
+            designed to be effortless.
+          </p>
+        </div>
+
+        <!-- STEPS -->
+        <div class="relative">
+          <!-- CONNECTOR LINE -->
+          <div
+            class="hidden lg:block absolute top-[40px] left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-teal-300/40 to-transparent"
+          ></div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+            <!-- STEP -->
+            <div class="group relative reveal reveal-left">
+              <!-- NUMBER -->
+              <div
+                class="w-[70px] h-[70px] rounded-full bg-gradient-to-br from-teal-500 to-teal-700 text-white flex items-center justify-center text-xl font-bold shadow-lg mx-auto mb-6 transition duration-300 group-hover:scale-110 group-hover:rotate-6"
+              >
+                01
+              </div>
+
+              <!-- CARD -->
+              <div
+                class="bg-white/70 backdrop-blur-lg border border-white/60 rounded-2xl p-6 text-center shadow-[0_10px_25px_rgba(0,0,0,0.06)] transition-all duration-300 group-hover:-translate-y-3 group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.12)]"
+              >
+                <h3
+                  class="font-semibold text-lg mb-2 text-gray-900 group-hover:text-teal-600 transition"
+                >
+                  Private Drivers Only
+                </h3>
+
+                <p class="text-sm text-gray-500 leading-relaxed">
+                  No shared rides. Your car, your space.
+                </p>
+              </div>
+            </div>
+
+            <!-- STEP -->
+            <div class="group relative reveal reveal-right">
+              <div
+                class="w-[70px] h-[70px] rounded-full bg-gradient-to-br from-teal-500 to-teal-700 text-white flex items-center justify-center text-xl font-bold shadow-lg mx-auto mb-6 transition duration-300 group-hover:scale-110 group-hover:rotate-6"
+              >
+                02
+              </div>
+
+              <div
+                class="bg-white/70 backdrop-blur-lg border border-white/60 rounded-2xl p-6 text-center shadow-[0_10px_25px_rgba(0,0,0,0.06)] transition-all duration-300 group-hover:-translate-y-3 group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.12)]"
+              >
+                <h3
+                  class="font-semibold text-lg mb-2 text-gray-900 group-hover:text-teal-600 transition"
+                >
+                  Fully Flexible Trips
+                </h3>
+
+                <p class="text-sm text-gray-500 leading-relaxed">
+                  Stop anywhere, change anytime.
+                </p>
+              </div>
+            </div>
+
+            <!-- STEP -->
+            <div class="group relative reveal reveal-left">
+              <div
+                class="w-[70px] h-[70px] rounded-full bg-gradient-to-br from-teal-500 to-teal-700 text-white flex items-center justify-center text-xl font-bold shadow-lg mx-auto mb-6 transition duration-300 group-hover:scale-110 group-hover:rotate-6"
+              >
+                03
+              </div>
+
+              <div
+                class="bg-white/70 backdrop-blur-lg border border-white/60 rounded-2xl p-6 text-center shadow-[0_10px_25px_rgba(0,0,0,0.06)] transition-all duration-300 group-hover:-translate-y-3 group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.12)]"
+              >
+                <h3
+                  class="font-semibold text-lg mb-2 text-gray-900 group-hover:text-teal-600 transition"
+                >
+                  Clean & Verified Cars
+                </h3>
+
+                <p class="text-sm text-gray-500 leading-relaxed">
+                  Regularly checked, well maintained.
+                </p>
+              </div>
+            </div>
+
+            <!-- STEP -->
+            <div class="group relative reveal reveal-right">
+              <div
+                class="w-[70px] h-[70px] rounded-full bg-gradient-to-br from-teal-500 to-teal-700 text-white flex items-center justify-center text-xl font-bold shadow-lg mx-auto mb-6 transition duration-300 group-hover:scale-110 group-hover:rotate-6"
+              >
+                04
+              </div>
+
+              <div
+                class="bg-white/70 backdrop-blur-lg border border-white/60 rounded-2xl p-6 text-center shadow-[0_10px_25px_rgba(0,0,0,0.06)] transition-all duration-300 group-hover:-translate-y-3 group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.12)]"
+              >
+                <h3
+                  class="font-semibold text-lg mb-2 text-gray-900 group-hover:text-teal-600 transition"
+                >
+                  Travel & Relax
+                </h3>
+
+                <p class="text-sm text-gray-500 leading-relaxed">
+                  No hidden charges. Pay only what you see.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- how it works  -->
+    <section id="why" class="section relative overflow-hidden">
+      <div class="container-main">
+        <!-- HEADING -->
+        <div class="text-center container-narrow mb-12 reveal">
+          <span
+            class="text-xs uppercase tracking-[0.3em] text-teal-500 font-semibold"
+          >
+            Simple Process
+          </span>
+
+          <h2
+            class="text-[clamp(2.6rem,5vw,3.8rem)] font-semibold mt-4 leading-[1.1] text-gray-900"
+          >
+            How It Works
+          </h2>
+
+          <p class="text-gray-500 mt-4 text-[1rem]">
+            A smooth process designed to get you on the road without friction.
+          </p>
+        </div>
+
+        <!-- STEPS -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <!-- STEP 1 -->
+          <div class="reveal reveal-left group relative">
+            <div
+              class="relative bg-white/60 backdrop-blur-xl border border-white/50 rounded-3xl p-7 text-center transition-transform duration-500 hover:-translate-y-4 hover:scale-[1.03] hover:shadow-[0_30px_80px_rgba(0,0,0,0.12)]"
+            >
+              <div
+                class="text-[3.5rem] font-bold text-teal-500/20 absolute top-4 left-6"
+              >
+                01
+              </div>
+
+              <div class="mb-5 flex items-center justify-center">
+                <div
+                  class="p-4 rounded-2xl bg-teal-50 group-hover:bg-teal-100 transition"
+                >
+                  <i data-lucide="car-front" class="w-8 h-8 text-teal-600"></i>
+                </div>
+              </div>
+
+              <h3
+                class="font-semibold text-[1.1rem] mb-3 text-gray-900 group-hover:text-teal-600 transition"
+              >
+                Choose Your Car
+              </h3>
+
+              <p class="text-sm text-gray-500 leading-relaxed">
+                Select a vehicle that matches your comfort, group size, and
+                travel needs.
+              </p>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="reveal reveal-right group relative">
+            <div
+              class="relative bg-white/60 backdrop-blur-xl border border-white/50 rounded-3xl p-7 text-center transition-transform duration-500 hover:-translate-y-4 hover:scale-[1.03] hover:shadow-[0_30px_80px_rgba(0,0,0,0.12)]"
+            >
+              <div
+                class="text-[3.5rem] font-bold text-teal-500/20 absolute top-4 left-6"
+              >
+                02
+              </div>
+
+              <div class="mb-5 flex items-center justify-center">
+                <div
+                  class="p-4 rounded-2xl bg-teal-50 group-hover:bg-teal-100 transition"
+                >
+                  <i
+                    data-lucide="clipboard-list"
+                    class="w-8 h-8 text-teal-600"
+                  ></i>
+                </div>
+              </div>
+
+              <h3
+                class="font-semibold text-[1.1rem] mb-3 text-gray-900 group-hover:text-teal-600 transition"
+              >
+                Share Your Plan
+              </h3>
+
+              <p class="text-sm text-gray-500 leading-relaxed">
+                Tell us your dates, pickup location, and route — quick and
+                effortless.
+              </p>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="reveal reveal-left group relative">
+            <div
+              class="relative bg-white/60 backdrop-blur-xl border border-white/50 rounded-3xl p-7 text-center transition-transform duration-500 hover:-translate-y-4 hover:scale-[1.03] hover:shadow-[0_30px_80px_rgba(0,0,0,0.12)]"
+            >
+              <div
+                class="text-[3.5rem] font-bold text-teal-500/20 absolute top-4 left-6"
+              >
+                03
+              </div>
+
+              <div class="mb-5 flex items-center justify-center">
+                <div
+                  class="p-4 rounded-2xl bg-teal-50 group-hover:bg-teal-100 transition"
+                >
+                  <i
+                    data-lucide="message-circle"
+                    class="w-8 h-8 text-teal-600"
+                  ></i>
+                </div>
+              </div>
+
+              <h3
+                class="font-semibold text-[1.1rem] mb-3 text-gray-900 group-hover:text-teal-600 transition"
+              >
+                Get Confirmation
+              </h3>
+
+              <p class="text-sm text-gray-500 leading-relaxed">
+                Receive a clear quote and confirm instantly with full
+                transparency.
+              </p>
+            </div>
+          </div>
+
+          <!-- STEP 4 -->
+          <div class="reveal reveal-right group relative">
+            <div
+              class="relative bg-white/60 backdrop-blur-xl border border-white/50 rounded-3xl p-7 text-center transition-transform duration-500 hover:-translate-y-4 hover:scale-[1.03] hover:shadow-[0_30px_80px_rgba(0,0,0,0.12)]"
+            >
+              <div
+                class="text-[3.5rem] font-bold text-teal-500/20 absolute top-4 left-6"
+              >
+                04
+              </div>
+
+              <div class="mb-5 flex items-center justify-center">
+                <div
+                  class="p-4 rounded-2xl bg-teal-50 group-hover:bg-teal-100 transition"
+                >
+                  <i data-lucide="globe" class="w-8 h-8 text-teal-600"></i>
+                </div>
+              </div>
+
+              <h3
+                class="font-semibold text-[1.1rem] mb-3 text-gray-900 group-hover:text-teal-600 transition"
+              >
+                Travel & Relax
+              </h3>
+
+              <p class="text-sm text-gray-500 leading-relaxed">
+                Your driver arrives on time — you enjoy a smooth, stress-free
+                journey.
               </p>
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-    </div>
+    <!---------------REVIEWS — auto-scrolling------------>
+    <section id="reviews" class="section relative overflow-hidden">
+      <div
+        class="absolute inset-0 -z-10 animate-gradient bg-[radial-gradient(circle_at_20%_30%,rgba(42,157,143,0.18),transparent_60%), radial-gradient(circle_at_80%_70%,rgba(79,190,203,0.15),transparent_60%), linear-gradient(120deg,#f8fafc,#eef3f9,#f8fafc)]"
+      ></div>
+
+      <div class="container-main">
+        <!-- Heading -->
+        <div class="reveal reveal-right container-narrow text-center mb-14">
+          <span
+            class="text-[11px] font-semibold tracking-[0.2em] uppercase text-teal-500 mb-3 block"
+            >What Travelers Say</span
+          >
+          <h2
+            class="font-display text-[clamp(2rem,4vw,2.8rem)] font-semibold text-gray-900 leading-[1.15]"
+          >
+            Trusted by <span class="text-teal-500">1,200+</span> Travelers
+          </h2>
+        </div>
+
+        <!-- Carousel -->
+        <div class="reviews-carousel-new relative overflow-hidden py-8 pb-12">
+          <div class="reviews-track-new flex gap-6">
+            <!-- Card 1 -->
+            <div
+              class="review-card-new w-[300px] shrink-0 bg-white rounded-[20px] p-7 relative overflow-hidden flex flex-col items-center text-center"
+              style="
+                transition:
+                  transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  opacity 0.65s ease,
+                  box-shadow 0.65s ease;
+              "
+            >
+              <div
+                class="w-14 h-14 rounded-full bg-teal-100 text-teal-700 font-bold text-lg flex items-center justify-center mb-4 z-10"
+              >
+                RS
+              </div>
+              <span class="text-[0.78rem] text-gray-400 mb-4 z-10"
+                >🇮🇳 Mumbai</span
+              >
+              <div
+                class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none"
+              >
+                "
+              </div>
+              <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">
+                Driver was very polite and always on time. Car was clean
+                throughout the trip.
+              </p>
+              <div class="mt-auto z-10">
+                <h4 class="font-semibold text-[0.92rem] text-gray-900">
+                  Rohit Sharma
+                </h4>
+                <div class="flex items-center justify-center gap-2 mt-1.5">
+                  <div class="star-rating">
+                    <span class="stars-empty">★★★★★</span>
+                    <span class="stars-filled" style="width: 96%">★★★★★</span>
+                  </div>
+                  <span class="text-gray-400 text-xs">4.8</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+              class="review-card-new w-[300px] shrink-0 bg-white rounded-[20px] p-7 relative overflow-hidden flex flex-col items-center text-center"
+              style="
+                transition:
+                  transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  opacity 0.65s ease,
+                  box-shadow 0.65s ease;
+              "
+            >
+              <div
+                class="w-14 h-14 rounded-full bg-purple-100 text-purple-700 font-bold text-lg flex items-center justify-center mb-4 z-10"
+              >
+                NV
+              </div>
+              <span class="text-[0.78rem] text-gray-400 mb-4 z-10"
+                >🇮🇳 Delhi</span
+              >
+              <div
+                class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none"
+              >
+                "
+              </div>
+              <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">
+                Travelled with parents, everything was smooth and comfortable.
+                No stress at all.
+              </p>
+              <div class="mt-auto z-10">
+                <h4 class="font-semibold text-[0.92rem] text-gray-900">
+                  Neha Verma
+                </h4>
+                <div class="flex items-center justify-center gap-2 mt-1.5">
+                  <div class="star-rating">
+                    <span class="stars-empty">★★★★★</span>
+                    <span class="stars-filled" style="width: 98%">★★★★★</span>
+                  </div>
+                  <span class="text-gray-400 text-xs">4.9</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              class="review-card-new w-[300px] shrink-0 bg-white rounded-[20px] p-7 relative overflow-hidden flex flex-col items-center text-center"
+              style="
+                transition:
+                  transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  opacity 0.65s ease,
+                  box-shadow 0.65s ease;
+              "
+            >
+              <div
+                class="w-14 h-14 rounded-full bg-orange-100 text-orange-700 font-bold text-lg flex items-center justify-center mb-4 z-10"
+              >
+                AG
+              </div>
+              <span class="text-[0.78rem] text-gray-400 mb-4 z-10"
+                >🇮🇳 Gurgaon</span
+              >
+              <div
+                class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none"
+              >
+                "
+              </div>
+              <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">
+                Honestly better than expected. Driver knew all routes and
+                avoided traffic perfectly.
+              </p>
+              <div class="mt-auto z-10">
+                <h4 class="font-semibold text-[0.92rem] text-gray-900">
+                  Aman Gupta
+                </h4>
+                <div class="flex items-center justify-center gap-2 mt-1.5">
+                  <div class="star-rating">
+                    <span class="stars-empty">★★★★★</span>
+                    <span class="stars-filled" style="width: 94%">★★★★★</span>
+                  </div>
+                  <span class="text-gray-400 text-xs">4.7</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div
+              class="review-card-new w-[300px] shrink-0 bg-white rounded-[20px] p-7 relative overflow-hidden flex flex-col items-center text-center"
+              style="
+                transition:
+                  transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  opacity 0.65s ease,
+                  box-shadow 0.65s ease;
+              "
+            >
+              <div
+                class="w-14 h-14 rounded-full bg-rose-100 text-rose-700 font-bold text-lg flex items-center justify-center mb-4 z-10"
+              >
+                PM
+              </div>
+              <span class="text-[0.78rem] text-gray-400 mb-4 z-10"
+                >🇮🇳 Ahmedabad</span
+              >
+              <div
+                class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none"
+              >
+                "
+              </div>
+              <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">
+                Very professional service. Car condition was excellent and the
+                ride felt completely safe.
+              </p>
+              <div class="mt-auto z-10">
+                <h4 class="font-semibold text-[0.92rem] text-gray-900">
+                  Pooja Mehta
+                </h4>
+                <div class="flex items-center justify-center gap-2 mt-1.5">
+                  <div class="star-rating">
+                    <span class="stars-empty">★★★★★</span>
+                    <span class="stars-filled" style="width: 96%">★★★★★</span>
+                  </div>
+                  <span class="text-gray-400 text-xs">4.8</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div
+              class="review-card-new w-[300px] shrink-0 bg-white rounded-[20px] p-7 relative overflow-hidden flex flex-col items-center text-center"
+              style="
+                transition:
+                  transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  opacity 0.65s ease,
+                  box-shadow 0.65s ease;
+              "
+            >
+              <div
+                class="w-14 h-14 rounded-full bg-blue-100 text-blue-700 font-bold text-lg flex items-center justify-center mb-4 z-10"
+              >
+                DB
+              </div>
+              <span class="text-[0.78rem] text-gray-400 mb-4 z-10">🇺🇸 USA</span>
+              <div
+                class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none"
+              >
+                "
+              </div>
+              <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">
+                Our India trip felt safe and well-organized. The driver was
+                absolutely excellent.
+              </p>
+              <div class="mt-auto z-10">
+                <h4 class="font-semibold text-[0.92rem] text-gray-900">
+                  Daniel Brooks
+                </h4>
+                <div class="flex items-center justify-center gap-2 mt-1.5">
+                  <div class="star-rating">
+                    <span class="stars-empty">★★★★★</span>
+                    <span class="stars-filled" style="width: 98%">★★★★★</span>
+                  </div>
+                  <span class="text-gray-400 text-xs">4.9</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div
+              class="review-card-new w-[300px] shrink-0 bg-white rounded-[20px] p-7 relative overflow-hidden flex flex-col items-center text-center"
+              style="
+                transition:
+                  transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  opacity 0.65s ease,
+                  box-shadow 0.65s ease;
+              "
+            >
+              <div
+                class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-700 font-bold text-lg flex items-center justify-center mb-4 z-10"
+              >
+                EW
+              </div>
+              <span class="text-[0.78rem] text-gray-400 mb-4 z-10">🇬🇧 UK</span>
+              <div
+                class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none"
+              >
+                "
+              </div>
+              <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">
+                Great experience overall. Very comfortable travel between cities
+                across India.
+              </p>
+              <div class="mt-auto z-10">
+                <h4 class="font-semibold text-[0.92rem] text-gray-900">
+                  Emma Wilson
+                </h4>
+                <div class="flex items-center justify-center gap-2 mt-1.5">
+                  <div class="star-rating">
+                    <span class="stars-empty">★★★★★</span>
+                    <span class="stars-filled" style="width: 96%">★★★★★</span>
+                  </div>
+                  <span class="text-gray-400 text-xs">4.8</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div
+              class="review-card-new w-[300px] shrink-0 bg-white rounded-[20px] p-7 relative overflow-hidden flex flex-col items-center text-center"
+              style="
+                transition:
+                  transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  opacity 0.65s ease,
+                  box-shadow 0.65s ease;
+              "
+            >
+              <div
+                class="w-14 h-14 rounded-full bg-yellow-100 text-yellow-700 font-bold text-lg flex items-center justify-center mb-4 z-10"
+              >
+                SR
+              </div>
+              <span class="text-[0.78rem] text-gray-400 mb-4 z-10"
+                >🇮🇳 Hyderabad</span
+              >
+              <div
+                class="absolute top-4 left-5 text-[5rem] font-serif text-gray-100 leading-none select-none pointer-events-none"
+              >
+                "
+              </div>
+              <p class="text-[0.88rem] text-gray-600 leading-[1.65] mb-5 z-10">
+                Everything went exactly as planned. Very trustworthy team, will
+                book again.
+              </p>
+              <div class="mt-auto z-10">
+                <h4 class="font-semibold text-[0.92rem] text-gray-900">
+                  Sneha Reddy
+                </h4>
+                <div class="flex items-center justify-center gap-2 mt-1.5">
+                  <div class="star-rating">
+                    <span class="stars-empty">★★★★★</span>
+                    <span class="stars-filled" style="width: 98%">★★★★★</span>
+                  </div>
+                  <span class="text-gray-400 text-xs">4.9</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dots -->
+        <div
+          class="reviews-dots flex items-center justify-center gap-2 mt-2"
+        ></div>
+      </div>
+    </section>
+
+
+    <!-- FAQ -->
+    <section
+      class="section reveal reveal-right relative overflow-hidden bg-white"
+    >
+      <div class="container-main">
+        <!-- HEADING -->
+        <div class="text-center container-narrow mx-auto mb-16 relative z-10">
+          <span
+            class="text-xs uppercase tracking-[0.25em] text-teal-500 font-semibold"
+          >
+            Got Questions?
+          </span>
+
+          <h2
+            class="text-[clamp(2.2rem,4vw,3rem)] font-semibold mt-4 leading-tight text-gray-900"
+          >
+            Frequently Asked
+            <span class="text-teal-500 relative inline-block">
+              Questions
+              <span
+                class="absolute left-0 -bottom-1 w-full h-[3px] bg-teal-500/70 rounded-full"
+              ></span>
+            </span>
+          </h2>
+
+          <p class="text-gray-500 mt-4 text-sm">
+            Everything you need to know before booking — clear, simple,
+            transparent.
+          </p>
+        </div>
+
+        <!-- FAQ ITEMS -->
+        <div class="mx-auto space-y-4 relative z-10">
+          <!-- ITEM -->
+          <details
+            class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300"
+          >
+            <summary
+              class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition"
+            >
+              Is fuel included in the daily rate?
+              <span
+                class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500"
+                >+</span
+              >
+            </summary>
+
+            <p class="mt-3 text-sm text-gray-500 leading-relaxed">
+              Yes. All our rates include driver and fuel for up to 250 km per
+              day. Extra kilometres are charged at the listed per-km rate.
+            </p>
+          </details>
+
+          <!-- ITEM -->
+          <details
+            class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300"
+          >
+            <summary
+              class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition"
+            >
+              Can I book a one-way trip?
+              <span
+                class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500"
+                >+</span
+              >
+            </summary>
+
+            <p class="mt-3 text-sm text-gray-500">
+              Yes. One-way bookings are available. A drop charge may apply
+              depending on distance.
+            </p>
+          </details>
+
+          <!-- ITEM -->
+          <details
+            class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300"
+          >
+            <summary
+              class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition"
+            >
+              What about cancellations?
+              <span
+                class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500"
+                >+</span
+              >
+            </summary>
+
+            <p class="mt-3 text-sm text-gray-500">
+              Free cancellation up to 48 hours. Within 24 hours, one day charge
+              applies.
+            </p>
+          </details>
+
+          <!-- ITEM -->
+          <details
+            class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300"
+          >
+            <summary
+              class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition"
+            >
+              Are drivers verified?
+              <span
+                class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500"
+                >+</span
+              >
+            </summary>
+
+            <p class="mt-3 text-sm text-gray-500">
+              Yes. All drivers are background-checked, licensed, and rated above
+              4.8.
+            </p>
+          </details>
+
+          <!-- ITEM -->
+          <details
+            class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300"
+          >
+            <summary
+              class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition"
+            >
+              Can I book for multiple days?
+              <span
+                class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500"
+                >+</span
+              >
+            </summary>
+
+            <p class="mt-3 text-sm text-gray-500">
+              Yes. Multi-day bookings are our most popular and come with better
+              pricing.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- brand logo  -->
+    <section class="section reveal relative py-[80px] overflow-hidden bg-white">
+      <div class="container-main">
+        <!-- HEADING -->
+        <div
+          class="reveal reveal-left text-center conatiner-narrow mb-12 reveal"
+        >
+          <span
+            class="text-xs uppercase tracking-[0.3em] text-teal-500 font-semibold"
+          >
+            Trusted Travel Partners
+          </span>
+
+          <h2
+            class="reveal reveal-right text-[clamp(1.2rem,2.4vw,2.2rem)] font-semibold mt-4 leading-[1.1] text-gray-900"
+          >
+            Platforms That Power Your Journey
+          </h2>
+
+          <p class="text-gray-500 mt-4 text-[1rem]">
+            We collaborate with reliable platforms and services to ensure a
+            smooth and seamless travel experience.
+          </p>
+        </div>
+
+        <!-- LOGO CAROUSEL -->
+        <div class="logo-carousel relative overflow-hidden py-6">
+          <div class="logo-track flex items-center gap-14">
+            <!-- logos -->
+            <div class="logo-item"><img src="images/makemytrip.jpg" /></div>
+            <div class="logo-item"><img src="images/goibibo.jpg" /></div>
+            <div class="logo-item"><img src="images/visa.jpg" /></div>
+            <div class="logo-item"><img src="images/mastercard1.jpg" /></div>
+            <div class="logo-item"><img src="images/google.jpg" /></div>
+
+            <!-- duplicate -->
+            <div class="logo-item"><img src="images/makemytrip.jpg" /></div>
+            <div class="logo-item"><img src="images/goibibo.jpg" /></div>
+            <div class="logo-item"><img src="images/visa.jpg" /></div>
+            <div class="logo-item"><img src="images/mastercard1.jpg" /></div>
+            <div class="logo-item"><img src="images/google.jpg" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRIP ENQUIRY FORM SECTION -->
+    <section id="form" class="section bg-gray-50 reveal">
+
+
+      <div class="container-narrow reveal reveal-left">
+        <p
+          class="text-sm text-teal-700 font-semibold uppercase tracking-widest text-center mb-2"
+        >
+          Need Help?
+        </p>
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-2">
+          Plan Your Perfect Trip
+        </h2>
+        <p class="text-center text-gray-500 mb-8">
+          Tell us where you want to go. We'll handle the rest.
+        </p>
+
+        <form
+          id="enquiryForm"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8"
+        >
+          <!-- Hidden fields -->
+          <input
+            type="hidden"
+            name="access_key"
+            value="1efdceae-c424-4b92-9a4d-9af4dcc8e156"
+          />
+          <input
+            type="hidden"
+            name="subject"
+            value="New Trip Enquiry - BharatBhramana"
+          />
+          <input type="hidden" name="redirect" value="false" />
+
+          <!-- Name -->
+          <div class="mb-5">
+            <label class="block text-sm font-medium text-gray-700 mb-1"
+              >Full Name *</label
+            >
+            <input
+              type="text"
+              name="name"
+              placeholder="Rahul Sharma"
+              required
+              class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
+            />
+          </div>
+
+          <!-- Phone + Email -->
+          <div class="grid grid-cols-2 gap-4 mb-5">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >WhatsApp Number *</label
+              >
+              <input
+                type="tel"
+                name="phone"
+                placeholder="+91 98765 43210"
+                required
+                class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Email</label
+              >
+              <input
+                type="email"
+                name="email"
+                placeholder="rahul@gmail.com"
+                class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
+              />
+            </div>
+          </div>
+
+          <!-- Destination + Group Size -->
+          <div class="grid grid-cols-2 gap-4 mb-5">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Destination *</label
+              >
+              <select
+                name="destination"
+                required
+                class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
+              >
+                <option value="" disabled selected>Choose a tour</option>
+                <option>Golden Triangle</option>
+                <option>Kashmir</option>
+                <option>Kerala</option>
+                <option>Manali</option>
+                <option>Goa</option>
+                <option>Varanasi</option>
+                <option>Andaman Islands</option>
+                <option>Custom Route</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Group Size *</label
+              >
+              <select
+                name="group_size"
+                required
+                class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
+              >
+                <option value="" disabled selected>No. of people</option>
+                <option>1–2 people</option>
+                <option>3–4 people</option>
+                <option>5–6 people</option>
+                <option>7+ people</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Car Preference -->
+          <div class="mb-5">
+            <label class="block text-sm font-medium text-gray-700 mb-1"
+              >Preferred Car</label
+            >
+            <select
+              name="car_preference"
+              class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
+            >
+              <option value="" disabled selected>
+                Select a car (optional)
+              </option>
+              <option>Maruti Suzuki Dzire – ₹3,200/day</option>
+              <option>Mahindra XUV700 – ₹4,500/day</option>
+              <option> Tata Safari – ₹5,800/day</option>
+              <option>Toyota Innova Crysta – ₹5,000/day</option>
+               <option>Mahindra Scorpio N – ₹5,000/day</option>
+                <option>Tata Nexon – ₹3,400/day</option>
+              <option>Mahindra Thar 4x4 – ₹4,200/day</option>
+              <option>Toyota Fortuner – ₹7,000/day</option>
+              <option>Maruti Swift – ₹3,200/day</option>
+              <option>Not sure – help me decide</option>
+            </select>
+          </div>
+
+          <!-- Date + Days -->
+          <div class="grid grid-cols-2 gap-4 mb-5">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Travel Date</label
+              >
+              <input
+                type="date"
+                name="travel_date"
+                class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >No. of Days</label
+              >
+              <input
+                type="number"
+                name="days"
+                placeholder="e.g. 7"
+                min="1"
+                max="30"
+                class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
+              />
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-700 mb-1"
+              >Anything else? (optional)</label
+            >
+            <textarea
+              name="message"
+              rows="3"
+              placeholder="Budget, preferred car, special requests..."
+              class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 resize-none"
+            ></textarea>
+          </div>
+
+          <!-- Submit -->
+          <button
+            type="submit"
+            id="submitBtn"
+            class="w-full bg-teal-700 hover:bg-teal-800 text-white font-semibold py-3.5 rounded-lg transition-colors duration-200 text-base"
+          >
+            Plan My Trip →
+          </button>
+          <p class="text-center text-xs text-gray-400 mt-3">
+            We reply within 15 minutes on WhatsApp
+          </p>
+        </form>
+
+
+      </div>
+
+         <!-- Success Modal -->
+<div id="successModal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center px-4">
+  <div class="bg-white rounded-2xl p-8 max-w-sm w-full text-center shadow-xl">
+
+    <h3 class="text-xl font-bold text-gray-900 mb-2">We got your request!</h3>
+    <p class="text-gray-500 text-sm mb-6">Our team will reach out on WhatsApp within 15 minutes.</p>
+    <button id="closeModal"
+            class="w-full bg-teal-700 hover:bg-teal-800 text-white font-semibold py-3 rounded-lg transition-colors">
+      Close
+    </button>
   </div>
+</div>
+    </section>
 
-  <!-- Bottom bar -->
-  <div class="flex flex-col sm:flex-row justify-between items-center py-6 gap-3 text-[0.9rem] text-white/40">
-    <div class="flex items-center gap-2 flex-wrap justify-center sm:justify-start">
-      <span>&copy;2026 BharatBhramana. All rights reserved.</span>
-      <span class="text-white/20 hidden sm:inline">·</span>
-      <span class="text-white/25">Crafted with care in India 🇮🇳</span>
-    </div>
-    <div class="flex gap-5 flex-wrap justify-center">
-      <a href="#" class="hover:text-teal-400 transition-colors duration-200">Privacy Policy</a>
-      <a href="#" class="hover:text-teal-400 transition-colors duration-200">Terms of Service</a>
-      <a href="#" class="hover:text-teal-400 transition-colors duration-200">Cancellation Policy</a>
-    </div>
-  </div>
+    <!-- footer  -->
+    <footer class="bg-dark-grad px-[5%] pt-20 border-t border-[#e8ddd0]/20">
+      <!-- CTA row -->
+      <div
+        class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-14 mb-14 border-b border-white/[0.08] gap-8"
+      >
+        <div>
+          <h2
+            class="font-display text-[clamp(2rem,4vw,3rem)] font-bold text-white mb-2"
+          >
+            Your next trip.<br />
+            <span class="text-teal-400">Door to door.</span>
+          </h2>
+          <p class="font-display text-[1rem] text-white/50 italic mb-7">
+            Private driver. Zero hassle. Real India.
+          </p>
 
-</footer>
+          <!-- Desktop: icon circles -->
+          <div class="hidden sm:flex gap-3 flex-wrap">
+            <a
+              href="https://youtube.com"
+              target="_blank"
+              class="p-3 rounded-full border border-white/20 text-white/80 hover:bg-white/10 hover:text-white hover:border-white/40 transition-all duration-200"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              class="p-3 rounded-full border border-white/20 text-white/80 hover:bg-white/10 hover:text-white hover:border-white/40 transition-all duration-200"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5.8A4.2 4.2 0 1 1 7.8 12 4.2 4.2 0 0 1 12 7.8zm5.3-.9a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://wa.me/919006143335"
+              target="_blank"
+              class="p-3 rounded-full border border-white/20 text-white/80 hover:bg-white/10 hover:text-white hover:border-white/40 transition-all duration-200"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M20.5 3.5A11.8 11.8 0 0 0 12 0 12 12 0 0 0 1.5 18.3L0 24l5.8-1.5A12 12 0 1 0 20.5 3.5zm-8.5 18a10 10 0 0 1-5.1-1.4l-.4-.2-3.4.9.9-3.3-.2-.4A10 10 0 1 1 12 21.5zm5.5-7.6c-.3-.2-1.6-.8-1.9-.9s-.5-.2-.7.2-.8.9-1 1.1-.4.3-.7.1a8.2 8.2 0 0 1-2.4-1.5 9.2 9.2 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.7l.4-.6c.1-.2.1-.4 0-.6s-.7-1.7-.9-2.3c-.2-.5-.4-.4-.7-.4h-.6c-.2 0-.6.1-.9.4s-1.1 1.1-1.1 2.7 1.1 3.1 1.2 3.3a12.5 12.5 0 0 0 4.8 4.4c.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.6-.7 1.8-1.4.2-.7.2-1.3.1-1.4s-.2-.2-.5-.3z"
+                />
+              </svg>
+            </a>
+            <a
+              href="tel:+919006143335"
+              class="p-3 rounded-full border border-white/20 text-white/80 hover:bg-white/10 hover:text-white hover:border-white/40 transition-all duration-200"
+            >
+              <i data-lucide="phone" class="w-5 h-5"></i>
+            </a>
+          </div>
 
+          <!-- Mobile: text pills -->
+          <div class="flex sm:hidden gap-2 flex-wrap">
+            <a
+              href="https://youtube.com"
+              target="_blank"
+              class="flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-white/80 text-sm hover:bg-white/10 transition"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"
+                />
+              </svg>
+              Youtube
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              class="flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-white/80 text-sm hover:bg-white/10 transition"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5.8A4.2 4.2 0 1 1 7.8 12 4.2 4.2 0 0 1 12 7.8zm5.3-.9a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+                />
+              </svg>
+              Instagram
+            </a>
+            <a
+              href="https://wa.me/919006143335"
+              target="_blank"
+              class="flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-white/80 text-sm hover:bg-white/10 transition"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M20.5 3.5A11.8 11.8 0 0 0 12 0 12 12 0 0 0 1.5 18.3L0 24l5.8-1.5A12 12 0 1 0 20.5 3.5zm-8.5 18a10 10 0 0 1-5.1-1.4l-.4-.2-3.4.9.9-3.3-.2-.4A10 10 0 1 1 12 21.5zm5.5-7.6c-.3-.2-1.6-.8-1.9-.9s-.5-.2-.7.2-.8.9-1 1.1-.4.3-.7.1a8.2 8.2 0 0 1-2.4-1.5 9.2 9.2 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.7l.4-.6c.1-.2.1-.4 0-.6s-.7-1.7-.9-2.3c-.2-.5-.4-.4-.7-.4h-.6c-.2 0-.6.1-.9.4s-1.1 1.1-1.1 2.7 1.1 3.1 1.2 3.3a12.5 12.5 0 0 0 4.8 4.4c.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.6-.7 1.8-1.4.2-.7.2-1.3.1-1.4s-.2-.2-.5-.3z"
+                />
+              </svg>
+              Whatsapp
+            </a>
+            <a
+              href="tel:+919006143335"
+              class="flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-white/80 text-sm hover:bg-white/10 transition"
+            >
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.98-.98a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+              Phone
+            </a>
+          </div>
+        </div>
 
+        <a
+          href="tel:+919006143335"
+          class="btn-shine shrink-0 inline-flex items-center gap-2.5 px-7 py-4 rounded-full font-semibold text-white bg-gradient-to-br from-[#2a9d8f] to-[#264653] shadow-[0_8px_25px_rgba(0,0,0,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(0,0,0,0.4)]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.98-.98a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+            />
+          </svg>
+          Call Us Now
+        </a>
+      </div>
 
+      <!-- Brand (mobile only — shown above accordion) -->
+      <div class="pb-10 mb-2 border-b border-white/[0.08] lg:hidden">
+        <a
+          href="index.html"
+          class="font-display text-[1.6rem] font-semibold text-white block mb-3.5"
+        >
+          Bharat<em class="text-teal-400 not-italic">भ्रमण</em>
+        </a>
+        <p
+          class="text-[0.95rem] text-white/65 leading-[1.8] max-w-[270px] mb-5"
+        >
+          Your trusted travel partner for private car &amp; driver experiences
+          across India.
+        </p>
+        <div class="flex flex-wrap gap-x-4 gap-y-2">
+          <span class="text-[0.78rem] text-white/40 flex items-center gap-1.5"
+            ><span
+              class="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block"
+            ></span
+            >Verified Drivers</span
+          >
+          <span class="text-[0.78rem] text-white/40 flex items-center gap-1.5"
+            ><span
+              class="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block"
+            ></span
+            >GPS Tracked</span
+          >
+          <span class="text-[0.78rem] text-white/40 flex items-center gap-1.5"
+            ><span
+              class="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block"
+            ></span
+            >24/7 Support</span
+          >
+          <span class="text-[0.78rem] text-white/40 flex items-center gap-1.5"
+            ><span
+              class="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block"
+            ></span
+            >Transparent Pricing</span
+          >
+        </div>
+      </div>
 
+      <!-- ── Footer grid (desktop) + accordion (mobile) ── -->
+      <div class="pb-14 border-b border-white/[0.08]">
+        <!-- DESKTOP GRID -->
+        <div class="hidden lg:grid lg:grid-cols-[2fr_1fr_1fr_1.6fr] lg:gap-12">
+          <!-- Brand col -->
+          <div>
+            <a
+              href="index.html"
+              class="font-display text-[1.6rem] font-semibold text-white block mb-3.5"
+            >
+              Bharat<em class="text-teal-400 not-italic">भ्रमण</em>
+            </a>
+            <p
+              class="text-[0.95rem] text-white/65 leading-[1.8] max-w-[270px] mb-5"
+            >
+              Your trusted travel partner for private car &amp; driver
+              experiences across India. Curated routes, verified drivers,
+              transparent pricing.
+            </p>
+            <!-- Trust strip -->
+            <div class="flex flex-wrap gap-x-4 gap-y-2">
+              <span
+                class="text-[0.78rem] text-white/40 flex items-center gap-1.5"
+              >
+                <span
+                  class="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block"
+                ></span
+                >Verified Drivers
+              </span>
+              <span
+                class="text-[0.78rem] text-white/40 flex items-center gap-1.5"
+              >
+                <span
+                  class="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block"
+                ></span
+                >GPS Tracked
+              </span>
+              <span
+                class="text-[0.78rem] text-white/40 flex items-center gap-1.5"
+              >
+                <span
+                  class="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block"
+                ></span
+                >24/7 Support
+              </span>
+              <span
+                class="text-[0.78rem] text-white/40 flex items-center gap-1.5"
+              >
+                <span
+                  class="w-1.5 h-1.5 rounded-full bg-teal-500 inline-block"
+                ></span
+                >Transparent Pricing
+              </span>
+            </div>
+          </div>
 
+          <!-- Explore col -->
+          <div>
+            <h4
+              class="footer-col-heading font-body text-[0.85rem] font-semibold uppercase tracking-[0.12em] text-white mb-5"
+            >
+              Explore
+            </h4>
+            <ul class="space-y-2.5">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="trips.html"
+                  class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block"
+                  >All Tours</a
+                >
+              </li>
+              <li>
+                <a
+                  href="cars.html"
+                  class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block"
+                  >Car Rentals</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about.html"
+                  class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#why"
+                  class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block"
+                  >Why Us</a
+                >
+              </li>
+            </ul>
+          </div>
 
+          <!-- Popular Tours col -->
+          <div>
+            <h4
+              class="footer-col-heading font-body text-[0.85rem] font-semibold uppercase tracking-[0.12em] text-white mb-5"
+            >
+              Popular Tours
+            </h4>
+            <ul class="space-y-2.5">
+              <li>
+                <a
+                  href="goldentriangle.html"
+                  class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block"
+                  >Golden Triangle</a
+                >
+              </li>
+              <li>
+                <a
+                  href="kerala.html"
+                  class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block"
+                  >Kerala Backwaters</a
+                >
+              </li>
+              <li>
+                <a
+                  href="trips.html"
+                  class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block"
+                  >Rajasthan Royale</a
+                >
+              </li>
+              <li>
+                <a
+                  href="trips.html"
+                  class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block"
+                  >Goa Beach Escape</a
+                >
+              </li>
+              <li>
+                <a
+                  href="trips.html"
+                  class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block"
+                  >Varanasi Spiritual</a
+                >
+              </li>
+            </ul>
+          </div>
 
+          <!-- Contact col -->
+          <div>
+            <h4
+              class="footer-col-heading font-body text-[0.85rem] font-semibold uppercase tracking-[0.12em] text-white mb-5"
+            >
+              Corporate Office
+            </h4>
+            <div class="flex gap-2.5">
+              <i
+                data-lucide="map-pin"
+                class="w-4 h-4 text-teal-500 mt-0.5 shrink-0"
+              ></i>
+              <address
+                class="not-italic text-[0.92rem] text-white/65 leading-[1.8]"
+              >
+                Flat No. 204, Shree Residency<br />
+                Near Apex Circle, Malviya Nagar<br />
+                Jaipur, Rajasthan – 302017<br />
+                India
+              </address>
+            </div>
+            <div class="flex gap-2.5 mt-4">
+              <i
+                data-lucide="clock"
+                class="w-4 h-4 text-teal-500 mt-0.5 shrink-0"
+              ></i>
+              <p class="text-[0.92rem] text-white/65 leading-[1.8]">
+                Mon – Sat: 10:00 AM – 8:00 PM<br />
+                Sunday: Closed
+              </p>
+            </div>
+          </div>
+        </div>
 
+        <!-- MOBILE ACCORDION -->
+        <div class="lg:hidden">
+          <div class="footer-acc border-b border-white/[0.08]">
+            <button
+              class="footer-acc-trigger w-full flex items-center justify-between py-4 text-left"
+            >
+              <span class="text-[1rem] font-semibold text-white">Explore</span>
+              <svg
+                class="footer-acc-chevron w-5 h-5 text-white/50 transition-transform duration-300 shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div class="footer-acc-body">
+              <div class="pb-4">
+                <ul class="space-y-3">
+                  <li>
+                    <a
+                      href="index.html"
+                      class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block"
+                      >Home</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="trips.html"
+                      class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block"
+                      >All Tours</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="cars.html"
+                      class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block"
+                      >Car Rentals</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="about.html"
+                      class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block"
+                      >About</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#why"
+                      class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block"
+                      >Why Us</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
+          <div class="footer-acc border-b border-white/[0.08]">
+            <button
+              class="footer-acc-trigger w-full flex items-center justify-between py-4 text-left"
+            >
+              <span class="text-[1rem] font-semibold text-white"
+                >Popular Tours</span
+              >
+              <svg
+                class="footer-acc-chevron w-5 h-5 text-white/50 transition-transform duration-300 shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div class="footer-acc-body">
+              <div class="pb-4">
+                <ul class="space-y-3">
+                  <li>
+                    <a
+                      href="goldentriangle.html"
+                      class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block"
+                      >Golden Triangle</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="kerala.html"
+                      class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block"
+                      >Kerala Backwaters</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="trips.html"
+                      class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block"
+                      >Rajasthan Royale</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="trips.html"
+                      class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block"
+                      >Goa Beach Escape</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="trips.html"
+                      class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block"
+                      >Varanasi Spiritual</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
+          <div class="footer-acc border-b border-white/[0.08]">
+            <button
+              class="footer-acc-trigger w-full flex items-center justify-between py-4 text-left"
+            >
+              <span class="text-[1rem] font-semibold text-white"
+                >Contact Info</span
+              >
+              <svg
+                class="footer-acc-chevron w-5 h-5 text-white/50 transition-transform duration-300 shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div class="footer-acc-body">
+              <div class="pb-5">
+                <div class="flex gap-2.5 mb-3">
+                  <i
+                    data-lucide="map-pin"
+                    class="w-4 h-4 text-teal-500 mt-0.5 shrink-0"
+                  ></i>
+                  <address
+                    class="not-italic text-[0.92rem] text-white/60 leading-[1.8]"
+                  >
+                    Flat No. 204, Shree Residency<br />
+                    Near Apex Circle, Malviya Nagar<br />
+                    Jaipur, Rajasthan – 302017, India
+                  </address>
+                </div>
+                <div class="flex gap-2.5">
+                  <i
+                    data-lucide="clock"
+                    class="w-4 h-4 text-teal-500 mt-0.5 shrink-0"
+                  ></i>
+                  <p class="text-[0.92rem] text-white/60 leading-[1.8]">
+                    Mon – Sat: 10:00 AM – 8:00 PM<br />
+                    Sunday: Closed
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <!-- Bottom bar -->
+      <div
+        class="flex flex-col sm:flex-row justify-between items-center py-6 gap-3 text-[0.9rem] text-white/40"
+      >
+        <div
+          class="flex items-center gap-2 flex-wrap justify-center sm:justify-start"
+        >
+          <span>&copy;2026 BharatBhramana. All rights reserved.</span>
+          <span class="text-white/20 hidden sm:inline">·</span>
+          <span class="text-white/25">Crafted with care in India 🇮🇳</span>
+        </div>
+        <div class="flex gap-5 flex-wrap justify-center">
+          <a href="#" class="hover:text-teal-400 transition-colors duration-200"
+            >Privacy Policy</a
+          >
+          <a href="#" class="hover:text-teal-400 transition-colors duration-200"
+            >Terms of Service</a
+          >
+          <a href="#" class="hover:text-teal-400 transition-colors duration-200"
+            >Cancellation Policy</a
+          >
+        </div>
+      </div>
+    </footer>
 
+    <!-- whatsapp floating option  -->
 
+    <!-- WhatsApp float -->
+    <a
+      href="https://wa.me/919006143335?text=Hi%20I%20want%20to%20plan%20a%20trip"
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat on WhatsApp"
+      class="wa-float fixed bottom-5 right-5 z-[1001] w-[55px] h-[55px] rounded-full bg-[#25d366] text-white flex items-center justify-center shadow-[0_8px_25px_rgba(0,0,0,0.2)] transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-[0_12px_30px_rgba(0,0,0,0.25)]"
+    >
+      <svg viewBox="0 0 32 32" width="24" height="24" fill="white">
+        <path
+          d="M16 .396C7.163.396 0 7.56 0 16.396c0 2.89.757 5.608 2.077 7.965L.396 32l7.84-1.64A15.93 15.93 0 0016 32c8.837 0 16-7.164 16-16.004C32 7.56 24.837.396 16 .396zm0 29.24c-2.563 0-5.06-.68-7.236-1.964l-.516-.305-4.652.973.986-4.537-.335-.534A13.575 13.575 0 012.41 16.396c0-7.506 6.084-13.59 13.59-13.59s13.59 6.084 13.59 13.59-6.084 13.59-13.59 13.59zm7.58-10.178c-.416-.208-2.46-1.212-2.84-1.35-.38-.14-.656-.208-.932.208-.277.416-1.07 1.35-1.31 1.628-.242.277-.484.312-.9.104-.416-.208-1.756-.647-3.347-2.063-1.238-1.103-2.074-2.463-2.316-2.88-.242-.416-.026-.64.182-.848.188-.188.416-.484.624-.726.208-.242.277-.416.416-.693.14-.277.07-.52-.035-.728-.104-.208-.932-2.246-1.276-3.078-.335-.805-.676-.696-.932-.708l-.796-.014c-.277 0-.728.104-1.11.52s-1.457 1.422-1.457 3.465 1.49 4.014 1.7 4.292c.208.277 2.93 4.476 7.103 6.278.993.429 1.767.686 2.37.878.996.317 1.903.272 2.62.165.8-.12 2.46-1.004 2.808-1.976.347-.97.347-1.8.243-1.976-.104-.174-.38-.277-.796-.485z"
+        />
+      </svg>
+    </a>
 
+    <!-- Scroll to top -->
+    <button
+      id="scrollTopBtn"
+      aria-label="Scroll to top"
+      class="hidden fixed bottom-[90px] right-5 z-[1001] w-11 h-11 rounded-full bg-ink-900/70 text-white items-center justify-center text-xl transition-all duration-300 hover:bg-ink-900 cursor-pointer border-none"
+    >
+      ↑
+    </button>
 
+    <!-- script --------------------------------->
+    <!-- lucide icon CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="card/utils.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script src="card/tour.js" defer></script>
+    <script src="card/cars.js" defer></script>
+    <script src="Enquiry/form.js"></script>
 
-
-
-  <!-- whatsapp floating option  -->
-
-  <!-- WhatsApp float -->
-  <a href="https://wa.me/919006143335?text=Hi%20I%20want%20to%20plan%20a%20trip" target="_blank" rel="noopener"
-    aria-label="Chat on WhatsApp"
-    class="wa-float fixed bottom-5 right-5 z-[1001] w-[55px] h-[55px] rounded-full bg-[#25d366] text-white flex items-center justify-center shadow-[0_8px_25px_rgba(0,0,0,0.2)] transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-[0_12px_30px_rgba(0,0,0,0.25)]">
-    <svg viewBox="0 0 32 32" width="24" height="24" fill="white">
-      <path
-        d="M16 .396C7.163.396 0 7.56 0 16.396c0 2.89.757 5.608 2.077 7.965L.396 32l7.84-1.64A15.93 15.93 0 0016 32c8.837 0 16-7.164 16-16.004C32 7.56 24.837.396 16 .396zm0 29.24c-2.563 0-5.06-.68-7.236-1.964l-.516-.305-4.652.973.986-4.537-.335-.534A13.575 13.575 0 012.41 16.396c0-7.506 6.084-13.59 13.59-13.59s13.59 6.084 13.59 13.59-6.084 13.59-13.59 13.59zm7.58-10.178c-.416-.208-2.46-1.212-2.84-1.35-.38-.14-.656-.208-.932.208-.277.416-1.07 1.35-1.31 1.628-.242.277-.484.312-.9.104-.416-.208-1.756-.647-3.347-2.063-1.238-1.103-2.074-2.463-2.316-2.88-.242-.416-.026-.64.182-.848.188-.188.416-.484.624-.726.208-.242.277-.416.416-.693.14-.277.07-.52-.035-.728-.104-.208-.932-2.246-1.276-3.078-.335-.805-.676-.696-.932-.708l-.796-.014c-.277 0-.728.104-1.11.52s-1.457 1.422-1.457 3.465 1.49 4.014 1.7 4.292c.208.277 2.93 4.476 7.103 6.278.993.429 1.767.686 2.37.878.996.317 1.903.272 2.62.165.8-.12 2.46-1.004 2.808-1.976.347-.97.347-1.8.243-1.976-.104-.174-.38-.277-.796-.485z" />
-    </svg>
-  </a>
-
-  <!-- Scroll to top -->
-  <button id="scrollTopBtn" aria-label="Scroll to top"
-    class="hidden fixed bottom-[90px] right-5 z-[1001] w-11 h-11 rounded-full bg-ink-900/70 text-white items-center justify-center text-xl transition-all duration-300 hover:bg-ink-900 cursor-pointer border-none">
-    ↑
-  </button>
-
-  <!-- script --------------------------------->
-<!-- lucide icon CDN -->
-   <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="card/utils.js" defer></script>
-   <script src="script.js" defer></script>
-  <script src="card/tour.js" defer></script>
-  <script src="card/cars.js" defer></script>
-
-  <script>lucide.createIcons()</script>
-
-
-
-
-
-
-
-
-
-
-</body>
-
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
 </html>

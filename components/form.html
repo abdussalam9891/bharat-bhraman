@@ -1,0 +1,207 @@
+   <!-- TRIP ENQUIRY FORM SECTION -->
+<section id="form" class="section bg-white ">
+
+  <div class="container-narrow">
+    <p class="text-xs uppercase tracking-[0.3em] text-teal-500 font-semibold text-center mb-2">
+      Need Help?
+    </p>
+
+    <h2 class="text-3xl font-bold text-center text-gray-900 mb-2">
+      Plan Your <span class="text-teal-500">Perfect Trip</span>
+    </h2>
+
+    <p class="text-center text-gray-500 mb-6">
+      Tell us where you want to go. We'll handle the rest.
+    </p>
+
+    <form
+      id="enquiryForm"
+      action="https://api.web3forms.com/submit"
+      method="POST"
+      class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6"
+    >
+
+      <!-- Hidden fields -->
+      <input type="hidden" name="access_key" value="1efdceae-c424-4b92-9a4d-9af4dcc8e156" />
+      <input type="hidden" name="subject" value="New Trip Enquiry - BharatBhramana" />
+      <input type="hidden" name="redirect" value="false" />
+
+      <!-- NAME -->
+      <div class="mb-4">
+
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Name*"
+          required
+          class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm
+          focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition"
+        />
+        <p class="error-text hidden text-xs text-red-600 mt-1 font-medium">
+          Enter valid name (min 3 letters)
+        </p>
+      </div>
+
+      <!-- PHONE + EMAIL -->
+      <div class="grid grid-cols-2 gap-3 mb-4">
+        <div>
+
+          <input
+           type="tel" id="phone" name="phone" placeholder="WhatsApp Number *" required
+            class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm
+            focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition"
+          />
+          <p class="error-text hidden text-xs text-red-600 mt-1">
+            Enter valid 10-digit number
+          </p>
+        </div>
+
+        <div>
+
+          <input
+            type="email"
+            name="email"
+
+            id="email"
+            placeholder="Email"
+            class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm
+            focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition"
+          />
+          <p class="error-text hidden text-xs text-red-600 mt-1">
+            Enter valid email
+          </p>
+        </div>
+      </div>
+
+      <!-- DESTINATION + GROUP -->
+      <div class="grid grid-cols-2 gap-3 mb-4">
+        <div>
+
+          <select
+            name="destination"
+            required
+            class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-500"
+          >
+           <option value="" disabled selected>Choose a tour</option>
+    <option value="golden-triangle">Golden Triangle</option>
+    <option value="kashmir">Kashmir</option>
+    <option value="kerala">Kerala</option>
+    <option value="manali">Manali</option>
+    <option value="goa">Goa</option>
+    <option value="varanasi">Varanasi</option>
+    <option value="andaman-islands">Andaman Islands</option>
+    <option value="custom-route">Custom Route</option>
+          </select>
+        </div>
+
+        <div>
+
+          <select
+            name="group_size"
+            required
+            class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-500"
+          >
+            <option value="" disabled selected>No. of people</option>
+            <option value="1-2">1–2 people</option>
+            <option value="3-4">3–4 people</option>
+            <option value="5-6">5–6 people</option>
+            <option value="7+">7+ people</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- CAR -->
+      <div class="mb-4">
+
+        <select
+          name="car_preference"
+          class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-500"
+        >
+          <option value="" disabled selected>Select a car (optional)</option>
+          <option>Maruti Suzuki Dzire – ₹3,200/day</option>
+          <option>Mahindra XUV700 – ₹4,500/day</option>
+          <option>Tata Safari – ₹5,800/day</option>
+          <option>Toyota Innova Crysta – ₹5,000/day</option>
+          <option>Mahindra Scorpio N – ₹5,000/day</option>
+          <option>Tata Nexon – ₹3,400/day</option>
+          <option>Mahindra Thar 4x4 – ₹4,200/day</option>
+          <option>Toyota Fortuner – ₹7,000/day</option>
+          <option>Maruti Swift – ₹3,200/day</option>
+          <option>Not sure – help me decide</option>
+        </select>
+      </div>
+
+      <!-- DATE + DAYS -->
+      <div class="grid grid-cols-2 gap-3 mb-4">
+        <div>
+
+          <input
+            type="date"
+            name="travel_date"
+            id="travelDate"
+            required
+            class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm
+            focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition"
+          />
+          <p class="error-text hidden text-xs text-red-600 mt-1">
+            Select a valid future date
+          </p>
+        </div>
+
+        <div>
+
+          <input
+            type="number"
+            name="days"
+            placeholder="No. of Days e.g. 7"
+            min="1"
+            max="30"
+            class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-500"
+          />
+        </div>
+      </div>
+
+      <!-- MESSAGE -->
+      <div class="mb-5">
+
+        <textarea
+        name="message"
+          rows="2"
+          placeholder="Budget, preferred car, special requests..."
+          class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-500 resize-none"
+        ></textarea>
+      </div>
+
+      <!-- BUTTON -->
+      <button
+        type="submit"
+        id="submitBtn"
+        class="w-full bg-teal-500 text-white font-semibold py-3 rounded-lg
+        shadow-md transition-all duration-300
+        hover:bg-teal-600 hover:-translate-y-0.5 hover:shadow-lg
+        disabled:opacity-60 disabled:cursor-not-allowed"
+      >
+        Plan My Trip →
+      </button>
+
+      <p class="text-center text-xs text-gray-400 mt-3">
+        We reply within 15 minutes on WhatsApp
+      </p>
+
+    </form>
+  </div>
+
+  <!-- Success Modal -->
+  <div id="successModal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center px-4">
+    <div class="bg-white rounded-2xl p-8 max-w-sm w-full text-center shadow-xl">
+      <h3 class="text-xl font-bold text-gray-900 mb-2">We got your request!</h3>
+      <p class="text-gray-500 text-sm mb-6">Our team will reach out on WhatsApp within 15 minutes.</p>
+      <button id="closeModal"
+        class="w-full bg-teal-600 hover:bg-teal-500 text-white font-semibold py-3 rounded-lg">
+        Close
+      </button>
+    </div>
+  </div>
+
+</section>

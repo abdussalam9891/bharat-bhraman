@@ -367,21 +367,21 @@ tailwind.config = {
 
 
    <!-- gallery  -->
-  <section class="container-main mt-[72px]">
+  <section class="section-sm container-main mt-6">
 
   <!-- BREADCRUMB -->
-  <div class="py-6">
+  <div class="mt-8">
     <div class="flex items-center gap-2 text-sm text-gray-700">
-      <a href="index.html" class="hover:text-gray-900 transition">Home</a>
+      <a href="index.html" class="hover:text-teal-700 font-bold transition">Home</a>
       <span class="text-gray-400">→</span>
-      <a href="trips.html" class="hover:text-gray-900 transition">Tours</a>
+      <a href="trips.html" class="hover:text-teal-700 font-bold transition">Tours</a>
       <span class="text-gray-400">→</span>
-      <span class="text-gray-900 font-medium">Kerala</span>
+      <span class="text-gray-900 font-bold">Kerala</span>
     </div>
   </div>
 
   <!-- TITLE -->
-  <h2 class="text-[clamp(2rem,4vw,2.6rem)] font-semibold mb-8 text-gray-900">
+  <h2 class="text-[clamp(2rem,4vw,2.6rem)] font-semibold mb-4 text-gray-900">
     The <span class="text-teal-600">Kerala</span> Route
   </h2>
 
@@ -480,15 +480,20 @@ tailwind.config = {
 
 
 
+    <section class="section-sm container-main">
 
+  <div class="grid lg:grid-cols-[1fr_380px] gap-10 items-start">
 
-<!-- overview ---------------------------- -->
-<section class="section container-main">
+    <!-- LEFT CONTENT (SCROLLABLE) -->
+    <div class="section-sm">
+
+      <!-- overview ---------------------------- -->
+<section class="container-narrow">
 
 
 
     <!-- OVERVIEW -->
-    <div class="reveal text-center space-y-6">
+    <div class="reveal text-center space-y-4">
 
       <!-- Heading -->
       <h2 class="text-[clamp(1.9rem,3vw,2.5rem)] font-semibold text-gray-900 leading-tight">
@@ -500,7 +505,7 @@ tailwind.config = {
       <div class="w-16 h-[3px] bg-teal-500 mx-auto rounded-full"></div>
 
       <!-- Content Box -->
-      <div class="bg-white/80 backdrop-blur-md border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-sm text-left space-y-5">
+      <div class="bg-white/80 backdrop-blur-md border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-sm text-left space-y-4">
 
         <p class="text-gray-600 leading-relaxed text-[15px]">
           Experience the very essence of Kerala through a thoughtfully designed journey that blends nature, culture, and slow travel.
@@ -538,149 +543,175 @@ tailwind.config = {
 
 
 <!-- the journey -------------------------------- -->
- <section class="section container-main">
+ <section class="section-sm container-narrow mt-8">
 
 
 
     <!-- Heading -->
-    <div class="reveal text-center mb-12">
+    <div class="reveal text-center mb-8">
       <h2 class="text-[clamp(1.9rem,3vw,2.5rem)] font-semibold text-gray-900">
-        The Journey
+        The <span class="text-teal-600">Journey</span>
       </h2>
       <div class="w-16 h-[3px] bg-teal-500 mx-auto mt-3 rounded-full"></div>
     </div>
 
     <!-- Timeline -->
-    <div class="relative space-y-10">
+    <div class="relative space-y-6">
 
       <!-- vertical line -->
       <div class="absolute left-5 top-0 bottom-0 w-[2px] bg-gray-200"></div>
 
-      <!-- ITEM -->
-      <div class="reveal-left relative pl-14">
+<!-- ITEM -->
+<div class="reveal-left relative pl-14">
 
-        <div class="absolute left-0 top-2 w-10 h-10 flex items-center justify-center rounded-full bg-teal-600 text-white font-semibold shadow-md">
-          1
-        </div>
+  <div class="absolute left-0 top-2 w-10 h-10 flex items-center justify-center rounded-full bg-teal-600 text-white font-semibold shadow-md">
+    1
+  </div>
 
-        <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition">
-          <h3 class="font-semibold text-gray-900 mb-2">
-            Arrival in Kochi — Colonial Charm
-          </h3>
-          <p class="text-sm text-gray-600 leading-relaxed">
-            Arrive in Kochi and transfer to your hotel. Explore Fort Kochi — Chinese fishing nets, colonial streets, and seaside cafés. Optional Kathakali performance in the evening.
-          </p>
-        </div>
+  <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition">
+    <h3 class="font-semibold text-teal-700 mb-2">
+      Arrival in Kochi — Gateway to Kerala
+    </h3>
+    <p class="text-sm text-gray-600 leading-relaxed">
+      Arrive in Kochi and transfer to your hotel.<br><br>
+      Explore Fort Kochi — colonial streets, Chinese fishing nets & seaside cafés.<br>
+      Optional: Kathakali cultural show in evening.<br><br>
+      <span class="text-gray-800 font-medium">Stay:</span> Hotel in Kochi
+    </p>
+  </div>
 
-      </div>
+</div>
 
-      <!-- ITEM -->
-      <div class="reveal-right relative pl-14">
 
-        <div class="absolute left-0 top-2 w-10 h-10 flex items-center justify-center rounded-full bg-teal-600 text-white font-semibold shadow-md">
-          2
-        </div>
+<!-- ITEM -->
+<div class="reveal-right relative pl-14">
 
-        <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition">
-          <h3 class="font-semibold text-gray-900 mb-2">
-            Kochi → Munnar — Into the Hills
-          </h3>
-          <p class="text-sm text-gray-600 leading-relaxed">
-            Scenic drive through waterfalls and tea estates. Stop at viewpoints along the way and settle into the cool mountain air of Munnar.
-          </p>
-        </div>
+  <div class="absolute left-0 top-2 w-10 h-10 flex items-center justify-center rounded-full bg-teal-600 text-white font-semibold shadow-md">
+    2
+  </div>
 
-      </div>
+  <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition">
+    <h3 class="font-semibold text-teal-700 mb-2">
+      Kochi → Munnar (4–5 hrs) — Into the Hills
+    </h3>
+    <p class="text-sm text-gray-600 leading-relaxed">
+      Scenic drive through waterfalls and tea plantations.<br><br>
+      Stop at viewpoints and spice gardens along the way.<br>
+      Reach Munnar and check-in.<br><br>
+      <span class="text-gray-800 font-medium">Stay:</span> Hotel in Munnar
+    </p>
+  </div>
 
-      <!-- ITEM -->
-      <div class="reveal-left relative pl-14">
+</div>
 
-        <div class="absolute left-0 top-2 w-10 h-10 flex items-center justify-center rounded-full bg-teal-600 text-white font-semibold shadow-md">
-          3
-        </div>
 
-        <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition">
-          <h3 class="font-semibold text-gray-900 mb-2">
-            Munnar — Tea Gardens & National Park
-          </h3>
-          <p class="text-sm text-gray-600 leading-relaxed">
-            Visit Eravikulam National Park, tea plantations, and Mattupetty Dam. Enjoy sweeping views of lush green hills.
-          </p>
-        </div>
+<!-- ITEM -->
+<div class="reveal-left relative pl-14">
 
-      </div>
+  <div class="absolute left-0 top-2 w-10 h-10 flex items-center justify-center rounded-full bg-teal-600 text-white font-semibold shadow-md">
+    3
+  </div>
 
-      <!-- ITEM -->
-      <div class="reveal-right relative pl-14">
+  <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition">
+    <h3 class="font-semibold text-teal-700 mb-2">
+      Munnar — Tea Gardens & Views
+    </h3>
+    <p class="text-sm text-gray-600 leading-relaxed">
+      Visit Eravikulam National Park (optional).<br>
+      Explore tea plantations, Mattupetty Dam & Echo Point.<br><br>
+      Slow day with scenic viewpoints and cool weather.<br><br>
+      <span class="text-gray-800 font-medium">Stay:</span> Hotel in Munnar
+    </p>
+  </div>
 
-        <div class="absolute left-0 top-2 w-10 h-10 flex items-center justify-center rounded-full bg-teal-600 text-white font-semibold shadow-md">
-          4
-        </div>
+</div>
 
-        <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition">
-          <h3 class="font-semibold text-gray-900 mb-2">
-            Munnar → Thekkady — Spice & Wildlife
-          </h3>
-          <p class="text-sm text-gray-600 leading-relaxed">
-            Discover spice plantations and optional cultural shows. A perfect mix of nature and local experiences.
-          </p>
-        </div>
 
-      </div>
+<!-- ITEM -->
+<div class="reveal-right relative pl-14">
 
-      <!-- ITEM -->
-      <div class="reveal-left relative pl-14">
+  <div class="absolute left-0 top-2 w-10 h-10 flex items-center justify-center rounded-full bg-teal-600 text-white font-semibold shadow-md">
+    4
+  </div>
 
-        <div class="absolute left-0 top-2 w-10 h-10 flex items-center justify-center rounded-full bg-teal-600 text-white font-semibold shadow-md">
-          5
-        </div>
+  <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition">
+    <h3 class="font-semibold text-teal-700 mb-2">
+      Munnar → Thekkady (3–4 hrs) — Spice & Wildlife
+    </h3>
+    <p class="text-sm text-gray-600 leading-relaxed">
+      Drive to Thekkady.<br><br>
+      Visit spice plantations and local markets.<br>
+      Optional: Kathakali or Kalaripayattu show.<br><br>
+      <span class="text-gray-800 font-medium">Stay:</span> Hotel in Thekkady
+    </p>
+  </div>
 
-        <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition">
-          <h3 class="font-semibold text-gray-900 mb-2">
-            Thekkady → Alleppey — Backwaters
-          </h3>
-          <p class="text-sm text-gray-600 leading-relaxed">
-            Cruise through tranquil canals on a private houseboat surrounded by coconut groves and village life.
-          </p>
-        </div>
+</div>
 
-      </div>
 
-      <!-- ITEM -->
-      <div class="reveal-right relative pl-14">
+<!-- ITEM -->
+<div class="reveal-left relative pl-14">
 
-        <div class="absolute left-0 top-2 w-10 h-10 flex items-center justify-center rounded-full bg-teal-600 text-white font-semibold shadow-md">
-          6
-        </div>
+  <div class="absolute left-0 top-2 w-10 h-10 flex items-center justify-center rounded-full bg-teal-600 text-white font-semibold shadow-md">
+    5
+  </div>
 
-        <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition">
-          <h3 class="font-semibold text-gray-900 mb-2">
-            Alleppey → Kochi — Leisure Day
-          </h3>
-          <p class="text-sm text-gray-600 leading-relaxed">
-            Return to Kochi and enjoy a relaxed day exploring or unwinding by the coast.
-          </p>
-        </div>
+  <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition">
+    <h3 class="font-semibold text-teal-700 mb-2">
+      Thekkady → Alleppey — Houseboat Experience
+    </h3>
+    <p class="text-sm text-gray-600 leading-relaxed">
+      Drive to Alleppey.<br><br>
+      Check-in to private houseboat.<br>
+      Cruise through backwaters, villages & coconut lagoons.<br><br>
+      Sunset views + overnight stay on boat.<br><br>
+      <span class="text-gray-800 font-medium">Stay:</span> Private Houseboat
+    </p>
+  </div>
 
-      </div>
+</div>
 
-      <!-- ITEM -->
-      <div class="reveal-left relative pl-14">
 
-        <div class="absolute left-0 top-2 w-10 h-10 flex items-center justify-center rounded-full bg-gray-900 text-white font-semibold shadow-md">
-          7
-        </div>
+<!-- ITEM -->
+<div class="reveal-right relative pl-14">
 
-        <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition">
-          <h3 class="font-semibold text-gray-900 mb-2">
-            Departure
-          </h3>
-          <p class="text-sm text-gray-600 leading-relaxed">
-            Transfer to airport or railway station with memories of a calm and beautiful journey through Kerala.
-          </p>
-        </div>
+  <div class="absolute left-0 top-2 w-10 h-10 flex items-center justify-center rounded-full bg-teal-600 text-white font-semibold shadow-md">
+    6
+  </div>
 
-      </div>
+  <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition">
+    <h3 class="font-semibold text-teal-700 mb-2">
+      Alleppey → Kochi — Leisure & Return
+    </h3>
+    <p class="text-sm text-gray-600 leading-relaxed">
+      Morning houseboat cruise and breakfast.<br><br>
+      Drive back to Kochi.<br>
+      Free time for shopping or cafés.<br><br>
+      <span class="text-gray-800 font-medium">Stay:</span> Hotel in Kochi
+    </p>
+  </div>
+
+</div>
+
+
+<!-- ITEM -->
+<div class="reveal-left relative pl-14">
+
+  <div class="absolute left-0 top-2 w-10 h-10 flex items-center justify-center rounded-full bg-gray-900 text-white font-semibold shadow-md">
+    7
+  </div>
+
+  <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition">
+    <h3 class="font-semibold text-teal-700 mb-2">
+      Departure
+    </h3>
+    <p class="text-sm text-gray-600 leading-relaxed">
+      Check-out and transfer to airport or railway station.<br><br>
+      Trip ends with relaxed Kerala memories.
+    </p>
+  </div>
+
+</div>
 
     </div>
 
@@ -690,27 +721,23 @@ tailwind.config = {
 
 
 <!-- inclusion exclusion ---------------- -->
-<section class="section container-main">
+<section class="section-sm container-narrow">
 
     <!-- Heading -->
-    <div class="reveal text-center mb-10">
+    <div class="reveal text-center mb-8">
       <h2 class="text-[clamp(1.8rem,3vw,2.3rem)] font-semibold text-gray-900">
-        What’s Included & Excluded
+        What’s <span class="text-teal-700">Included & Excluded</span>
       </h2>
       <div class="w-16 h-[3px] bg-teal-500 mx-auto mt-3 rounded-full"></div>
     </div>
 
-
-
-
-
-    <!-- GRID -->
-    <div class="reveal grid md:grid-cols-2 gap-12">
+       <!-- GRID -->
+    <div class="reveal grid md:grid-cols-2 gap-8">
 
       <!-- INCLUDED -->
-      <div class="reveal-left bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+      <div class="reveal-left bg-white border border-gray-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition">
 
-        <h3 class="font-semibold text-gray-900 text-lg mb-5">
+        <h3 class="font-semibold text-teal-700 text-lg mb-5">
           Included
         </h3>
 
@@ -744,9 +771,9 @@ tailwind.config = {
       </div>
 
       <!-- EXCLUDED -->
-      <div class="reveal-right bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+      <div class="reveal-right bg-white border border-gray-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition">
 
-        <h3 class="font-semibold text-gray-900 text-lg mb-5">
+        <h3 class="font-semibold text-red-800 text-lg mb-5">
           Excluded
         </h3>
 
@@ -773,42 +800,12 @@ tailwind.config = {
 
     </div>
 
-  </div>
+    </section>
 
-</section>
 
 
 <!-- ROUTE + INFO -->
-<section class="section container-main">
-
-  <div class="space-y-12">
-
-    <!-- ROUTE -->
-    <div class="reveal bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-
-      <h2 class="text-lg font-semibold text-gray-900 mb-4">
-        Route
-      </h2>
-
-      <div class="flex flex-wrap items-center gap-2 text-sm text-gray-700">
-
-        <span class="px-3 py-1 rounded-full bg-gray-100">Kochi</span>
-        <span class="text-gray-400">→</span>
-
-        <span class="px-3 py-1 rounded-full bg-gray-100">Munnar</span>
-        <span class="text-gray-400">→</span>
-
-        <span class="px-3 py-1 rounded-full bg-gray-100">Thekkady</span>
-        <span class="text-gray-400">→</span>
-
-        <span class="px-3 py-1 rounded-full bg-gray-100">Alleppey</span>
-        <span class="text-gray-400">→</span>
-
-        <span class="px-3 py-1 rounded-full bg-gray-100">Kochi</span>
-
-      </div>
-
-    </div>
+<section class="section-sm container-narrow">
 
     <!-- KNOW BEFORE YOU GO -->
     <div class="reveal">
@@ -816,7 +813,7 @@ tailwind.config = {
       <!-- Heading -->
       <div class="text-center mb-8">
         <h2 class="text-[clamp(1.8rem,3vw,2.3rem)] font-semibold text-gray-900">
-          Know Before You Go
+          Know Before <span class="text-teal-700">You Go</span>
         </h2>
         <div class="w-16 h-[3px] bg-teal-500 mx-auto mt-3 rounded-full"></div>
       </div>
@@ -848,42 +845,118 @@ tailwind.config = {
 
     </div>
 
-  </div>
+
 
 </section>
 
 
 
 
+  </div>
+
+
+  <!-- right  -->
+    <div class="relative">
+
+      <div class="sticky top-24">
+
+
+
+<!-- form card  -->
+   <div class="bg-white border border-gray-200 rounded-2xl shadow-md p-5 mt-32">
 
 
 
 
-    <!-- FORM — neeche, simple -->
-    <div>
-      <script>
-        window.formConfig = {
-          title: "Plan Your Kerala Trip",
-          subject: "Kerala Tour Enquiry - BharatBhramana",
-          destination: "Kerala",
-          buttonText: "Book Kerala Trip →"
-        };
-      </script>
-      <div id="formContainer"></div>
-      <script>
-        async function loadForm() {
-          const res = await fetch('components/enquiryForm.html');
-          document.getElementById('formContainer').innerHTML = await res.text();
-          const c = window.formConfig;
-          document.getElementById('formTitle').textContent = c.title;
-          document.getElementById('formSubject').value = c.subject;
-          document.getElementById('formDestination').value = c.destination;
-          document.getElementById('submitBtn').textContent = c.buttonText;
-        }
-        loadForm();
-      </script>
+  <!-- config -->
+  <script>
+    const formConfig = {
+  destination: "kerala",
+  subject: "Kerala Tour Enquiry - BharatBhramana",
+  buttonText: "Plan Kerala Trip →",
+  title: "Plan Your <span class='text-teal-500'>Kerala Trip</span>"
+};
+  </script>
+
+  <!-- container -->
+  <div id="formContainer"></div>
+
+</div>
+
+
+
+<script>
+async function loadForm() {
+  try {
+    const res = await fetch('/components/form.html');
+    const html = await res.text();
+
+
+
+
+
+
+
+
+
+
+    document.getElementById("formContainer").innerHTML = html;
+
+
+    const heading = document.querySelector("#form h2");
+
+if (heading && formConfig.title) {
+  heading.innerHTML = formConfig.title;
+}
+
+    // ✅ destination safe set
+    const select = document.querySelector('select[name="destination"]');
+    if (select && formConfig.destination) {
+      select.value = formConfig.destination.toLowerCase();
+    }
+
+    // ✅ subject
+    const subject = document.querySelector('input[name="subject"]');
+    if (subject && formConfig.subject) {
+      subject.value = formConfig.subject;
+    }
+
+    // ✅ button
+    const btn = document.getElementById("submitBtn");
+    if (btn && formConfig.buttonText) {
+      btn.innerText = formConfig.buttonText;
+    }
+
+    // ✅ init
+    if (typeof initForm === "function") {
+      initForm();
+    }
+
+  } catch (err) {
+    console.error("Form load failed", err);
+  }
+}
+
+//----call------
+document.addEventListener("DOMContentLoaded", () => {
+  loadForm();
+});
+</script>
+
+
+
+
+
+
+      </div>
+
     </div>
 
+
+ </div>
+
+
+</section>
 
 
 
@@ -1311,12 +1384,6 @@ tailwind.config = {
 
 
 
-
-
-
-
-
-
   <!-- footer  -->
 <footer class="bg-dark-grad px-[5%] pt-20 border-t border-[#e8ddd0]/20">
 
@@ -1584,6 +1651,8 @@ tailwind.config = {
   <!-- script --------------------------------->
    <script src="js/script.js"></script>
   <script src="js/tripDetails.js"></script>
+   <script src="/js/form.js"></script>
+
   <script>lucide.createIcons();</script>
 
 

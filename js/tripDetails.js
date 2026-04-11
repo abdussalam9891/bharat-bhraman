@@ -75,3 +75,65 @@
     });
   });
 })();
+
+
+
+
+
+(function (){
+
+// Section nav active state
+const sectionLinks = document.querySelectorAll('.section-nav-link');
+const sections = document.querySelectorAll('#overview, #journey, #inclusions, #knowbeforeyougo, #faq');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      sectionLinks.forEach(link => {
+        link.classList.remove('text-teal-600', 'border-teal-500');
+        link.classList.add('text-gray-600', 'border-transparent');
+      });
+      const active = document.querySelector(`.section-nav-link[href="#${entry.target.id}"]`);
+      if (active) {
+        active.classList.add('text-teal-600', 'border-teal-500');
+        active.classList.remove('text-gray-600', 'border-transparent');
+      }
+    }
+  });
+}, { rootMargin: '-80px 0px -60% 0px' });
+
+sections.forEach(s => observer.observe(s));
+
+
+
+
+})()
+
+
+
+
+
+const mainNav = document.getElementById('mainNav');
+const sectionNav = document.getElementById('sectionNav');
+const stickyForm = document.getElementById('stickyForm');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+  const current = window.scrollY;
+
+  if (current > lastScroll && current > 100) {
+    // Scroll down — main nav hide, section nav upar shift
+    mainNav.style.transform = 'translateY(-100%)';
+    sectionNav.style.transform = 'translateY(-72px)';  // main nav ki height
+    stickyForm.style.top = '48px';  // sirf section nav ki height
+  } else {
+    // Scroll up — sab wapas
+    mainNav.style.transform = 'translateY(0)';
+    sectionNav.style.transform = 'translateY(0)';
+    stickyForm.style.top = '136px';
+  }
+
+  lastScroll = current;
+});
+
+

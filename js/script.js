@@ -606,3 +606,31 @@ document.addEventListener("DOMContentLoaded", () => {
   //   });
   // })();
 });
+
+
+
+
+
+
+const mainNav = document.getElementById('mainNav');
+const sectionNav = document.getElementById('sectionNav');
+const stickyForm = document.getElementById('stickyForm');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+  const current = window.scrollY;
+
+  if (current > lastScroll && current > 100) {
+    // Scroll down — main nav hide, section nav upar shift
+    mainNav.style.transform = 'translateY(-100%)';
+    sectionNav.style.transform = 'translateY(-72px)';  // main nav ki height
+    stickyForm.style.top = '48px';  // sirf section nav ki height
+  } else {
+    // Scroll up — sab wapas
+    mainNav.style.transform = 'translateY(0)';
+    sectionNav.style.transform = 'translateY(0)';
+    stickyForm.style.top = '136px';
+  }
+
+  lastScroll = current;
+});

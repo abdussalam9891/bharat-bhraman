@@ -480,15 +480,19 @@ tailwind.config = {
 
 
 
+
+
+
+
     <section class="section-sm container-main">
 
-  <div class="grid lg:grid-cols-[1fr_380px] gap-10 items-start">
+  <div class="grid lg:grid-cols-[1fr_380px] gap-10 ">
 
     <!-- LEFT CONTENT (SCROLLABLE) -->
     <div class="section-sm">
 
       <!-- overview ---------------------------- -->
-<section class="container-narrow">
+<section id="overview" class="container-narrow">
 
 
 
@@ -543,7 +547,7 @@ tailwind.config = {
 
 
 <!-- the journey -------------------------------- -->
- <section class="section-sm container-narrow mt-8">
+ <section id="journey" class="section-sm container-narrow mt-8">
 
 
 
@@ -721,7 +725,7 @@ tailwind.config = {
 
 
 <!-- inclusion exclusion ---------------- -->
-<section class="section-sm container-narrow">
+<section id="inclusions"  class="section-sm container-narrow">
 
     <!-- Heading -->
     <div class="reveal text-center mb-8">
@@ -805,7 +809,7 @@ tailwind.config = {
 
 
 <!-- ROUTE + INFO -->
-<section class="section-sm container-narrow">
+<section id="knowbeforeyougo" class="section-sm container-narrow">
 
     <!-- KNOW BEFORE YOU GO -->
     <div class="reveal">
@@ -863,7 +867,7 @@ tailwind.config = {
 
 
 <!-- form card  -->
-   <div class="bg-white border border-gray-200 rounded-2xl shadow-md p-5 mt-32">
+   <div class="bg-white border border-gray-200 rounded-2xl shadow-md p-5">
 
 
 
@@ -1285,7 +1289,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </section>
 
  <!-- FAQ -->
-<section class="px-[5%] py-[110px] bg-gradient-to-b from-[#f8fafc] to-white relative overflow-hidden">
+<section  id="faq"  class="px-[5%] py-[110px] bg-gradient-to-b from-[#f8fafc] to-white relative overflow-hidden">
 
   <!-- BACKGROUND DECOR (SUBTLE GLOW) -->
   <div class="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-teal-100 rounded-full blur-3xl opacity-40"></div>

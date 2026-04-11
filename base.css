@@ -16,10 +16,11 @@
 
 
 
-html, body {
+html {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
+
 
 
 /* Main layout container */
@@ -72,7 +73,7 @@ html, body {
 
 
 
- 
+
 
 .container-narrow h2 {
   letter-spacing: -0.01em;

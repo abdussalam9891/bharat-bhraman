@@ -14,12 +14,12 @@ function createOverlay(wrapper) {
   overlay.className = "absolute inset-0 bg-gradient-to-t from-black/40 to-transparent";
 
   const prev = document.createElement("button");
-  prev.className = "prev absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition";
-  prev.textContent = "←";
+  prev.className = "prev absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 flex items-center justify-center rounded-full bg-white/50 opacity-0 group-hover:opacity-100 transition";
+  prev.textContent = "<";
 
   const next = document.createElement("button");
-  next.className = "next absolute right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition";
-  next.textContent = "→";
+  next.className = "next absolute right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 flex items-center justify-center rounded-full bg-white/50 opacity-0 group-hover:opacity-100 transition";
+  next.textContent = ">";
 
   wrapper.append(overlay, prev, next);
 }

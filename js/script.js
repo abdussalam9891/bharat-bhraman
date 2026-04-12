@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+
   // homepage tour
   (function initTourCarousel() {
     const track = document.getElementById("tourTrack");
@@ -576,61 +578,53 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // // car section home page carousel
-  // (function initCarCarousel() {
-  //   const track   = document.getElementById('carTrack');
-  //   const prevBtn = document.getElementById('carPrev');
-  //   const nextBtn = document.getElementById('carNext');
-  //   if (!track || !prevBtn || !nextBtn) return;
 
-  //   let position = 0;
-
-  //   function getCardWidth() {
-  //     const card = track.querySelector('article');
-  //     if (!card) return 328;
-  //     return card.offsetWidth + 28; // card + gap-7 (28px)
-  //   }
-
-  //   function getMaxScroll() {
-  //     return track.scrollWidth - track.parentElement.offsetWidth;
-  //   }
-
-  //   nextBtn.addEventListener('click', () => {
-  //     position = Math.min(position + getCardWidth(), getMaxScroll());
-  //     track.style.transform = `translateX(-${position}px)`;
-  //   });
-
-  //   prevBtn.addEventListener('click', () => {
-  //     position = Math.max(position - getCardWidth(), 0);
-  //     track.style.transform = `translateX(-${position}px)`;
-  //   });
-  // })();
 });
 
 
 
 
+// navbar hide on scroll
 
-
-const mainNav = document.getElementById('mainNav');
-const sectionNav = document.getElementById('sectionNav');
-const stickyForm = document.getElementById('stickyForm');
 let lastScroll = 0;
 
-window.addEventListener('scroll', () => {
-  const current = window.scrollY;
+function initNavbarScroll() {
+  const nav = document.getElementById('mainNav');
+  if (!nav) return;
 
-  if (current > lastScroll && current > 100) {
-    // Scroll down — main nav hide, section nav upar shift
-    mainNav.style.transform = 'translateY(-100%)';
-    sectionNav.style.transform = 'translateY(-72px)';  // main nav ki height
-    stickyForm.style.top = '48px';  // sirf section nav ki height
-  } else {
-    // Scroll up — sab wapas
-    mainNav.style.transform = 'translateY(0)';
-    sectionNav.style.transform = 'translateY(0)';
-    stickyForm.style.top = '136px';
-  }
+  window.addEventListener('scroll', () => {
+    const current = window.scrollY;
 
-  lastScroll = current;
-});
+    const scrollingDown = current > lastScroll && current > 100;
+
+    nav.classList.toggle('-translate-y-full', scrollingDown);
+    nav.classList.toggle('translate-y-0', !scrollingDown);
+
+    lastScroll = current;
+  });
+}
+
+initNavbarScroll();
+
+// const mainNav = document.getElementById('mainNav');
+// const sectionNav = document.getElementById('sectionNav');
+// const stickyForm = document.getElementById('stickyForm');
+// let lastScroll = 0;
+
+// window.addEventListener('scroll', () => {
+//   const current = window.scrollY;
+
+//   if (current > lastScroll && current > 100) {
+//     // Scroll down — main nav hide, section nav upar shift
+//     mainNav.style.transform = 'translateY(-100%)';
+//     sectionNav.style.transform = 'translateY(-72px)';  // main nav ki height
+//     stickyForm.style.top = '48px';  // sirf section nav ki height
+//   } else {
+//     // Scroll up — sab wapas
+//     mainNav.style.transform = 'translateY(0)';
+//     sectionNav.style.transform = 'translateY(0)';
+//     stickyForm.style.top = '136px';
+//   }
+
+//   lastScroll = current;
+// });

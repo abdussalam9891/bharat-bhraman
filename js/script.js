@@ -1,6 +1,42 @@
 document.addEventListener("DOMContentLoaded", () => {
 
 
+
+(function () {
+  let isOpen = false;
+
+  const overlay = document.getElementById('navOverlay');
+  const drawer = document.getElementById('mobileMenu');
+  const navToggle = document.getElementById('navToggle');
+
+  if (!navToggle) return;
+
+  function toggleNav() {
+    isOpen = !isOpen;
+
+    if (overlay) {
+      overlay.classList.toggle('opacity-100', isOpen);
+      overlay.classList.toggle('pointer-events-auto', isOpen);
+    }
+
+  if (drawer) {
+  drawer.classList.toggle('translate-x-0', isOpen);
+  drawer.classList.toggle('translate-x-full', !isOpen);
+}
+
+    navToggle.dataset.state = isOpen ? "open" : "closed";
+
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+
+  navToggle.addEventListener('click', toggleNav);
+
+  if (overlay) {
+    overlay.addEventListener('click', toggleNav);
+  }
+})();
+
+
   // homepage tour
   (function initTourCarousel() {
     const track = document.getElementById("tourTrack");

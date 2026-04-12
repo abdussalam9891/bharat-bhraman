@@ -8,32 +8,74 @@ document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.getElementById('navOverlay');
   const drawer = document.getElementById('mobileMenu');
   const navToggle = document.getElementById('navToggle');
+  const mainNav = document.getElementById('mainNav');
 
   if (!navToggle) return;
 
-  function toggleNav() {
-    isOpen = !isOpen;
+  function openNav() {
+    isOpen = true;
 
-    if (overlay) {
-      overlay.classList.toggle('opacity-100', isOpen);
-      overlay.classList.toggle('pointer-events-auto', isOpen);
+    // Overlay
+    overlay?.classList.add('opacity-100', 'pointer-events-auto');
+
+    // Drawer
+    drawer?.classList.remove('translate-x-full');
+    drawer?.classList.add('translate-x-0');
+
+    // Navbar hide
+    if (mainNav) {
+      mainNav.style.transform = 'translateY(-100%)';
     }
 
-  if (drawer) {
-  drawer.classList.toggle('translate-x-0', isOpen);
-  drawer.classList.toggle('translate-x-full', !isOpen);
-}
+    // Toggle state
+    navToggle.dataset.state = "open";
 
-    navToggle.dataset.state = isOpen ? "open" : "closed";
+    // Lock scroll
+    document.body.style.overflow = 'hidden';
+  }
 
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+  function closeNav() {
+    isOpen = false;
+
+    // Overlay
+    overlay?.classList.remove('opacity-100', 'pointer-events-auto');
+
+    // Drawer
+    drawer?.classList.remove('translate-x-0');
+    drawer?.classList.add('translate-x-full');
+
+    // Navbar back
+    if (mainNav) {
+      mainNav.style.transform = 'translateY(0)';
+    }
+
+    // Toggle state
+    navToggle.dataset.state = "closed";
+
+    // Unlock scroll
+    document.body.style.overflow = '';
+
+
+    // 🔥 FIX: reset scroll reference
+  lastScroll = window.scrollY;
+  }
+
+
+
+
+  const closeBtn = document.getElementById('drawerClose');
+closeBtn?.addEventListener('click', closeNav);
+
+
+
+
+  function toggleNav() {
+    isOpen ? closeNav() : openNav();
   }
 
   navToggle.addEventListener('click', toggleNav);
+  overlay?.addEventListener('click', closeNav);
 
-  if (overlay) {
-    overlay.addEventListener('click', toggleNav);
-  }
 })();
 
 
@@ -629,15 +671,21 @@ function initNavbarScroll() {
   if (!nav) return;
 
   window.addEventListener('scroll', () => {
-    const current = window.scrollY;
+  if (document.body.style.overflow === 'hidden') return;
 
-    const scrollingDown = current > lastScroll && current > 100;
+  const current = window.scrollY;
 
-    nav.classList.toggle('-translate-y-full', scrollingDown);
-    nav.classList.toggle('translate-y-0', !scrollingDown);
+  // ignore tiny scrolls
+  if (Math.abs(current - lastScroll) < 5) return;
 
-    lastScroll = current;
-  });
+  if (current > lastScroll && current > 100) {
+    mainNav.style.transform = 'translateY(-100%)';
+  } else {
+    mainNav.style.transform = 'translateY(0)';
+  }
+
+  lastScroll = current;
+});
 }
 
 initNavbarScroll();

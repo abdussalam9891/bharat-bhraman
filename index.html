@@ -58,13 +58,23 @@
     <!-------------------------Mobile Drawer (separate from desktop ul)------------------------------------>
 
    <div id="mobileMenu"
-  class="fixed top-[72px] right-0 z-[999]
+  class="fixed top-0 right-0 z-[999]
          w-[80%] max-w-[320px]
-         h-[calc(100dvh-72px)]
+         h-[100dvh]
          bg-[#0f172a]
          translate-x-full
          transition-transform duration-300
          flex flex-col overflow-y-auto px-6 pt-6 pb-6">
+
+
+         <button
+  id="drawerClose"
+  class="absolute top-5 right-5 z-[1000] flex flex-col gap-[5px]"
+>
+  <span class="block w-6 h-[2px] bg-white rotate-45 translate-y-[6px]"></span>
+  <span class="block w-6 h-[2px] bg-white opacity-0"></span>
+  <span class="block w-6 h-[2px] bg-white -rotate-45 -translate-y-[6px]"></span>
+</button>
 
   <!-- MAIN LINKS -->
   <div class="flex flex-col gap-1">
@@ -295,14 +305,14 @@
          rounded-full p-2"
       >
         <span
-          class="block w-6 h-[2px] bg-teal-500 rounded-sm transition-all duration-300"
+          class="block w-5 h-[2.5px] bg-teal-500 rounded-sm transition-all duration-300"
         ></span>
         <span
-          class="block w-6 h-[2px] bg-teal-500 rounded-sm transition-all duration-300"
+          class="block w-5 h-[2.5px] bg-teal-500 rounded-sm transition-all duration-300"
         ></span>
-        <span
-          class="block w-6 h-[2px] bg-teal-500 rounded-sm transition-all duration-300"
-        ></span>
+       <span
+  class="block w-3 h-[2.5px] bg-teal-500 rounded-sm transition-all duration-300 self-end"
+></span>
       </button>
 
 

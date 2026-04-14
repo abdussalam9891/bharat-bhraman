@@ -54,6 +54,7 @@
   </head>
 
   <body
+
     class="font-body text-gray-800 leading-relaxed antialiased relative overflow-x-hidden"
   >
 
@@ -331,10 +332,22 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- featured tours ----------------------------------- -->
 
     <section
-      class="px-[5%] py-[110px] relative overflow-hidden bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9]"
+      class="px-[5%] py-[110px] relative overflow-hidden bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9] reveal"
     >
       <!-- Background glow -->
       <div
@@ -342,19 +355,19 @@
       ></div>
 
       <!-- Header -->
-      <div class="flex justify-between items-end mb-10 relative z-10">
+      <div class="flex justify-between items-end mb-10 relative z-10 reveal">
         <div>
           <span
-            class="text-[11px] font-semibold tracking-[0.15em] uppercase text-teal-500 mb-3 block"
+            class="text-[11px] font-semibold tracking-[0.15em] uppercase text-teal-500 mb-3 block reveal reveal-left"
           >
             Popular Packages
           </span>
           <h2
-            class="font-display text-[clamp(2rem,4vw,2.9rem)] font-semibold text-ink-900 leading-[1.15] mb-3"
+            class="font-display text-[clamp(2rem,4vw,2.9rem)] font-semibold text-ink-900 leading-[1.15] mb-3 reveal reveal-right"
           >
             Curated Tours,<br />Crafted for You
           </h2>
-          <p class="text-[1.02rem] text-gray-500 max-w-[500px] leading-[1.7]">
+          <p class="text-[1.02rem] text-gray-500 max-w-[500px] leading-[1.7] reveal reveal-left">
             Explore India's most iconic destinations with comfort and precision.
           </p>
         </div>
@@ -362,34 +375,42 @@
 
       </div>
 
-      <!-- Carousel -->
-      <div class="relative z-10">
+
+      <div class="relative z-10 reveal">
         <!-- Track -->
         <div
-          id="tourTrack"
-          class="flex gap-7 overflow-x-auto scroll-smooth no-scrollbar pb-2"
+
+          class="grid gap-7 [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))]"
         >
 
           <!-- CARD 1 -->
           <article
-            class="card-reveal snap-start min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)]"
+            class="card-reveal w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] reveal reveal-left"
           >
             <!-- IMAGE BLOCK -->
             <div class="relative h-[220px] overflow-hidden">
               <div class="slider-container relative w-full h-full">
+
+                 <!-- BADGE top-left -->
+              <div
+                class="absolute top-4 left-4 z-30 bg-gradient-to-r from-orange-500 to-pink-500 text-white text-[0.7rem] font-semibold px-3 py-1 rounded-full shadow-lg pointer-events-none">
+                Bestseller
+              </div>
+
+
                 <!-- images -->
                 <img
-                  src="images/d2.jpg"
+                  src="/assets/images/d2.jpg"
                   class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500"
                 />
 
                 <img
-                  src="images/d7.jpg"
+                  src="/assets/images/d7.jpg"
                   class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
                 />
 
                 <img
-                  src="images/r6.jpg"
+                  src="/assets/images/r6.jpg"
                   class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
                 />
 
@@ -402,13 +423,13 @@
                 <button
                   class="prev absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white"
                 >
-                  ←
+                  <
                 </button>
 
                 <button
                   class="next absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white"
                 >
-                  →
+                  >
                 </button>
 
                 <!-- dots -->
@@ -446,46 +467,51 @@
               </div>
             </div>
 
-            <!-- FOOTER -->
-            <div
-              class="flex justify-between items-center px-6 py-4 border-t border-gray-100"
-            >
-              <div
-                class="font-display text-[1.3rem] font-semibold text-ink-900"
-              >
-                ₹14,000
+           <!-- FOOTER -->
+          <div class="flex justify-between items-center px-6 py-4 border-t border-gray-100">
+            <div>
+              <div class="text-xs text-gray-400 line-through">₹12,000</div>
+              <div class="font-display text-[1.3rem] font-semibold text-gray-900">
+                ₹9,500
                 <span class="text-[0.75rem] text-gray-500">/ person</span>
               </div>
-
-              <a
-                href="goldentriangle.html"
-                class="px-4 py-2 rounded-lg bg-ink-900 text-white text-sm hover:bg-teal-500 transition"
-              >
-                Details
-              </a>
+              <div
+                class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5">
+                Save ₹2,500
+              </div>
             </div>
+            <a href="/pages/goldentriangle.html"
+              class="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm hover:bg-teal-500 transition">Details</a>
+          </div>
           </article>
 
           <!-- CARD 2 -->
           <article
-            class="card-reveal snap-start min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)]"
+            class="card-reveal w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] reveal reveal-right"
           >
             <!-- IMAGE BLOCK -->
             <div class="relative h-[220px] overflow-hidden">
               <div class="slider-container relative w-full h-full">
+
+                 <!-- BADGE top-left -->
+              <div
+                class="absolute top-4 left-4 z-30 bg-gradient-to-r from-orange-500 to-pink-500 text-white text-[0.7rem] font-semibold px-3 py-1 rounded-full shadow-lg pointer-events-none">
+                Most Booked
+              </div>
+
                 <!-- images -->
                 <img
-                  src="images/kerala1.jpg"
+                  src="/assets/images/kerala1.jpg"
                   class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500"
                 />
 
                 <img
-                  src="images/kerala2.jpg"
+                  src="/assets/images/kerala2.jpg"
                   class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
                 />
 
                 <img
-                  src="images/kerala3.jpg"
+                  src="/assets/images/kerala3.jpg"
                   class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
                 />
 
@@ -498,13 +524,13 @@
                 <button
                   class="prev absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white"
                 >
-                  ←
+                  <
                 </button>
 
                 <button
                   class="next absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white"
                 >
-                  →
+                  >
                 </button>
 
                 <!-- dots -->
@@ -542,46 +568,51 @@
               </div>
             </div>
 
-            <!-- FOOTER -->
-            <div
-              class="flex justify-between items-center px-6 py-4 border-t border-gray-100"
-            >
-              <div
-                class="font-display text-[1.3rem] font-semibold text-ink-900"
-              >
-                ₹20,000
+           <!-- FOOTER -->
+          <div class="flex justify-between items-center px-6 py-4 border-t border-gray-100">
+            <div>
+              <div class="text-xs text-gray-400 line-through">₹25,000</div>
+              <div class="font-display text-[1.3rem] font-semibold text-gray-900">
+                ₹21,000
                 <span class="text-[0.75rem] text-gray-500">/ person</span>
               </div>
-
-              <a
-                href="kerala.html"
-                class="px-4 py-2 rounded-lg bg-ink-900 text-white text-sm hover:bg-teal-500 transition"
-              >
-                Details
-              </a>
+              <div
+                class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5">
+                Save ₹4,000
+              </div>
             </div>
+            <a href="/pages/kerala.html"
+              class="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm hover:bg-teal-500 transition">Details</a>
+          </div>
           </article>
 
           <!-- CARD 3 -->
           <article
-            class="card-reveal snap-start min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)]"
+            class="card-reveal w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] reveal reveal-left"
           >
             <!-- IMAGE BLOCK -->
             <div class="relative h-[220px] overflow-hidden">
               <div class="slider-container relative w-full h-full">
+
+                 <!-- BADGE top-left -->
+              <div
+                class="absolute top-4 left-4 z-30 bg-gradient-to-r from-orange-500 to-pink-500 text-white text-[0.7rem] font-semibold px-3 py-1 rounded-full shadow-lg pointer-events-none">
+                top pick
+              </div>
+
                 <!-- images -->
                 <img
-                  src="images/k1.jpg"
+                  src="/assets/images/k1.jpg"
                   class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500"
                 />
 
                 <img
-                  src="images/k2.jpg"
+                  src="/assets/images/k2.jpg"
                   class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
                 />
 
                 <img
-                  src="images/k3.jpg"
+                  src="/assets/images/k3.jpg"
                   class="slider-image absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
                 />
 
@@ -594,13 +625,13 @@
                 <button
                   class="prev absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white"
                 >
-                  ←
+                  <
                 </button>
 
                 <button
                   class="next absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white"
                 >
-                  →
+                  >
                 </button>
 
                 <!-- dots -->
@@ -638,47 +669,45 @@
               </div>
             </div>
 
-            <!-- FOOTER -->
-            <div
-              class="flex justify-between items-center px-6 py-4 border-t border-gray-100"
-            >
-              <div
-                class="font-display text-[1.3rem] font-semibold text-ink-900"
-              >
-                ₹18,000
+         <!-- FOOTER -->
+          <div class="flex justify-between items-center px-6 py-4 border-t border-gray-100">
+            <div>
+              <div class="text-xs text-gray-400 line-through">₹19,999</div>
+              <div class="font-display text-[1.3rem] font-semibold text-gray-900">
+                ₹16,999
                 <span class="text-[0.75rem] text-gray-500">/ person</span>
               </div>
-
-              <a
-                href="goldentriangle.html"
-                class="px-4 py-2 rounded-lg bg-ink-900 text-white text-sm hover:bg-teal-500 transition"
-              >
-                Details
-              </a>
+              <div
+                class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5">
+                Save ₹3,000
+              </div>
             </div>
+            <a href="/pages/kashmir.html"
+              class="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm hover:bg-teal-500 transition">Details</a>
+          </div>
           </article>
 
 
                 <!-- goa------------- -->
         <article
-          class="card-reveal snap-start min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
+          class="card-reveal w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)] reveal reveal-right">
           <!-- IMAGE BLOCK -->
           <div class="relative h-[220px] overflow-hidden">
             <div class="slider-container relative w-full h-full">
               <!-- BADGE top-left -->
               <div
-                class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400 text-amber-900 font-bold text-amber-900 shadow-md tracking-wide uppercase">
-                🔥 Bestseller
+                class="absolute top-4 left-4 z-30 bg-gradient-to-r from-orange-500 to-pink-500 text-white text-[0.7rem] font-semibold px-3 py-1 rounded-full shadow-lg pointer-events-none">
+                Bestseller
               </div>
 
               <!-- IMAGES -->
-              <img src="tourimages/goa1.jpg"
+              <img src="/assets/tourimages/goa1.jpg"
                 class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/goa2.jpg"
+              <img src="/assets/tourimages/goa2.jpg"
                 class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/goa3.jpg"
+              <img src="/assets/tourimages/goa3.jpg"
                 class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/goa4.jpg"
+              <img src="/assets/tourimages/goa4.jpg"
                 class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
 
               <!-- dark overlay on hover -->
@@ -689,11 +718,11 @@
               <!-- ARROWS -->
               <button
                 class="prev absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white">
-                ←
+                <
               </button>
               <button
                 class="next absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white">
-                →
+                >
               </button>
 
               <!-- DOTS -->
@@ -735,34 +764,34 @@
                 Save ₹1,500
               </div>
             </div>
-            <a href="goa.html"
+            <a href="/pages/goa.html"
               class="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm hover:bg-teal-500 transition">Details</a>
           </div>
         </article>
 
         <!-- manali -->
         <article
-          class="card-reveal snap-start min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
+          class="card-reveal w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)] reveal reveal-left">
           <!-- IMAGE BLOCK -->
           <div class="relative h-[220px] overflow-hidden">
             <div class="slider-container relative w-full h-full">
               <!-- BADGE top-left -->
               <div
-                class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400 text-amber-900 font-bold text-amber-900 shadow-md tracking-wide uppercase">
-                ❄️ Most Booked
+                class="absolute top-4 left-4 z-30 bg-gradient-to-r from-orange-500 to-pink-500 text-white text-[0.7rem] font-semibold px-3 py-1 rounded-full shadow-lg pointer-events-none">
+                Most Booked
               </div>
 
               <!-- IMAGES -->
 
-              <img src="tourimages/manali1.jpg"
+              <img src="/assets/tourimages/manali1.jpg"
                 class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/manali2.jpg"
+              <img src="/assets/tourimages/manali2.jpg"
                 class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/manali3.jpg"
+              <img src="/assets/tourimages/manali3.jpg"
                 class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/manali4.jpg"
+              <img src="/assets/tourimages/manali4.jpg"
                 class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/manali5.jpg"
+              <img src="/assets/tourimages/manali5.jpg"
                 class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
 
               <!-- dark overlay on hover -->
@@ -773,11 +802,11 @@
               <!-- ARROWS -->
               <button
                 class="prev absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white">
-                ←
+                <
               </button>
               <button
                 class="next absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white">
-                →
+               >
               </button>
 
               <!-- DOTS -->
@@ -821,31 +850,31 @@
                 Save ₹2,500
               </div>
             </div>
-            <a href="manali.html"
+            <a href="/pages/manali.html"
               class="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm hover:bg-teal-500 transition">Details</a>
           </div>
         </article>
 
         <!-- varanasi  -->
         <article
-          class="card-reveal snap-start min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
+          class="card-reveal w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)] reveal reveal-right">
           <!-- IMAGE BLOCK -->
           <div class="relative h-[220px] overflow-hidden">
             <div class="slider-container relative w-full h-full">
               <!-- BADGE top-left -->
               <div
-                class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-400 text-orange-900 font-bold text-amber-900 shadow-md tracking-wide uppercase">
-                🪔 Spiritual
+                class="absolute top-4 left-4 z-30 bg-gradient-to-r from-orange-500 to-pink-500 text-white text-[0.7rem] font-semibold px-3 py-1 rounded-full shadow-lg pointer-events-none">
+                Spiritual
               </div>
 
               <!-- IMAGES -->
-              <img src="tourimages/kashi1.jpg"
+              <img src="/assets/tourimages/kashi1.jpg"
                 class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/kashi2.jpg"
+              <img src="/assets/tourimages/kashi2.jpg"
                 class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/kashi3.jpg"
+              <img src="/assets/tourimages/kashi3.jpg"
                 class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/kashi4.jpg"
+              <img src="/assets/tourimages/kashi4.jpg"
                 class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
 
               <!-- dark overlay on hover -->
@@ -856,11 +885,11 @@
               <!-- ARROWS -->
               <button
                 class="prev absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white">
-                ←
+                <
               </button>
               <button
                 class="next absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white">
-                →
+                >
               </button>
 
               <!-- DOTS -->
@@ -902,7 +931,7 @@
                 Save ₹1,500
               </div>
             </div>
-            <a href="kashi.html"
+            <a href="/pages/kashi.html"
               class="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm hover:bg-teal-500 transition">Details</a>
           </div>
         </article>
@@ -911,26 +940,26 @@
 
         <!-- andaman  -->
         <article
-          class="card-reveal snap-start min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
+          class="card-reveal w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)] reveal reveal-left">
           <!-- IMAGE BLOCK -->
           <div class="relative h-[220px] overflow-hidden">
             <div class="slider-container relative w-full h-full">
               <!-- BADGE top-left -->
               <div
-                class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-fullbg-cyan-400 text-cyan-900 font-bold text-amber-900 shadow-md tracking-wide uppercase">
-                🏝️ Top Pick
+                class="absolute top-4 left-4 z-30 bg-gradient-to-r from-orange-500 to-pink-500 text-white text-[0.7rem] font-semibold px-3 py-1 rounded-full shadow-lg pointer-events-none">
+                Top Pick
               </div>
 
               <!-- IMAGES -->
-              <img src="tourimages/portblair1.jpg"
+              <img src="/assets/tourimages/portblair1.jpg"
                 class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/portblair2.jpg"
+              <img src="/assets/tourimages/portblair2.jpg"
                 class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/andaman1.jpg"
+              <img src="/assets/tourimages/andaman1.jpg"
                 class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/andaman2.jpg"
+              <img src="/assets/tourimages/andaman2.jpg"
                 class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
-              <img src="tourimages/andaman3.jpg"
+              <img src="/assets/tourimages/andaman3.jpg"
                 class="slider-image absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500" />
 
               <!-- dark overlay on hover -->
@@ -941,11 +970,11 @@
               <!-- ARROWS -->
               <button
                 class="prev absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white">
-                ←
+                <
               </button>
               <button
                 class="next absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition hover:bg-white">
-                →
+                >
               </button>
 
               <!-- DOTS -->
@@ -987,7 +1016,7 @@
                 Save ₹4,000
               </div>
             </div>
-            <a href="andamanIsland.html"
+            <a href="/pages/andamanIsland.html"
               class="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm hover:bg-teal-500 transition">Details</a>
           </div>
         </article>
@@ -997,21 +1026,7 @@
 
         </div>
 
-        <!-- Buttons -->
-        <div class="flex justify-end gap-3 mt-8">
-          <button
-            id="tourPrev"
-            class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-teal-500 hover:text-white transition"
-          >
-            ←
-          </button>
-          <button
-            id="tourNext"
-            class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-teal-500 hover:text-white transition"
-          >
-            →
-          </button>
-        </div>
+
 
 
       </div>
@@ -1021,26 +1036,23 @@
 
 
 <!-- trip recommendation  -->
-    <section class="px-[5%] py-[100px] bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+    <section class="px-[5%] py-[100px] bg-gradient-to-b from-slate-50 to-white relative overflow-hidden reveal">
 
-  <!-- subtle glow -->
-  <div class="absolute inset-0 opacity-20
-    bg-[radial-gradient(circle_at_30%_40%,rgba(59,130,246,0.25),transparent_60%)]">
-  </div>
+
 
   <div class="relative z-10 max-w-[900px] mx-auto text-center">
 
     <!-- LABEL -->
-    <p class="text-sm font-medium text-teal-600 tracking-wider uppercase mb-3">
+    <p class="text-sm font-medium text-teal-600 tracking-wider uppercase mb-3 reveal reveal-left">
       Need Help Choosing?
     </p>
 
     <!-- HEADING -->
-  <h2 class="text-[clamp(1.9rem,3vw,2.6rem)] font-semibold text-gray-900 leading-tight mb-4">
+  <h2 class="text-[clamp(1.9rem,3vw,2.6rem)] font-semibold text-gray-900 leading-tight mb-4 reveal reveal-right">
   Not sure which <span class="text-teal-600">package</span> is right for you?
 </h2>
     <!-- SUBTEXT -->
-    <p class="text-gray-500 text-[1.05rem] max-w-[650px] mx-auto mb-10 leading-relaxed">
+    <p class="text-gray-500 text-[1.05rem] max-w-[650px] mx-auto mb-10 leading-relaxed reveal reveal-left">
       Tell us your budget, travel dates, and preferences. We’ll recommend the best itinerary tailored to your trip.
     </p>
 
@@ -1056,7 +1068,7 @@
     </a>
 
     <!-- TRUST LINE -->
-    <div class="mt-6 text-sm text-gray-400">
+    <div class="mt-6 text-sm text-gray-400 reveal reveal-right">
       Response within 10–15 minutes • No obligation
     </div>
 
@@ -1067,7 +1079,7 @@
 
 
     <!-- sticky bar2 ---------------------- -->
-<section class="px-[5%] py-[100px] bg-gradient-to-b from-slate-50 to-white">
+<section class="px-[5%] py-[100px] bg-gradient-to-b from-slate-50 to-white reveal">
 
   <!-- HEADING -->
   <div class="max-w-[1100px] mx-auto mb-14 text-center">
@@ -1082,7 +1094,7 @@
     <!-- ITEM -->
     <div class="group p-7 rounded-2xl bg-white border border-gray-200 text-center
       shadow-sm transition-all duration-300
-      hover:-translate-y-2 hover:shadow-lg hover:border-teal-200 hover:bg-teal-50">
+      hover:-translate-y-2 hover:shadow-lg hover:border-teal-200 hover:bg-teal-50 reveal reveal-left">
 
       <div class="text-[2.2rem] font-semibold text-gray-900 mb-2 transition duration-300 group-hover:text-teal-600">
         600+
@@ -1097,7 +1109,7 @@
     <!-- ITEM -->
     <div class="group p-7 rounded-2xl bg-white border border-gray-200 text-center
       shadow-sm transition-all duration-300
-      hover:-translate-y-2 hover:shadow-lg hover:border-teal-200 hover:bg-teal-50">
+      hover:-translate-y-2 hover:shadow-lg hover:border-teal-200 hover:bg-teal-50 reveal reveal-right">
 
       <div class="text-[2.2rem] font-semibold text-gray-900 mb-2 transition duration-300 group-hover:text-teal-600">
         98%
@@ -1112,7 +1124,7 @@
     <!-- ITEM -->
     <div class="group p-7 rounded-2xl bg-white border border-gray-200 text-center
       shadow-sm transition-all duration-300
-      hover:-translate-y-2 hover:shadow-lg hover:border-teal-200 hover:bg-teal-50">
+      hover:-translate-y-2 hover:shadow-lg hover:border-teal-200 hover:bg-teal-50 reveal reveal-left">
 
       <div class="text-[2.2rem] font-semibold text-gray-900 mb-2 transition duration-300 group-hover:text-teal-600">
         40+
@@ -1127,7 +1139,7 @@
     <!-- ITEM -->
     <div class="group p-7 rounded-2xl bg-white border border-gray-200 text-center
       shadow-sm transition-all duration-300
-      hover:-translate-y-2 hover:shadow-lg hover:border-teal-200 hover:bg-teal-50">
+      hover:-translate-y-2 hover:shadow-lg hover:border-teal-200 hover:bg-teal-50 reveal reveal-right">
 
       <div class="text-[2.2rem] font-semibold text-gray-900 mb-2 transition duration-300 group-hover:text-teal-600">
         24/7
@@ -1145,340 +1157,324 @@
 
 
         <!-- car featured (traveller's fav)------------------------------- -->
+
     <section
-      class="px-[5%] py-[110px] relative overflow-hidden bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9]"
+      class="px-[5%] py-[110px] relative overflow-hidden bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9] reveal reveal-left reveal-right"
     >
       <!-- HEADER -->
       <div class="flex justify-between items-end mb-10">
         <div>
           <span
-            class="text-[11px] font-semibold tracking-[0.15em] uppercase text-teal-500 mb-3 block"
+            class="text-[11px] font-semibold tracking-[0.15em] uppercase text-teal-500 mb-3 block reveal reveal-left"
           >
             Our Fleet
           </span>
           <h2
-            class="font-display text-[clamp(2rem,4vw,2.9rem)] font-semibold text-gray-900 leading-[1.15] mb-3"
+            class="font-display text-[clamp(2rem,4vw,2.9rem)] font-semibold text-gray-900 leading-[1.15] mb-3 reveal reveal-right"
           >
-           Cars Our Travellers Love Most
+            Bestseller Cars
           </h2>
-
         </div>
       </div>
 
       <!-- TRACK -->
-      <div class="flex gap-7 overflow-x-auto scroll-smooth no-scrollbar pb-2">
+      <div class="grid gap-7 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]">
         <!--CARD TEMPLATE -->
 
         <!-- XUV700 -->
-     <article class="min-w-[300px] max-w-[320px] group bg-white rounded-[16px]
-border border-gray-200 overflow-hidden transition-all duration-300
-hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
-  <div class="relative h-[220px] overflow-hidden slider-container">
+        <article
+          class="w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)] reveal reveal-left"
+        >
+          <div class="relative h-[220px] overflow-hidden slider-container">
+            <!-- BESTSELLER BADGE -->
+            <div
+              class="absolute top-4 left-4 z-30 bg-gradient-to-r from-orange-500 to-pink-500 text-white text-[0.7rem] font-semibold px-3 py-1 rounded-full shadow-lg pointer-events-none"
+            >
+              Bestseller
+            </div>
 
-    <!-- BESTSELLER BADGE -->
-    <div class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400 text-[0.7rem] font-bold text-amber-900 shadow-md tracking-wide uppercase">
-      🔥 Bestseller
-    </div>
+            <img
+              src="/assets/carpic/mahindraSuv1.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+            <img
+              src="/assets/carpic/mahindraSuv2.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+            <img
+              src="/assets/carpic/mahindraSuv3.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+            <img
+              src="/assets/carpic/mahindraSuv4.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
 
-    <img src="carpic/mahindraSuv1.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-     <img src="carpic/mahindraSuv2.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-       <img src="carpic/mahindraSuv3.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-       <img src="carpic/mahindraSuv4.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
+            <!-- LEFT BUTTON -->
+            <button
+              class="prev absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-300 hover:scale-110"
+            >
+              <i data-lucide="chevron-left" class="w-5 h-5 text-gray-700"></i>
+            </button>
 
-   <button
-  class="prev absolute left-3 top-1/2 -translate-y-1/2
-  bg-white/90 p-2 rounded-full shadow
-  opacity-100 md:opacity-0 md:group-hover:opacity-100
-  transition duration-300 hover:scale-110">
+            <!-- RIGHT BUTTON -->
+            <button
+              class="next absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-300 hover:scale-110"
+            >
+              <i data-lucide="chevron-right" class="w-5 h-5 text-gray-700"></i>
+            </button>
+          </div>
 
-  <i data-lucide="chevron-left" class="w-5 h-5 text-gray-700"></i>
-</button>
+          <div class="p-6">
+            <h3 class="font-semibold text-lg">Mahindra XUV700</h3>
+            <p class="text-sm text-gray-500 mb-3">7 Seater • SUV • Diesel</p>
+            <div class="text-sm text-gray-500 mb-4">
+              ₹18/km • AC • Comfortable Ride
+            </div>
+          </div>
 
-<!-- RIGHT BUTTON -->
-<button
-  class="next absolute right-3 top-1/2 -translate-y-1/2
-  bg-white/90 p-2 rounded-full shadow
-  opacity-100 md:opacity-0 md:group-hover:opacity-100
-  transition duration-300 hover:scale-110">
-
-  <i data-lucide="chevron-right" class="w-5 h-5 text-gray-700"></i>
-</button>
-  </div>
-
-  <div class="p-6">
-    <h3 class="font-semibold text-lg">Mahindra XUV700</h3>
-    <p class="text-sm text-gray-500 mb-3">7 Seater • SUV • Diesel</p>
-    <div class="text-sm text-gray-500 mb-4">₹18/km • AC • Comfortable Ride</div>
-  </div>
-
- <div class="flex justify-between items-center px-6 py-4 border-t">
-  <div>
-    <div class="text-xs text-gray-400 line-through">₹5500/day</div>
-    <div class="font-bold text-lg text-gray-900">₹4500/day</div>
-    <div class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5">Save ₹1000</div>
-  </div>
- <a
-  href="https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Mahindra%20XUV700%20for%20rent."
-  target="_blank"
-  class="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
->
-  Book
-</a>
-</div>
-</article>
-
+          <div class="flex justify-between items-center px-6 py-4 border-t">
+            <div>
+              <div class="text-xs text-gray-400 line-through">₹5500/day</div>
+              <div class="font-bold text-lg text-gray-900">₹4500/day</div>
+              <div
+                class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5"
+              >
+                Save ₹1000
+              </div>
+            </div>
+            <a
+              href="https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Mahindra%20XUV700%20for%20rent."
+              target="_blank"
+              class="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
+            >
+              Book
+            </a>
+          </div>
+        </article>
 
         <!-- maruti suzuki dzire -->
-         <article class="min-w-[300px] max-w-[320px] group bg-white rounded-[16px]
-border border-gray-200 overflow-hidden transition-all duration-300
-hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
-  <div class="relative h-[220px] overflow-hidden slider-container">
+        <article
+          class="w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)] reveal reveal-right"
+        >
+          <div class="relative h-[220px] overflow-hidden slider-container">
+            <!-- BESTSELLER BADGE -->
+            <div
+              class="absolute top-4 left-4 z-30 bg-gradient-to-r from-orange-500 to-pink-500 text-white text-[0.7rem] font-semibold px-3 py-1 rounded-full shadow-lg pointer-events-none"
+            >
+              Bestseller
+            </div>
 
-    <!-- BESTSELLER BADGE -->
-    <div class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-400 text-sky-900 font-bold text-amber-900 shadow-md tracking-wide uppercase">
-      ⭐ Top Choice
-    </div>
+            <img
+              src="/assets/carpic/dzire1.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+            <img
+              src="/assets/carpic/dzire2.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+            <img
+              src="/assets/carpic/dzire3.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+            <img
+              src="/assets/carpic/dzire4.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
 
-    <img src="carpic/dzire1.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-     <img src="carpic/dzire2.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-       <img src="carpic/dzire3.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-       <img src="carpic/dzire4.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
+            <!-- LEFT BUTTON -->
+            <button
+              class="prev absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-300 hover:scale-110"
+            >
+              <i data-lucide="chevron-left" class="w-5 h-5 text-gray-700"></i>
+            </button>
 
-    <button
-  class="prev absolute left-3 top-1/2 -translate-y-1/2
-  bg-white/90 p-2 rounded-full shadow
-  opacity-100 md:opacity-0 md:group-hover:opacity-100
-  transition duration-300 hover:scale-110">
+            <!-- RIGHT BUTTON -->
+            <button
+              class="next absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-300 hover:scale-110"
+            >
+              <i data-lucide="chevron-right" class="w-5 h-5 text-gray-700"></i>
+            </button>
+          </div>
 
-  <i data-lucide="chevron-left" class="w-5 h-5 text-gray-700"></i>
-</button>
+          <div class="p-6">
+            <h3 class="font-semibold text-lg">Maruti Suzuki Dzire</h3>
+            <p class="text-sm text-gray-500 mb-3">
+              4 Seater • Sedan • Petrol/CNG
+            </p>
+            <div class="text-sm text-gray-500 mb-4">
+              ₹13/km • AC • Smooth City Ride
+            </div>
+          </div>
 
-<!-- RIGHT BUTTON -->
-<button
-  class="next absolute right-3 top-1/2 -translate-y-1/2
-  bg-white/90 p-2 rounded-full shadow
-  opacity-100 md:opacity-0 md:group-hover:opacity-100
-  transition duration-300 hover:scale-110">
-
-  <i data-lucide="chevron-right" class="w-5 h-5 text-gray-700"></i>
-</button>
-  </div>
-
-  <div class="p-6">
-    <h3 class="font-semibold text-lg">Maruti Suzuki Dzire</h3>
-    <p class="text-sm text-gray-500 mb-3">4 Seater • Sedan • Petrol/CNG</p>
-    <div class="text-sm text-gray-500 mb-4">₹13/km • AC • Smooth City Ride </div>
-  </div>
-
- <div class="flex justify-between items-center px-6 py-4 border-t">
-  <div>
-    <div class="text-xs text-gray-400 line-through">₹3800/day</div>
-    <div class="font-bold text-lg text-gray-900">₹3200/day</div>
-    <div class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5">Save ₹600</div>
-  </div>
-  <a
-  href="https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Mahindra%20XUV700%20for%20rent."
-  target="_blank"
-  class="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
->
-  Book
-</a>
-</div>
-</article>
+          <div class="flex justify-between items-center px-6 py-4 border-t">
+            <div>
+              <div class="text-xs text-gray-400 line-through">₹3800/day</div>
+              <div class="font-bold text-lg text-gray-900">₹3200/day</div>
+              <div
+                class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5"
+              >
+                Save ₹600
+              </div>
+            </div>
+            <a
+              href="https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Mahindra%20XUV700%20for%20rent."
+              target="_blank"
+              class="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
+            >
+              Book
+            </a>
+          </div>
+        </article>
 
         <!-- toyota INNOVA  -->
-      <article class="min-w-[300px] max-w-[320px] group bg-white rounded-[16px]
-border border-gray-200 overflow-hidden transition-all duration-300
-hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
-  <div class="relative h-[220px] overflow-hidden slider-container">
+        <article
+          class="w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)] reveal reveal-left"
+        >
+          <div class="relative h-[220px] overflow-hidden slider-container">
+            <!-- BESTSELLER BADGE -->
+            <div
+              class="absolute top-4 left-4 z-30 bg-gradient-to-r from-orange-500 to-pink-500 text-white text-[0.7rem] font-semibold px-3 py-1 rounded-full shadow-lg pointer-events-none"
+            >
+              Bestseller
+            </div>
 
-    <!-- BESTSELLER BADGE -->
-    <div class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400 text-amber-900 font-bold text-amber-900 shadow-md tracking-wide uppercase">
-      🔥 Most Booked
-    </div>
+            <img
+              src="/assets/carpic/inova1.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+            <img
+              src="/assets/carpic/inova2.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+            <img
+              src="/assets/carpic/inova3.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+            <img
+              src="/assets/carpic/inova4.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
 
-   <img src="carpic/inova1.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-     <img src="carpic/inova2.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-       <img src="carpic/inova3.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-       <img src="carpic/inova4.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
+            <!-- LEFT BUTTON -->
+            <button
+              class="prev absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-300 hover:scale-110"
+            >
+              <i data-lucide="chevron-left" class="w-5 h-5 text-gray-700"></i>
+            </button>
 
-    <button
-  class="prev absolute left-3 top-1/2 -translate-y-1/2
-  bg-white/90 p-2 rounded-full shadow
-  opacity-100 md:opacity-0 md:group-hover:opacity-100
-  transition duration-300 hover:scale-110">
+            <!-- RIGHT BUTTON -->
+            <button
+              class="next absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-300 hover:scale-110"
+            >
+              <i data-lucide="chevron-right" class="w-5 h-5 text-gray-700"></i>
+            </button>
+          </div>
 
-  <i data-lucide="chevron-left" class="w-5 h-5 text-gray-700"></i>
-</button>
+          <div class="p-6">
+            <h3 class="font-semibold text-lg">Toyota Innova Crysta</h3>
+            <p class="text-sm text-gray-500 mb-3">7 Seater • MUV • Diesel</p>
+            <div class="text-sm text-gray-500 mb-4">
+              ₹18/km • AC • Premium Interior
+            </div>
+          </div>
 
-<!-- RIGHT BUTTON -->
-<button
-  class="next absolute right-3 top-1/2 -translate-y-1/2
-  bg-white/90 p-2 rounded-full shadow
-  opacity-100 md:opacity-0 md:group-hover:opacity-100
-  transition duration-300 hover:scale-110">
-
-  <i data-lucide="chevron-right" class="w-5 h-5 text-gray-700"></i>
-</button>
-  </div>
-
-  <div class="p-6">
-    <h3 class="font-semibold text-lg"> Toyota Innova Crysta</h3>
-    <p class="text-sm text-gray-500 mb-3">7 Seater • MUV • Diesel</p>
-    <div class="text-sm text-gray-500 mb-4">₹18/km • AC • Premium Interior</div>
-  </div>
-
- <div class="flex justify-between items-center px-6 py-4 border-t">
-  <div>
-    <div class="text-xs text-gray-400 line-through">₹6000/day</div>
-    <div class="font-bold text-lg text-gray-900">₹5000/day</div>
-    <div class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5">Save ₹1000</div>
-  </div>
- <a
-  href="https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Mahindra%20XUV700%20for%20rent."
-  target="_blank"
-  class="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
->
-  Book
-</a>
-</div>
-</article>
-
-       <!-- mahindra thar -->
-      <article class="min-w-[300px] max-w-[320px] group bg-white rounded-[16px]
-border border-gray-200 overflow-hidden transition-all duration-300
-hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
-  <div class="relative h-[220px] overflow-hidden slider-container">
-
-    <!-- BESTSELLER BADGE -->
-    <div class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-500 text-stone-100 font-bold text-amber-900 shadow-md tracking-wide uppercase">
-      🧗 Off-Road King
-    </div>
-
-    <img src="carpic/thar1.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-     <img src="carpic/thar2.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-       <img src="carpic/thar3.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-       <img src="carpic/thar4.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-    <button
-  class="prev absolute left-3 top-1/2 -translate-y-1/2
-  bg-white/90 p-2 rounded-full shadow
-  opacity-100 md:opacity-0 md:group-hover:opacity-100
-  transition duration-300 hover:scale-110">
-
-  <i data-lucide="chevron-left" class="w-5 h-5 text-gray-700"></i>
-</button>
-
-<!-- RIGHT BUTTON -->
-<button
-  class="next absolute right-3 top-1/2 -translate-y-1/2
-  bg-white/90 p-2 rounded-full shadow
-  opacity-100 md:opacity-0 md:group-hover:opacity-100
-  transition duration-300 hover:scale-110">
-
-  <i data-lucide="chevron-right" class="w-5 h-5 text-gray-700"></i>
-</button>
-  </div>
-
-  <div class="p-6">
-    <h3 class="font-semibold text-lg">  Mahindra Thar — Adventure 4x4</h3>
-    <p class="text-sm text-gray-500 mb-3">4 Seater • 4x4 SUV • Diesel</p>
-    <div class="text-sm text-gray-500 mb-4">₹18/km • AC •  4WD Mountain Beast</div>
-  </div>
-
- <div class="flex justify-between items-center px-6 py-4 border-t">
-  <div>
-    <div class="text-xs text-gray-400 line-through">₹5000/day</div>
-    <div class="font-bold text-lg text-gray-900">₹4200/day</div>
-    <div class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5">Save ₹800</div>
-  </div>
- <a
-  href="https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Mahindra%20XUV700%20for%20rent."
-  target="_blank"
-  class="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
->
-  Book
-</a>
-</div>
-</article>
+          <div class="flex justify-between items-center px-6 py-4 border-t">
+            <div>
+              <div class="text-xs text-gray-400 line-through">₹6000/day</div>
+              <div class="font-bold text-lg text-gray-900">₹5000/day</div>
+              <div
+                class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5"
+              >
+                Save ₹1000
+              </div>
+            </div>
+            <a
+              href="https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Mahindra%20XUV700%20for%20rent."
+              target="_blank"
+              class="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
+            >
+              Book
+            </a>
+          </div>
+        </article>
 
 
-       <!-- XUV700 -->
-      <article class="min-w-[300px] max-w-[320px] group bg-white rounded-[16px]
-border border-gray-200 overflow-hidden transition-all duration-300
-hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]">
-  <div class="relative h-[220px] overflow-hidden slider-container">
+           <article
+          class="w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)] reveal reveal-right"
+        >
+          <div class="relative h-[220px] overflow-hidden slider-container">
+            <!-- BESTSELLER BADGE -->
+            <div
+              class="absolute top-4 left-4 z-30 bg-gradient-to-r from-orange-500 to-pink-500 text-white text-[0.7rem] font-semibold px-3 py-1 rounded-full shadow-lg pointer-events-none"
+            >
+              Bestseller
+            </div>
 
-    <!-- BESTSELLER BADGE -->
-    <div class="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-yellow-500 text-yellow-950 font-bold text-amber-900 shadow-md tracking-wide uppercase">
-      👑 Luxury Pick
-    </div>
+            <img
+              src="/assets/carpic/fortuner1.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+            <img
+              src="/assets/carpic/fortuner2.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+            <img
+              src="/assets/carpic/fortuner3.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
+            <img
+              src="/assets/carpic/f4.jpg"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
+            />
 
-    <img src="carpic/fortuner1.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-     <img src="carpic/fortuner2.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-       <img src="carpic/fortuner3.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
-       <img src="carpic/f4.jpg"
-      class="slider-image absolute inset-0 w-full h-full object-cover opacity-100" />
+            <!-- LEFT BUTTON -->
+            <button
+              class="prev absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-300 hover:scale-110"
+            >
+              <i data-lucide="chevron-left" class="w-5 h-5 text-gray-700"></i>
+            </button>
 
-    <button
-  class="prev absolute left-3 top-1/2 -translate-y-1/2
-  bg-white/90 p-2 rounded-full shadow
-  opacity-100 md:opacity-0 md:group-hover:opacity-100
-  transition duration-300 hover:scale-110">
+            <!-- RIGHT BUTTON -->
+            <button
+              class="next absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-300 hover:scale-110"
+            >
+              <i data-lucide="chevron-right" class="w-5 h-5 text-gray-700"></i>
+            </button>
+          </div>
 
-  <i data-lucide="chevron-left" class="w-5 h-5 text-gray-700"></i>
-</button>
+          <div class="p-6">
+            <h3 class="font-semibold text-lg">Toyota Fortuner</h3>
+            <p class="text-sm text-gray-500 mb-3">
+              7 Seater • Premium SUV • Diesel
+            </p>
+            <div class="text-sm text-gray-500 mb-4">
+              ₹22/km • AC • Ultimate Luxury
+            </div>
+          </div>
 
-<!-- RIGHT BUTTON -->
-<button
-  class="next absolute right-3 top-1/2 -translate-y-1/2
-  bg-white/90 p-2 rounded-full shadow
-  opacity-100 md:opacity-0 md:group-hover:opacity-100
-  transition duration-300 hover:scale-110">
+          <div class="flex justify-between items-center px-6 py-4 border-t">
+            <div>
+              <div class="text-xs text-gray-400 line-through">₹8500/day</div>
+              <div class="font-bold text-lg text-gray-900">₹7000/day</div>
+              <div
+                class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5"
+              >
+                Save ₹1000
+              </div>
+            </div>
+            <a
+              href="https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Mahindra%20XUV700%20for%20rent."
+              target="_blank"
+              class="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
+            >
+              Book
+            </a>
+          </div>
+        </article>
 
-  <i data-lucide="chevron-right" class="w-5 h-5 text-gray-700"></i>
-</button>
-  </div>
 
-  <div class="p-6">
-    <h3 class="font-semibold text-lg"> Toyota Fortuner </h3>
-    <p class="text-sm text-gray-500 mb-3">7 Seater • Premium SUV • Diesel</p>
-    <div class="text-sm text-gray-500 mb-4">₹22/km • AC • Ultimate Luxury</div>
-  </div>
 
- <div class="flex justify-between items-center px-6 py-4 border-t">
-  <div>
-    <div class="text-xs text-gray-400 line-through">₹8500/day</div>
-    <div class="font-bold text-lg text-gray-900">₹7000/day</div>
-    <div class="text-[0.65rem] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full w-fit mt-0.5">Save ₹1000</div>
-  </div>
- <a
-  href="https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Mahindra%20XUV700%20for%20rent."
-  target="_blank"
-  class="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
->
-  Book
-</a>
-</div>
-</article>
 
 
       </div>
@@ -1796,7 +1792,7 @@ hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157
 
 
   <!-- footer  -->
-<footer class="bg-dark-grad px-[5%] pt-20 border-t border-[#e8ddd0]/20">
+<footer class="bg-dark-grad px-[5%] pt-20 border-t border-[#e8ddd0]/20 reveal">
 
   <!-- CTA row -->
   <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-14 mb-14 border-b border-white/[0.08] gap-8">
@@ -2071,6 +2067,8 @@ hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157
      <script src="https://unpkg.com/lucide@latest"></script>
 
    <script src="/script/script.js" defer></script>
+   <script src="/script/tour.js"></script>
+   <script src="/script/utils.js"></script>
 
     <script src="/script/navbar.js"></script>
     <script src="/script/footer.js"></script>

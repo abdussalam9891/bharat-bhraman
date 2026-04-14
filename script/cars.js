@@ -13,10 +13,10 @@ const cars = [
     badge: "Bestseller",
     link: "https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Mahindra%20XUV700%20for%20rent.",
     images: [
-      "carpic/mahindraSuv1.jpg",
-      "carpic/mahindraSuv2.jpg",
-      "carpic/mahindraSuv3.jpg",
-      "carpic/mahindraSuv4.jpg"
+      "/assets/carpic/mahindraSuv1.jpg",
+      "/assets/carpic/mahindraSuv2.jpg",
+      "/assets/carpic/mahindraSuv3.jpg",
+      "/assets/carpic/mahindraSuv4.jpg"
     ]
   },
 
@@ -30,10 +30,10 @@ const cars = [
     badge: "Top Choice",
     link: "https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Maruti%20Suzuki%20Dzire%20for%20rent.",
     images: [
-      "carpic/dzire1.jpg",
-      "carpic/dzire2.jpg",
-      "carpic/dzire3.jpg",
-      "carpic/dzire4.jpg"
+      "/assets/carpic/dzire1.jpg",
+      "/assets/carpic/dzire2.jpg",
+      "/assets/carpic/dzire3.jpg",
+      "/assets/carpic/dzire4.jpg"
     ]
   },
 
@@ -47,10 +47,10 @@ const cars = [
     badge: "Most Booked",
     link: "https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Toyota%20Innova%20Crysta%20for%20rent.",
     images: [
-      "carpic/inova1.jpg",
-      "carpic/inova2.jpg",
-      "carpic/inova3.jpg",
-      "carpic/inova4.jpg"
+      "/assets/carpic/inova1.jpg",
+      "/assets/carpic/inova2.jpg",
+      "/assets/carpic/inova3.jpg",
+      "/assets/carpic/inova4.jpg"
     ]
   },
 
@@ -64,10 +64,10 @@ const cars = [
     badge: "Off-Road King",
     link: "https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Mahindra%20Thar%20for%20rent.",
     images: [
-      "carpic/thar1.jpg",
-      "carpic/thar2.jpg",
-      "carpic/thar3.jpg",
-      "carpic/thar4.jpg"
+      "/assets/carpic/thar1.jpg",
+      "/assets/carpic/thar2.jpg",
+      "/assets/carpic/thar3.jpg",
+      "/assets/carpic/thar4.jpg"
     ]
   },
 
@@ -81,10 +81,10 @@ const cars = [
     badge: "Luxury Pick",
     link: "https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Toyota%20Fortuner%20for%20rent.",
     images: [
-      "carpic/fortuner1.jpg",
-      "carpic/fortuner2.jpg",
-      "carpic/fortuner3.jpg",
-      "carpic/f4.jpg"
+      "/assets/carpic/fortuner1.jpg",
+      "/assets/carpic/fortuner2.jpg",
+      "/assets/carpic/fortuner3.jpg",
+      "/assets/carpic/f4.jpg"
     ]
   }
 ];

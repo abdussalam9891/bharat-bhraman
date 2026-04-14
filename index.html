@@ -41,15 +41,21 @@
 
 
 
-    <link rel="stylesheet" href="base.css" />
-    <link rel="stylesheet" href="component.css" />
-    <link rel="stylesheet" href="animations.css" />
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/component.css" />
+    <link rel="stylesheet" href="/styles/animations.css" />
   </head>
 
   <body
     class="font-body text-gray-800 leading-relaxed antialiased bg-white relative overflow-x-hidden"
   >
-    <!-- navbar ----------------------------------------------- -->
+
+
+
+
+
+
+     <!-- navbar ----------------------------------------------- -->
     <!-- Dark overlay behind mobile drawer -->
     <div id="navOverlay"
   class="fixed inset-0 bg-black/30 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 z-[998]">
@@ -78,10 +84,10 @@
 
   <!-- MAIN LINKS -->
   <div class="flex flex-col gap-1">
-    <a href="index.html" class="block py-3 text-white text-[1.05rem] hover:text-teal-500    border-b border-white/10">Home</a>
-    <a href="trips.html" class="block py-3 text-white text-[1.05rem] hover:text-teal-500    border-b border-white/10">Packages</a>
-    <a href="cars.html" class="block py-3 text-white text-[1.05rem]  hover:text-teal-500   border-b border-white/10">Cars</a>
-    <a href="about.html" class="block py-3 text-white text-[1.05rem] hover:text-teal-500    border-b border-white/10">About</a>
+    <a href="/index.html" class="block py-3 text-white text-[1.05rem] hover:text-teal-500    border-b border-white/10">Home</a>
+    <a href="/pages/trips.html" class="block py-3 text-white text-[1.05rem] hover:text-teal-500    border-b border-white/10">Packages</a>
+    <a href="/pages/cars.html" class="block py-3 text-white text-[1.05rem]  hover:text-teal-500   border-b border-white/10">Cars</a>
+    <a href="/pages/about.html" class="block py-3 text-white text-[1.05rem] hover:text-teal-500    border-b border-white/10">About</a>
   </div>
 
   <!-- EXPLORE SECTION -->
@@ -90,12 +96,13 @@
       Explore
     </p>
 
-    <a href="goldentriangle.html" class="text-white/80 py-2 text-[0.95rem] hover:text-teal-400 transition">Golden Triangle</a>
-    <a href="kashmir.html" class="text-white/80 py-2 text-[0.95rem] hover:text-teal-400 transition">Kashmir</a>
-    <a href="manali.html" class="text-white/80 py-2 text-[0.95rem] hover:text-teal-400 transition">Himachal</a>
-    <a href="kerala.html" class="text-white/80 py-2 text-[0.95rem] hover:text-teal-400 transition">Kerala</a>
-    <a href="kashi.html" class="text-white/80 py-2 text-[0.95rem] hover:text-teal-400 transition">Spiritual Tours</a>
+    <a href="/pages/goldentriangle.html"  class="text-white/80 py-2 text-[0.95rem] hover:text-teal-400 transition">Golden Triangle</a>
+    <a href="/pages/kashmir.html" class="text-white/80 py-2 text-[0.95rem] hover:text-teal-400 transition">Kashmir</a>
+    <a href="/pages/manali.html" class="text-white/80 py-2 text-[0.95rem] hover:text-teal-400 transition">Himachal</a>
+    <a href="/pages/kerala.html" class="text-white/80 py-2 text-[0.95rem] hover:text-teal-400 transition">Kerala</a>
+    <a href="/pages/kashi.html" class="text-white/80 py-2 text-[0.95rem] hover:text-teal-400 transition">Spiritual Tours</a>
   </div>
+
 
 </div>
 
@@ -112,7 +119,7 @@
 
     <!-- Logo -->
       <a
-        href="index.html"
+        href="#"
         class="font-display text-[1.4rem] font-bold  text-gray-900 tracking-tight transition-transform duration-300 hover:scale-105 shrink-0"
       >
         Bharat<em class="text-teal-600 not-italic">भ्रमण</em>
@@ -136,7 +143,7 @@
         </li>
         <li>
           <a
-            href="trips.html"
+            href="pages/trips.html"
             class="relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
           >
             Packages
@@ -158,13 +165,11 @@
   class="mega-menu absolute top-full left-1/2 -translate-x-1/2
          w-auto min-w-[520px] bg-white rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.12)]
          border border-gray-100 mt-3
-
          opacity-0 pointer-events-none
-         group-hover:opacity-100 group-hover:pointer-events-auto
          transition-all duration-200"
       >
         <!-- EXPLORE PANEL -->
-        <div class="mega-panel hidden" data-panel="explore">
+        <div class="mega-panel" data-panel="explore">
           <div class="flex gap-16 m-8">
             <div>
               <h4
@@ -175,21 +180,21 @@
               <ul class="space-y-2.5">
                 <li>
                   <a
-                    href="goldentriangle.html"
+                    href="pages/goldentriangle.html"
                     class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Golden Triangle</a
                   >
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="pages/kashmir.html"
                     class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Kashmir</a
                   >
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="pages/manali.html"
                     class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Himachal</a
                   >
@@ -205,7 +210,7 @@
               <ul class="space-y-2.5">
                 <li>
                   <a
-                    href="kerala.html"
+                    href="pages/kerala.html"
                     class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Kerala</a
                   >
@@ -235,21 +240,21 @@
               <ul class="space-y-2.5">
                 <li>
                   <a
-                    href="#"
+                    href="pages/goldentriangle.html"
                     class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Desert Tours</a
                   >
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="pages/kashi.html"
                     class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Spiritual Tours</a
                   >
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="pages/goa.html"
                     class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Luxury Trips</a
                   >
@@ -267,7 +272,7 @@
 
         <li>
           <a
-            href="cars.html"
+            href="pages/cars.html"
             class="relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
           >
             Cars
@@ -276,7 +281,7 @@
 
         <li>
           <a
-            href="about.html"
+            href="pages/about.html"
             class="relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
           >
             About
@@ -300,7 +305,7 @@
       <button
         id="navToggle"
   data-state="closed"
-  class="nav-toggle-btn
+  class="nav-toggle-btn bg-white/10 backdrop-blur-md
          max-[900px]:flex hidden flex-col justify-center gap-[5px]
          rounded-full p-2"
       >
@@ -329,16 +334,17 @@
 
 
 
+
     <!---------------------- hero---------------------->
     <section
       class="relative min-h-[75vh] mt-[72px] mx-[18px] mb-[8px] md:mb-[12px] rounded-[18px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)] flex items-center justify-center px-[5%]"
     >
       <!-- Background -->
       <div class="hero-images absolute inset-0 z-[-2]">
-        <img src="images/k5.jpg" class="hero-img active" />
-        <img src="images/kerala4.jpg" class="hero-img" />
-        <img src="images/kerala6.jpg" class="hero-img" />
-        <img src="images/m1.jpg" class="hero-img" />
+        <img src="/assets/images/k5.jpg" class="hero-img active" />
+        <img src="/assets/images/kerala4.jpg" class="hero-img" />
+        <img src="/assets/images/kerala6.jpg" class="hero-img" />
+        <img src="/assets/images/m1.jpg" class="hero-img" />
       </div>
 
       <!-- Overlay -->
@@ -347,10 +353,10 @@
       ></div>
 
       <!-- CONTENT -->
-      <div class="relative z-10 max-w-[850px] text-white text-center w-full">
+      <div class="relative z-10 max-w-[850px] px-4 sm:px-0 py-4 text-white text-center w-full">
         <!-- HEADING -->
         <h1
-          class="text-[clamp(3rem,6vw,5rem)] font-bold leading-[1.05] tracking-tight mb-6"
+          class="text-[clamp(3rem,6vw,5rem)] font-bold leading-[1.1] sm:leading-[1.05] tracking-tight mb-6"
         >
           <span class="block car-hero-top">Less Noise</span>
           <span
@@ -365,14 +371,14 @@
           class="flex flex-col sm:flex-row items-center justify-center gap-4 car-hero-bottom mb-14"
         >
           <a
-            href="trips.html"
-            class="btn-shine shrink-0 px-8 py-3.5 rounded-full font-medium bg-gradient-to-br from-teal-500 to-teal-700 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.06]"
+            href="/pages/trips.html"
+            class="btn-shine shrink-0 px-6 sm:px-8 py-3 rounded-full font-medium bg-gradient-to-br from-teal-500 to-teal-700 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.06]"
           >
            Explore Tours →
           </a>
           <a
             href="#form"
-            class="btn-shine shrink-0 px-8 py-3.5 rounded-full font-medium border border-white/30 backdrop-blur-md hover:bg-white/10 transition-all duration-300"
+            class="btn-shine shrink-0 px-6 sm:px-8 py-3 rounded-full font-medium border border-white/30 backdrop-blur-md hover:bg-white/10 transition-all duration-300"
           >
             Plan My Trip →
           </a>
@@ -380,10 +386,10 @@
 
         <!-- STATS ROW -->
         <div
-          class="hero-stats-row flex flex-row items-center justify-center gap-0 w-full border-t border-white/15 pt-8"
+          class="hero-stats-row flex flex-wrap sm:flex-nowrap items-center justify-center gap-0 w-full border-t border-white/15 pt-8"
         >
           <div
-            class="hero-stat-item flex-1 flex flex-col items-center gap-1 px-4 border-r border-white/15 last:border-r-0"
+            class="hero-stat-item w-1/2 sm:flex-1 flex flex-col items-center gap-1 px-3 sm:px-2 border-r border-white/15 last:border-r-0"
           >
             <div
               class="stat-num text-[2.2rem] font-bold tracking-[-1px]"
@@ -397,7 +403,7 @@
           </div>
 
           <div
-            class="hero-stat-item flex-1 flex flex-col items-center gap-1 px-4 border-r border-white/15 last:border-r-0"
+            class="hero-stat-item w-1/2 sm:flex-1 flex flex-col items-center gap-1 px-3 sm:px-2 border-r border-white/15 last:border-r-0"
           >
             <div
               class="stat-num text-[2.2rem] font-bold tracking-[-1px]"
@@ -411,7 +417,7 @@
           </div>
 
           <div
-            class="hero-stat-item flex-1 flex flex-col items-center gap-1 px-4 border-r border-white/15 last:border-r-0"
+            class="hero-stat-item w-1/2 sm:flex-1 flex flex-col items-center gap-1 px-3 sm:px-2 border-r border-white/15 last:border-r-0"
           >
             <div
               class="stat-num text-[2.2rem] font-bold tracking-[-1px]"
@@ -425,7 +431,7 @@
           </div>
 
           <div
-            class="hero-stat-item flex-1 flex flex-col items-center gap-1 px-4"
+            class="hero-stat-item w-1/2 sm:flex-1 flex flex-col items-center gap-1 px-3 sm:px-2"
           >
             <div
               class="stat-num text-[2.2rem] font-bold tracking-[-1px]"
@@ -484,7 +490,7 @@
           <!-- CENTER -->
           <div class="flex justify-center">
             <img
-              src="images/animatedCar.png"
+              src="assets/images/animatedCar.png"
               class="car-image reveal w-full max-w-md"
             />
           </div>
@@ -601,29 +607,13 @@
           </article>
         </template>
 
-        <div class="flex justify-end gap-3 reveal">
-          <!-- PREVIOUS -->
-          <button
-            id="tourPrev"
-            class="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-700 hover:bg-teal-500 hover:text-white transition"
-          >
-            < <span>Previous</span>
-          </button>
 
-          <!-- NEXT -->
-          <button
-            id="tourNext"
-            class="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-700 hover:bg-teal-500 hover:text-white transition"
-          >
-            <span>Next</span> >
-          </button>
-        </div>
       </div>
     </section>
 
     <!-- get recommendation  -->
     <section
-      class="section bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9] relative"
+      class="section bg-white relative"
     >
       <!-- subtle glow -->
       <div
@@ -701,7 +691,7 @@
         <!-- TEMPLATE -->
         <template id="car-card-template">
           <article
-            class="snap-start min-w-[300px] max-w-[320px]   group bg-white rounded-[16px]   overflow-hidden transition-all duration-300 hover:-translate-y-2  hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+            class="snap-start min-w-[300px] max-w-[320px]   group bg-white rounded-[16px]     transition-all duration-300 hover:-translate-y-2  hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
           >
             <div class="relative h-[200px] overflow-hidden">
               <div class="images-wrapper relative w-full h-full"></div>
@@ -727,23 +717,7 @@
           </article>
         </template>
 
-        <div class="flex justify-end gap-3 mt-8 reveal">
-          <!-- PREVIOUS -->
-          <button
-            id="carPrev"
-            class="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-700 hover:bg-teal-500 hover:text-white transition"
-          >
-            < <span>Previous</span>
-          </button>
 
-          <!-- NEXT -->
-          <button
-            id="carNext"
-            class="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-700 hover:bg-teal-500 hover:text-white transition"
-          >
-            <span>Next</span> >
-          </button>
-        </div>
       </div>
     </section>
 
@@ -1531,18 +1505,16 @@
         <div class="logo-carousel relative overflow-hidden py-6">
           <div class="logo-track flex items-center gap-14">
             <!-- logos -->
-            <div class="logo-item"><img src="images/makemytrip.jpg" /></div>
-            <div class="logo-item"><img src="images/goibibo.jpg" /></div>
-            <div class="logo-item"><img src="images/visa.jpg" /></div>
-            <div class="logo-item"><img src="images/mastercard1.jpg" /></div>
-            <div class="logo-item"><img src="images/google.jpg" /></div>
 
-            <!-- duplicate -->
-            <div class="logo-item"><img src="images/makemytrip.jpg" /></div>
-            <div class="logo-item"><img src="images/goibibo.jpg" /></div>
-            <div class="logo-item"><img src="images/visa.jpg" /></div>
-            <div class="logo-item"><img src="images/mastercard1.jpg" /></div>
-            <div class="logo-item"><img src="images/google.jpg" /></div>
+            <div class="logo-item"><img src="/assets/images/goibibo.jpg" /></div>
+            <div class="logo-item"><img src="/assets/images/visa.jpg" /></div>
+            <div class="logo-item"><img src="/assets/images/mastercard1.jpg" /></div>
+            <div class="logo-item"><img src="/assets/images/google.jpg" /></div>
+
+           <div class="logo-item"><img src="/assets/images/goibibo.jpg" /></div>
+            <div class="logo-item"><img src="/assets/images/visa.jpg" /></div>
+            <div class="logo-item"><img src="/assets/images/mastercard1.jpg" /></div>
+            <div class="logo-item"><img src="/assets/images/google.jpg" /></div>
           </div>
         </div>
       </div>
@@ -1585,25 +1557,25 @@ if (heading && formConfig.title) {
   heading.innerHTML = formConfig.title;
 }
 
-    // ✅ destination safe set
+    // destination safe set
     const select = document.querySelector('select[name="destination"]');
     if (select && formConfig.destination) {
       select.value = formConfig.destination.toLowerCase();
     }
 
-    // ✅ subject
+    //subject
     const subject = document.querySelector('input[name="subject"]');
     if (subject && formConfig.subject) {
       subject.value = formConfig.subject;
     }
 
-    // ✅ button
+    //button
     const btn = document.getElementById("submitBtn");
     if (btn && formConfig.buttonText) {
       btn.innerText = formConfig.buttonText;
     }
 
-    // ✅ init
+    //init
     if (typeof initForm === "function") {
       initForm();
     }
@@ -1768,7 +1740,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <!-- Brand (mobile only — shown above accordion) -->
       <div class="pb-10 mb-2 border-b border-white/[0.08] lg:hidden">
         <a
-          href="index.html"
+          href="/index.html"
           class="font-display text-[1.6rem] font-semibold text-white block mb-3.5"
         >
           Bharat<em class="text-teal-400 not-italic">भ्रमण</em>
@@ -1814,7 +1786,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <!-- Brand col -->
           <div>
             <a
-              href="index.html"
+              href="/index.html"
               class="font-display text-[1.6rem] font-semibold text-white block mb-3.5"
             >
               Bharat<em class="text-teal-400 not-italic">भ्रमण</em>
@@ -1873,28 +1845,28 @@ document.addEventListener("DOMContentLoaded", () => {
             <ul class="space-y-2.5">
               <li>
                 <a
-                  href="index.html"
+                  href="/index.html"
                   class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block"
                   >Home</a
                 >
               </li>
               <li>
                 <a
-                  href="trips.html"
+                  href="/pages/trips.html"
                   class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block"
                   >All Tours</a
                 >
               </li>
               <li>
                 <a
-                  href="cars.html"
+                  href="/pages/cars.html"
                   class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block"
                   >Car Rentals</a
                 >
               </li>
               <li>
                 <a
-                  href="about.html"
+                  href="/pages/about.html"
                   class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block"
                   >About</a
                 >
@@ -1919,35 +1891,35 @@ document.addEventListener("DOMContentLoaded", () => {
             <ul class="space-y-2.5">
               <li>
                 <a
-                  href="goldentriangle.html"
+                  href="/pages/goldentriangle.html"
                   class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block"
                   >Golden Triangle</a
                 >
               </li>
               <li>
                 <a
-                  href="kerala.html"
+                  href="/pages/kerala.html"
                   class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block"
                   >Kerala Backwaters</a
                 >
               </li>
               <li>
                 <a
-                  href="trips.html"
+                  href="/pages/goldentriangle.html"
                   class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block"
                   >Rajasthan Royale</a
                 >
               </li>
               <li>
                 <a
-                  href="trips.html"
+                  href="/pages/goa.html"
                   class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block"
                   >Goa Beach Escape</a
                 >
               </li>
               <li>
                 <a
-                  href="trips.html"
+                  href="/pages/kashi.html"
                   class="text-[0.95rem] text-white/65 hover:text-teal-400 hover:translate-x-1 transition-all duration-200 inline-block"
                   >Varanasi Spiritual</a
                 >
@@ -2015,28 +1987,28 @@ document.addEventListener("DOMContentLoaded", () => {
                 <ul class="space-y-3">
                   <li>
                     <a
-                      href="index.html"
+                      href="/index.html"
                       class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block"
                       >Home</a
                     >
                   </li>
                   <li>
                     <a
-                      href="trips.html"
+                      href="/pages/trips.html"
                       class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block"
                       >All Tours</a
                     >
                   </li>
                   <li>
                     <a
-                      href="cars.html"
+                      href="/pages/cars.html"
                       class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block"
                       >Car Rentals</a
                     >
                   </li>
                   <li>
                     <a
-                      href="about.html"
+                      href="/pages/about.html"
                       class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block"
                       >About</a
                     >
@@ -2079,35 +2051,35 @@ document.addEventListener("DOMContentLoaded", () => {
                 <ul class="space-y-3">
                   <li>
                     <a
-                      href="goldentriangle.html"
+                      href="/pages/goldentriangle.html"
                       class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block"
                       >Golden Triangle</a
                     >
                   </li>
                   <li>
                     <a
-                      href="kerala.html"
+                      href="/pages/kerala.html"
                       class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block"
                       >Kerala Backwaters</a
                     >
                   </li>
                   <li>
                     <a
-                      href="trips.html"
+                      href="/pages/goldentriangle.html"
                       class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block"
                       >Rajasthan Royale</a
                     >
                   </li>
                   <li>
                     <a
-                      href="trips.html"
+                      href="/pages/goa.html"
                       class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block"
                       >Goa Beach Escape</a
                     >
                   </li>
                   <li>
                     <a
-                      href="trips.html"
+                      href="/pages/kashi.html"
                       class="text-[0.95rem] text-white/60 hover:text-teal-400 transition-colors pl-1 block"
                       >Varanasi Spiritual</a
                     >
@@ -2194,6 +2166,10 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     </footer>
 
+
+
+
+
     <!-- whatsapp floating option  -->
 
     <!-- WhatsApp float -->
@@ -2223,11 +2199,15 @@ document.addEventListener("DOMContentLoaded", () => {
     <!-- script --------------------------------->
     <!-- lucide icon CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="card/utils.js" defer></script>
-    <script src="js/script.js" defer></script>
-    <script src="card/tour.js" defer></script>
-    <script src="card/cars.js" defer></script>
-    <script src="js/form.js"></script>
+    <script src="/script/navbar.js"></script>
+    <script src="/script/footer.js"></script>
+    <script src="/script/utils.js" defer></script>
+    <script src="/script/script.js" defer></script>
+    <script src="/script/tour.js" defer></script>
+    <script src="/script/cars.js" defer></script>
+    <script src="/script/form.js"></script>
+
+
 
     <script>
       lucide.createIcons();

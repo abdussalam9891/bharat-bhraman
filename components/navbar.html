@@ -1,0 +1,276 @@
+
+
+
+    <!-- navbar ----------------------------------------------- -->
+    <!-- Dark overlay behind mobile drawer -->
+    <div id="navOverlay"
+  class="fixed inset-0 bg-black/30 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 z-[998]">
+</div>
+
+    <!-------------------------Mobile Drawer (separate from desktop ul)------------------------------------>
+
+   <div id="mobileMenu"
+  class="fixed top-0 right-0 z-[999]
+         w-[80%] max-w-[320px]
+         h-[100dvh]
+         bg-[#0f172a]
+         translate-x-full
+         transition-transform duration-300
+         flex flex-col overflow-y-auto px-6 pt-6 pb-6">
+
+
+         <button
+  id="drawerClose"
+  class="absolute top-5 right-5 z-[1000] flex flex-col gap-[5px]"
+>
+  <span class="block w-6 h-[2px] bg-white rotate-45 translate-y-[6px]"></span>
+  <span class="block w-6 h-[2px] bg-white opacity-0"></span>
+  <span class="block w-6 h-[2px] bg-white -rotate-45 -translate-y-[6px]"></span>
+</button>
+
+  <!-- MAIN LINKS -->
+  <div class="flex flex-col gap-1">
+    <a href="index.html" class="block py-3 text-white text-[1.05rem] hover:text-teal-500    border-b border-white/10">Home</a>
+    <a href="trips.html" class="block py-3 text-white text-[1.05rem] hover:text-teal-500    border-b border-white/10">Packages</a>
+    <a href="cars.html" class="block py-3 text-white text-[1.05rem]  hover:text-teal-500   border-b border-white/10">Cars</a>
+    <a href="about.html" class="block py-3 text-white text-[1.05rem] hover:text-teal-500    border-b border-white/10">About</a>
+  </div>
+
+  <!-- EXPLORE SECTION -->
+  <div class="mt-6 pt-5 border-t border-white/10 flex flex-col gap-2">
+    <p class="text-white/40 text-[0.7rem] uppercase tracking-widest">
+      Explore
+    </p>
+
+    <a href="goldentriangle.html" class="text-white/80 py-2 text-[0.95rem] hover:text-teal-400 transition">Golden Triangle</a>
+    <a href="kashmir.html" class="text-white/80 py-2 text-[0.95rem] hover:text-teal-400 transition">Kashmir</a>
+    <a href="manali.html" class="text-white/80 py-2 text-[0.95rem] hover:text-teal-400 transition">Himachal</a>
+    <a href="kerala.html" class="text-white/80 py-2 text-[0.95rem] hover:text-teal-400 transition">Kerala</a>
+    <a href="kashi.html" class="text-white/80 py-2 text-[0.95rem] hover:text-teal-400 transition">Spiritual Tours</a>
+  </div>
+
+
+</div>
+
+
+
+
+
+<!-- navbar  ------------------------>
+      <nav
+     id="mainNav"
+  class="mega-nav fixed top-0 left-0 right-0 z-[1000] flex items-center justify-between px-[5%] h-[72px] shrink-0 rounded-full font-medium border border-white/30 backdrop-blur-md hover:bg-white/10 transition-all duration-300 transition-transform duration-300 ease-[cubic-bezier(.22,1,.36,1)] translate-y-0"
+    >
+
+
+    <!-- Logo -->
+      <a
+        href="index.html"
+        class="font-display text-[1.4rem] font-bold  text-gray-900 tracking-tight transition-transform duration-300 hover:scale-105 shrink-0"
+      >
+        Bharat<em class="text-teal-600 not-italic">भ्रमण</em>
+      </a>
+
+
+
+
+      <!-- Desktop links -->
+      <ul
+        id="navLinks"
+        class="nav-links-mobile hidden nav:flex gap-[34px] list-none"
+      >
+        <li>
+          <a
+            href="index.html"
+            class="relative text-teal-600 text-[0.95rem] font-semibold transition-colors duration-300 hover:text-teal-300 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-400 after:transition-all after:duration-350 hover:after:w-full"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="trips.html"
+            class="relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
+          >
+            Packages
+          </a>
+        </li>
+
+<!-- explore  -->
+        <li class="relative group">
+          <a
+            href="#"
+            class="mega-trigger relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
+            data-mega="explore"
+          >
+            Explore
+          </a>
+             <!-- Mega Menu -->
+      <div
+         id="megaMenu"
+  class="mega-menu absolute top-full left-1/2 -translate-x-1/2
+         w-auto min-w-[520px] bg-white rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.12)]
+         border border-gray-100 mt-3
+         opacity-0 pointer-events-none
+         transition-all duration-200"
+      >
+        <!-- EXPLORE PANEL -->
+        <div class="mega-panel" data-panel="explore">
+          <div class="flex gap-16 m-8">
+            <div>
+              <h4
+                class=" text-teal-500 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
+              >
+                North India
+              </h4>
+              <ul class="space-y-2.5">
+                <li>
+                  <a
+                    href="goldentriangle.html"
+                    class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Golden Triangle</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Kashmir</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Himachal</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4
+                class=" text-teal-500 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
+              >
+                South India
+              </h4>
+              <ul class="space-y-2.5">
+                <li>
+                  <a
+                    href="kerala.html"
+                    class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Kerala</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Tamil Nadu</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Karnataka</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4
+                class="text-teal-500 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
+              >
+                Special
+              </h4>
+              <ul class="space-y-2.5">
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Desert Tours</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Spiritual Tours</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
+                    >Luxury Trips</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+        </li>
+
+
+
+        <li>
+          <a
+            href="cars.html"
+            class="relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
+          >
+            Cars
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="about.html"
+            class="relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
+          >
+            About
+          </a>
+        </li>
+      </ul>
+
+
+        <!-- CTA -->
+      <a
+        href="https://wa.me/919006143335?text=Hi%20I%20am%20interested%20in%20your%20tour%20packages"
+        target="_blank"
+        rel="noopener"
+        class="btn-shine hidden nav:flex items-center gap-2 px-5 py-[10px] rounded-full text-sm font-semibold text-white bg-teal-500 shadow-[0_8px_25px_rgba(0,0,0,0.3)] transition-all duration-400 hover:-translate-y-0.5 hover:scale-[1.04] hover:shadow-[0_18px_40px_rgba(0,0,0,0.5)]"
+      >
+        Book Now
+      </a>
+
+
+        <!-- Mobile toggle -->
+      <button
+        id="navToggle"
+  data-state="closed"
+  class="nav-toggle-btn bg-white/10 backdrop-blur-md
+         max-[900px]:flex hidden flex-col justify-center gap-[5px]
+         rounded-full p-2"
+      >
+        <span
+          class="block w-5 h-[2.5px] bg-teal-500 rounded-sm transition-all duration-300"
+        ></span>
+        <span
+          class="block w-5 h-[2.5px] bg-teal-500 rounded-sm transition-all duration-300"
+        ></span>
+       <span
+  class="block w-3 h-[2.5px] bg-teal-500 rounded-sm transition-all duration-300 self-end"
+></span>
+      </button>
+
+
+
+
+    </nav>
+
+
+
+

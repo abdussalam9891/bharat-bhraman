@@ -1,22 +1,18 @@
  <!doctype html>
 <html lang="en">
  <head>
-   <meta charset="UTF-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-
-  <title>Goa 3 Day Tour Package – Beaches, Nightlife & Water Activities</title>
-
-  <!-- DESCRIPTION -->
-  <meta name="description" content="Enjoy Goa with a 3-day tour covering North Goa beaches, South Goa sightseeing, nightlife, and water sports. Perfect for friends, couples, and quick getaways." />
+  <title>Kashmir 6 Day Tour Package – Srinagar, Gulmarg & Pahalgam</title>
 
 
-  <meta name="keywords" content="Goa tour package, Goa 3 days itinerary, North Goa beaches, South Goa trip, Goa nightlife tour, Goa water sports" />
+  <meta name="description" content="Experience Kashmir with a 6-day tour covering Srinagar houseboats, Gulmarg snow activities, and Pahalgam valleys. Perfect for couples, family, and scenic mountain trips." />
 
-
-  <meta property="og:title" content="Goa 3 Day Tour Package" />
-  <meta property="og:description" content="Experience beaches, nightlife, and adventure activities in Goa with a perfect 3-day trip." />
-  <meta property="og:image" content="https://bharat-bharman.vercel.app/images/goa.jpg" />
+  <meta name="keywords" content="Kashmir tour package, Kashmir 6 days itinerary, Srinagar houseboat, Gulmarg snow trip, Pahalgam valley tour" />
+  <meta property="og:title" content="Kashmir 6 Day Tour Package" />
+  <meta property="og:description" content="Explore snow-covered mountains, Dal Lake houseboats, and scenic valleys in Kashmir." />
+  <meta property="og:image" content="https://bharat-bharman.vercel.app/images/kashmir.jpg" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_IN" />
 
@@ -51,6 +47,8 @@ tailwind.config = {
 <link rel="stylesheet" href="component.css">
   <link rel="stylesheet" href="animations.css" />
 
+
+
   <!-- lucide icon CDN -->
    <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -61,12 +59,69 @@ tailwind.config = {
 
  <body class="font-body bg-gray-50 text-gray-800 leading-relaxed antialiased">
 
- <!-- NAVbar----------------------------------->
-    <nav
-      id="mainNav"
-      class="mega-nav fixed top-0 left-0 right-0 z-[999] flex items-center justify-between px-[5%] h-[72px] bg-white/80 backdrop-blur-[14px] border-b border-gray-200/60"
+   <!-- navbar ----------------------------------------------- -->
+    <!-- Dark overlay behind mobile drawer -->
+    <div id="navOverlay"
+  class="fixed inset-0 bg-black/30 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 z-[998]">
+</div>
+
+    <!-------------------------Mobile Drawer (separate from desktop ul)------------------------------------>
+
+   <div id="mobileMenu"
+  class="fixed top-0 right-0 z-[999]
+         w-[80%] max-w-[320px]
+         h-[100dvh]
+         bg-[#0f172a]
+         translate-x-full
+         transition-transform duration-300
+         flex flex-col overflow-y-auto px-6 pt-6 pb-6">
+
+
+         <button
+  id="drawerClose"
+  class="absolute top-5 right-5 z-[1000] flex flex-col gap-[5px]"
+>
+  <span class="block w-6 h-[2px] bg-white rotate-45 translate-y-[6px]"></span>
+  <span class="block w-6 h-[2px] bg-white opacity-0"></span>
+  <span class="block w-6 h-[2px] bg-white -rotate-45 -translate-y-[6px]"></span>
+</button>
+
+  <!-- MAIN LINKS -->
+  <div class="flex flex-col gap-1">
+    <a href="index.html" class="block py-3 text-white text-[1.05rem] hover:text-teal-500    border-b border-white/10">Home</a>
+    <a href="pages/trips.html" class="block py-3 text-white text-[1.05rem] hover:text-teal-500    border-b border-white/10">Packages</a>
+    <a href="pages/cars.html" class="block py-3 text-white text-[1.05rem]  hover:text-teal-500   border-b border-white/10">Cars</a>
+    <a href="pages/about.html" class="block py-3 text-white text-[1.05rem] hover:text-teal-500    border-b border-white/10">About</a>
+  </div>
+
+  <!-- EXPLORE SECTION -->
+  <div class="mt-6 pt-5 border-t border-white/10 flex flex-col gap-2">
+    <p class="text-white/40 text-[0.7rem] uppercase tracking-widest">
+      Explore
+    </p>
+
+    <a href="pages/goldentriangle.html"  class="text-white/80 py-2 text-[0.95rem] hover:text-teal-400 transition">Golden Triangle</a>
+    <a href="pages/kashmir.html" class="text-white/80 py-2 text-[0.95rem] hover:text-teal-400 transition">Kashmir</a>
+    <a href="pages/manali.html" class="text-white/80 py-2 text-[0.95rem] hover:text-teal-400 transition">Himachal</a>
+    <a href="pages/kerala.html" class="text-white/80 py-2 text-[0.95rem] hover:text-teal-400 transition">Kerala</a>
+    <a href="pages/kashi.html" class="text-white/80 py-2 text-[0.95rem] hover:text-teal-400 transition">Spiritual Tours</a>
+  </div>
+
+
+</div>
+
+
+
+
+
+<!-- navbar  ------------------------>
+      <nav
+     id="mainNav"
+  class="mega-nav fixed top-0 left-0 right-0 z-[1000] flex items-center justify-between px-[5%] h-[72px] shrink-0 rounded-full font-medium border border-white/30 backdrop-blur-md hover:bg-white/10 transition-all duration-300 transition-transform duration-300 ease-[cubic-bezier(.22,1,.36,1)] translate-y-0"
     >
-      <!-- Logo -->
+
+
+    <!-- Logo -->
       <a
         href="index.html"
         class="font-display text-[1.4rem] font-bold  text-gray-900 tracking-tight transition-transform duration-300 hover:scale-105 shrink-0"
@@ -74,22 +129,8 @@ tailwind.config = {
         Bharat<em class="text-teal-600 not-italic">भ्रमण</em>
       </a>
 
-      <!-- Mobile toggle -->
-      <button
-        id="navToggle"
-        class="nav-toggle-btn hidden max-[900px]:flex flex-col justify-center gap-[5px] bg-transparent border-none cursor-pointer p-1.5 z-[1001]"
-        aria-label="Toggle menu"
-      >
-        <span
-          class="block w-6 h-[2px] bg-gray-800 rounded-sm transition-all duration-300"
-        ></span>
-        <span
-          class="block w-6 h-[2px] bg-gray-800 rounded-sm transition-all duration-300"
-        ></span>
-        <span
-          class="block w-6 h-[2px] bg-gray-800 rounded-sm transition-all duration-300"
-        ></span>
-      </button>
+
+
 
       <!-- Desktop links -->
       <ul
@@ -106,13 +147,15 @@ tailwind.config = {
         </li>
         <li>
           <a
-            href="trips.html"
+            href="pages/trips.html"
             class="relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
           >
             Packages
           </a>
         </li>
-        <li class="relative">
+
+<!-- explore  -->
+        <li class="relative group">
           <a
             href="#"
             class="mega-trigger relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
@@ -120,76 +163,42 @@ tailwind.config = {
           >
             Explore
           </a>
-        </li>
-        <li>
-          <a
-            href="cars.html"
-            class="relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
-          >
-            Cars
-          </a>
-        </li>
-        <li class="relative">
-          <a
-            href="#"
-            class="mega-trigger relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
-            data-mega="bestsellers"
-          >
-            Best Sellers
-          </a>
-        </li>
-        <li>
-          <a
-            href="about.html"
-            class="relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
-          >
-            About
-          </a>
-        </li>
-      </ul>
-
-      <!-- CTA -->
-      <a
-        href="https://wa.me/919006143335?text=Hi%20I%20am%20interested%20in%20your%20tour%20packages"
-        target="_blank"
-        rel="noopener"
-        class="btn-shine hidden nav:flex items-center gap-2 px-5 py-[10px] rounded-full text-sm font-semibold text-white bg-gradient-to-br from-[#2a9d8f] to-[#264653] shadow-[0_8px_25px_rgba(0,0,0,0.3)] transition-all duration-400 hover:-translate-y-0.5 hover:scale-[1.04] hover:shadow-[0_18px_40px_rgba(0,0,0,0.5)]"
-      >
-        Book Now
-      </a>
-
-      <!-- Mega Menu -->
+             <!-- Mega Menu -->
       <div
-        id="megaMenu"
-        class="mega-menu absolute top-full left-1/2 -translate-x-1/2 w-auto min-w-[520px] bg-white rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-gray-100 mt-3"
+         id="megaMenu"
+  class="mega-menu absolute top-full left-1/2 -translate-x-1/2
+         w-auto min-w-[520px] bg-white rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.12)]
+         border border-gray-100 mt-3
+         opacity-0 pointer-events-none
+         transition-all duration-200"
       >
         <!-- EXPLORE PANEL -->
-        <div class="mega-panel hidden" data-panel="explore">
+        <div class="mega-panel" data-panel="explore">
           <div class="flex gap-16 m-8">
             <div>
               <h4
-                class=" text-gray-400 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
+                class=" text-teal-500 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
               >
                 North India
               </h4>
               <ul class="space-y-2.5">
                 <li>
                   <a
-                    href="goldentriangle.html"
+                    href="pages/goldentriangle.html"
                     class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Golden Triangle</a
                   >
                 </li>
                 <li>
                   <a
-                    href="kashmir.html"
+                    href="pages/kashmir.html"
                     class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Kashmir</a
                   >
                 </li>
                 <li>
                   <a
-                    href="manali.html"
+                    href="pages/manali.html"
                     class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Himachal</a
                   >
@@ -198,14 +207,14 @@ tailwind.config = {
             </div>
             <div>
               <h4
-                class=" text-gray-400 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
+                class=" text-teal-500 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
               >
                 South India
               </h4>
               <ul class="space-y-2.5">
                 <li>
                   <a
-                    href="kerala.html"
+                    href="pages/kerala.html"
                     class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Kerala</a
                   >
@@ -228,28 +237,28 @@ tailwind.config = {
             </div>
             <div>
               <h4
-                class="text-gray-400 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
+                class="text-teal-500 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
               >
                 Special
               </h4>
               <ul class="space-y-2.5">
                 <li>
                   <a
-                    href="#"
+                    href="pages/goldentriangle.html"
                     class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Desert Tours</a
                   >
                 </li>
                 <li>
                   <a
-                    href="kashi.html"
+                    href="pages/kashi.html"
                     class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Spiritual Tours</a
                   >
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="pages/goa.html"
                     class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Luxury Trips</a
                   >
@@ -259,102 +268,65 @@ tailwind.config = {
           </div>
         </div>
 
-        <!-- BEST SELLERS PANEL -->
-        <div class="mega-panel hidden" data-panel="bestsellers">
-          <div class="flex gap-16 m-8">
-            <div>
-              <h4
-                class="text-gray-400 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
-              >
-                Top Picks
-              </h4>
-              <ul class="space-y-2.5">
-                <li>
-                  <a
-                    href="goldentriangle.html"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Golden Triangle ★★★★★</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="kerala.html"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Kerala ★★★★★</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="goa.html"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Goa ★★★★☆</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4
-                class="text-gray-400 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
-              >
-                Trending
-              </h4>
-              <ul class="space-y-2.5">
-                <li>
-                  <a
-                    href="goldentriangle.html"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Rajasthan</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="manali.html"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Himachal</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="kashi.html"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Varanasi</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4
-                class="text-gray-400 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
-              >
-                Offers
-              </h4>
-              <ul class="space-y-2.5">
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Early Bird</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-400 hover:translate-x-1.5 inline-block"
-                    >Group Deals</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Custom Tours</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+
       </div>
+        </li>
+
+
+
+        <li>
+          <a
+            href="pages/cars.html"
+            class="relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
+          >
+            Cars
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="pages/about.html"
+            class="relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
+          >
+            About
+          </a>
+        </li>
+      </ul>
+
+
+        <!-- CTA -->
+      <a
+        href="https://wa.me/919006143335?text=Hi%20I%20am%20interested%20in%20your%20tour%20packages"
+        target="_blank"
+        rel="noopener"
+        class="btn-shine hidden nav:flex items-center gap-2 px-5 py-[10px] rounded-full text-sm font-semibold text-white bg-teal-500 shadow-[0_8px_25px_rgba(0,0,0,0.3)] transition-all duration-400 hover:-translate-y-0.5 hover:scale-[1.04] hover:shadow-[0_18px_40px_rgba(0,0,0,0.5)]"
+      >
+        Book Now
+      </a>
+
+
+        <!-- Mobile toggle -->
+      <button
+        id="navToggle"
+  data-state="closed"
+  class="nav-toggle-btn bg-white/10 backdrop-blur-md
+         max-[900px]:flex hidden flex-col justify-center gap-[5px]
+         rounded-full p-2"
+      >
+        <span
+          class="block w-5 h-[2.5px] bg-teal-500 rounded-sm transition-all duration-300"
+        ></span>
+        <span
+          class="block w-5 h-[2.5px] bg-teal-500 rounded-sm transition-all duration-300"
+        ></span>
+       <span
+  class="block w-3 h-[2.5px] bg-teal-500 rounded-sm transition-all duration-300 self-end"
+></span>
+      </button>
+
+
+
+
     </nav>
 
 
@@ -382,7 +354,7 @@ tailwind.config = {
   <span class="text-gray-400">→</span>
 
   <span class="text-gray-900 font-medium">
-    Goa
+    Kashmir
   </span>
 
 </div>
@@ -394,19 +366,19 @@ tailwind.config = {
       <h2
         class="text-[clamp(2rem,4vw,2.6rem)] font-semibold mb-6 text-gray-900"
       >
-        The <span class="text-teal-600 font-semibold">Goa</span> Route
+        The <span class="text-teal-600 font-semibold">Kashmir</span> Route
       </h2>
 
       <!-- GALLERY WRAPPER (IMPORTANT) -->
       <div
         id="gallery"
         data-images='[
-      "images/goa1.jpg",
-      "images/goa2.jpg",
-      "images/goa3.jpg",
-      "images/goa4.jpg",
-      "images/goa5.jpg",
-      "images/goa6.jpg"
+      "images/k1.jpg",
+      "images/k2.jpg",
+      "images/k3.jpg",
+      "images/k4.jpg",
+      "images/k5.jpg",
+      "images/k6.jpg"
     ]'
       >
         <!-- GRID -->
@@ -416,7 +388,7 @@ tailwind.config = {
           <!-- LEFT BIG IMAGE -->
           <div class="h-[420px] overflow-hidden">
             <img
-              src="images/goa1.jpg"
+              src="images/k1.jpg"
               onclick="openLightbox(0)"
               class="w-full h-full object-cover cursor-pointer hover:scale-105 transition duration-700"
             />
@@ -426,7 +398,7 @@ tailwind.config = {
           <div class="grid grid-rows-2 gap-2 h-[420px]">
             <div class="overflow-hidden">
               <img
-                src="images/goa2.jpg"
+                src="images/k2.jpg"
                 onclick="openLightbox(1)"
                 class="w-full h-full object-cover cursor-pointer hover:scale-105 transition duration-700"
               />
@@ -434,7 +406,7 @@ tailwind.config = {
 
             <div class="relative overflow-hidden">
               <img
-                src="images/goa3.jpg"
+                src="images/k3.jpg"
                 onclick="openLightbox(2)"
                 class="w-full h-full object-cover cursor-pointer hover:scale-105 transition duration-700"
               />
@@ -506,8 +478,6 @@ tailwind.config = {
 
 
 
-
-
 <!-- STATS BAR -->
 <div class="px-[5%] py-6">
 
@@ -525,7 +495,7 @@ tailwind.config = {
       hover:text-white hover:shadow-md">
 
       <span class="text-base">⏳</span>
-      <span class="font-medium">3 Days</span>
+      <span class="font-medium">7 Days</span>
     </div>
 
     <!-- ITEM -->
@@ -537,7 +507,7 @@ tailwind.config = {
       hover:text-white hover:shadow-md">
 
       <span class="text-base">📍</span>
-      <span class="font-medium">North Goa → South Goa</span>
+      <span class="font-medium">Srinagar → Gulmarg → Pahalgam → Sonmarg → Srinagar</span>
     </div>
 
     <!-- ITEM -->
@@ -593,22 +563,18 @@ tailwind.config = {
       <div>
         <h2 class="text-2xl font-semibold mb-6 text-gray-900">The Journey</h2>
 
-            <div class="space-y-5">
+         <div class="space-y-5">
 
           <div class="group rounded-2xl p-5 bg-white border border-gray-200
             shadow-sm hover:shadow-md transition">
             <div class="flex items-center gap-4 mb-3">
               <div class="w-10 h-10 flex items-center justify-center rounded-full
                 bg-teal-100 text-teal-600 font-semibold">1</div>
-              <div class="font-medium text-gray-900">Arrival in Goa — Beach & Sunset Vibes</div>
+              <div class="font-medium text-gray-900">Arrival in Srinagar — The Calm Begins</div>
             </div>
             <p class="text-sm text-gray-600 leading-relaxed">
 
-Arrival — Ease Into Goa
-
-Land in Goa and settle in. No rush.
-
-Head out in the evening — feel the air, walk into your first beach sunset, grab a drink, let Goa begin. Optional nightlife if you’re up for it.
+Arrive in Srinagar and check into your hotel or houseboat. Spend the evening on Dal Lake with a Shikara ride as the sun sets behind the mountains.
             </p>
           </div>
 
@@ -617,11 +583,11 @@ Head out in the evening — feel the air, walk into your first beach sunset, gra
             <div class="flex items-center gap-4 mb-3">
               <div class="w-10 h-10 flex items-center justify-center rounded-full
                 bg-teal-100 text-teal-600 font-semibold">2</div>
-              <div class="font-medium text-gray-900">North Goa — Beaches & Forts</div>
+              <div class="font-medium text-gray-900">Srinagar — Gardens & Old City</div>
             </div>
             <p class="text-sm text-gray-600 leading-relaxed">
 
-Visit North Goa highlights including Fort Aguada, Anjuna Beach, Vagator Beach, and Chapora Fort. Explore beach shacks, water sports (optional), and scenic viewpoints. Evening free for cafes or clubs. Overnight in Goa.
+Explore Mughal Gardens, local markets, and the old city charm. Slow day, scenic views, nothing rushed.
             </p>
           </div>
 
@@ -632,13 +598,77 @@ Visit North Goa highlights including Fort Aguada, Anjuna Beach, Vagator Beach, a
             <div class="flex items-center gap-4 mb-3">
               <div class="w-10 h-10 flex items-center justify-center rounded-full
                 bg-teal-100 text-teal-600 font-semibold">3</div>
-              <div class="font-medium text-gray-900"> South Goa — Peaceful Coast & Departure</div>
+              <div class="font-medium text-gray-900"> Srinagar → Gulmarg — Snow & Cable Cars</div>
             </div>
             <p class="text-sm text-gray-600 leading-relaxed">
 
-Explore South Goa’s calm beaches like Colva, Benaulim, and Miramar. Visit Old Goa churches (Basilica of Bom Jesus). After sightseeing, transfer for departure. Tour ends with relaxed beach memories.
+Drive to Gulmarg. Experience the famous Gondola ride and snow landscapes (seasonal). Return or stay overnight.
             </p>
           </div>
+
+             <div class="group rounded-2xl p-5 bg-white border border-gray-200
+            shadow-sm hover:shadow-md transition">
+            <div class="flex items-center gap-4 mb-3">
+              <div class="w-10 h-10 flex items-center justify-center rounded-full
+                bg-teal-100 text-teal-600 font-semibold">4</div>
+              <div class="font-medium text-gray-900"> Srinagar → Pahalgam — Valleys & Rivers
+</div>
+            </div>
+            <p class="text-sm text-gray-600 leading-relaxed">
+
+Head to Pahalgam, passing through saffron fields and scenic countryside. Relax by the Lidder River.
+            </p>
+          </div>
+
+             <div class="group rounded-2xl p-5 bg-white border border-gray-200
+            shadow-sm hover:shadow-md transition">
+            <div class="flex items-center gap-4 mb-3">
+              <div class="w-10 h-10 flex items-center justify-center rounded-full
+                bg-teal-100 text-teal-600 font-semibold">5</div>
+              <div class="font-medium text-gray-900"> Pahalgam — Explore & Slow Travel</div>
+            </div>
+            <p class="text-sm text-gray-600 leading-relaxed">
+
+Visit Betaab Valley, Aru Valley, or simply spend time in nature. This is your slow day.
+            </p>
+          </div>
+
+             <div class="group rounded-2xl p-5 bg-white border border-gray-200
+            shadow-sm hover:shadow-md transition">
+            <div class="flex items-center gap-4 mb-3">
+              <div class="w-10 h-10 flex items-center justify-center rounded-full
+                bg-teal-100 text-teal-600 font-semibold">6</div>
+              <div class="font-medium text-gray-900"> Srinagar → Sonmarg — Raw Mountain Beauty</div>
+            </div>
+            <p class="text-sm text-gray-600 leading-relaxed">
+
+A day trip to Sonmarg with glaciers, rivers, and open landscapes. One of the most untouched parts of Kashmir.
+            </p>
+          </div>
+
+             <div class="group rounded-2xl p-5 bg-white border border-gray-200
+            shadow-sm hover:shadow-md transition">
+            <div class="flex items-center gap-4 mb-3">
+              <div class="w-10 h-10 flex items-center justify-center rounded-full
+                bg-teal-100 text-teal-600 font-semibold">7</div>
+              <div class="font-medium text-gray-900"> Departure — Carry It With You</div>
+            </div>
+            <p class="text-sm text-gray-600 leading-relaxed">
+
+Transfer to airport. You leave — but Kashmir doesn’t.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white border shadow-sm">
+  <h3 class="text-lg font-semibold mb-3">Why This Trip Works</h3>
+
+  <ul class="text-sm text-gray-600 space-y-2">
+    <li>• Balanced route (lakes, valleys, snow)</li>
+    <li>• Not rushed — time to actually feel the place</li>
+    <li>• Private car for full comfort</li>
+    <li>• Designed for couples, families & photographers</li>
+  </ul>
+</div>
 
 
 
@@ -681,18 +711,46 @@ Explore South Goa’s calm beaches like Colva, Benaulim, and Miramar. Visit Old 
       <div class="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
         <h2 class="text-xl font-semibold mb-3 text-gray-900">Route</h2>
         <p class="text-gray-600 text-sm">
-          Goa Airport → North Goa → South Goa → Departure
+          Srinagar → Gulmarg → Pahalgam → Sonmarg → Srinagar
         </p>
       </div>
 
       <!-- KNOW BEFORE -->
-       <div>
+      <div>
         <h2 class="text-2xl font-semibold mb-6 text-gray-900">Know Before You Go</h2>
+
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div class="p-4 bg-white border rounded-xl text-center text-sm">Best Time<br><b>Nov–Feb </b></div>
-          <div class="p-4 bg-white border rounded-xl text-center text-sm">Clothing<br><b>Light Beachwear </b></div>
-          <div class="p-4 bg-white border rounded-xl text-center text-sm">Difficulty<br><b>Easy</b></div>
+
+          <div class="p-4 bg-white border rounded-xl text-center text-sm hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)]">Best Time<br><b>Apr–Oct (Pleasant)</b> <span class="text-xs text-gray-500">Dec–Feb for snow</span></div>
+           <div class="p-4 bg-white border rounded-xl text-center text-sm">
+      Temperature<br><b>-2°C to 25°C</b>
+    </div>
+     <div class="p-4 bg-white border rounded-xl text-center text-sm">
+      Clothing<br><b>Warm Layers</b><br>
+      <span class="text-xs text-gray-500">Heavy in winter</span>
+    </div>
+
+          <div class="p-4 bg-white border rounded-xl text-center text-sm">Difficulty<br><b>Easy–Moderate</b></div>
           <div class="p-4 bg-white border rounded-xl text-center text-sm">Customisable<br><b>Yes</b></div>
+
+          <div class="p-4 bg-white border rounded-xl text-center text-sm">
+      Ideal For<br><b>Couples • Families</b>
+    </div>
+
+    <div class="p-4 bg-white border rounded-xl text-center text-sm">
+      Connectivity<br><b>Limited in valleys</b>
+    </div>
+
+    <div class="p-4 bg-white border rounded-xl text-center text-sm">
+      Customisable<br><b>Yes</b>
+    </div>
+
+    <div class="p-4 bg-white border rounded-xl text-center text-sm">
+      Altitude<br><b>High Regions</b><br>
+      <span class="text-xs text-gray-500">Take it slow</span>
+    </div>
+
+
         </div>
       </div>
 
@@ -714,13 +772,13 @@ Explore South Goa’s calm beaches like Colva, Benaulim, and Miramar. Visit Old 
     <div class="text-center mb-6">
       <div class="text-sm text-gray-400 mb-1">Starting from</div>
       <div class="text-[3rem] font-bold text-gray-900">
-        ₹9,900
+        ₹17,000
       </div>
       <div class="text-sm text-gray-500">
         per person • seasonal pricing
       </div>
       <p class="text-xs text-red-500 mt-3">
-   ⚡ High demand on weekends — prices may increase
+  ⚡ Prices increase during snowfall & peak season
 </p>
 
 <ul class="mt-5 text-xs text-gray-500 space-y-2">
@@ -779,7 +837,7 @@ Explore South Goa’s calm beaches like Colva, Benaulim, and Miramar. Visit Old 
 
 
 
-  <!-- car featured ------------------------------- -->
+ <!-- car featured ------------------------------- -->
     <section
       class="px-[5%] py-[110px] relative overflow-hidden bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9]"
     >
@@ -1104,8 +1162,7 @@ Explore South Goa’s calm beaches like Colva, Benaulim, and Miramar. Visit Old 
 
 
 
-
- <!-- FAQ -->
+    <!-- FAQ -->
 <section class="px-[5%] py-[110px] bg-gradient-to-b from-[#f8fafc] to-white relative overflow-hidden">
 
   <!-- BACKGROUND DECOR (SUBTLE GLOW) -->
@@ -1140,12 +1197,12 @@ Explore South Goa’s calm beaches like Colva, Benaulim, and Miramar. Visit Old 
     <details class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
 
       <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
-       What is the best time to visit Goa?
+        Is the price shown final or are there extra charges?
         <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
       </summary>
 
       <p class="mt-3 text-sm text-gray-500 leading-relaxed">
-        November to February is the best time with pleasant weather and active nightlife. Monsoon offers greenery but limited beach activities.
+        The listed price includes driver and fuel for up to 250 km per day. Tolls, parking, and state taxes (if applicable) are extra. We keep everything transparent — no hidden surprises.
       </p>
 
     </details>
@@ -1153,54 +1210,56 @@ Explore South Goa’s calm beaches like Colva, Benaulim, and Miramar. Visit Old 
     <!-- ITEM -->
     <details class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
       <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
-      Are water sports included?
+      Is Kashmir safe for tourists?
         <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
       </summary>
 
       <p class="mt-3 text-sm text-gray-500">
-       No, water sports like parasailing, jet ski, and scuba are optional and can be booked on-site.
+       Yes, Kashmir is safe for tourists in major destinations like Srinagar, Gulmarg, and Pahalgam. We also provide trusted local drivers and support throughout your trip.
       </p>
     </details>
 
     <!-- ITEM -->
     <details class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
       <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
-       Is Goa suitable for families?
+       When can I experience snowfall in Kashmir?
         <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
       </summary>
 
       <p class="mt-3 text-sm text-gray-500">
-       Yes, especially South Goa which offers peaceful beaches and relaxed stays.
+        Snowfall usually occurs from December to February, especially in Gulmarg. For snow experiences, winter months are ideal.
+
       </p>
     </details>
 
     <!-- ITEM -->
     <details class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
       <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
-      Can I customize the itinerary?
+        Is the Gondola ride included in the package?
         <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
       </summary>
 
       <p class="mt-3 text-sm text-gray-500">
-      Yes, you can add nightlife, water sports, or extend your stay.
+         Gondola tickets are not included as they are subject to availability and weather. We assist you in booking them in advance.
       </p>
     </details>
 
     <!-- ITEM -->
     <details class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
       <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
-      How do payments work for booking?
+      Can I customize my Kashmir itinerary?
         <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
       </summary>
 
       <p class="mt-3 text-sm text-gray-500">
-        A small advance is required to confirm your booking, with the remaining amount payable before or during the trip. Full payment details are shared transparently at booking.
+        Yes, the trip is fully customizable. You can add destinations, upgrade hotels, or extend your stay based on your preferences.
       </p>
     </details>
 
   </div>
 
 </section>
+
 
 
 </main>
@@ -1475,7 +1534,6 @@ Explore South Goa’s calm beaches like Colva, Benaulim, and Miramar. Visit Old 
   <!-- script --------------------------------->
   <script src="script.js"></script>
   <script>lucide.createIcons();</script>
-
 <script src="goldentriangle.js"></script>
 
  <script>

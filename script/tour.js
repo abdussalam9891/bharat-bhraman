@@ -11,7 +11,7 @@ const tours = [
     oldPrice: "₹19,999",
     link: "goldentriangle.html",
     badge: "Save ₹4,000",
-    images: ["images/d2.jpg", "images/d7.jpg", "images/r6.jpg"]
+    images: ["/assets/images/d2.jpg", "/assets/images/d7.jpg", "/assets/images/r6.jpg"],
   },
   {
     title: "Kerala",
@@ -24,7 +24,7 @@ const tours = [
     oldPrice: "₹25,000",
     link: "kerala.html",
     badge: "Save ₹5,000",
-    images: ["images/kerala1.jpg", "images/kerala2.jpg", "images/kerala3.jpg"]
+    images: ["/assets/images/kerala1.jpg", "/assets/images/kerala2.jpg", "/assets/images/kerala3.jpg"],
   },
   {
     title: "Goa Beach Escape",
@@ -37,7 +37,12 @@ const tours = [
     oldPrice: "₹9,000",
     link: "goa.html",
     badge: "Bestseller",
-    images: ["tourimages/goa1.jpg","tourimages/goa2.jpg","tourimages/goa3.jpg","tourimages/goa4.jpg"]
+    images: [
+      "/assets/tourimages/goa1.jpg",
+      "/assets/tourimages/goa2.jpg",
+      "/assets/tourimages/goa3.jpg",
+      "/assets/tourimages/goa4.jpg",
+    ],
   },
   {
     title: "Manali Snow Trip",
@@ -50,7 +55,13 @@ const tours = [
     oldPrice: "₹16,000",
     link: "manali.html",
     badge: "Most Booked",
-    images: ["tourimages/manali1.jpg","tourimages/manali2.jpg","tourimages/manali3.jpg","tourimages/manali4.jpg","tourimages/manali5.jpg"]
+    images: [
+      "/assets/tourimages/manali1.jpg",
+      "/assets/tourimages/manali2.jpg",
+      "/assets/tourimages/manali3.jpg",
+      "/assets/tourimages/manali4.jpg",
+      "/assets/tourimages/manali5.jpg",
+    ],
   },
   {
     title: "Varanasi Spiritual Tour",
@@ -63,7 +74,12 @@ const tours = [
     oldPrice: "₹10,000",
     link: "kashi.html",
     badge: "Spiritual",
-    images: ["tourimages/kashi1.jpg","tourimages/kashi2.jpg","tourimages/kashi3.jpg","tourimages/kashi4.jpg"]
+    images: [
+      "/assets/tourimages/kashi1.jpg",
+      "/assets/tourimages/kashi2.jpg",
+      "/assets/tourimages/kashi3.jpg",
+      "/assets/tourimages/kashi4.jpg",
+    ],
   },
   {
     title: "Andaman Islands",
@@ -76,10 +92,15 @@ const tours = [
     oldPrice: "₹28,000",
     link: "andamanIsland.html",
     badge: "Top Pick",
-    images: ["tourimages/portblair1.jpg","tourimages/portblair2.jpg","tourimages/andaman1.jpg","tourimages/andaman2.jpg","tourimages/andaman3.jpg"]
-  }
+    images: [
+      "/assets/tourimages/portblair1.jpg",
+      "/assets/tourimages/portblair2.jpg",
+      "/assets/tourimages/andaman1.jpg",
+      "/assets/tourimages/andaman2.jpg",
+      "/assets/tourimages/andaman3.jpg",
+    ],
+  },
 ];
-
 
 // INIT
 const container = document.getElementById("cardContainer");
@@ -136,5 +157,5 @@ initScroller(
   document.getElementById("cardContainer"),
   document.getElementById("tourPrev"),
   document.getElementById("tourNext"),
-  24
+  24,
 );

@@ -1,71 +1,127 @@
 <!doctype html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8" />
+  <head>
+    <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Manali 5 Day Tour Package | Snow, Mountains & Adventure</title>
 
-  <title>Golden Triangle Tour 5 Days – Delhi, Agra & Jaipur Package</title>
+  <meta name="description" content="Experience Manali with a 5-day tour covering Solang Valley, Rohtang Pass, Atal Tunnel, and scenic mountain views. Perfect for couples, friends, and adventure lovers." />
 
+  <meta name="keywords" content="Manali tour package, Manali 5 days itinerary, Solang Valley trip, Rohtang Pass travel, Manali snow trip" />
 
-  <meta name="description" content="Explore India’s Golden Triangle with a 5-day tour covering Delhi, Agra, and Jaipur. Visit the Taj Mahal, Amber Fort, and historic landmarks with a comfortable car and driver." />
+  <meta property="og:title" content="Manali 5 Day Tour Package" />
+  <meta property="og:description" content="Explore snow-covered mountains, adventure sports, and scenic beauty in Manali." />
 
-  <meta name="keywords" content="Golden Triangle tour India, Delhi Agra Jaipur tour, 5 days Golden Triangle itinerary, Taj Mahal tour package, India private tour" />
+  <meta property="og:image" content="https://bharat-bharman.vercel.app/images/manali.jpg" />
 
-  <!-- OPEN GRAPH -->
-  <meta property="og:title" content="Golden Triangle 5 Day Tour Package" />
-  <meta property="og:description" content="Discover Delhi, Agra, and Jaipur with iconic landmarks like the Taj Mahal and Amber Fort." />
-  <meta property="og:image" content="https://bharat-bharman.vercel.app/images/goldentriangle.jpg" />
   <meta property="og:type" content="website" />
-  <meta property="og:locale" content="en_IN" />
 
 
-  <!-- Tailwind Play CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
- <script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        primary: '#2a9d8f',
-        primaryHover: '#23867a',
-        dark: '#0a0a0a',
-        ink: {
-          900: '#111827'
-        }
-      },
-      fontFamily: {
-        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-        body: ['"DM Sans"', 'sans-serif'],
-      },
-      screens: {
-        nav: '900px',
-      },
-    }
-  }
-}
-</script>
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2a9d8f",
+              primaryHover: "#23867a",
+              dark: "#0a0a0a",
+              ink: {
+                900: "#111827",
+              },
+            },
+            fontFamily: {
+              display: ['"Cormorant Garamond"', "Georgia", "serif"],
+              body: ['"DM Sans"', "sans-serif"],
+            },
+            screens: {
+              nav: "900px",
+            },
+          },
+        },
+      };
+    </script>
 
-<link rel="stylesheet" href="base.css" />
-<link rel="stylesheet" href="component.css">
-  <link rel="stylesheet" href="animations.css" />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="component.css" />
+    <link rel="stylesheet" href="animations.css" />
 
 
-  <!-- lucide icon CDN -->
+
+    <!-- lucide icon CDN -->
    <script src="https://unpkg.com/lucide@latest"></script>
-</head>
+  </head>
+
+  <body class="font-body bg-gray-50 text-gray-800 leading-relaxed antialiased">
 
 
 
 
- <body class="font-body bg-gray-50 text-gray-800 leading-relaxed antialiased">
+    <!-- navbar ----------------------------------------------- -->
+    <!-- Dark overlay behind mobile drawer -->
+    <div id="navOverlay"
+  class="fixed inset-0 bg-black/30 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 z-[998]">
+</div>
 
- <!-- NAVbar----------------------------------->
-    <nav
-      id="mainNav"
-      class="mega-nav fixed top-0 left-0 right-0 z-[999] flex items-center justify-between px-[5%] h-[72px] bg-white/80 backdrop-blur-[14px] border-b border-gray-200/60"
+    <!-------------------------Mobile Drawer (separate from desktop ul)------------------------------------>
+
+   <div id="mobileMenu"
+  class="fixed top-0 right-0 z-[999]
+         w-[80%] max-w-[320px]
+         h-[100dvh]
+         bg-[#0f172a]
+         translate-x-full
+         transition-transform duration-300
+         flex flex-col overflow-y-auto px-6 pt-6 pb-6">
+
+
+         <button
+  id="drawerClose"
+  class="absolute top-5 right-5 z-[1000] flex flex-col gap-[5px]"
+>
+  <span class="block w-6 h-[2px] bg-white rotate-45 translate-y-[6px]"></span>
+  <span class="block w-6 h-[2px] bg-white opacity-0"></span>
+  <span class="block w-6 h-[2px] bg-white -rotate-45 -translate-y-[6px]"></span>
+</button>
+
+  <!-- MAIN LINKS -->
+  <div class="flex flex-col gap-1">
+    <a href="index.html" class="block py-3 text-white text-[1.05rem] hover:text-teal-500    border-b border-white/10">Home</a>
+    <a href="pages/trips.html" class="block py-3 text-white text-[1.05rem] hover:text-teal-500    border-b border-white/10">Packages</a>
+    <a href="pages/cars.html" class="block py-3 text-white text-[1.05rem]  hover:text-teal-500   border-b border-white/10">Cars</a>
+    <a href="pages/about.html" class="block py-3 text-white text-[1.05rem] hover:text-teal-500    border-b border-white/10">About</a>
+  </div>
+
+  <!-- EXPLORE SECTION -->
+  <div class="mt-6 pt-5 border-t border-white/10 flex flex-col gap-2">
+    <p class="text-white/40 text-[0.7rem] uppercase tracking-widest">
+      Explore
+    </p>
+
+    <a href="pages/goldentriangle.html"  class="text-white/80 py-2 text-[0.95rem] hover:text-teal-400 transition">Golden Triangle</a>
+    <a href="pages/kashmir.html" class="text-white/80 py-2 text-[0.95rem] hover:text-teal-400 transition">Kashmir</a>
+    <a href="pages/manali.html" class="text-white/80 py-2 text-[0.95rem] hover:text-teal-400 transition">Himachal</a>
+    <a href="pages/kerala.html" class="text-white/80 py-2 text-[0.95rem] hover:text-teal-400 transition">Kerala</a>
+    <a href="pages/kashi.html" class="text-white/80 py-2 text-[0.95rem] hover:text-teal-400 transition">Spiritual Tours</a>
+  </div>
+
+
+</div>
+
+
+
+
+
+<!-- navbar  ------------------------>
+      <nav
+     id="mainNav"
+  class="mega-nav fixed top-0 left-0 right-0 z-[1000] flex items-center justify-between px-[5%] h-[72px] shrink-0 rounded-full font-medium border border-white/30 backdrop-blur-md hover:bg-white/10 transition-all duration-300 transition-transform duration-300 ease-[cubic-bezier(.22,1,.36,1)] translate-y-0"
     >
-      <!-- Logo -->
+
+
+    <!-- Logo -->
       <a
         href="index.html"
         class="font-display text-[1.4rem] font-bold  text-gray-900 tracking-tight transition-transform duration-300 hover:scale-105 shrink-0"
@@ -73,22 +129,8 @@ tailwind.config = {
         Bharat<em class="text-teal-600 not-italic">भ्रमण</em>
       </a>
 
-      <!-- Mobile toggle -->
-      <button
-        id="navToggle"
-        class="nav-toggle-btn hidden max-[900px]:flex flex-col justify-center gap-[5px] bg-transparent border-none cursor-pointer p-1.5 z-[1001]"
-        aria-label="Toggle menu"
-      >
-        <span
-          class="block w-6 h-[2px] bg-gray-800 rounded-sm transition-all duration-300"
-        ></span>
-        <span
-          class="block w-6 h-[2px] bg-gray-800 rounded-sm transition-all duration-300"
-        ></span>
-        <span
-          class="block w-6 h-[2px] bg-gray-800 rounded-sm transition-all duration-300"
-        ></span>
-      </button>
+
+
 
       <!-- Desktop links -->
       <ul
@@ -105,13 +147,15 @@ tailwind.config = {
         </li>
         <li>
           <a
-            href="trips.html"
+            href="pages/trips.html"
             class="relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
           >
             Packages
           </a>
         </li>
-        <li class="relative">
+
+<!-- explore  -->
+        <li class="relative group">
           <a
             href="#"
             class="mega-trigger relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
@@ -119,76 +163,42 @@ tailwind.config = {
           >
             Explore
           </a>
-        </li>
-        <li>
-          <a
-            href="cars.html"
-            class="relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
-          >
-            Cars
-          </a>
-        </li>
-        <li class="relative">
-          <a
-            href="#"
-            class="mega-trigger relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
-            data-mega="bestsellers"
-          >
-            Best Sellers
-          </a>
-        </li>
-        <li>
-          <a
-            href="about.html"
-            class="relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
-          >
-            About
-          </a>
-        </li>
-      </ul>
-
-      <!-- CTA -->
-      <a
-        href="https://wa.me/919006143335?text=Hi%20I%20am%20interested%20in%20your%20tour%20packages"
-        target="_blank"
-        rel="noopener"
-        class="btn-shine hidden nav:flex items-center gap-2 px-5 py-[10px] rounded-full text-sm font-semibold text-white bg-gradient-to-br from-[#2a9d8f] to-[#264653] shadow-[0_8px_25px_rgba(0,0,0,0.3)] transition-all duration-400 hover:-translate-y-0.5 hover:scale-[1.04] hover:shadow-[0_18px_40px_rgba(0,0,0,0.5)]"
-      >
-        Book Now
-      </a>
-
-      <!-- Mega Menu -->
+             <!-- Mega Menu -->
       <div
-        id="megaMenu"
-        class="mega-menu absolute top-full left-1/2 -translate-x-1/2 w-auto min-w-[520px] bg-white rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-gray-100 mt-3"
+         id="megaMenu"
+  class="mega-menu absolute top-full left-1/2 -translate-x-1/2
+         w-auto min-w-[520px] bg-white rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.12)]
+         border border-gray-100 mt-3
+         opacity-0 pointer-events-none
+         transition-all duration-200"
       >
         <!-- EXPLORE PANEL -->
-        <div class="mega-panel hidden" data-panel="explore">
+        <div class="mega-panel" data-panel="explore">
           <div class="flex gap-16 m-8">
             <div>
               <h4
-                class=" text-gray-400 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
+                class=" text-teal-500 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
               >
                 North India
               </h4>
               <ul class="space-y-2.5">
                 <li>
                   <a
-                    href="goldentriangle.html"
+                    href="pages/goldentriangle.html"
                     class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Golden Triangle</a
                   >
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="pages/kashmir.html"
                     class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Kashmir</a
                   >
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="pages/manali.html"
                     class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Himachal</a
                   >
@@ -197,14 +207,14 @@ tailwind.config = {
             </div>
             <div>
               <h4
-                class=" text-gray-400 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
+                class=" text-teal-500 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
               >
                 South India
               </h4>
               <ul class="space-y-2.5">
                 <li>
                   <a
-                    href="kerala.html"
+                    href="pages/kerala.html"
                     class=" text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Kerala</a
                   >
@@ -227,28 +237,28 @@ tailwind.config = {
             </div>
             <div>
               <h4
-                class="text-gray-400 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
+                class="text-teal-500 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
               >
                 Special
               </h4>
               <ul class="space-y-2.5">
                 <li>
                   <a
-                    href="#"
+                    href="pages/goldentriangle.html"
                     class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Desert Tours</a
                   >
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="pages/kashi.html"
                     class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Spiritual Tours</a
                   >
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="pages/goa.html"
                     class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
                     >Luxury Trips</a
                   >
@@ -258,153 +268,95 @@ tailwind.config = {
           </div>
         </div>
 
-        <!-- BEST SELLERS PANEL -->
-        <div class="mega-panel hidden" data-panel="bestsellers">
-          <div class="flex gap-16 m-8">
-            <div>
-              <h4
-                class="text-gray-400 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
-              >
-                Top Picks
-              </h4>
-              <ul class="space-y-2.5">
-                <li>
-                  <a
-                    href="goldentriangle.html"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Golden Triangle ★★★★★</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="kerala.html"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Kerala ★★★★★</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Goa ★★★★☆</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4
-                class="text-gray-400 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
-              >
-                Trending
-              </h4>
-              <ul class="space-y-2.5">
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Rajasthan</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Himachal</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Varanasi</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4
-                class="text-gray-400 text-[0.85rem] font-semibold uppercase tracking-widest mb-4"
-              >
-                Offers
-              </h4>
-              <ul class="space-y-2.5">
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Early Bird</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-400 hover:translate-x-1.5 inline-block"
-                    >Group Deals</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="text-gray-700 text-[0.9rem] transition-all duration-300 hover:text-teal-600 hover:translate-x-1.5 inline-block"
-                    >Custom Tours</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+
       </div>
+        </li>
+
+
+
+        <li>
+          <a
+            href="pages/cars.html"
+            class="relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
+          >
+            Cars
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="pages/about.html"
+            class="relative text-gray-700 text-[0.95rem] font-medium transition-colors duration-300 hover:text-gray-900 after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all after:duration-350 hover:after:w-full"
+          >
+            About
+          </a>
+        </li>
+      </ul>
+
+
+        <!-- CTA -->
+      <a
+        href="https://wa.me/919006143335?text=Hi%20I%20am%20interested%20in%20your%20tour%20packages"
+        target="_blank"
+        rel="noopener"
+        class="btn-shine hidden nav:flex items-center gap-2 px-5 py-[10px] rounded-full text-sm font-semibold text-white bg-teal-500 shadow-[0_8px_25px_rgba(0,0,0,0.3)] transition-all duration-400 hover:-translate-y-0.5 hover:scale-[1.04] hover:shadow-[0_18px_40px_rgba(0,0,0,0.5)]"
+      >
+        Book Now
+      </a>
+
+
+        <!-- Mobile toggle -->
+      <button
+        id="navToggle"
+  data-state="closed"
+  class="nav-toggle-btn bg-white/10 backdrop-blur-md
+         max-[900px]:flex hidden flex-col justify-center gap-[5px]
+         rounded-full p-2"
+      >
+        <span
+          class="block w-5 h-[2.5px] bg-teal-500 rounded-sm transition-all duration-300"
+        ></span>
+        <span
+          class="block w-5 h-[2.5px] bg-teal-500 rounded-sm transition-all duration-300"
+        ></span>
+       <span
+  class="block w-3 h-[2.5px] bg-teal-500 rounded-sm transition-all duration-300 self-end"
+></span>
+      </button>
+
+
+
+
     </nav>
 
 
- <main class="pt-[72px]">
-   <!-- gallery  -->
-    <section class="px-[5%]  mt-[72-px]">
-
-<div class="hero-inner py-20 px-[5%]">
-
-<div class="flex items-center gap-2 text-sm text-gray-700">
-
-  <a href="index.html"
-    class="hover:text-gray-900 transition">
-    Home
-  </a>
-
-  <span class="text-gray-400">→</span>
-
-  <a href="trips.html"
-    class="hover:text-gray-900 transition">
-    Tours
-  </a>
-
-  <span class="text-gray-400">→</span>
-
-  <span class="text-gray-900 font-medium">
-    Goldentriangle
-  </span>
-
-</div>
-
-</div>
 
 
+
+
+
+
+
+
+
+
+
+    <!-- gallery  -->
+    <section class="px-[5%] pt-[60px] mt-[80px]">
       <!-- TITLE -->
       <h2
         class="text-[clamp(2rem,4vw,2.6rem)] font-semibold mb-6 text-gray-900"
       >
-        The <span class="text-teal-600 font-semibold">Goldentriangle</span> Route
+        The <span class="text-teal-600 font-semibold">Manali</span> Route
       </h2>
 
       <!-- GALLERY WRAPPER (IMPORTANT) -->
       <div
         id="gallery"
         data-images='[
-      "images/r1.jpg",
-      "images/r2.jpg",
-      "images/r3.jpg",
-      "images/r4.jpg",
-      "images/r5.jpg",
-      "images/r6.jpg"
+      "images/manali1.jpg",
+      "images/manali2.jpg",
+      "images/manali3.jpg"
     ]'
       >
         <!-- GRID -->
@@ -414,7 +366,7 @@ tailwind.config = {
           <!-- LEFT BIG IMAGE -->
           <div class="h-[420px] overflow-hidden">
             <img
-              src="images/r1.jpg"
+              src="images/manali1.jpg"
               onclick="openLightbox(0)"
               class="w-full h-full object-cover cursor-pointer hover:scale-105 transition duration-700"
             />
@@ -424,7 +376,7 @@ tailwind.config = {
           <div class="grid grid-rows-2 gap-2 h-[420px]">
             <div class="overflow-hidden">
               <img
-                src="images/r2.jpg"
+                src="images/manali2.jpg"
                 onclick="openLightbox(1)"
                 class="w-full h-full object-cover cursor-pointer hover:scale-105 transition duration-700"
               />
@@ -432,7 +384,7 @@ tailwind.config = {
 
             <div class="relative overflow-hidden">
               <img
-                src="images/r3.jpg"
+                src="images/manali3.jpg"
                 onclick="openLightbox(2)"
                 class="w-full h-full object-cover cursor-pointer hover:scale-105 transition duration-700"
               />
@@ -489,439 +441,331 @@ tailwind.config = {
       </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- STATS BAR -->
-<div class="px-[5%] py-6">
-
-  <div class="flex gap-3 overflow-x-auto no-scrollbar
-    bg-gradient-to-r from-white/80 to-[#f8fafc]
-    backdrop-blur-md border border-gray-200/60
-    rounded-2xl p-3 shadow-sm">
-
-    <!-- ITEM -->
-    <div class="flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap
-      bg-white/70 border border-gray-200 text-gray-700 text-sm
-      transition-all duration-300
-      hover:-translate-y-[2px] hover:scale-[1.03]
-      hover:bg-gradient-to-br hover:from-teal-500 hover:to-teal-600
-      hover:text-white hover:shadow-md">
-
-      <span class="text-base">⏳</span>
-      <span class="font-medium">10 Days</span>
-    </div>
-
-    <!-- ITEM -->
-    <div class="flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap
-      bg-white/70 border border-gray-200 text-gray-700 text-sm
-      transition-all duration-300
-      hover:-translate-y-[2px] hover:scale-[1.03]
-      hover:bg-gradient-to-br hover:from-teal-500 hover:to-teal-600
-      hover:text-white hover:shadow-md">
-
-      <span class="text-base">📍</span>
-      <span class="font-medium">Jaipur • Jodhpur • Jaisalmer • Udaipur</span>
-    </div>
-
-    <!-- ITEM -->
-    <div class="flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap
-      bg-white/70 border border-gray-200 text-gray-700 text-sm
-      transition-all duration-300
-      hover:-translate-y-[2px] hover:scale-[1.03]
-      hover:bg-gradient-to-br hover:from-teal-500 hover:to-teal-600
-      hover:text-white hover:shadow-md">
-
-      <span class="text-base">🏨</span>
-      <span class="font-medium">4★ Heritage Stays</span>
-    </div>
-
-    <!-- ITEM -->
-    <div class="flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap
-      bg-white/70 border border-gray-200 text-gray-700 text-sm
-      transition-all duration-300
-      hover:-translate-y-[2px] hover:scale-[1.03]
-      hover:bg-gradient-to-br hover:from-teal-500 hover:to-teal-600
-      hover:text-white hover:shadow-md">
-
-      <span class="text-base">🚗</span>
-      <span class="font-medium">Private Car</span>
-    </div>
-
-    <!-- ITEM -->
-    <div class="flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap
-      bg-white/70 border border-gray-200 text-gray-700 text-sm
-      transition-all duration-300
-      hover:-translate-y-[2px] hover:scale-[1.03]
-      hover:bg-gradient-to-br hover:from-teal-500 hover:to-teal-600
-      hover:text-white hover:shadow-md">
-
-      <span class="text-base">👥</span>
-      <span class="font-medium">2–6 People</span>
-    </div>
-
-  </div>
-
-</div>
-
-
-
-<div class="px-[5%] py-[80px] bg-gradient-to-b from-[#f8fafc] to-white">
-
-  <div class="max-w-[1200px] mx-auto grid lg:grid-cols-[1fr_360px] gap-12">
-
-    <!-- LEFT -->
-    <div class="space-y-14">
-
-      <!-- SECTION -->
-      <div>
-        <h2 class="text-2xl font-semibold mb-6 text-gray-900">The Journey</h2>
-
-        <div class="space-y-5">
-
-          <!-- DAY -->
-          <div class="group rounded-2xl p-5 bg-white border border-gray-200
-            shadow-sm hover:shadow-md transition">
-
-            <div class="flex items-center gap-4 mb-3">
-              <div class="w-10 h-10 flex items-center justify-center rounded-full
-                bg-teal-100 text-teal-600 font-semibold">
-                1
-              </div>
-
-              <div class="font-medium text-gray-900">
-                Jaipur Arrival
-              </div>
-            </div>
-
-            <p class="text-sm text-gray-600 leading-relaxed">
-              Arrive, check-in, evening walk in local bazaars.
-              Slow introduction to Rajasthan.
-              Stay: 4★ Hotel
-            </p>
-
-          </div>
-
-            <!-- DAY -->
-          <div class="group rounded-2xl p-5 bg-white border border-gray-200
-            shadow-sm hover:shadow-md transition">
-
-            <div class="flex items-center gap-4 mb-3">
-              <div class="w-10 h-10 flex items-center justify-center rounded-full
-                bg-teal-100 text-teal-600 font-semibold">
-                2
-              </div>
-
-              <div class="font-medium text-gray-900">
-                Jaipur Sightseeing — Forts & Palaces
-              </div>
-            </div>
-
-            <p class="text-sm text-gray-600 leading-relaxed">
-              Visit Amber Fort (elephant ride optional), City Palace, Hawa Mahal,
-              Jantar Mantar Observatory, and the Albert Hall Museum. Overnight in Jaipur.
-            </p>
-
-          </div>
-
-            <!-- DAY -->
-          <div class="group rounded-2xl p-5 bg-white border border-gray-200
-            shadow-sm hover:shadow-md transition">
-
-            <div class="flex items-center gap-4 mb-3">
-              <div class="w-10 h-10 flex items-center justify-center rounded-full
-                bg-teal-100 text-teal-600 font-semibold">
-                3
-              </div>
-
-              <div class="font-medium text-gray-900">
-                Jaipur → Jodhpur (The Blue City)
-              </div>
-            </div>
-
-            <p class="text-sm text-gray-600 leading-relaxed">
-              Drive to Jodhpur (approx. 5 hrs). En route, stop at Ajmer Sharif Dargah
-              and Pushkar Lake. Check in and explore the blue lanes of the old city.
-            </p>
-
-          </div>
-
-            <!-- DAY -->
-          <div class="group rounded-2xl p-5 bg-white border border-gray-200
-            shadow-sm hover:shadow-md transition">
-
-            <div class="flex items-center gap-4 mb-3">
-              <div class="w-10 h-10 flex items-center justify-center rounded-full
-                bg-teal-100 text-teal-600 font-semibold">
-                4
-              </div>
-
-              <div class="font-medium text-gray-900">
-               Jodhpur — Mehrangarh Fort & Markets
-              </div>
-            </div>
-
-            <p class="text-sm text-gray-600 leading-relaxed">
-               Morning visit to Mehrangarh Fort (one of India's largest), Jaswant Thada
-              memorial, Umaid Bhawan Palace. Afternoon explore Sardar Market. Overnight in Jodhpur.
-            </p>
-
-          </div>
-
-            <!-- DAY -->
-          <div class="group rounded-2xl p-5 bg-white border border-gray-200
-            shadow-sm hover:shadow-md transition">
-
-            <div class="flex items-center gap-4 mb-3">
-              <div class="w-10 h-10 flex items-center justify-center rounded-full
-                bg-teal-100 text-teal-600 font-semibold">
-                5
-              </div>
-
-              <div class="font-medium text-gray-900">
-               Jodhpur → Jaisalmer (The Golden City)
-              </div>
-            </div>
-
-            <p class="text-sm text-gray-600 leading-relaxed">
-               Drive to Jaisalmer (approx. 5 hrs) through the Thar Desert. Check in
-              and explore Jaisalmer Fort at sunset — the only living fort in India.
-            </p>
-
-          </div>
-
-            <!-- DAY -->
-          <div class="group rounded-2xl p-5 bg-white border border-gray-200
-            shadow-sm hover:shadow-md transition">
-
-            <div class="flex items-center gap-4 mb-3">
-              <div class="w-10 h-10 flex items-center justify-center rounded-full
-                bg-teal-100 text-teal-600 font-semibold">
-                6
-              </div>
-
-              <div class="font-medium text-gray-900">
-                Jaisalmer — Desert & Dunes
-              </div>
-            </div>
-
-            <p class="text-sm text-gray-600 leading-relaxed">
-             Morning: Patwon Ki Haveli and Bada Bagh cenotaphs. Evening: camel safari
-              at Sam Sand Dunes + desert camp with folk music and dinner under the stars.
-            </p>
-
-          </div>
-
-            <!-- DAY -->
-          <div class="group rounded-2xl p-5 bg-white border border-gray-200
-            shadow-sm hover:shadow-md transition">
-
-            <div class="flex items-center gap-4 mb-3">
-              <div class="w-10 h-10 flex items-center justify-center rounded-full
-                bg-teal-100 text-teal-600 font-semibold">
-                7
-              </div>
-
-              <div class="font-medium text-gray-900">
-                Jaisalmer → Udaipur (The City of Lakes)
-              </div>
-            </div>
-
-            <p class="text-sm text-gray-600 leading-relaxed">
-             Long scenic drive to Udaipur (approx. 7 hrs). Arrive, check in, and enjoy
-              a sunset boat ride on Lake Pichola with views of the Lake Palace.
-            </p>
-
-          </div>
-
-            <!-- DAY -->
-          <div class="group rounded-2xl p-5 bg-white border border-gray-200
-            shadow-sm hover:shadow-md transition">
-
-            <div class="flex items-center gap-4 mb-3">
-              <div class="w-10 h-10 flex items-center justify-center rounded-full
-                bg-teal-100 text-teal-600 font-semibold">
-                8
-              </div>
-
-              <div class="font-medium text-gray-900">
-               Udaipur — Palaces & Lakes
-              </div>
-            </div>
-
-            <p class="text-sm text-gray-600 leading-relaxed">
-                Visit City Palace, Jagdish Temple, Saheliyon Ki Bari, and Fateh Sagar Lake.
-              Evening stroll through the old city and dinner at a rooftop restaurant.
-            </p>
-
-          </div>
-
-
-
-            <!-- DAY -->
-          <div class="group rounded-2xl p-5 bg-white border border-gray-200
-            shadow-sm hover:shadow-md transition">
-
-            <div class="flex items-center gap-4 mb-3">
-              <div class="w-10 h-10 flex items-center justify-center rounded-full
-                bg-teal-100 text-teal-600 font-semibold">
-                9
-              </div>
-
-              <div class="font-medium text-gray-900">
-                Departure
-              </div>
-            </div>
-
-            <p class="text-sm text-gray-600 leading-relaxed">
-              Morning at leisure. Drop to Udaipur airport or railway station for
-              onward journey. Tour ends with unforgettable memories.
-            </p>
-
-          </div>
-
-
-
+    <!-- STATS BAR -->
+    <div class="px-[5%] py-6">
+      <div
+        class="flex gap-3 overflow-x-auto no-scrollbar bg-gradient-to-r from-white/80 to-[#f8fafc] backdrop-blur-md border border-gray-200/60 rounded-2xl p-3 shadow-sm"
+      >
+        <!-- ITEM -->
+        <div
+          class="flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap bg-white/70 border border-gray-200 text-gray-700 text-sm transition-all duration-300 hover:-translate-y-[2px] hover:scale-[1.03] hover:bg-gradient-to-br hover:from-teal-500 hover:to-teal-600 hover:text-white hover:shadow-md"
+        >
+          <span class="text-base">⏳</span>
+          <span class="font-medium">5 Days</span>
+        </div>
+
+        <!-- ITEM -->
+        <div
+          class="flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap bg-white/70 border border-gray-200 text-gray-700 text-sm transition-all duration-300 hover:-translate-y-[2px] hover:scale-[1.03] hover:bg-gradient-to-br hover:from-teal-500 hover:to-teal-600 hover:text-white hover:shadow-md"
+        >
+          <span class="text-base">📍</span>
+          <span class="font-medium">Manali</span>
+        </div>
+
+        <!-- ITEM -->
+        <div
+          class="flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap bg-white/70 border border-gray-200 text-gray-700 text-sm transition-all duration-300 hover:-translate-y-[2px] hover:scale-[1.03] hover:bg-gradient-to-br hover:from-teal-500 hover:to-teal-600 hover:text-white hover:shadow-md"
+        >
+          <span class="text-base">🏨</span>
+          <span class="font-medium">4★ Heritage Stays</span>
+        </div>
+
+        <!-- ITEM -->
+        <div
+          class="flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap bg-white/70 border border-gray-200 text-gray-700 text-sm transition-all duration-300 hover:-translate-y-[2px] hover:scale-[1.03] hover:bg-gradient-to-br hover:from-teal-500 hover:to-teal-600 hover:text-white hover:shadow-md"
+        >
+          <span class="text-base">🚗</span>
+          <span class="font-medium">Private Car</span>
+        </div>
+
+        <!-- ITEM -->
+        <div
+          class="flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap bg-white/70 border border-gray-200 text-gray-700 text-sm transition-all duration-300 hover:-translate-y-[2px] hover:scale-[1.03] hover:bg-gradient-to-br hover:from-teal-500 hover:to-teal-600 hover:text-white hover:shadow-md"
+        >
+          <span class="text-base">👥</span>
+          <span class="font-medium">2–6 People</span>
         </div>
       </div>
+    </div>
 
-      <!-- INCLUDED -->
-      <div>
-        <h2 class="text-2xl font-semibold mb-6 text-gray-900">What’s Included</h2>
+    <div class="px-[5%] py-[80px] bg-gradient-to-b from-[#f8fafc] to-white">
+      <div class="max-w-[1200px] mx-auto grid lg:grid-cols-[1fr_360px] gap-12">
+        <!-- LEFT -->
+        <div class="space-y-14">
+          <!-- SECTION -->
+          <!-- SECTION -->
+          <div>
+            <h2 class="text-2xl font-semibold mb-6 text-gray-900">
+              The Journey
+            </h2>
 
-        <div class="grid md:grid-cols-2 gap-6">
+            <div class="space-y-5">
+              <!-- DAY 1 -->
+              <div
+                class="group rounded-2xl p-5 bg-white border border-gray-200 shadow-sm hover:shadow-md transition"
+              >
+                <div class="flex items-center gap-4 mb-3">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-teal-100 text-teal-600 font-semibold"
+                  >
+                    1
+                  </div>
+                  <div class="font-medium text-gray-900">
+                    Arrival in Manali — Settle Into the Mountains
+                  </div>
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  Arrive in Manali via Volvo or private car. Check into your
+                  hotel and take it easy. Explore Mall Road, nearby cafés, and
+                  get your first feel of the mountains.
+                </p>
+              </div>
 
-          <div class="p-5 rounded-2xl bg-green-50 border border-green-200">
-            <ul class="space-y-2 text-sm text-gray-700">
-              <li>✔ Private car for entire trip</li>
-              <li>✔ All accommodation</li>
-              <li>✔ Daily breakfast</li>
-              <li>✔ Driver, tolls, parking</li>
-              <li>✔ 24/7 support</li>
+              <!-- DAY 2 -->
+              <div
+                class="group rounded-2xl p-5 bg-white border border-gray-200 shadow-sm hover:shadow-md transition"
+              >
+                <div class="flex items-center gap-4 mb-3">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-teal-100 text-teal-600 font-semibold"
+                  >
+                    2
+                  </div>
+                  <div class="font-medium text-gray-900">
+                    Manali — Temples, Culture & Old Town
+                  </div>
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  Visit Hadimba Devi Temple, Manu Temple, and Vashisht hot
+                  springs. Spend time in Old Manali exploring riverside cafés
+                  and local markets.
+                </p>
+              </div>
+
+              <!-- DAY 3 -->
+              <div
+                class="group rounded-2xl p-5 bg-white border border-gray-200 shadow-sm hover:shadow-md transition"
+              >
+                <div class="flex items-center gap-4 mb-3">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-teal-100 text-teal-600 font-semibold"
+                  >
+                    3
+                  </div>
+                  <div class="font-medium text-gray-900">
+                    Solang Valley — Snow & Adventure
+                  </div>
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  Head to Solang Valley for adventure activities like
+                  paragliding, zipline, or snow experiences (seasonal). Optional
+                  visit to Atal Tunnel or nearby snow points depending on
+                  weather.
+                </p>
+              </div>
+
+              <!-- DAY 4 -->
+              <div
+                class="group rounded-2xl p-5 bg-white border border-gray-200 shadow-sm hover:shadow-md transition"
+              >
+                <div class="flex items-center gap-4 mb-3">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-teal-100 text-teal-600 font-semibold"
+                  >
+                    4
+                  </div>
+                  <div class="font-medium text-gray-900">
+                    Kullu & Kasol — Valley Escape
+                  </div>
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  Drive towards Kullu Valley. Visit river rafting points
+                  (optional), shawl factories, and continue to Kasol. Walk along
+                  the Parvati River and enjoy the laid-back vibe before
+                  returning.
+                </p>
+              </div>
+
+              <!-- DAY 5 -->
+              <div
+                class="group rounded-2xl p-5 bg-white border border-gray-200 shadow-sm hover:shadow-md transition"
+              >
+                <div class="flex items-center gap-4 mb-3">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-teal-100 text-teal-600 font-semibold"
+                  >
+                    5
+                  </div>
+                  <div class="font-medium text-gray-900">
+                    Departure — Back With a Reset Mind
+                  </div>
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  After breakfast, check out and begin your return journey. You
+                  leave Manali refreshed, carrying the calm with you.
+                </p>
+              </div>
+
+              <!-- WHY THIS TRIP WORKS -->
+              <div class="p-6 rounded-2xl bg-white border shadow-sm">
+                <h3 class="text-lg font-semibold mb-3">Why This Trip Works</h3>
+
+                <ul class="text-sm text-gray-600 space-y-2">
+                  <li>• Perfect mix of chill + adventure</li>
+                  <li>• Snow experience + local culture covered</li>
+                  <li>• Not rushed — relaxed pacing</li>
+                  <li>• Ideal for friends, couples & first-time visitors</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- INCLUDED -->
+          <div>
+            <h2 class="text-2xl font-semibold mb-6 text-gray-900">
+              What’s Included
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="p-5 rounded-2xl bg-green-50 border border-green-200">
+                <ul class="space-y-2 text-sm text-gray-700">
+                  <li>✔ Private car for entire trip</li>
+                  <li>✔ All accommodation</li>
+                  <li>✔ Daily breakfast</li>
+                  <li>✔ Driver, tolls, parking</li>
+                  <li>✔ 24/7 support</li>
+                </ul>
+              </div>
+
+              <div class="p-5 rounded-2xl bg-red-50 border border-red-200">
+                <ul class="space-y-2 text-sm text-gray-700">
+                  <li>✘ Flights</li>
+                  <li>✘ Entry tickets</li>
+                  <li>✘ Personal expenses</li>
+                  <li>✘ Tips</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- ROUTE -->
+          <div
+            class="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm"
+          >
+            <h2 class="text-xl font-semibold mb-3 text-gray-900">Route</h2>
+            <p class="text-gray-600 text-sm">
+              Delhi → Chandigarh → Mohali → Kullu → Manali
+            </p>
+          </div>
+
+          <!-- KNOW BEFORE -->
+          <div>
+            <h2 class="text-2xl font-semibold mb-6 text-gray-900">
+              Know Before You Go
+            </h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div
+                class="p-4 bg-white border rounded-xl text-center text-sm hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)]"
+              >
+                Best Time<br /><b>Apr–Oct (Pleasant)</b>
+                <span class="text-xs text-gray-500">Dec–Feb for snow</span>
+              </div>
+              <div class="p-4 bg-white border rounded-xl text-center text-sm">
+                Temperature<br /><b>-2°C to 25°C</b>
+              </div>
+              <div class="p-4 bg-white border rounded-xl text-center text-sm">
+                Clothing<br /><b>Warm Layers</b><br />
+                <span class="text-xs text-gray-500">Heavy in winter</span>
+              </div>
+
+              <div class="p-4 bg-white border rounded-xl text-center text-sm">
+                Difficulty<br /><b>Easy–Moderate</b>
+              </div>
+              <div class="p-4 bg-white border rounded-xl text-center text-sm">
+                Customisable<br /><b>Yes</b>
+              </div>
+
+              <div class="p-4 bg-white border rounded-xl text-center text-sm">
+                Ideal For<br /><b>Couples • Families</b>
+              </div>
+
+              <div class="p-4 bg-white border rounded-xl text-center text-sm">
+                Connectivity<br /><b>Limited in valleys</b>
+              </div>
+
+              <div class="p-4 bg-white border rounded-xl text-center text-sm">
+                Customisable<br /><b>Yes</b>
+              </div>
+
+              <div class="p-4 bg-white border rounded-xl text-center text-sm">
+                Altitude<br /><b>High Regions</b><br />
+                <span class="text-xs text-gray-500">Take it slow</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:sticky lg:top-28 self-start">
+          <div
+            class="relative p-7 rounded-2xl overflow-hidden bg-gradient-to-br from-white to-[#f1f5f9] border border-gray-200 shadow-[0_25px_60px_rgba(0,0,0,0.08)]"
+          >
+            <!-- GLOW -->
+            <div
+              class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_20%,rgba(42,157,143,0.18),transparent_60%)]"
+            ></div>
+
+            <!-- PRICE -->
+            <div class="text-center mb-6">
+              <div class="text-sm text-gray-400 mb-1">Starting from</div>
+              <div class="text-[3rem] font-bold text-gray-900">₹13,500</div>
+              <div class="text-sm text-gray-500">
+                per person • seasonal pricing
+              </div>
+              <p class="text-xs text-red-500 mt-3">
+                ⚡ Prices increase during snowfall & peak season
+              </p>
+
+              <ul class="mt-5 text-xs text-gray-500 space-y-2">
+                <li>✔ Trusted drivers with local expertise</li>
+                <li>✔ Handpicked stays (houseboat + hotels)</li>
+                <li>✔ 24/7 WhatsApp support</li>
+              </ul>
+            </div>
+
+            <div class="h-[1px] bg-gray-200 my-5"></div>
+
+            <!-- CTA -->
+            <a
+              href="https://wa.me/919006143335"
+              class="block text-center py-3.5 rounded-full font-medium text-white bg-gradient-to-br from-teal-500 to-teal-700 shadow-md transition hover:-translate-y-1 hover:scale-[1.04] hover:shadow-xl"
+            >
+              Ask on WhatsApp →
+            </a>
+
+            <!-- FEATURES -->
+            <ul class="mt-6 space-y-3 text-sm text-gray-600">
+              <li class="flex gap-2 items-center">
+                <span class="w-2 h-2 bg-teal-500 rounded-full"></span>
+                No hidden costs
+              </li>
+
+              <li class="flex gap-2 items-center">
+                <span class="w-2 h-2 bg-teal-500 rounded-full"></span>
+                Flexible itinerary
+              </li>
+
+              <li class="flex gap-2 items-center">
+                <span class="w-2 h-2 bg-teal-500 rounded-full"></span>
+                Fast confirmation
+              </li>
             </ul>
           </div>
-
-          <div class="p-5 rounded-2xl bg-red-50 border border-red-200">
-            <ul class="space-y-2 text-sm text-gray-700">
-              <li>✘ Flights</li>
-              <li>✘ Entry tickets</li>
-              <li>✘ Personal expenses</li>
-              <li>✘ Tips</li>
-            </ul>
-          </div>
-
         </div>
       </div>
-
-      <!-- ROUTE -->
-      <div class="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
-        <h2 class="text-xl font-semibold mb-3 text-gray-900">Route</h2>
-        <p class="text-gray-600 text-sm">
-          Jaipur → Jodhpur → Jaisalmer → Udaipur (Private AC Car)
-        </p>
-      </div>
-
-      <!-- KNOW BEFORE -->
-      <div>
-        <h2 class="text-2xl font-semibold mb-6 text-gray-900">Know Before You Go</h2>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-
-          <div class="p-4 bg-white border rounded-xl text-center text-sm hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)]">Best Time<br><b>Oct–Mar</b></div>
-          <div class="p-4 bg-white border rounded-xl text-center text-sm">Clothing<br><b>Comfortable</b></div>
-          <div class="p-4 bg-white border rounded-xl text-center text-sm">Difficulty<br><b>Easy</b></div>
-          <div class="p-4 bg-white border rounded-xl text-center text-sm">Customisable<br><b>Yes</b></div>
-
-        </div>
-      </div>
-
     </div>
 
-<div class="lg:sticky lg:top-28 self-start">
-
-  <div class="relative p-7 rounded-2xl overflow-hidden
-    bg-gradient-to-br from-white to-[#f1f5f9]
-    border border-gray-200
-    shadow-[0_25px_60px_rgba(0,0,0,0.08)]">
-
-    <!-- GLOW -->
-    <div class="absolute inset-0 -z-10
-      bg-[radial-gradient(circle_at_30%_20%,rgba(42,157,143,0.18),transparent_60%)]">
-    </div>
-
-    <!-- PRICE -->
-    <div class="text-center mb-6">
-      <div class="text-[3rem] font-bold text-gray-900">
-        ₹10,000
-      </div>
-      <div class="text-sm text-gray-500">
-        per person (4 pax)
-      </div>
-    </div>
-
-    <div class="h-[1px] bg-gray-200 my-5"></div>
-
-    <!-- CTA -->
-    <a href="https://wa.me/919006143335"
-      class="block text-center py-3.5 rounded-full font-medium text-white
-      bg-gradient-to-br from-teal-500 to-teal-700
-      shadow-md transition
-      hover:-translate-y-1 hover:scale-[1.04] hover:shadow-xl">
-
-      Ask on WhatsApp →
-    </a>
-
-    <!-- FEATURES -->
-    <ul class="mt-6 space-y-3 text-sm text-gray-600">
-
-      <li class="flex gap-2 items-center">
-        <span class="w-2 h-2 bg-teal-500 rounded-full"></span>
-        No hidden costs
-      </li>
-
-      <li class="flex gap-2 items-center">
-        <span class="w-2 h-2 bg-teal-500 rounded-full"></span>
-        Flexible itinerary
-      </li>
-
-      <li class="flex gap-2 items-center">
-        <span class="w-2 h-2 bg-teal-500 rounded-full"></span>
-        Fast confirmation
-      </li>
-
-    </ul>
-
-  </div>
-
-</div>
-
-
-
-
-
-
-</div>
-
-
-
-</div>
-
-
- <!-- car featured ------------------------------- -->
+    <!-- car featured ------------------------------- -->
     <section
       class="px-[5%] py-[110px] relative overflow-hidden bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9]"
     >
@@ -1243,136 +1087,153 @@ tailwind.config = {
       </div>
     </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- FAQ -->
-<section class="px-[5%] py-[110px] bg-gradient-to-b from-[#f8fafc] to-white relative overflow-hidden">
+    <section
+      class="px-[5%] py-[110px] bg-gradient-to-b from-[#f8fafc] to-white relative overflow-hidden"
+    >
+      <!-- BACKGROUND DECOR (SUBTLE GLOW) -->
+      <div
+        class="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-teal-100 rounded-full blur-3xl opacity-40"
+      ></div>
+      <div
+        class="absolute bottom-[-100px] right-[-100px] w-[300px] h-[300px] bg-blue-100 rounded-full blur-3xl opacity-40"
+      ></div>
 
-  <!-- BACKGROUND DECOR (SUBTLE GLOW) -->
-  <div class="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-teal-100 rounded-full blur-3xl opacity-40"></div>
-  <div class="absolute bottom-[-100px] right-[-100px] w-[300px] h-[300px] bg-blue-100 rounded-full blur-3xl opacity-40"></div>
+      <!-- HEADING -->
+      <div class="text-center max-w-[700px] mx-auto mb-16 relative z-10">
+        <span
+          class="text-xs uppercase tracking-[0.25em] text-teal-500 font-semibold"
+        >
+          Got Questions?
+        </span>
 
-  <!-- HEADING -->
-  <div class="text-center max-w-[700px] mx-auto mb-16 relative z-10">
+        <h2
+          class="text-[clamp(2.2rem,4vw,3rem)] font-semibold mt-4 leading-tight text-gray-900"
+        >
+          Frequently Asked
+          <span class="text-teal-500 relative inline-block">
+            Questions
+            <span
+              class="absolute left-0 -bottom-1 w-full h-[3px] bg-teal-500/70 rounded-full"
+            ></span>
+          </span>
+        </h2>
 
-    <span class="text-xs uppercase tracking-[0.25em] text-teal-500 font-semibold">
-      Got Questions?
-    </span>
+        <p class="text-gray-500 mt-4 text-sm">
+          Everything you need to know before booking — clear, simple,
+          transparent.
+        </p>
+      </div>
 
-    <h2 class="text-[clamp(2.2rem,4vw,3rem)] font-semibold mt-4 leading-tight text-gray-900">
-      Frequently Asked
-      <span class="text-teal-500 relative inline-block">
-        Questions
-        <span class="absolute left-0 -bottom-1 w-full h-[3px] bg-teal-500/70 rounded-full"></span>
-      </span>
-    </h2>
+      <!-- FAQ -->
+      <div class="max-w-[820px] mx-auto space-y-5 relative z-10">
+        <!-- ITEM -->
+        <details
+          class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300"
+        >
+          <summary
+            class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition"
+          >
+            Is internet and network available in Manali?
+            <span
+              class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500"
+              >+</span
+            >
+          </summary>
 
-    <p class="text-gray-500 mt-4 text-sm">
-      Everything you need to know before booking — clear, simple, transparent.
-    </p>
+          <p class="mt-3 text-sm text-gray-500 leading-relaxed">
+            Network is available in Manali town, but may be limited in remote
+            areas like Solang or Rohtang. It’s best to not rely heavily on
+            internet connectivity during the trip.
+          </p>
+        </details>
 
-  </div>
+        <!-- ITEM -->
+        <details
+          class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300"
+        >
+          <summary
+            class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition"
+          >
+            Is it safe to travel to Manali in winter?
+            <span
+              class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500"
+              >+</span
+            >
+          </summary>
 
-  <!-- FAQ -->
-  <div class="max-w-[820px] mx-auto space-y-5 relative z-10">
+          <p class="mt-3 text-sm text-gray-500">
+            Yes, Manali is safe in winter. However, road conditions may vary due
+            to snowfall. Our drivers are experienced with mountain routes to
+            ensure safe travel.
+          </p>
+        </details>
 
-    <!-- ITEM -->
-    <details class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
+        <!-- ITEM -->
+        <details
+          class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300"
+        >
+          <summary
+            class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition"
+          >
+            When can I experience snowfall in Manali?
+            <span
+              class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500"
+              >+</span
+            >
+          </summary>
 
-      <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
-        Is the price shown final or are there extra charges?
-        <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
-      </summary>
+          <p class="mt-3 text-sm text-gray-500">
+            Snowfall usually occurs from December to February. For snow
+            experiences, winter months are ideal.
+          </p>
+        </details>
 
-      <p class="mt-3 text-sm text-gray-500 leading-relaxed">
-        The listed price includes driver and fuel for up to 250 km per day. Tolls, parking, and state taxes (if applicable) are extra. We keep everything transparent — no hidden surprises.
-      </p>
+        <!-- ITEM -->
+        <details
+          class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300"
+        >
+          <summary
+            class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition"
+          >
+            Is Rohtang Pass included in the package?
+            <span
+              class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500"
+              >+</span
+            >
+          </summary>
 
-    </details>
+          <p class="mt-3 text-sm text-gray-500">
+            Rohtang Pass requires special permits and is subject to weather
+            conditions. It is usually not included by default, but we assist
+            with permits and planning.
+          </p>
+        </details>
 
-    <!-- ITEM -->
-    <details class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
-      <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
-       What happens if I exceed the daily 250 km limit?
-        <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
-      </summary>
+        <!-- ITEM -->
+        <details
+          class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300"
+        >
+          <summary
+            class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition"
+          >
+            When is the best time to visit Manali?
+            <span
+              class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500"
+              >+</span
+            >
+          </summary>
 
-      <p class="mt-3 text-sm text-gray-500">
-       No problem — additional distance is charged per km based on the vehicle type. Your driver will always inform you before any extra charges apply.
-      </p>
-    </details>
-
-    <!-- ITEM -->
-    <details class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
-      <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
-       Are your drivers experienced and verified?
-        <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
-      </summary>
-
-      <p class="mt-3 text-sm text-gray-500">
-        Yes. All drivers are licensed, background-checked, and experienced in long-distance travel. They are trained to ensure safety, punctuality, and a smooth ride.
-      </p>
-    </details>
-
-    <!-- ITEM -->
-    <details class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
-      <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
-        Are drivers verified?
-        <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
-      </summary>
-
-      <p class="mt-3 text-sm text-gray-500">
-        Yes. All drivers are background-checked, licensed, and rated above 4.8.
-      </p>
-    </details>
-
-    <!-- ITEM -->
-    <details class="group bg-white/80 backdrop-blur-md border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:border-teal-300 transition duration-300">
-      <summary class="flex justify-between items-center cursor-pointer font-medium text-gray-800 group-hover:text-teal-600 transition">
-      Do you offer one-way trips or only round trips?
-        <span class="transition group-open:rotate-45 text-lg text-gray-400 group-hover:text-teal-500">+</span>
-      </summary>
-
-      <p class="mt-3 text-sm text-gray-500">
-        Both options are available. One-way trips may include a drop charge depending on distance and route.
-      </p>
-    </details>
-
-  </div>
-
-</section>
+          <p class="mt-3 text-sm text-gray-500">
+            March to June offers pleasant weather and greenery, while December
+            to February is ideal for snowfall and winter experiences.
+          </p>
+        </details>
+      </div>
+    </section>
 
 
-</main>
+
 
 
 
@@ -1643,10 +1504,12 @@ tailwind.config = {
   <!-- script --------------------------------->
   <script src="script.js"></script>
   <script>lucide.createIcons();</script>
-<script src="goldentriangle.js"></script>
+    <script src="goldentriangle.js"></script>
+      <script src="script/navbar.js"></script>
+    <script src="script/footer.js"></script>
 
 
-<script>
+    <script>
       let images = [];
       let current = 0;
 

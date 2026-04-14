@@ -2,81 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-(function () {
-  let isOpen = false;
 
-  const overlay = document.getElementById('navOverlay');
-  const drawer = document.getElementById('mobileMenu');
-  const navToggle = document.getElementById('navToggle');
-  const mainNav = document.getElementById('mainNav');
-
-  if (!navToggle) return;
-
-  function openNav() {
-    isOpen = true;
-
-    // Overlay
-    overlay?.classList.add('opacity-100', 'pointer-events-auto');
-
-    // Drawer
-    drawer?.classList.remove('translate-x-full');
-    drawer?.classList.add('translate-x-0');
-
-    // Navbar hide
-    if (mainNav) {
-      mainNav.style.transform = 'translateY(-100%)';
-    }
-
-    // Toggle state
-    navToggle.dataset.state = "open";
-
-    // Lock scroll
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeNav() {
-    isOpen = false;
-
-    // Overlay
-    overlay?.classList.remove('opacity-100', 'pointer-events-auto');
-
-    // Drawer
-    drawer?.classList.remove('translate-x-0');
-    drawer?.classList.add('translate-x-full');
-
-    // Navbar back
-    if (mainNav) {
-      mainNav.style.transform = 'translateY(0)';
-    }
-
-    // Toggle state
-    navToggle.dataset.state = "closed";
-
-    // Unlock scroll
-    document.body.style.overflow = '';
-
-
-    // 🔥 FIX: reset scroll reference
-  lastScroll = window.scrollY;
-  }
-
-
-
-
-  const closeBtn = document.getElementById('drawerClose');
-closeBtn?.addEventListener('click', closeNav);
-
-
-
-
-  function toggleNav() {
-    isOpen ? closeNav() : openNav();
-  }
-
-  navToggle.addEventListener('click', toggleNav);
-  overlay?.addEventListener('click', closeNav);
-
-})();
 
 
   // homepage tour
@@ -377,80 +303,7 @@ closeBtn?.addEventListener('click', closeNav);
   }
   // scroll top button
 
-  //  navbar --------------------------
-  (function () {
-    function initNavbar() {
-      const megaMenu = document.getElementById("megaMenu");
-      const triggers = document.querySelectorAll(".mega-trigger");
-      const panels = document.querySelectorAll(".mega-panel");
-      const navToggle = document.getElementById("navToggle");
-      const mobileMenu = document.getElementById("mobileMenu");
-      const overlay = document.getElementById("navOverlay");
 
-      console.log("INIT RUNNING", { navToggle, triggers, megaMenu });
-
-      // ── Mega menu ──
-      if (megaMenu && triggers.length) {
-        function showMega(panelKey) {
-          megaMenu.classList.add("active");
-          panels.forEach((p) => {
-            const match = p.dataset.panel === panelKey;
-            p.classList.toggle("hidden", !match);
-            p.classList.toggle("flex", match);
-          });
-        }
-
-        function hideMega() {
-          megaMenu.classList.remove("active");
-        }
-
-        let hideTimeout;
-
-        triggers.forEach((trigger) => {
-          trigger.addEventListener("mouseenter", () => {
-            if (window.innerWidth < 900) return;
-            clearTimeout(hideTimeout);
-            showMega(trigger.dataset.mega);
-          });
-
-          trigger.addEventListener("mouseleave", () => {
-            if (window.innerWidth < 900) return;
-            hideTimeout = setTimeout(hideMega, 120);
-          });
-        });
-
-        megaMenu.addEventListener("mouseenter", () => {
-          clearTimeout(hideTimeout);
-        });
-
-        megaMenu.addEventListener("mouseleave", () => {
-          hideTimeout = setTimeout(hideMega, 120);
-        });
-      }
-
-      // ── Mobile menu ──
-      if (navToggle && mobileMenu && overlay) {
-        navToggle.addEventListener("click", () => {
-          mobileMenu.classList.toggle("open");
-          overlay.classList.toggle("active");
-          navToggle.classList.toggle("active");
-        });
-
-        overlay.addEventListener("click", () => {
-          mobileMenu.classList.remove("open");
-          overlay.classList.remove("active");
-          navToggle.classList.remove("active");
-        });
-      }
-    }
-
-    // SAFE INIT
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", initNavbar);
-    } else {
-      initNavbar();
-    }
-  })();
 
   // CARD IMAGE SLIDER (INSIDE CARD)
   document.querySelectorAll(".slider-container").forEach((slider) => {
@@ -637,24 +490,14 @@ closeBtn?.addEventListener('click', closeNav);
   })();
   // homepage hero image rotation -----------------------
 
-  // footer  -------------------------------
-  (function initFooterAccordion() {
-    const accs = document.querySelectorAll(".footer-acc");
-    accs.forEach((acc) => {
-      const trigger = acc.querySelector(".footer-acc-trigger");
-      trigger.addEventListener("click", () => {
-        const isOpen = acc.classList.contains("open");
-        accs.forEach((a) => a.classList.remove("open"));
-        if (!isOpen) acc.classList.add("open");
-      });
-    });
-  })();
 
-  window.addEventListener("load", function () {
-    if (window.lucide) {
-      lucide.createIcons();
-    }
-  });
+
+
+
+
+
+
+
 
 
 });
@@ -662,53 +505,6 @@ closeBtn?.addEventListener('click', closeNav);
 
 
 
-// navbar hide on scroll
 
-let lastScroll = 0;
 
-function initNavbarScroll() {
-  const nav = document.getElementById('mainNav');
-  if (!nav) return;
 
-  window.addEventListener('scroll', () => {
-  if (document.body.style.overflow === 'hidden') return;
-
-  const current = window.scrollY;
-
-  // ignore tiny scrolls
-  if (Math.abs(current - lastScroll) < 5) return;
-
-  if (current > lastScroll && current > 100) {
-    mainNav.style.transform = 'translateY(-100%)';
-  } else {
-    mainNav.style.transform = 'translateY(0)';
-  }
-
-  lastScroll = current;
-});
-}
-
-initNavbarScroll();
-
-// const mainNav = document.getElementById('mainNav');
-// const sectionNav = document.getElementById('sectionNav');
-// const stickyForm = document.getElementById('stickyForm');
-// let lastScroll = 0;
-
-// window.addEventListener('scroll', () => {
-//   const current = window.scrollY;
-
-//   if (current > lastScroll && current > 100) {
-//     // Scroll down — main nav hide, section nav upar shift
-//     mainNav.style.transform = 'translateY(-100%)';
-//     sectionNav.style.transform = 'translateY(-72px)';  // main nav ki height
-//     stickyForm.style.top = '48px';  // sirf section nav ki height
-//   } else {
-//     // Scroll up — sab wapas
-//     mainNav.style.transform = 'translateY(0)';
-//     sectionNav.style.transform = 'translateY(0)';
-//     stickyForm.style.top = '136px';
-//   }
-
-//   lastScroll = current;
-// });

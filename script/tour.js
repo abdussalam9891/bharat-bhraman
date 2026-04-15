@@ -9,7 +9,7 @@ const tours = [
     booked: "180+ travelers booked this",
     price: "₹14,999",
     oldPrice: "₹19,999",
-    link: "goldentriangle.html",
+    link: "/pages/goldentriangle.html",
     badge: "Save ₹4,000",
     images: ["/assets/images/d2.jpg", "/assets/images/d7.jpg", "/assets/images/r6.jpg"],
   },
@@ -22,7 +22,7 @@ const tours = [
     booked: "220+ travelers booked this",
     price: "₹20,000",
     oldPrice: "₹25,000",
-    link: "kerala.html",
+    link: "/pages/kerala.html",
     badge: "Save ₹5,000",
     images: ["/assets/images/kerala1.jpg", "/assets/images/kerala2.jpg", "/assets/images/kerala3.jpg"],
   },
@@ -35,7 +35,7 @@ const tours = [
     booked: "Bestseller",
     price: "₹7,500",
     oldPrice: "₹9,000",
-    link: "goa.html",
+    link: "/pages/goa.html",
     badge: "Bestseller",
     images: [
       "/assets/tourimages/goa1.jpg",
@@ -53,7 +53,7 @@ const tours = [
     booked: "Most Booked",
     price: "₹13,500",
     oldPrice: "₹16,000",
-    link: "manali.html",
+    link: "/pages/manali.html",
     badge: "Most Booked",
     images: [
       "/assets/tourimages/manali1.jpg",
@@ -72,7 +72,7 @@ const tours = [
     booked: "Spiritual",
     price: "₹8,500",
     oldPrice: "₹10,000",
-    link: "kashi.html",
+    link: "/pages/kashi.html",
     badge: "Spiritual",
     images: [
       "/assets/tourimages/kashi1.jpg",
@@ -90,7 +90,7 @@ const tours = [
     booked: "Top Pick",
     price: "₹24,000",
     oldPrice: "₹28,000",
-    link: "andamanIsland.html",
+    link: "/pages/andamanIsland.html",
     badge: "Top Pick",
     images: [
       "/assets/tourimages/portblair1.jpg",

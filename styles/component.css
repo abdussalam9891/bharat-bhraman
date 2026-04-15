@@ -48,19 +48,18 @@
 #carTrack {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  touch-action: pan-y;
+  overflow-x: auto;
+  touch-action: pan-x;
+
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
 #tourTrack::-webkit-scrollbar,
-#carTrack::-webkit-scrollbar { display: none; }
-
-@media (min-width: 768px) {
-  #tourTrack,
-  #carTrack { overflow-x: hidden; }
+#carTrack::-webkit-scrollbar {
+  display: none;
 }
-
+ 
 
 /* ── REVIEW CARDS ───────────────────────────────────────────── */
 

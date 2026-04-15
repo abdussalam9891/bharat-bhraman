@@ -135,10 +135,4 @@ if (carContainer && carTemplate) {
   }
 }
 
-// SCROLL
-initScroller(
-  document.getElementById("carTrack"),
-  document.getElementById("carPrev"),
-  document.getElementById("carNext"),
-  28
-);
+ 

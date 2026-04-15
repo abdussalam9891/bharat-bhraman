@@ -573,7 +573,7 @@
         <!-- CARD CONTAINER -->
         <div
           id="cardContainer"
-          class="flex gap-6 overflow-x-auto px-[5%] py-[60px] snap-x snap-mandatory scroll-smooth no-scrollbar"
+          class="flex gap-6 overflow-x-auto px-[5%] py-[60px] snap-x snap-mandatory scroll-smooth no-scrollbar flex-nowrap"
         ></div>
 
         <!-- TEMPLATE -->
@@ -663,7 +663,7 @@
 
     <!-- car featured ------------------------------- -->
     <section
-      class="section relative bg-white"
+      class="section-sm relative overflow-hidden bg-white"
     >
       <div class="container-main">
         <!-- HEADER -->
@@ -685,19 +685,19 @@
         <!-- TRACK -->
         <div
           id="carTrack"
-          class="flex gap-7 snap-x snap-mandatory scroll-smooth no-scrollbar"
+         class="flex gap-6 overflow-x-auto px-[5%] py-[60px] snap-x snap-mandatory scroll-smooth no-scrollbar flex-nowrap"
         ></div>
 
         <!-- TEMPLATE -->
         <template id="car-card-template">
           <article
-            class="snap-start min-w-[300px] max-w-[320px]   group bg-white rounded-[16px]     transition-all duration-300 hover:-translate-y-2  hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+           class="snap-start min-w-[300px] max-w-[320px] group bg-white rounded-[18px] overflow-hidden shadow-sm hover:shadow-[0_25px_60px_rgba(0,0,0,0.18)] transition-all duration-500 hover:-translate-y-2"
           >
             <div class="relative h-[200px] overflow-hidden">
-              <div class="images-wrapper relative w-full h-full"></div>
+              <div class="slider-container images-wrapper relative w-full h-full"></div>
             </div>
 
-            <div class="p-6">
+            <div class="p-6 space-y-1">
               <h3
                 class="car-title font-display text-[1.35rem] font-semibold text-gray-900"
               ></h3>

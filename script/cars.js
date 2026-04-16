@@ -11,7 +11,7 @@ const cars = [
     oldPrice: "₹5500/day",
     save: "Save ₹1000",
     badge: "Bestseller",
-    link: "https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Mahindra%20XUV700%20for%20rent.",
+    link: "/index.html#form",
     images: [
       "/assets/carpic/mahindraSuv1.jpg",
       "/assets/carpic/mahindraSuv2.jpg",
@@ -28,7 +28,7 @@ const cars = [
     oldPrice: "₹3800/day",
     save: "Save ₹600",
     badge: "Top Choice",
-    link: "https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Maruti%20Suzuki%20Dzire%20for%20rent.",
+    link: "/index.html#form",
     images: [
       "/assets/carpic/dzire1.jpg",
       "/assets/carpic/dzire2.jpg",
@@ -45,7 +45,7 @@ const cars = [
     oldPrice: "₹6000/day",
     save: "Save ₹1000",
     badge: "Most Booked",
-    link: "https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Toyota%20Innova%20Crysta%20for%20rent.",
+    link: "/index.html#form",
     images: [
       "/assets/carpic/inova1.jpg",
       "/assets/carpic/inova2.jpg",
@@ -62,7 +62,7 @@ const cars = [
     oldPrice: "₹5000/day",
     save: "Save ₹800",
     badge: "Off-Road King",
-    link: "https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Mahindra%20Thar%20for%20rent.",
+    link: "/index.html#form",
     images: [
       "/assets/carpic/thar1.jpg",
       "/assets/carpic/thar2.jpg",
@@ -79,7 +79,7 @@ const cars = [
     oldPrice: "₹8500/day",
     save: "Save ₹1500",
     badge: "Luxury Pick",
-    link: "https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Toyota%20Fortuner%20for%20rent.",
+    link: "/index.html#form",
     images: [
       "/assets/carpic/fortuner1.jpg",
       "/assets/carpic/fortuner2.jpg",
@@ -135,4 +135,4 @@ if (carContainer && carTemplate) {
   }
 }
 
- 
+

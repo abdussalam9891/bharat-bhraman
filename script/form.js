@@ -20,11 +20,11 @@ const phoneInput = document.getElementById('phone');
 const emailInput = document.getElementById('email');
 const dateInput = document.getElementById('travelDate');
 
-// 🔒 Disable past dates
+//  Disable past dates
 const today = new Date().toISOString().split("T")[0];
 if (dateInput) dateInput.min = today;
 
-// ✅ SINGLE validation function (Tailwind version)
+//  SINGLE validation function (Tailwind version)
 function validateField(input, condition) {
   const error = input.closest("div").querySelector(".error-text");
 
@@ -43,7 +43,7 @@ function validateField(input, condition) {
   }
 }
 
-// 🔥 LIVE VALIDATION
+// LIVE VALIDATION
 nameInput?.addEventListener("input", () => {
   if (nameInput.value.length === 0) {
     // remove styles when empty
@@ -78,7 +78,7 @@ dateInput?.addEventListener("change", () => {
   validateField(dateInput, selected >= now);
 });
 
-// 🚀 SUBMIT
+// SUBMIT
 form.addEventListener('submit', async (e) => {
 
 
@@ -104,7 +104,7 @@ form.addEventListener('submit', async (e) => {
     return;
   }
 
-  // 🔄 Loading state
+  // Loading state
   btn.innerHTML = `
     <span class="flex items-center justify-center gap-2">
       <span class="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
@@ -125,7 +125,7 @@ form.addEventListener('submit', async (e) => {
     if (json.success) {
       document.getElementById('successModal').classList.remove('hidden');
 
-      // 🔥 reset button immediately
+      // reset button immediately
  btn.innerHTML = formConfig.buttonText || "Plan My Trip →";
   btn.disabled = false;
 
@@ -139,7 +139,7 @@ form.addEventListener('submit', async (e) => {
   }
 });
 
-// ✅ RESET
+// RESET
 document.getElementById('closeModal').addEventListener('click', () => {
   document.getElementById('successModal').classList.add('hidden');
 
@@ -162,5 +162,5 @@ document.getElementById('closeModal').addEventListener('click', () => {
 
 
 
-  // (POORA TERA EXISTING CODE YAHAN SHIFT KAR)
+   
 }

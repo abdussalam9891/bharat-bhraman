@@ -81,7 +81,7 @@
           <select
             name="destination"
             required
-            class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-500"
+            class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
           >
            <option value="" disabled selected>Choose a tour</option>
     <option value="golden-triangle">Golden Triangle</option>
@@ -95,20 +95,18 @@
           </select>
         </div>
 
-        <div>
+       <div>
+  <input
+    type="number"
+    name="group_size"
+    placeholder="No. of people"
+    min="1"
+    max="100"
+    required
+    class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
+  />
+</div>
 
-          <select
-            name="group_size"
-            required
-            class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-500"
-          >
-            <option value="" disabled selected>No. of people</option>
-            <option value="1-2">1–2 people</option>
-            <option value="3-4">3–4 people</option>
-            <option value="5-6">5–6 people</option>
-            <option value="7+">7+ people</option>
-          </select>
-        </div>
       </div>
 
       <!-- CAR -->
@@ -116,7 +114,7 @@
 
         <select
           name="car_preference"
-          class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-500"
+          class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
         >
           <option value="" disabled selected>Select a car (optional)</option>
           <option>Maruti Suzuki Dzire – ₹3,200/day</option>
@@ -157,7 +155,7 @@
             placeholder="No. of Days e.g. 7"
             min="1"
             max="30"
-            class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-500"
+            class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
           />
         </div>
       </div>
@@ -169,7 +167,7 @@
         name="message"
           rows="2"
           placeholder="Budget, preferred car, special requests..."
-          class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-500 resize-none"
+          class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 resize-none"
         ></textarea>
       </div>
 

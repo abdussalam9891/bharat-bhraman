@@ -381,44 +381,111 @@
       </div>
     </section>
 
-    <!-- car section ------------------------ -->
-    <!-- HEADER -->
-    <div id="fleet" class="m-16">
-      <h2 class="text-[clamp(2rem,4vw,2.8rem)] font-semibold mb-4">
-        Choose Your Vehicle
-      </h2>
 
-      <div class="flex gap-3 flex-wrap">
-        <button class="px-4 py-2 rounded-full bg-black text-white text-sm">
-          All
-        </button>
-        <button class="px-4 py-2 rounded-full bg-white border text-sm">
-          Sedan
-        </button>
-        <button class="px-4 py-2 rounded-full bg-white border text-sm">
-          SUV
-        </button>
-        <button class="px-4 py-2 rounded-full bg-white border text-sm">
-          Luxury
-        </button>
-        <button class="px-4 py-2 rounded-full bg-white border text-sm">
-          Traveller
-        </button>
-      </div>
-    </div>
+
 
 
 
 
     <!-- car featured ------------------------------- -->
     <section
-      class="px-[5%] py-[110px] relative overflow-hidden bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9]"
+      id="fleet"  class="px-[5%] py-[110px] relative overflow-hidden bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9]"
     >
+
+       <div class="m-16">
+      <h2 class="text-[clamp(2rem,4vw,2.8rem)] font-semibold mb-4">
+        Choose Your Vehicle
+      </h2>
+
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mt-6 mb-6">
+
+  <!-- LEFT -->
+  <div class="flex flex-wrap gap-3">
+    <!-- your filter buttons -->
+        <button data-filter="all" class="px-4 py-2 rounded-full bg-black text-white text-sm">
+          All
+        </button>
+        <button data-filter="sedan" class="px-4 py-2 rounded-full bg-white border text-sm">
+          Sedan
+        </button>
+         <button data-filter="hatchback" class="px-4 py-2 rounded-full bg-white border text-sm">
+          Hatchback
+        </button>
+        <button data-filter="suv" class="px-4 py-2 rounded-full bg-white border text-sm">
+          SUV
+        </button>
+         <button data-filter="muv" class="px-4 py-2 rounded-full bg-white border text-sm">
+          MUV
+        </button>
+        <button data-filter="luxury" class="px-4 py-2 rounded-full bg-white border text-sm">
+          Luxury
+        </button>
+
+
+
+
+  </div>
+
+  <!-- RIGHT -->
+  <div class="flex items-center gap-2">
+
+
+    <div class="relative">
+
+  <!-- BUTTON -->
+  <button id="sortBtn"
+    class="flex items-center gap-2 bg-white border border-gray-300 rounded-full px-4 py-2 text-sm shadow-sm hover:shadow-md transition">
+    Sort by
+    <span class="text-xs">▼</span>
+  </button>
+
+  <!-- DROPDOWN -->
+  <div id="sortMenu"
+    class="hidden absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden z-50">
+
+    <button data-sort=""
+      class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100">
+      Recommended
+    </button>
+
+    <button data-sort="low"
+      class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100">
+      Price: Low → High
+    </button>
+
+    <button data-sort="high"
+      class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100">
+      Price: High → Low
+    </button>
+
+  </div>
+
+</div>
+
+
+  </div>
+
+</div>
+
+
+
+
+
+    </div>
+
+
+
+
+
       <!-- TRACK -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7">
+      <div id="carContainer"  class="grid gap-7 justify-items-center sm:[grid-template-columns:repeat(auto-fill,minmax(280px,300px))]">
+
+
         <!-- XUV700 -->
         <article
-          class="w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+        data-price="4500"
+  data-type="suv"
+          class="car-card w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
         >
           <div class="relative h-[220px] overflow-hidden slider-container">
             <!-- BESTSELLER BADGE -->
@@ -490,7 +557,9 @@
 
         <!-- SWIFT DZIRE -->
         <article
-          class="w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+        data-price="2800"
+  data-type="hatchback"
+          class="car-card  w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
         >
           <div class="relative h-[220px] overflow-hidden slider-container">
             <!-- BESTSELLER BADGE -->
@@ -564,7 +633,9 @@
 
         <!-- maruti suzuki dzire -->
         <article
-          class="w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+         data-price="3200"
+  data-type="sedan"
+          class="car-card w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
         >
           <div class="relative h-[220px] overflow-hidden slider-container">
             <!-- BESTSELLER BADGE -->
@@ -635,7 +706,9 @@
 
         <!--Maruti Suzuki Ertiga  -->
         <article
-          class="w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+         data-price="3800"
+  data-type="muv"
+          class="car-card w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
         >
           <div class="relative h-[220px] overflow-hidden slider-container">
             <!-- BESTSELLER BADGE -->
@@ -707,7 +780,9 @@
 
         <!-- XUV700 -->
         <article
-          class="w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+         data-price="4200"
+  data-type="suv"
+          class=" car-card w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
         >
           <div class="relative h-[220px] overflow-hidden slider-container">
             <!-- BESTSELLER BADGE -->
@@ -779,7 +854,9 @@
 
         <!-- toyota INNOVA  -->
         <article
-          class="w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+         data-price="5000"
+  data-type="muv"
+          class="car-card w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
         >
           <div class="relative h-[220px] overflow-hidden slider-container">
             <!-- BESTSELLER BADGE -->
@@ -851,7 +928,9 @@
 
         <!-- mahindra thar -->
         <article
-          class="w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+         data-price="4200"
+  data-type="suv"
+          class="car-card w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
         >
           <div class="relative h-[220px] overflow-hidden slider-container">
             <!-- BESTSELLER BADGE -->
@@ -924,7 +1003,9 @@
 
 
         <article
-          class="w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+         data-price="7000"
+  data-type="luxury"
+          class="car-card w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
         >
           <div class="relative h-[220px] overflow-hidden slider-container">
             <!-- BESTSELLER BADGE -->
@@ -998,7 +1079,9 @@
 
 
         <article
-          class="w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+         data-price="3200"
+  data-type="sedan"
+          class="car-card w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
         >
           <div class="relative h-[220px] overflow-hidden slider-container">
             <!-- BESTSELLER BADGE -->
@@ -1072,7 +1155,9 @@
 
 
         <article
-          class="w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+         data-price="4800"
+  data-type="suv"
+          class="car-card w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
         >
           <div class="relative h-[220px] overflow-hidden slider-container">
             <!-- BESTSELLER BADGE -->
@@ -1144,7 +1229,9 @@
 
 
         <article
-          class="w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+         data-price="3500"
+  data-type="sedan"
+          class="car-card w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
         >
           <div class="relative h-[220px] overflow-hidden slider-container">
             <!-- BESTSELLER BADGE -->
@@ -2984,6 +3071,7 @@
 
     <script src="/script/navbar.js"></script>
     <script src="/script/footer.js"></script>
+    <script src="/script/filter.js"></script>
 
     <script>
       lucide.createIcons();

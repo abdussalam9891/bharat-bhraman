@@ -152,10 +152,4 @@ if (container && template) {
   }
 }
 
-// SCROLL
-initScroller(
-  document.getElementById("cardContainer"),
-  document.getElementById("tourPrev"),
-  document.getElementById("tourNext"),
-  24,
-);
+ 

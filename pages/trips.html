@@ -346,7 +346,7 @@
 
     <!-- featured tours ----------------------------------- -->
 
-    <section
+    <section id="tourSection"
       class="px-[5%] py-[110px] relative overflow-hidden bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9]"
     >
       <!-- Background glow -->
@@ -375,17 +375,55 @@
 
       </div>
 
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+
+  <!-- FILTER BUTTONS -->
+  <div class="flex gap-3 flex-wrap">
+    <button data-filter="all" class="px-4 py-2 rounded-full bg-black text-white text-sm">All</button>
+    <button data-filter="short" class="px-4 py-2 rounded-full bg-white border text-sm">1–4 Days</button>
+    <button data-filter="medium" class="px-4 py-2 rounded-full bg-white border text-sm">5–7 Days</button>
+    <button data-filter="long" class="px-4 py-2 rounded-full bg-white border text-sm">8+ Days</button>
+  </div>
+
+  <!-- SORT -->
+  <div class="relative">
+    <button id="tourSortBtn"
+      class="flex items-center gap-2 bg-white border border-gray-300 rounded-full px-4 py-2 text-sm shadow-sm">
+      Recommended <span class="text-xs">▼</span>
+    </button>
+
+    <div id="tourSortMenu"
+      class="hidden absolute right-0 mt-2 w-48 bg-white border rounded-xl shadow-lg overflow-hidden z-50">
+
+      <button data-sort="" class="block w-full text-left px-4 py-2 hover:bg-gray-100">
+        Recommended
+      </button>
+
+      <button data-sort="low" class="block w-full text-left px-4 py-2 hover:bg-gray-100">
+        Price: Low → High
+      </button>
+
+      <button data-sort="high" class="block w-full text-left px-4 py-2 hover:bg-gray-100">
+        Price: High → Low
+      </button>
+
+    </div>
+  </div>
+
+</div>
+
 
       <div class="relative z-10 ">
         <!-- Track -->
         <div
-
-          class="grid gap-7 [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))]"
+          id="tourContainer"
+  class="grid gap-7 justify-items-center sm:[grid-template-columns:repeat(auto-fill,minmax(280px,300px))]"
         >
 
           <!-- CARD 1 -->
           <article
-            class="w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)]  reveal reveal-left"
+            data-days="9" data-price="9500"
+            class="tour-card w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)]  reveal reveal-left"
           >
             <!-- IMAGE BLOCK -->
             <div class="relative h-[220px] overflow-hidden">
@@ -487,7 +525,8 @@
 
           <!-- CARD 2 -->
           <article
-            class="w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)]  reveal reveal-right"
+           data-days="7" data-price="21000"
+            class="tour-card w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)]  reveal reveal-right"
           >
             <!-- IMAGE BLOCK -->
             <div class="relative h-[220px] overflow-hidden">
@@ -588,8 +627,10 @@
 
           <!-- CARD 3 -->
           <article
-            class="w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)]  reveal reveal-left"
+            data-days="7" data-price="16900"
+            class="tour-card w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)]  reveal reveal-right"
           >
+
             <!-- IMAGE BLOCK -->
             <div class="relative h-[220px] overflow-hidden">
               <div class="slider-container relative w-full h-full">
@@ -690,7 +731,10 @@
 
                 <!-- goa------------- -->
         <article
-          class="w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)] reveal reveal-right">
+          data-days="3" data-price="7500"
+            class="tour-card w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)]  reveal reveal-right"
+          >
+
           <!-- IMAGE BLOCK -->
           <div class="relative h-[220px] overflow-hidden">
             <div class="slider-container relative w-full h-full">
@@ -771,7 +815,10 @@
 
         <!-- manali -->
         <article
-          class=" w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]  reveal reveal-left">
+          data-days="5" data-price="13500"
+            class="tour-card w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)]  reveal reveal-right"
+          >
+
           <!-- IMAGE BLOCK -->
           <div class="relative h-[220px] overflow-hidden">
             <div class="slider-container relative w-full h-full">
@@ -857,7 +904,10 @@
 
         <!-- varanasi  -->
         <article
-          class=" w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]  reveal reveal-right">
+          data-days="4" data-price="8500"
+            class="tour-card w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)]  reveal reveal-right"
+          >
+
           <!-- IMAGE BLOCK -->
           <div class="relative h-[220px] overflow-hidden">
             <div class="slider-container relative w-full h-full">
@@ -940,7 +990,10 @@
 
         <!-- andaman  -->
         <article
-          class="w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]  reveal reveal-left">
+          data-days="7" data-price="24000"
+            class=" tour-card w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-500 ease-[cubic-bezier(.2,.65,.3,1)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)]  reveal reveal-right"
+          >
+
           <!-- IMAGE BLOCK -->
           <div class="relative h-[220px] overflow-hidden">
             <div class="slider-container relative w-full h-full">
@@ -2072,6 +2125,7 @@
 
     <script src="/script/navbar.js"></script>
     <script src="/script/footer.js"></script>
+    <script src="/script/trip.js"></script>
      <script>lucide.createIcons();</script>
   </body>
 </html>

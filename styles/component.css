@@ -49,7 +49,7 @@
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   overflow-x: auto;
-  touch-action: pan-x;
+  touch-action: pan-y;
 
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -59,7 +59,7 @@
 #carTrack::-webkit-scrollbar {
   display: none;
 }
- 
+
 
 /* ── REVIEW CARDS ───────────────────────────────────────────── */
 

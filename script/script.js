@@ -438,6 +438,9 @@ document.addEventListener("DOMContentLoaded", () => {
       .forEach((el) => observer.observe(el));
   })();
 
+
+  
+
   // homepage hero counter
   const counters = document.querySelectorAll(".stat-num");
 

@@ -44,7 +44,7 @@
 
 /* ── CARD SCROLL SYSTEM (tour + car carousels) ──────────────── */
 
-#tourTrack,
+/* #tourTrack,
 #carTrack {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
@@ -58,7 +58,7 @@
 #tourTrack::-webkit-scrollbar,
 #carTrack::-webkit-scrollbar {
   display: none;
-}
+} */
 
 
 /* ── REVIEW CARDS ───────────────────────────────────────────── */

@@ -882,44 +882,28 @@ document.addEventListener("DOMContentLoaded", () => {
       class="px-[5%] py-[110px] relative overflow-hidden bg-gradient-to-b from-white via-[#f8fafc] to-[#f1f5f9]"
     >
       <!-- HEADER -->
-      <div class="flex items-end justify-between mb-10">
-        <!-- LEFT -->
+      <div class="flex justify-between items-end mb-10">
         <div>
           <span
             class="text-[11px] font-semibold tracking-[0.15em] uppercase text-teal-500 mb-3 block"
           >
             Our Fleet
           </span>
-
           <h2
             class="font-display text-[clamp(2rem,4vw,2.9rem)] font-semibold text-gray-900 leading-[1.15] mb-3"
           >
-            Ideal Vehicle for This Trip
+            Bestseller Cars
           </h2>
         </div>
-
-        <!-- RIGHT -->
-        <a
-          href="/pages/cars.html"
-          class="hidden lg:inline-flex items-center gap-2 text-sm font-medium text-teal-600 transition group"
-        >
-          <span class="relative">
-            View All Cars
-            <span
-              class="absolute left-0 -bottom-1 w-0 h-[2px] bg-teal-500 transition-all group-hover:w-full"
-            ></span>
-          </span>
-          →
-        </a>
       </div>
 
       <!-- TRACK -->
-      <div class="flex gap-7 overflow-x-auto scroll-smooth no-scrollbar pb-2">
+      <div class="grid gap-7 [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))]">
         <!--CARD TEMPLATE -->
 
         <!-- XUV700 -->
         <article
-          class="min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+          class="w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
         >
           <div class="relative h-[220px] overflow-hidden slider-container">
             <!-- BESTSELLER BADGE -->
@@ -935,26 +919,29 @@ document.addEventListener("DOMContentLoaded", () => {
             />
             <img
               src="/assets/carpic/mahindraSuv2.jpg"
-              class="slider-image absolute inset-0 w-full h-full object-cover opacity-0"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
             />
             <img
               src="/assets/carpic/mahindraSuv3.jpg"
-              class="slider-image absolute inset-0 w-full h-full object-cover opacity-0"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
             />
             <img
               src="/assets/carpic/mahindraSuv4.jpg"
-              class="slider-image absolute inset-0 w-full h-full object-cover opacity-0"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
             />
 
+            <!-- LEFT BUTTON -->
             <button
-              class="prev absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 px-2 rounded-full"
+              class="prev absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-300 hover:scale-110"
             >
-              ←
+              <i data-lucide="chevron-left" class="w-5 h-5 text-gray-700"></i>
             </button>
+
+            <!-- RIGHT BUTTON -->
             <button
-              class="next absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 px-2 rounded-full"
+              class="next absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-300 hover:scale-110"
             >
-              →
+              <i data-lucide="chevron-right" class="w-5 h-5 text-gray-700"></i>
             </button>
           </div>
 
@@ -977,25 +964,26 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
             </div>
             <a
-  href="https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Mahindra%20XUV700%20for%20rent."
-  target="_blank"
-  class="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
->
-  Book
-</a>
+              href="/index.html#form"
+              data-car="Mahindra XUV700"
+
+              class="car-cta px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
+            >
+              Select
+            </a>
           </div>
         </article>
 
         <!-- maruti suzuki dzire -->
         <article
-          class="min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+          class="w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
         >
           <div class="relative h-[220px] overflow-hidden slider-container">
             <!-- BESTSELLER BADGE -->
             <div
               class="absolute top-4 left-4 z-30 bg-gradient-to-r from-orange-500 to-pink-500 text-white text-[0.7rem] font-semibold px-3 py-1 rounded-full shadow-lg pointer-events-none"
             >
-              Top Choice
+              Bestseller
             </div>
 
             <img
@@ -1004,26 +992,29 @@ document.addEventListener("DOMContentLoaded", () => {
             />
             <img
               src="/assets/carpic/dzire2.jpg"
-              class="slider-image absolute inset-0 w-full h-full object-cover opacity-0"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
             />
             <img
               src="/assets/carpic/dzire3.jpg"
-              class="slider-image absolute inset-0 w-full h-full object-cover opacity-0"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
             />
             <img
               src="/assets/carpic/dzire4.jpg"
-              class="slider-image absolute inset-0 w-full h-full object-cover opacity-0"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
             />
 
+            <!-- LEFT BUTTON -->
             <button
-              class="prev absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 px-2 rounded-full"
+              class="prev absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-300 hover:scale-110"
             >
-              ←
+              <i data-lucide="chevron-left" class="w-5 h-5 text-gray-700"></i>
             </button>
+
+            <!-- RIGHT BUTTON -->
             <button
-              class="next absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 px-2 rounded-full"
+              class="next absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-300 hover:scale-110"
             >
-              →
+              <i data-lucide="chevron-right" class="w-5 h-5 text-gray-700"></i>
             </button>
           </div>
 
@@ -1047,26 +1038,27 @@ document.addEventListener("DOMContentLoaded", () => {
                 Save ₹600
               </div>
             </div>
-           <a
-  href="https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Mahindra%20XUV700%20for%20rent."
-  target="_blank"
-  class="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
->
-  Book
-</a>
+            <a
+              href="/index.html#form"
+              data-car="Maruti Suzuki Dzire"
+
+              class="car-cta px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
+            >
+              Select
+            </a>
           </div>
         </article>
 
         <!-- toyota INNOVA  -->
         <article
-          class="min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+          class="w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
         >
           <div class="relative h-[220px] overflow-hidden slider-container">
             <!-- BESTSELLER BADGE -->
             <div
               class="absolute top-4 left-4 z-30 bg-gradient-to-r from-orange-500 to-pink-500 text-white text-[0.7rem] font-semibold px-3 py-1 rounded-full shadow-lg pointer-events-none"
             >
-              Most Booked
+              Bestseller
             </div>
 
             <img
@@ -1075,26 +1067,29 @@ document.addEventListener("DOMContentLoaded", () => {
             />
             <img
               src="/assets/carpic/inova2.jpg"
-              class="slider-image absolute inset-0 w-full h-full object-cover opacity-0"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
             />
             <img
               src="/assets/carpic/inova3.jpg"
-              class="slider-image absolute inset-0 w-full h-full object-cover opacity-0"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
             />
             <img
               src="/assets/carpic/inova4.jpg"
-              class="slider-image absolute inset-0 w-full h-full object-cover opacity-0"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
             />
 
+            <!-- LEFT BUTTON -->
             <button
-              class="prev absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 px-2 rounded-full"
+              class="prev absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-300 hover:scale-110"
             >
-              ←
+              <i data-lucide="chevron-left" class="w-5 h-5 text-gray-700"></i>
             </button>
+
+            <!-- RIGHT BUTTON -->
             <button
-              class="next absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 px-2 rounded-full"
+              class="next absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-300 hover:scale-110"
             >
-              →
+              <i data-lucide="chevron-right" class="w-5 h-5 text-gray-700"></i>
             </button>
           </div>
 
@@ -1116,26 +1111,27 @@ document.addEventListener("DOMContentLoaded", () => {
                 Save ₹1000
               </div>
             </div>
-          <a
-  href="https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Mahindra%20XUV700%20for%20rent."
-  target="_blank"
-  class="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
->
-  Book
-</a>
+            <a
+              href="/index.html#form"
+              data-car="Toyota Innova Crysta"
+
+              class="car-cta px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
+            >
+              Select
+            </a>
           </div>
         </article>
 
-        <!-- XUV700 -->
-        <article
-          class="min-w-[300px] max-w-[320px] group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
+
+           <article
+          class="w-full group bg-white rounded-[16px] border border-gray-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(42,157,143,0.15)]"
         >
           <div class="relative h-[220px] overflow-hidden slider-container">
             <!-- BESTSELLER BADGE -->
             <div
-             class="absolute top-4 left-4 z-30 bg-gradient-to-r from-orange-500 to-pink-500 text-white text-[0.7rem] font-semibold px-3 py-1 rounded-full shadow-lg pointer-events-none"
+              class="absolute top-4 left-4 z-30 bg-gradient-to-r from-orange-500 to-pink-500 text-white text-[0.7rem] font-semibold px-3 py-1 rounded-full shadow-lg pointer-events-none"
             >
-              Luxury Pick
+              Bestseller
             </div>
 
             <img
@@ -1144,26 +1140,29 @@ document.addEventListener("DOMContentLoaded", () => {
             />
             <img
               src="/assets/carpic/fortuner2.jpg"
-              class="slider-image absolute inset-0 w-full h-full object-cover opacity-0"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
             />
             <img
               src="/assets/carpic/fortuner3.jpg"
-              class="slider-image absolute inset-0 w-full h-full object-cover opacity-0"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
             />
             <img
               src="/assets/carpic/f4.jpg"
-              class="slider-image absolute inset-0 w-full h-full object-cover opacity-0"
+              class="slider-image absolute inset-0 w-full h-full object-cover opacity-100"
             />
 
+            <!-- LEFT BUTTON -->
             <button
-              class="prev absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 px-2 rounded-full"
+              class="prev absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-300 hover:scale-110"
             >
-              ←
+              <i data-lucide="chevron-left" class="w-5 h-5 text-gray-700"></i>
             </button>
+
+            <!-- RIGHT BUTTON -->
             <button
-              class="next absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 px-2 rounded-full"
+              class="next absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-300 hover:scale-110"
             >
-              →
+              <i data-lucide="chevron-right" class="w-5 h-5 text-gray-700"></i>
             </button>
           </div>
 
@@ -1188,16 +1187,22 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
             </div>
            <a
-  href="https://wa.me/919006143335?text=Hi%2C%20I%20want%20to%20book%20Mahindra%20XUV700%20for%20rent."
-  target="_blank"
-  class="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
->
-  Book
-</a>
+              href="/index.html#form"
+              data-car="Toyota Fortuner"
+
+              class="car-cta px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-teal-500 transition"
+            >
+              Select
+            </a>
           </div>
         </article>
+
+
+
+
       </div>
     </section>
+
 
     <!-- FAQ -->
     <section
@@ -1941,6 +1946,7 @@ document.addEventListener("DOMContentLoaded", () => {
    <script src="/script/form.js"></script>
      <script src="/script/navbar.js"></script>
     <script src="/script/footer.js"></script>
+    <script src="/script/cars.js"></script>
 
      <script>lucide.createIcons();</script>
 

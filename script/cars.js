@@ -111,7 +111,9 @@ if (carContainer && carTemplate) {
       <div class="text-[0.65rem] text-green-600">${car.save}</div>
     `;
 
-    clone.querySelector(".car-cta").href = car.link;
+   const cta = clone.querySelector(".car-cta");
+   cta.setAttribute("data-car", car.name);
+
 
     const card = clone.querySelector("article");
 
@@ -130,9 +132,73 @@ if (carContainer && carTemplate) {
     carContainer.appendChild(clone);
   });
 
+
+
+
+
   if (typeof initReveal === "function") {
     initReveal();
   }
 }
+
+
+// document.addEventListener("click", (e) => {
+//   const btn = e.target.closest(".car-cta");
+//   if (!btn) return;
+
+//   e.preventDefault();
+
+//   const carName = btn.getAttribute("data-car");
+//   if (!carName) return;
+
+//   // always save to localStorage
+//   localStorage.setItem("selectedCar", carName);
+
+//   const formSection = document.getElementById("form");
+//   const carSelect = document.querySelector('select[name="car_preference"]');
+
+//   if (carSelect) {
+//     // form already loaded — update directly
+//     carSelect.value = carName;
+//     formSection.scrollIntoView({ behavior: "smooth" });
+//   } else {
+//     // form not loaded yet — scroll, loadForm() will pick up localStorage
+//     formSection.scrollIntoView({ behavior: "smooth" });
+//   }
+// });
+
+
+
+
+
+
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest(".car-cta");
+  if (!btn) return;
+
+  e.preventDefault();
+
+  const carName = btn.getAttribute("data-car");
+  if (!carName) return;
+
+  // store always
+  localStorage.setItem("selectedCar", carName);
+
+  const formSection = document.getElementById("form");
+
+  if (formSection) {
+    formSection.scrollIntoView({ behavior: "smooth" });
+
+    // if form already loaded → update instantly
+    const carSelect = document.querySelector('select[name="car_preference"]');
+    if (carSelect) {
+      carSelect.value = carName;
+    }
+
+  } else {
+    // different page case
+    window.location.href = "/index.html#form";
+  }
+});
 
 

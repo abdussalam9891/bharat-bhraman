@@ -42,23 +42,6 @@
 
 
 
-/* ── CARD SCROLL SYSTEM (tour + car carousels) ──────────────── */
-
-/* #tourTrack,
-#carTrack {
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  overflow-x: auto;
-  touch-action: pan-y;
-
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-#tourTrack::-webkit-scrollbar,
-#carTrack::-webkit-scrollbar {
-  display: none;
-} */
 
 
 /* ── REVIEW CARDS ───────────────────────────────────────────── */
@@ -242,20 +225,7 @@ details[open] p {
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { scrollbar-width: none; }
 
-/* General card hover */
-.card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 16px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  transition: 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-}
-
+ 
 /* CTA button shadow */
 .cta-btn { box-shadow: 0 10px 25px rgba(42, 157, 143, 0.25); }
 .cta-btn:hover { box-shadow: 0 15px 35px rgba(42, 157, 143, 0.35); }

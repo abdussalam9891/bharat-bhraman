@@ -40,7 +40,7 @@
     </script>
 
 
-<link rel="preload" as="image" href="/assets/images/k5.jpg">
+ 
 
 
 
@@ -1549,37 +1549,42 @@ async function loadForm() {
     const res = await fetch('/components/form.html');
     const html = await res.text();
 
+   document.getElementById("formContainer").innerHTML = html;
 
 
-
-    document.getElementById("formContainer").innerHTML = html;
-
-
-    const heading = document.querySelector("#form h2");
-
-if (heading && formConfig.title) {
-  heading.innerHTML = formConfig.title;
+const savedCar = localStorage.getItem("selectedCar");
+if (savedCar) {
+  const carSelect = document.querySelector('select[name="car_preference"]');
+  if (carSelect) {
+    carSelect.value = savedCar;
+  }
 }
 
-    // destination safe set
-    const select = document.querySelector('select[name="destination"]');
-    if (select && formConfig.destination) {
-      select.value = formConfig.destination.toLowerCase();
+    // heading
+    const heading = document.querySelector("#form h2");
+    if (heading && formConfig.title) {
+      heading.innerHTML = formConfig.title;
     }
 
-    //subject
+    // destination
+    const destinationSelect = document.querySelector('select[name="destination"]');
+    if (destinationSelect && formConfig.destination) {
+      destinationSelect.value = formConfig.destination.toLowerCase();
+    }
+
+    // subject
     const subject = document.querySelector('input[name="subject"]');
     if (subject && formConfig.subject) {
       subject.value = formConfig.subject;
     }
 
-    //button
+    // button
     const btn = document.getElementById("submitBtn");
     if (btn && formConfig.buttonText) {
       btn.innerText = formConfig.buttonText;
     }
 
-    //init
+    // init form
     if (typeof initForm === "function") {
       initForm();
     }
@@ -1589,7 +1594,7 @@ if (heading && formConfig.title) {
   }
 }
 
-//----call------
+// call
 document.addEventListener("DOMContentLoaded", () => {
   loadForm();
 });

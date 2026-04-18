@@ -1,3 +1,7 @@
+// dynamically loaded card's utils 
+
+
+
 // Images
 function createImages(wrapper, images) {
   images.forEach((img, i) => {

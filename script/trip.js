@@ -4,10 +4,10 @@
 
 
 document.addEventListener("DOMContentLoaded", () => {
-// all code
 
 
-  // ===== SAFE ELEMENT SELECTION =====
+
+  //   SAFE ELEMENT SELECTION
 const tourSection = document.querySelector("#tourSection");
 if (!tourSection) {
   console.error("tourSection not found");
@@ -24,13 +24,13 @@ let currentFilter = "all";
 let currentSort = "";
 
 
-// ===== GUARD (prevents crash) =====
+//  GUARD (prevents crash)
 if (!tourContainer || !sortBtn || !sortMenu) {
   console.warn("Tour filter system not initialized properly");
 }
 
 
-// ===== FILTER =====
+// FILTER
 buttons.forEach(btn => {
   btn.addEventListener("click", () => {
     currentFilter = btn.dataset.filter;
@@ -49,14 +49,14 @@ buttons.forEach(btn => {
 });
 
 
-// ===== SORT DROPDOWN =====
+// SORT DROPDOWN
 sortBtn.addEventListener("click", (e) => {
   e.stopPropagation(); // 🔥 prevents instant close
   sortMenu.classList.toggle("hidden");
 });
 
 
-// ===== SORT CLICK =====
+// SORT CLICK
 tourSection.querySelectorAll("#tourSortMenu [data-sort]").forEach(item => {
   item.addEventListener("click", () => {
     sortMenu.classList.add("hidden");
@@ -73,7 +73,7 @@ tourSection.querySelectorAll("#tourSortMenu [data-sort]").forEach(item => {
 });
 
 
-// ===== CLOSE DROPDOWN =====
+// CLOSE DROPDOWN
 document.addEventListener("click", (e) => {
   if (!sortBtn.contains(e.target) && !sortMenu.contains(e.target)) {
     sortMenu.classList.add("hidden");
@@ -81,7 +81,7 @@ document.addEventListener("click", (e) => {
 });
 
 
-// ===== ESC CLOSE =====
+// ESC CLOSE
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     sortMenu.classList.add("hidden");
@@ -133,7 +133,7 @@ document.addEventListener("keydown", (e) => {
 }
 
 
-// ===== INIT (important) =====
+// INIT
 applyFilterAndSort();
 
 

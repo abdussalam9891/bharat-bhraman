@@ -1,14 +1,5 @@
 
 
-
-
-
-
-
-
-
-
-
  function initForm() {
   const form = document.getElementById('enquiryForm');
   if (!form) return;
@@ -24,7 +15,7 @@ const dateInput = document.getElementById('travelDate');
 const today = new Date().toISOString().split("T")[0];
 if (dateInput) dateInput.min = today;
 
-//  SINGLE validation function (Tailwind version)
+//  SINGLE validation function 
 function validateField(input, condition) {
   const error = input.closest("div").querySelector(".error-text");
 
@@ -162,5 +153,5 @@ document.getElementById('closeModal').addEventListener('click', () => {
 
 
 
-   
+
 }

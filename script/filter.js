@@ -1,4 +1,4 @@
-// ===== ELEMENTS =====
+// ELEMENTS
 const buttons = document.querySelectorAll("[data-filter]");
 const container = document.getElementById("carContainer");
 
@@ -9,7 +9,7 @@ let currentFilter = "all";
 let currentSort = "";
 
 
-// ===== FILTER + ACTIVE UI =====
+//  FILTER + ACTIVE UI
 buttons.forEach(btn => {
   btn.addEventListener("click", () => {
     currentFilter = btn.dataset.filter;
@@ -28,13 +28,13 @@ buttons.forEach(btn => {
 });
 
 
-// ===== SORT DROPDOWN TOGGLE =====
+// SORT DROPDOWN TOGGLE
 sortBtn.addEventListener("click", () => {
   sortMenu.classList.toggle("hidden");
 });
 
 
-// ===== SORT OPTION CLICK =====
+//  SORT OPTION CLICK
 document.querySelectorAll("[data-sort]").forEach(item => {
   item.addEventListener("click", () => {
     sortMenu.classList.add("hidden");
@@ -52,7 +52,7 @@ document.querySelectorAll("[data-sort]").forEach(item => {
 });
 
 
-// ===== CLOSE DROPDOWN (OUTSIDE CLICK) =====
+// CLOSE DROPDOWN
 document.addEventListener("click", (e) => {
   if (!sortBtn.contains(e.target) && !sortMenu.contains(e.target)) {
     sortMenu.classList.add("hidden");
@@ -60,7 +60,7 @@ document.addEventListener("click", (e) => {
 });
 
 
-// ===== CLOSE ON ESC =====
+// CLOSE ON ESC
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     sortMenu.classList.add("hidden");

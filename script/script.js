@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
       update(true);
     });
 
-    // ---------- mouse drag (desktop premium feel) ----------
+    // ---------- mouse drag  ----------
     wrapper.addEventListener("mousedown", (e) => {
       isDragging = true;
       startX = e.pageX;
@@ -439,7 +439,7 @@ document.addEventListener("DOMContentLoaded", () => {
   })();
 
 
-  
+
 
   // homepage hero counter
   const counters = document.querySelectorAll(".stat-num");

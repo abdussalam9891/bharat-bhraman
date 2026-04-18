@@ -1,4 +1,4 @@
-// ── 1. LIGHTBOX ─────────────────────────────────────
+// LIGHTBOX
 (function () {
   let images = [];
   let current = 0;
@@ -34,7 +34,7 @@
   }
 })();
 
-// ── 2. CAR CARD SLIDER ──────────────────────────────
+// CAR CARD SLIDER
 (function () {
   document.querySelectorAll('.slider-container').forEach(container => {
     const images = container.querySelectorAll('.slider-image');
@@ -78,7 +78,7 @@
 
 
 
- 
+
 
 
 

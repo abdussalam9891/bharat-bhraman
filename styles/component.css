@@ -25,7 +25,7 @@
 }
 
 
-/* ── Mobile drawer (state only) ── */
+/* Mobile drawer */
 
 .mobile-drawer[data-state="open"] {
   transform: translateX(0);
@@ -44,7 +44,7 @@
 
 
 
-/* ── REVIEW CARDS ───────────────────────────────────────────── */
+/* REVIEW CARDS */
 
 /* Default: scaled down, faded */
 .review-card-new {
@@ -112,19 +112,8 @@
 }
 
 
-/* ── FAQ ────────────────────────────────────────────────────── */
+/*LOGO CAROUSEL */
 
-/* Hide default browser arrow */
-summary::-webkit-details-marker { display: none; }
-
-details[open] p {
-  animation: fadeIn 0.25s ease;
-}
-
-
-/* ── LOGO CAROUSEL ──────────────────────────────────────────── */
-
-/* Fade edges */
 .logo-carousel::before,
 .logo-carousel::after {
   content: "";
@@ -180,7 +169,7 @@ details[open] p {
 .logo-carousel:hover .logo-track { animation-play-state: paused; }
 
 
-/* ── FOOTER ─────────────────────────────────────────────────── */
+/* FOOTER  */
 
 /* Dark gradient background */
 .bg-dark-grad {
@@ -193,7 +182,7 @@ details[open] p {
   border-left: 2px solid #2dd4bf;
 }
 
-/* Mobile accordion — grid-row trick for smooth expand */
+/* Mobile accordion  grid-row trick for smooth expand */
 .footer-acc-body {
   max-height: 0;
   overflow: hidden;
@@ -219,13 +208,13 @@ details[open] p {
 .footer-acc-trigger:active { transform: scale(0.98); }
 
 
-/* ── UTILITIES ──────────────────────────────────────────────── */
+/*  UTILITIES  */
 
-/* Hide scrollbar but keep scroll functionality */
+/* Hide scrollbar */
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { scrollbar-width: none; }
 
- 
+
 /* CTA button shadow */
 .cta-btn { box-shadow: 0 10px 25px rgba(42, 157, 143, 0.25); }
 .cta-btn:hover { box-shadow: 0 15px 35px rgba(42, 157, 143, 0.35); }

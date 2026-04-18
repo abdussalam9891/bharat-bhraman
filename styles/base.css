@@ -38,7 +38,7 @@ html {
   margin-inline: auto;
 }
 
-/* Optional medium container (use later if needed) */
+/* medium container  */
 .container-medium {
   width: 100%;
   max-width: 1000px;
@@ -51,12 +51,12 @@ html {
   padding-block: clamp(50px, 6vw, 80px);
 }
 
-/* Important hero / big sections */
+/* big sections */
 .section-lg {
   padding-block: clamp(80px, 10vw, 110px);
 }
 
-/* Tight sections (like journey, inclusion) */
+/* Tight sections */
 .section-sm {
   padding-block: clamp(30px, 4vw, 50px);
 }

@@ -30,7 +30,7 @@ const tours = [
     title: "Goa Beach Escape",
     location: "Panaji - Calangute - Palolem",
     days: "3 Days",
-    rating: "★ 4.9",
+    rating: "★ 4.9 (140)",
     type: "Private",
     booked: "Bestseller",
     price: "₹7,500",
@@ -48,7 +48,7 @@ const tours = [
     title: "Manali Snow Trip",
     location: "Delhi - Kullu - Manali",
     days: "5 Days",
-    rating: "★ 4.8",
+    rating: "★ 4.8 (210)",
     type: "Private",
     booked: "Most Booked",
     price: "₹13,500",
@@ -67,7 +67,7 @@ const tours = [
     title: "Varanasi Spiritual Tour",
     location: "Varanasi - Sarnath - Bodh Gaya",
     days: "4 Days",
-    rating: "★ 4.7",
+    rating: "★ 4.7 (80)",
     type: "Private",
     booked: "Spiritual",
     price: "₹8,500",
@@ -85,7 +85,7 @@ const tours = [
     title: "Andaman Islands",
     location: "Port Blair - Havelock - Neil Island",
     days: "7 Days",
-    rating: "★ 4.9",
+    rating: "★ 4.9 (40)",
     type: "Private",
     booked: "Top Pick",
     price: "₹24,000",
@@ -152,4 +152,4 @@ if (container && template) {
   }
 }
 
- 
+
